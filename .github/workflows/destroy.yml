@@ -1,0 +1,23 @@
+name: destroy
+
+on:
+  delete:
+    branches:
+      - '**'
+      - '!main'
+  workflow_dispatch:
+    inputs:
+      branch_name_override:
+        required: false
+        description: 'Manually override the branch (optional)'
+
+jobs:
+  destroy:
+    uses: q4mobile/capital-connect-workflows/.github/workflows/deploy_pipeline.yml@v4
+    with:
+      operation: destroy
+    secrets: inherit
+
+  cleanup:
+    uses: q4mobile/capital-connect-workflows/.github/workflows/cleanup.yml@v4
+    secrets: inherit

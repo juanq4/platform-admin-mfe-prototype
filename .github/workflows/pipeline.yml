@@ -1,0 +1,19 @@
+name: pipeline
+
+on:
+  push:
+    branches:
+      - '**'
+  workflow_dispatch:
+
+jobs:
+  build:
+    uses: q4mobile/capital-connect-workflows/.github/workflows/build.yml@v4
+    secrets: inherit
+
+  deploy:
+    needs: [build]
+    uses: q4mobile/capital-connect-workflows/.github/workflows/deploy_pipeline.yml@v4
+    with:
+      version: ${{ needs.build.outputs.version }}
+    secrets: inherit

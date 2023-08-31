@@ -1,0 +1,180 @@
+{
+  "name": "@com.q4inc.connect.platform.mfe.seed/platform-mfe-seed",
+  "version": "1.0.25",
+  "description": "Seed project for a Platform Micro Front End",
+  "author": "Q4 Inc",
+  "license": "ISC",
+  "engines": {
+    "node": "16.16.0"
+  },
+  "homepage": "https://github.com/q4mobile/platform-mfe-seed#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/q4mobile/platform-mfe-seed.git"
+  },
+  "bugs": {
+    "url": "https://github.com/q4mobile/platform-mfe-seed/issues"
+  },
+  "testrail": {
+    "unit": {
+      "project_id": 0,
+      "suite_id": 0
+    },
+    "e2e": {
+      "project_id": 0,
+      "suite_id": 0
+    }
+  },
+  "release": {
+    "branches": [
+      "main",
+      {
+        "name": "!main",
+        "prerelease": "${_.lowerCase(name).replace(/[^a-zA-Z0-9]/g, '-')}"
+      }
+    ],
+    "ci": true,
+    "plugins": [
+      [
+        "@semantic-release/npm",
+        {
+          "npmPublish": true
+        }
+      ],
+      [
+        "@semantic-release/commit-analyzer",
+        {
+          "preset": "angular",
+          "releaseRules": [
+            {
+              "message": "*",
+              "release": "patch"
+            }
+          ]
+        }
+      ],
+      [
+        "@semantic-release/github",
+        {
+          "successComment": false,
+          "failComment": false,
+          "failTitle": false,
+          "releasedLabels": false,
+          "labels": false,
+          "assignees": []
+        }
+      ],
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "CHANGELOG.md",
+            "package.json",
+            "package-lock.json"
+          ],
+          "message": "chore(release): set `package.json` and `package-lock.json` to ${nextRelease.version} [skip ci] \n\n${nextRelease.notes}"
+        }
+      ]
+    ]
+  },
+  "scripts": {
+    "build:story-book": "build-storybook -o dist",
+    "build": "rimraf dist && webpack --config config/webpack.prod.js",
+    "build:prod": "rimraf dist && webpack --config config/webpack.prod.js",
+    "e2e": "",
+    "freshInstall": "npm install && npm run tokana:dev",
+    "lint": "eslint . --ext .js,.ts,.tsx",
+    "lint:fix": "npm run lint -- --fix",
+    "prepack": "npm run build:story-book && mv dist story-book && npm run build",
+    "pre-release": "CI=true HUSKY=0 semantic-release --prepare '@semantic-release/npm'",
+    "release": "CI=true HUSKY=0 semantic-release",
+    "prepare": "husky install",
+    "plop": "plop",
+    "start": "start-storybook -p 3002 --no-manager-cache",
+    "test": "jest",
+    "test:ci": "npm run test:coverage",
+    "test:coverage": "npm run test -- --coverage --verbose false",
+    "test:dev": "jest --watch",
+    "docs:preview": "npx @techdocs/cli serve"
+  },
+  "devDependencies": {
+    "@q4/platform-definitions": "^2.10.0",
+    "@q4/storybook-module-federation": "^1.0.6",
+    "@q4/stratus-jest-reporter": "^1.3.0",
+    "@storybook/addon-actions": "^6.5.13",
+    "@storybook/addon-essentials": "^6.5.13",
+    "@storybook/addon-links": "^6.5.13",
+    "@storybook/builder-webpack5": "^6.5.13",
+    "@storybook/manager-webpack5": "^6.5.13",
+    "@storybook/react": "^6.5.13",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@types/jest": "^29.2.2",
+    "@types/pendo-io-browser": "^2.17.1",
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.8",
+    "@typescript-eslint/eslint-plugin": "^5.42.0",
+    "@typescript-eslint/parser": "^5.42.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.6.0",
+    "eslint": "^8.27.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-import-resolver-typescript": "^3.5.2",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest-dom": "^4.0.1",
+    "eslint-plugin-no-unsanitized": "^4.0.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.31.10",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-plugin-security": "^1.5.0",
+    "eslint-plugin-sonarjs": "^0.16.0",
+    "eslint-plugin-storybook": "^0.6.7",
+    "eslint-plugin-testing-library": "^5.9.1",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "html-webpack-plugin": "^5.5.0",
+    "husky": "^8.0.2",
+    "jest": "^29.3.1",
+    "jest-environment-jsdom": "^29.0.3",
+    "lint-staged": "^13.0.3",
+    "plop": "^3.0.5",
+    "prettier": "^2.7.1",
+    "rimraf": "^3.0.2",
+    "style-loader": "^3.3.1",
+    "ts-jest": "^29.0.3",
+    "ts-loader": "^9.4.1",
+    "typescript": "^4.8.4",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.11.1",
+    "webpack-merge": "^5.8.0"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.7.1",
+    "@auth0/auth0-react": "^1.12.0",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@q4/nimbus-ui": "^2.11.0",
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/git": "^10.0.1",
+    "cross-fetch": "^3.1.5",
+    "dotenv": "^16.0.3",
+    "graphql": "^16.6.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "semantic-release": "^19.0.5"
+  },
+  "lint-staged": {
+    "*.(spec|test).@(js|ts|tsx)": [
+      "jest"
+    ],
+    "*.@(js|ts|tsx)": [
+      "npm run lint:fix"
+    ],
+    "*.+(json|css|md)": [
+      "prettier --write"
+    ]
+  }
+}

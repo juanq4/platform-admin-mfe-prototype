@@ -1,0 +1,26 @@
+variable "alternate_domain_aliases" {
+  type = any
+}
+variable "app_name_prefix" {}
+variable "aws_region" {}
+variable "contact" {}
+variable "description" {}
+variable "domain_stage" {}
+variable "environment" {}
+variable "environment_type" {}
+variable "hosted_zone" {}
+variable "platform_aws_account_number" {}
+variable "product_name" {}
+variable "product" {}
+variable "repository_url" {}
+variable "rolename_suffix" {}
+variable "sub_product" {}
+variable "subdomain" {}
+variable "platform_hosted_zone" {}
+variable "terraform_remote_state_connect_base_key" {}
+variable "terraform_remote_state_bucket" {}
+variable "npm_package_version" {}
+variable "npm_package_name" {}
+variable "iam_role" {}
+variable "deploy_story_book" {}
+variable "artifact_server_password" {}

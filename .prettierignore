@@ -1,0 +1,6 @@
+# Defaults
+.gitignore
+.eslintignore
+
+dist
+node_modules

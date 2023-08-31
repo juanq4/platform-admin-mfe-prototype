@@ -1,0 +1,17 @@
+# Backstage Techdocs
+#
+# 1. Define the structure and location of the documentation (note: all paths are relative to ./docs)
+# 2. Update documentation markdown in ./docs folder
+# 3. Preview documentation locally by running npm run docs:preview (requires docker)
+#
+
+site_name: '{{Domain}} MFE Documentation'
+
+nav:
+  - Home: index.md
+  - Architecture:
+      - High Level Design: ./architecture/overview.md
+      - Detailed System Design: ./architecture/system.md      
+
+plugins:
+  - techdocs-core

@@ -1,0 +1,10 @@
+import { render, screen } from "@testing-library/react";
+import React from "react";
+import { {{pascalCase name}} } from "./{{camelCase name}}.component";
+
+describe("{{pascalCase name}}", () => {
+  it("should render with no props", () => {
+    const { container } = render(<{{pascalCase name}} />);
+    expect(container).toBeVisible();
+  });
+});

@@ -1,0 +1,62 @@
+import React, { useState, useEffect, useMemo } from "react";
+import type { {{pascalCase name}}Props } from "./{{camelCase name}}.definition";
+import styled from "@emotion/styled";
+
+const Container = styled.div`
+  display: inherit;
+`;
+
+export const {{camelCase name}}DefaultProps =  {
+  variable: ""
+}
+
+export const {{pascalCase name}} = (props: {{pascalCase name}}Props = {{camelCase name}}DefaultProps): JSX.Element => {
+  const { variable } = props;
+
+  // 1. useState
+  const [state, setState] = useState({});
+
+  // 2. variables
+  const memoizedVariable = useMemo(() => getMemoizedVariable, []);
+
+  function getMemoizedVariable(): string {
+    return 'memoized'
+  }
+
+  const variableA = "a";
+  const variableB = "b";
+  const variableC = getSomething();
+
+  // 3. useEffect
+  useEffect(() => {
+    // some logic
+  }, [])
+
+  // 4. functions
+  /**
+  * Get Something
+  */
+  function getSomething () {
+    // getter logic
+  }
+
+  /**
+  * Handle Something
+  */
+  function handleClick () {
+    // some logic
+  }
+
+  /**
+  * Helper
+  */
+  function helperFunction () {
+    // some logic
+  }
+
+  return (
+    <Container>
+      <div></div>
+    </Container>
+  );
+}

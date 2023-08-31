@@ -1,0 +1,14 @@
+{
+  "Version": "2008-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowCloudFrontOriginAccessIdentity",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "${cloudfront_origin_access_identity}"
+      },
+      "Action": "s3:GetObject",
+      "Resource": "${s3_bucket_arn}/*"
+    }
+  ]
+}

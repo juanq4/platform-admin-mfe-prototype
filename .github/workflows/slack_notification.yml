@@ -1,0 +1,15 @@
+name: slack_notification
+
+on:
+  workflow_run:
+    workflows:
+      - pipeline
+      - pull_request
+      - destroy
+    types:
+      - completed
+
+jobs:
+  slack:
+    uses: q4mobile/capital-connect-workflows/.github/workflows/slack_notification.yml@v4
+    secrets: inherit

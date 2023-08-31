@@ -1,0 +1,27 @@
+# Backstage Catalog Info
+# 
+# 1. Describe the components that make up this service and their relationships
+# 2. Register the components at https://backstage.platform.q4inc.com
+#
+
+
+# MFE
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: {{domain}}-mfe
+  description: {{Application Name}} micro front-ends
+  annotations:
+    github.com/project-slug: q4mobile/platform-{{domain}}-mfe
+    backstage.io/techdocs-ref: dir:.
+  tags:
+    - mfe
+    - {{domain}}
+spec:
+  type: website
+  lifecycle: production
+  owner: group:{{team}}
+  system: platform
+  dependsOn:
+    - component:sampleNode1-node
+    - component:sampleNode1-node

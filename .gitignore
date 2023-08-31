@@ -1,0 +1,26 @@
+coverage/
+dist/
+node_modules/
+
+.DS_Store
+.env
+
+
+#ide
+.vscode
+.history
+.idea
+
+# testrail report
+testrail-report.json
+nightwatch-testrail-report.json
+testrail-*-*-report.json
+
+logs
+
+# Terraform
+.terraform
+*.auto.tfvars
+*.tfplan
+*.terraform.lock.hcl
+backend.tf

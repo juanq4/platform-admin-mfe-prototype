@@ -1,0 +1,9 @@
+platform_aws_account_number             = "756778833670"
+alternate_domain_aliases                = ["*.seed.mfe.platform.q4inc.com"]
+hosted_zone                             = "seed.mfe.platform.q4inc.com"
+rolename_suffix                         = ""
+domain_stage                            = ""
+platform_hosted_zone                    = "platform.q4inc.com"
+terraform_remote_state_bucket           = "state.terraform.prod.connect.q4inc.com.us-east-1"
+terraform_remote_state_connect_base_key = "environment/prod/com/q4inc/connect/"
+deploy_story_book                       = "false"
