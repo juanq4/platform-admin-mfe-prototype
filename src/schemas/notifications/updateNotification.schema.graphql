@@ -1,0 +1,3 @@
+mutation UpdateNotification($markRead: Boolean!, $notificationId: String) {
+  updateNotification(markRead: $markRead, notificationId: $notificationId)
+}

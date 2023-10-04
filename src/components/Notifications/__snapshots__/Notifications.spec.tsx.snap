@@ -1,0 +1,844 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Notifications  7390814: renders component 1`] = `
+.emotion-0 {
+  background-color: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0px 0px 0px 1px #e9ecee,0px 2px 4px rgba(61, 70, 78, 0.2);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  max-height: inherit;
+  padding: 32px;
+}
+
+.emotion-1 {
+  font-family: 'Open Sans',sans-serif;
+  -webkit-transition: color 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out;
+  text-transform: capitalize;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 44px;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  font-weight: 600;
+}
+
+@media only screen and (max-width: 768px) {
+  .emotion-1 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex-wrap: nowrap;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  line-height: 28px;
+  padding: 16px;
+}
+
+.emotion-3 {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.emotion-4 {
+  color: #3d464e;
+  font-size: 12px;
+}
+
+.emotion-5 {
+  background: none;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  top: 4px;
+}
+
+.emotion-5:after {
+  content: url();
+  color: #3d464e;
+  left: 25px;
+  position: absolute;
+  top: 0px;
+}
+
+.emotion-5:before {
+  content: url();
+  color: #3d464e;
+  left: 9px;
+  position: absolute;
+  top: 0px;
+  z-index: 1;
+}
+
+.emotion-6 {
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  width: 35px;
+  z-index: 5;
+}
+
+.emotion-6:checked+span {
+  background-color: #e5ecf0;
+}
+
+.emotion-6:checked+span:after {
+  background-color: #107662;
+  -webkit-transform: translate3d(15px, 0, 0);
+  -moz-transform: translate3d(15px, 0, 0);
+  -ms-transform: translate3d(15px, 0, 0);
+  transform: translate3d(15px, 0, 0);
+}
+
+.emotion-7 {
+  background-color: #e5ecf0;
+  border-radius: 32px;
+  cursor: pointer;
+  display: block;
+  height: 16px;
+  position: relative;
+  width: 31px;
+}
+
+.emotion-7:after {
+  background-color: #3d464e;
+  border-radius: 100%;
+  content: "";
+  height: 12px;
+  left: 2px;
+  position: absolute;
+  -webkit-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+  top: 2px;
+  width: 12px;
+  z-index: 2;
+}
+
+.emotion-8 {
+  padding: 0px 16px;
+  overflow: auto;
+}
+
+.emotion-9 {
+  list-style: none;
+  margin: 0 0 20px 0;
+  padding: 0;
+}
+
+.emotion-10 {
+  height: 28px;
+  width: 100%;
+  padding: 4px 0px;
+  font-family: Open Sans,sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  color: #61707C;
+}
+
+.emotion-11 {
+  height: auto;
+  font-size: 14px;
+  line-height: 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  box-shadow: inset 0px -1px 0px inherit;
+}
+
+.emotion-12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  height: 100%;
+  padding: 12px 8px;
+  box-shadow: inset 0px -1px 0px #e7ecef;
+}
+
+.emotion-13 {
+  margin: 8px 0px;
+}
+
+.emotion-14 {
+  width: 308px;
+  margin: 0px 16px;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.emotion-15 {
+  font-size: 14px;
+  line-height: 16px;
+  color: #3d464e;
+  margin-bottom: 6px;
+}
+
+.emotion-16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  font-size: 12px;
+  line-height: 18px;
+  color: #61707C;
+}
+
+.emotion-17 {
+  margin: auto;
+}
+
+.emotion-18 {
+  width: 8px;
+  height: 8px;
+  background-color: #1ABC9C;
+  border-radius: 4px;
+}
+
+.emotion-74 {
+  box-shadow: inset 0px 1px 0px #e5ecf0;
+}
+
+.emotion-0 {
+  background-color: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0px 0px 0px 1px #e9ecee,0px 2px 4px rgba(61, 70, 78, 0.2);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  max-height: inherit;
+  padding: 32px;
+}
+
+.emotion-1 {
+  font-family: 'Open Sans',sans-serif;
+  -webkit-transition: color 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out;
+  text-transform: capitalize;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 44px;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  font-weight: 600;
+}
+
+@media only screen and (max-width: 768px) {
+  .emotion-1 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex-wrap: nowrap;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  line-height: 28px;
+  padding: 16px;
+}
+
+.emotion-3 {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.emotion-4 {
+  color: #3d464e;
+  font-size: 12px;
+}
+
+.emotion-5 {
+  background: none;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  top: 4px;
+}
+
+.emotion-5:after {
+  content: url();
+  color: #3d464e;
+  left: 25px;
+  position: absolute;
+  top: 0px;
+}
+
+.emotion-5:before {
+  content: url();
+  color: #3d464e;
+  left: 9px;
+  position: absolute;
+  top: 0px;
+  z-index: 1;
+}
+
+.emotion-6 {
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  width: 35px;
+  z-index: 5;
+}
+
+.emotion-6:checked+span {
+  background-color: #e5ecf0;
+}
+
+.emotion-6:checked+span:after {
+  background-color: #107662;
+  -webkit-transform: translate3d(15px, 0, 0);
+  -moz-transform: translate3d(15px, 0, 0);
+  -ms-transform: translate3d(15px, 0, 0);
+  transform: translate3d(15px, 0, 0);
+}
+
+.emotion-7 {
+  background-color: #e5ecf0;
+  border-radius: 32px;
+  cursor: pointer;
+  display: block;
+  height: 16px;
+  position: relative;
+  width: 31px;
+}
+
+.emotion-7:after {
+  background-color: #3d464e;
+  border-radius: 100%;
+  content: "";
+  height: 12px;
+  left: 2px;
+  position: absolute;
+  -webkit-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+  top: 2px;
+  width: 12px;
+  z-index: 2;
+}
+
+.emotion-8 {
+  padding: 0px 16px;
+  overflow: auto;
+}
+
+.emotion-9 {
+  list-style: none;
+  margin: 0 0 20px 0;
+  padding: 0;
+}
+
+.emotion-10 {
+  height: 28px;
+  width: 100%;
+  padding: 4px 0px;
+  font-family: Open Sans,sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  color: #61707C;
+}
+
+.emotion-11 {
+  height: auto;
+  font-size: 14px;
+  line-height: 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  box-shadow: inset 0px -1px 0px inherit;
+}
+
+.emotion-12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  height: 100%;
+  padding: 12px 8px;
+  box-shadow: inset 0px -1px 0px #e7ecef;
+}
+
+.emotion-13 {
+  margin: 8px 0px;
+}
+
+.emotion-14 {
+  width: 308px;
+  margin: 0px 16px;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.emotion-15 {
+  font-size: 14px;
+  line-height: 16px;
+  color: #3d464e;
+  margin-bottom: 6px;
+}
+
+.emotion-16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  font-size: 12px;
+  line-height: 18px;
+  color: #61707C;
+}
+
+.emotion-17 {
+  margin: auto;
+}
+
+.emotion-18 {
+  width: 8px;
+  height: 8px;
+  background-color: #1ABC9C;
+  border-radius: 4px;
+}
+
+.emotion-74 {
+  box-shadow: inset 0px 1px 0px #e5ecf0;
+}
+
+<div>
+  <div
+    class="emotion-0"
+  >
+    <h1
+      class="emotion-1"
+    >
+      notification preferences
+    </h1>
+    <div
+      class="emotion-2"
+    >
+      <div
+        class="emotion-3"
+      />
+      <div
+        class="emotion-4"
+      >
+        <label
+          for="notifications"
+        >
+          Only show unread
+        </label>
+        <button
+          class="emotion-5"
+        >
+          <input
+            class="emotion-6"
+            id="notifications"
+            type="checkbox"
+          />
+          <span
+            class="emotion-7"
+          />
+        </button>
+      </div>
+    </div>
+    <div
+      class="emotion-8"
+    >
+      <ul
+        class="emotion-9"
+      >
+        <div
+          class="emotion-10"
+        >
+          <span>
+            Today
+          </span>
+        </div>
+        <li
+          class="emotion-11"
+        >
+          <div
+            class="emotion-12"
+          >
+            <div
+              class="emotion-13"
+            >
+              <i
+                class="cci-website-analytics-4pt"
+              />
+            </div>
+            <div
+              class="emotion-14"
+            >
+              <div
+                class="emotion-15"
+              >
+                [data view] has [data detail] in Engagement Analtyics
+              </div>
+              <div
+                class="emotion-16"
+              >
+                <div>
+                  Engagement Analytics
+                </div>
+                <div>
+                  1 hour ago
+                </div>
+              </div>
+            </div>
+            <div
+              class="emotion-17"
+            >
+              <div
+                class="emotion-18"
+              />
+            </div>
+          </div>
+        </li>
+        <li
+          class="emotion-11"
+        >
+          <div
+            class="emotion-12"
+          >
+            <div
+              class="emotion-13"
+            >
+              <i
+                class="cci-website-4pt"
+              />
+            </div>
+            <div
+              class="emotion-14"
+            >
+              <div
+                class="emotion-15"
+              >
+                [request name] is [ready for publishing]. Launch Preview site
+              </div>
+              <div
+                class="emotion-16"
+              >
+                <div>
+                  Website
+                </div>
+                <div>
+                  6 hours ago
+                </div>
+              </div>
+            </div>
+            <div
+              class="emotion-17"
+            >
+              <div
+                class="emotion-18"
+              />
+            </div>
+          </div>
+        </li>
+        <li
+          class="emotion-11"
+        >
+          <div
+            class="emotion-12"
+          >
+            <div
+              class="emotion-13"
+            >
+              <i
+                class="cci-website-4pt"
+              />
+            </div>
+            <div
+              class="emotion-14"
+            >
+              <div
+                class="emotion-15"
+              >
+                [request name] is [ready for publishing]. Launch Preview site
+              </div>
+              <div
+                class="emotion-16"
+              >
+                <div>
+                  Website
+                </div>
+                <div>
+                  8 hour ago
+                </div>
+              </div>
+            </div>
+            <div
+              class="emotion-17"
+            >
+              <div
+                class="emotion-18"
+              />
+            </div>
+          </div>
+        </li>
+        <li
+          class="emotion-11"
+        >
+          <div
+            class="emotion-12"
+          >
+            <div
+              class="emotion-13"
+            >
+              <i
+                class="cci-website-4pt"
+              />
+            </div>
+            <div
+              class="emotion-14"
+            >
+              <div
+                class="emotion-15"
+              >
+                [request name] is [ready for publishing]. Launch Preview site
+              </div>
+              <div
+                class="emotion-16"
+              >
+                <div>
+                  Website
+                </div>
+                <div>
+                  15 hour ago
+                </div>
+              </div>
+            </div>
+            <div
+              class="emotion-17"
+            >
+              <div
+                class="emotion-18"
+              />
+            </div>
+          </div>
+        </li>
+      </ul>
+      <ul
+        class="emotion-9"
+      >
+        <div
+          class="emotion-10"
+        >
+          <span>
+            This Week
+          </span>
+        </div>
+        <li
+          class="emotion-11"
+        >
+          <div
+            class="emotion-12"
+          >
+            <div
+              class="emotion-13"
+            >
+              <i
+                class="cci-website-4pt"
+              />
+            </div>
+            <div
+              class="emotion-14"
+            >
+              <div
+                class="emotion-15"
+              >
+                [request name] is [ready for approval]. Launch Preview
+              </div>
+              <div
+                class="emotion-16"
+              >
+                <div>
+                  Website
+                </div>
+                <div>
+                  1 day ago
+                </div>
+              </div>
+            </div>
+            <div
+              class="emotion-17"
+            />
+          </div>
+        </li>
+        <li
+          class="emotion-11"
+        >
+          <div
+            class="emotion-12"
+          >
+            <div
+              class="emotion-13"
+            >
+              <i
+                class="cci-website-4pt"
+              />
+            </div>
+            <div
+              class="emotion-14"
+            >
+              <div
+                class="emotion-15"
+              >
+                [request name] is [ready for approval]. Launch Preview
+              </div>
+              <div
+                class="emotion-16"
+              >
+                <div>
+                  Website
+                </div>
+                <div>
+                  3 days ago
+                </div>
+              </div>
+            </div>
+            <div
+              class="emotion-17"
+            >
+              <div
+                class="emotion-18"
+              />
+            </div>
+          </div>
+        </li>
+        <li
+          class="emotion-11"
+        >
+          <div
+            class="emotion-12"
+          >
+            <div
+              class="emotion-13"
+            >
+              <i
+                class="cci-website-4pt"
+              />
+            </div>
+            <div
+              class="emotion-14"
+            >
+              <div
+                class="emotion-15"
+              >
+                Additonal info is required for [request name].
+              </div>
+              <div
+                class="emotion-16"
+              >
+                <div>
+                  Website
+                </div>
+                <div>
+                  5 days ago
+                </div>
+              </div>
+            </div>
+            <div
+              class="emotion-17"
+            />
+          </div>
+        </li>
+        <li
+          class="emotion-11"
+        >
+          <div
+            class="emotion-12"
+          >
+            <div
+              class="emotion-13"
+            >
+              <i
+                class="cci-website-analytics-4pt"
+              />
+            </div>
+            <div
+              class="emotion-14"
+            >
+              <div
+                class="emotion-15"
+              >
+                [data view] has [data detail] in Engagement Analtyics
+              </div>
+              <div
+                class="emotion-16"
+              >
+                <div>
+                  Engagement Analytics
+                </div>
+                <div>
+                  5 days ago
+                </div>
+              </div>
+            </div>
+            <div
+              class="emotion-17"
+            />
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div
+      class="emotion-74"
+    />
+  </div>
+</div>
+`;

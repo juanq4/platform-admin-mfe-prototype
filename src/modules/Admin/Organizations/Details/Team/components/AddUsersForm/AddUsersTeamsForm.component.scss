@@ -1,0 +1,55 @@
+@import "../../../../../../../styles/scss/variables";
+
+.add-users-teams-form {
+  .ag-theme-balham {
+    &.nui-table {
+      .ag-header-select-all,
+      .ag-selection-checkbox {
+        display: flex;
+        width: gux(4);
+        height: gux(4) !important;
+        background: $white;
+      }
+    }
+
+    .ag-checkbox-input-wrapper.ag-checked:after {
+      color: $white
+    }
+
+    .ag-checkbox-input-wrapper{
+      background: transparent;
+      width: gux(4);
+      height: gux(4);
+      font-size: $font-size--lg;
+      line-height: gux(4);
+    }
+
+    .ag-checkbox {
+      &.ag-header-select-all {
+        display: flex;
+        border-radius: gux(0.8);
+
+        .ag-checkbox-input-wrapper.ag-checked:after {
+          color: $primary500
+        }
+      }
+    }
+
+    .ag-cell-wrap-text {
+      white-space: break-spaces !important;
+      word-break: normal;
+    }
+
+    .ag-header {
+      z-index: 99;
+      overflow: visible;
+
+      &-viewport,
+      &-container,
+      &-row,
+      &-cell {
+        overflow: visible;
+      }
+    }
+  }
+}

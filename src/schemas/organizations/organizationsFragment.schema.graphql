@@ -1,0 +1,11 @@
+fragment OrganizationFragment on Organization {
+  id
+  name
+  active
+  isAdmin
+  identifiers
+  entitlements
+  type
+  region
+  currency
+}

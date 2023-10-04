@@ -1,0 +1,23 @@
+query Organizations(
+  $pageSize: Int
+  $page: [String]
+  $type: String
+  $searchTerm: String
+  $managedBy: String
+  $delegateOrganizationId: String
+  $active: Boolean
+) {
+  organizations(
+    pageSize: $pageSize
+    page: $page
+    type: $type
+    searchTerm: $searchTerm
+    managedBy: $managedBy
+    delegateOrganizationId: $delegateOrganizationId
+    active: $active
+  ) {
+    items {
+      ...OrganizationFragment
+    }
+  }
+}

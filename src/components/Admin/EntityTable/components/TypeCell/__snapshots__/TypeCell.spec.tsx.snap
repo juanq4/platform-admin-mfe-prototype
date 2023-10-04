@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TypeCell Component 4754437: [Given] I'm a user of the organizations admin view[When] the organization has a type of ‘Agency’ [Then] I can see the word ‘Agency’ listed under the “Type” column 1`] = `
+<div
+  class="entity-table_table-cell"
+  id="TypeCell"
+>
+  <span>
+    Agency
+  </span>
+</div>
+`;
+
+exports[`TypeCell Component 4754438: [Given] I'm a user of the organizations admin view [When] the organization has a type of “Corporate”[Then] I can see the word “Corporate” listed under the “Type” column 1`] = `
+<div
+  class="entity-table_table-cell"
+  id="TypeCell"
+>
+  <span>
+    Corporate
+  </span>
+</div>
+`;
+
+exports[`TypeCell Component 4754439: [Given] I'm a user of the organizations admin view [When] the organization in that row does not have a type [Then] I can see the word “Corporate” listed under the “Type” column 1`] = `
+<div
+  class="entity-table_table-cell"
+  id="TypeCell"
+>
+  <span>
+    Corporate
+  </span>
+</div>
+`;
+
+exports[`TypeCell Component 7386714: [Given] no props are provided [Expect] the component should render 1`] = `
+<div
+  id="root"
+>
+  <div
+    class="entity-table_table-cell"
+  >
+    <span>
+      Corporate
+    </span>
+  </div>
+</div>
+`;
+
+exports[`mapIdToTypeCell 7386715: [Given] the function is passed not no props [Expect] the component should render 1`] = `
+<div
+  id="root"
+>
+  <div
+    class="entity-table_table-cell"
+  >
+    <span>
+      Corporate
+    </span>
+  </div>
+</div>
+`;
+
+exports[`mapIdToTypeCell 7434028: [Given] value is 'null' [Expect] the status to be 'Corporate' 1`] = `
+<div
+  class="entity-table_table-cell"
+  id="MockCellTypeCell-4dec165f-4093-4182-bd72-88754"
+>
+  <span>
+    Corporate
+  </span>
+</div>
+`;
+
+exports[`mapIdToTypeCell 7434029: [Given] value is 'agency' [Expect] the status to be 'Agency' 1`] = `
+<div
+  class="entity-table_table-cell"
+  id="MockCellTypeCell-4dec165f-4093-4182-bd72-88754"
+>
+  <span>
+    Agency
+  </span>
+</div>
+`;
+
+exports[`mapIdToTypeCell 7434030: [Given] value is 'corporate' [Expect] the status to be 'Corporate' 1`] = `
+<div
+  class="entity-table_table-cell"
+  id="MockCellTypeCell-4dec165f-4093-4182-bd72-88754"
+>
+  <span>
+    Corporate
+  </span>
+</div>
+`;

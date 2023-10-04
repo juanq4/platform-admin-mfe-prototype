@@ -1,0 +1,153 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CopyCell Component 7386010: [Given] no props are provided [Expect] the component should render 1`] = `
+<div
+  id="root"
+>
+  <div
+    class="entity-table_table-cell"
+  >
+    <span>
+      -
+    </span>
+  </div>
+</div>
+`;
+
+exports[`CopyCell Component 7434643: [Given] value is 'null' [Expect] the checkmark to not be visible 1`] = `
+<div
+  class="entity-table_table-cell"
+  id="MockCheckMarkCellId"
+>
+  <span
+    id="MockCheckMarkCellIdValue"
+  >
+    -
+  </span>
+</div>
+`;
+
+exports[`CopyCell Component 7434644: [Given] value is '' [Expect] the checkmark to not be visible 1`] = `
+<div
+  class="entity-table_table-cell"
+  id="MockCheckMarkCellId"
+>
+  <span
+    id="MockCheckMarkCellIdValue"
+  >
+    -
+  </span>
+</div>
+`;
+
+exports[`CopyCell Component 7434645: [Given] value is '     ' [Expect] the checkmark to be visible 1`] = `
+<div
+  class="entity-table_table-cell"
+  id="MockCheckMarkCellId"
+>
+  <span
+    id="MockCheckMarkCellIdValue"
+  >
+    -
+  </span>
+</div>
+`;
+
+exports[`CopyCell Component 7434646: Given] value is '4dec165f-4093-4182-bd72-88754' [Expect] the checkmark to be visible 1`] = `
+<div
+  class="entity-table_table-cell"
+  id="MockCheckMarkCellId"
+>
+  <span
+    id="MockCheckMarkCellIdValue"
+  >
+    4dec165f-4093-4182-bd72-88754
+  </span>
+  <button
+    class="nui-button copy-button nui-button--none nui-button--square nui-button--v1"
+    id="MockCheckMarkCellIdCopyButton"
+    type="button"
+  >
+    <i
+      class="nui-button_icon q4i-clone-duplicate-4pt"
+      id="MockCheckMarkCellIdCopyButtonIcon"
+    />
+  </button>
+</div>
+`;
+
+exports[`mapIdToCopyCell 7386011: [Given] the function is passed not no props [Expect] the component should render 1`] = `
+<div
+  id="root"
+>
+  <div
+    class="entity-table_table-cell"
+  >
+    <span>
+      -
+    </span>
+  </div>
+</div>
+`;
+
+exports[`mapIdToCopyCell 7434647: [Given] value is 'null' [Expect] the checkmark to not be visible 1`] = `
+<div
+  class="entity-table_table-cell"
+  id="MockCheckMarkCellCopyCell-4dec165f-4093-4182-bd72-88754"
+>
+  <span
+    id="MockCheckMarkCellCopyCell-4dec165f-4093-4182-bd72-88754Value"
+  >
+    -
+  </span>
+</div>
+`;
+
+exports[`mapIdToCopyCell 7434648: [Given] value is '' [Expect] the checkmark to not be visible 1`] = `
+<div
+  class="entity-table_table-cell"
+  id="MockCheckMarkCellCopyCell-4dec165f-4093-4182-bd72-88754"
+>
+  <span
+    id="MockCheckMarkCellCopyCell-4dec165f-4093-4182-bd72-88754Value"
+  >
+    -
+  </span>
+</div>
+`;
+
+exports[`mapIdToCopyCell 7434649: [Given] value is '     ' [Expect] the checkmark to be visible 1`] = `
+<div
+  class="entity-table_table-cell"
+  id="MockCheckMarkCellCopyCell-4dec165f-4093-4182-bd72-88754"
+>
+  <span
+    id="MockCheckMarkCellCopyCell-4dec165f-4093-4182-bd72-88754Value"
+  >
+    -
+  </span>
+</div>
+`;
+
+exports[`mapIdToCopyCell 7434650: [Given] value is '4dec165f-4093-4182-bd72-88754' [Expect] the checkmark to be visible 1`] = `
+<div
+  class="entity-table_table-cell"
+  id="MockCheckMarkCellCopyCell-4dec165f-4093-4182-bd72-88754"
+>
+  <span
+    id="MockCheckMarkCellCopyCell-4dec165f-4093-4182-bd72-88754Value"
+  >
+    4dec165f-4093-4182-bd72-88754
+  </span>
+  <button
+    class="nui-button copy-button nui-button--none nui-button--square nui-button--v1"
+    id="MockCheckMarkCellCopyCell-4dec165f-4093-4182-bd72-88754CopyButton"
+    type="button"
+  >
+    <i
+      class="nui-button_icon q4i-clone-duplicate-4pt"
+      id="MockCheckMarkCellCopyCell-4dec165f-4093-4182-bd72-88754CopyButtonIcon"
+    />
+  </button>
+</div>
+`;

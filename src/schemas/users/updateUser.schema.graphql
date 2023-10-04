@@ -1,0 +1,28 @@
+mutation updateUser(
+  $id: String!
+  $organizationId: String!
+  $email: String!
+  $firstName: String!
+  $lastName: String!
+  $active: Boolean
+  $friendlyName: String
+  $title: String
+  $roles: [String]
+  $emailApp: String
+) {
+  updateUser(
+    id: $id
+    organizationId: $organizationId
+    email: $email
+    firstName: $firstName
+    lastName: $lastName
+    active: $active
+    friendlyName: $friendlyName
+    title: $title
+    roles: $roles
+    emailApp: $emailApp
+  ) {
+    id
+    organizationId
+  }
+}

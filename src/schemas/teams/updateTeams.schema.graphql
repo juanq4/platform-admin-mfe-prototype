@@ -1,0 +1,29 @@
+fragment AccessGroupFragment on AccessGroup {
+  id
+  name
+  organizationId
+  managedOrganizationIds
+  userIds
+}
+
+mutation UpdateTeamMutation(
+  $id: String!
+  $name: String
+  $organizationId: String
+  $managedOrganizationIds: [String]
+  $userIds: [String]
+  $managedOrgDeltas: AccessGroupUpdateDeltas
+  $userDeltas: AccessGroupUpdateDeltas
+) {
+  updateAccessGroup(
+    id: $id
+    name: $name
+    organizationId: $organizationId
+    managedOrganizationIds: $managedOrganizationIds
+    userIds: $userIds
+    managedOrgDeltas: $managedOrgDeltas
+    userDeltas: $userDeltas
+  ) {
+    ...AccessGroupFragment
+  }
+}

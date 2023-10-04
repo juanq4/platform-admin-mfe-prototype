@@ -2,7 +2,7 @@
 import type { MfeProps } from "@q4/platform-definitions";
 import { render } from "@testing-library/react";
 import React from "react";
-import { SampleModule } from "../src/modules/sampleModule/sampleModule.component";
+import { Admin } from "../src/modules/admin/Admin.view";
 
 describe("SampleModule", () => {
   let defaultSampleModuleProps: MfeProps;
@@ -61,48 +61,46 @@ describe("SampleModule", () => {
   describe("Mfe Props", () => {
     it("throws when userId is missing from context", () => {
       defaultSampleModuleProps.context!.userId = "";
-      expect(() => render(<SampleModule {...defaultSampleModuleProps} />)).toThrowError("userId is missing from context");
+      expect(() => render(<Admin {...defaultSampleModuleProps} />)).toThrowError("userId is missing from context");
     });
 
     it("throws when roles is missing from context", () => {
       (defaultSampleModuleProps.context!.roles as unknown) = null;
-      expect(() => render(<SampleModule {...defaultSampleModuleProps} />)).toThrowError("roles is missing from context");
+      expect(() => render(<Admin {...defaultSampleModuleProps} />)).toThrowError("roles is missing from context");
     });
 
     it("throws when name is missing from organization", () => {
       defaultSampleModuleProps.context!.organization.name = "";
-      expect(() => render(<SampleModule {...defaultSampleModuleProps} />)).toThrowError("name is missing from organization");
+      expect(() => render(<Admin {...defaultSampleModuleProps} />)).toThrowError("name is missing from organization");
     });
 
     it("throws when id is missing from organization", () => {
       defaultSampleModuleProps.context!.organization.id = "";
-      expect(() => render(<SampleModule {...defaultSampleModuleProps} />)).toThrowError("id is missing from organization");
+      expect(() => render(<Admin {...defaultSampleModuleProps} />)).toThrowError("id is missing from organization");
     });
 
     it("throws when entitlements is missing from organization", () => {
       (defaultSampleModuleProps.context!.organization.entitlements as unknown) = null;
-      expect(() => render(<SampleModule {...defaultSampleModuleProps} />)).toThrowError(
+      expect(() => render(<Admin {...defaultSampleModuleProps} />)).toThrowError(
         "entitlements is missing from organization",
       );
     });
 
     it("throws when identifiers is missing from organization", () => {
       (defaultSampleModuleProps.context!.organization.identifiers as unknown) = null;
-      expect(() => render(<SampleModule {...defaultSampleModuleProps} />)).toThrowError(
-        "identifiers is missing from organization",
-      );
+      expect(() => render(<Admin {...defaultSampleModuleProps} />)).toThrowError("identifiers is missing from organization");
     });
 
     it("throws when token is missing", () => {
       defaultSampleModuleProps.token = "";
-      expect(() => render(<SampleModule {...defaultSampleModuleProps} />)).toThrowError("token is missing");
+      expect(() => render(<Admin {...defaultSampleModuleProps} />)).toThrowError("token is missing");
     });
   });
 
   // if BEM css is used, verify the namespace is defined
   it("contains class name as namespace", () => {
-    const { container } = render(<SampleModule {...defaultSampleModuleProps} />);
-    // eslint-disable-next-line testing-library/no-node-access
+    const { container } = render(<Admin {...defaultSampleModuleProps} />);
+
     expect(container.firstElementChild).toHaveClass("seed__container");
   });
 });

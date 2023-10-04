@@ -1,0 +1,2263 @@
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+type AccessGroup {
+  id: String
+  name: String
+  organizationId: String
+  managedOrganizationIds: [String]
+  userIds: [String]
+}
+
+type AccessGroupList {
+  items: [AccessGroup]
+  count: Int
+}
+
+input ActivityFilter {
+  category: String
+  startDate: String
+  endDate: String
+}
+
+enum AGGR_FIELD {
+  SECTOR
+}
+
+union ChangeSummary = StudioPersonManageChangeSummaryDTO
+
+type Client {
+  name: String
+  symbol: String
+  exchange: String
+}
+
+type ContactDTO {
+  contactId: String
+  name: String
+  email: String
+  title: String
+  city: String
+  state: String
+}
+
+type ContactHoldingCurrentDTO {
+  current: Float
+}
+
+type ContactJobDTO {
+  entityId: String
+  institutionName: String
+  institutionType: String
+  title: String
+  phone: String
+  directPhone: String
+  email: String
+  address1: String
+  address2: String
+  address3: String
+  city: String
+  countryName: String
+  stateProvince: String
+  postalCode: String
+  functions: [String]
+}
+
+type ContactResult {
+  items: [ContactDTO]
+  count: Int
+}
+
+type ContactStrategyDTO {
+  id: String
+  contactId: String
+  entityId: String
+  source: String
+  summary: String
+  country: [String]
+  customRegion: [String]
+  marketCap: [String]
+  quality: [String]
+  regionGroup: [String]
+  sectors: [String]
+  securityType: [String]
+  strategy: [String]
+  style: [String]
+}
+
+type CreatePageResponse {
+  success: Boolean!
+  message: String!
+  data: Page
+}
+
+input CreateRequestJobInput {
+  id: String!
+  type: RequestJobEnum!
+  schedule: RequestScheduleInput!
+  data: JobDataInput!
+  instructions: String
+  files: [RequestFileInput!]!
+}
+
+enum CustomCaseTypeEnum {
+  missingSite
+}
+
+enum DataProfile {
+  published
+  workingCopy
+  preview
+  admin
+}
+
+scalar Date
+
+type DeletePageResponse {
+  success: Boolean!
+  message: String!
+}
+
+type DepartmentDTO implements Workflow {
+  workflowId: String!
+  languageId: Int!
+  active: Boolean!
+  isDeleted: Boolean!
+  statusId: Int!
+  status: WorkflowStatus!
+  workingRevisionNumber: Int!
+  publishedRevisionNumber: Int!
+  effectiveDate: Date
+  title: String
+  bucket: String
+  departmentId: Int!
+  departmentName: String!
+  rank: Int
+}
+
+type DepartmentResult {
+  items: [DepartmentDTO!]!
+  count: Int!
+}
+
+input DesktopActivityAddress {
+  id: String
+  location: String
+  venue: String
+}
+
+type DesktopActivityAddressDTO {
+  id: String
+  location: String
+  venue: String
+}
+
+type DesktopActivityCategoryCountDTO {
+  comment: Int
+  phone: Int
+  email: Int
+  meeting: Int
+  earnings: Int
+  other: Int
+  roadshow: Int
+  conference: Int
+}
+
+input DesktopActivityDate {
+  date: String
+  timezone: String
+}
+
+type DesktopActivityDateDTO {
+  date: String
+  timezone: String
+}
+
+type DesktopActivityDTO {
+  id: String
+  category: String
+  title: String
+  start: DesktopActivityDateDTO
+  end: DesktopActivityDateDTO
+  allDay: Boolean
+  virtual: Boolean
+  body: String
+  address: [DesktopActivityAddressDTO]
+  links: [DesktopActivityLinksDTO]
+  participants: [DesktopActivityParticipantsDTO]
+  profileId: String
+  tag: [String]
+  text: String
+  revisions: [DesktopActivityRevisionsDTO]
+}
+
+input DesktopActivityLink {
+  entityId: String
+  entityType: String
+}
+
+type DesktopActivityLinksDTO {
+  entityType: String
+  entityId: String
+  entityName: String
+  institutionId: String
+}
+
+input DesktopActivityParticipant {
+  id: String
+  participantId: String
+  name: String
+}
+
+type DesktopActivityParticipantsDTO {
+  id: String
+  participantId: String
+  name: String
+}
+
+type DesktopActivityResult {
+  items: [DesktopActivityDTO]
+  count: Int
+  categoryCount: DesktopActivityCategoryCountDTO
+}
+
+type DesktopActivityRevisionsDTO {
+  id: String
+  profileId: String
+  date: String
+}
+
+type DesktopAddressBookDTO {
+  id: String
+  organizationId: String
+  contactId: String
+  lists: [String]
+  reference: EntityReferenceDTO
+}
+
+type DesktopAddressBookResult {
+  items: [DesktopAddressBookDTO]
+  count: Int
+}
+
+type DesktopContactDTO {
+  id: String
+  salutation: String
+  suffixProf: String
+  fullName: String
+  nickname: String
+  directPhone: String
+  phoneExtension: String
+  mobile: String
+  email: String
+  bio: String
+  source: String
+  status: String
+  coverage: Boolean
+  jobs: [ContactJobDTO]
+  managedFunds: [ManagedFundDTO]
+  contactHoldingCurrent(securityId: [String], source: String): [ContactHoldingCurrentDTO]
+  favorite: [FavoriteDTO]
+  strategy: [ContactStrategyDTO]
+}
+
+input DesktopContactEntity {
+  firstName: String
+  lastName: String
+  nickname: String
+  directPhone: String
+  mobile: String
+  jobs: [DesktopContactJobInput]
+}
+
+input DesktopContactJobInput {
+  entityId: String
+  institutionName: String
+  institutionType: String
+  title: String
+  phone: String
+  directPhone: String
+  email: String
+  address1: String
+  city: String
+  countryName: String
+  stateProvince: String
+  postalCode: String
+  country: String
+}
+
+type DesktopContactResult {
+  items: [DesktopContactDTO]
+  count: Int
+}
+
+type DesktopCorporateParticipantDTO {
+  id: String
+  firstName: String
+  lastName: String
+  nickname: String
+  fullName: String
+  mobile: String
+  notes: String
+  jobs: [DesktopCorporateParticipantJob]
+}
+
+type DesktopCorporateParticipantJob {
+  id: String
+  email: String
+  directPhone: String
+  address1: String
+  address2: String
+  address3: String
+  city: String
+  stateProvince: String
+  postalCode: String
+  cityStateZip: String
+  country: String
+  countryName: String
+  phone: String
+  fax: String
+  title: String
+  active: Boolean
+  functions: [String]
+}
+
+type DesktopCorporateParticipantResult {
+  items: [DesktopCorporateParticipantDTO]
+  count: Int
+}
+
+type DesktopCreateActivityId {
+  id: String
+}
+
+type DesktopCreateActivityResult {
+  items: [DesktopCreateActivityId]
+  count: Int
+}
+
+type DesktopCreateContactId {
+  id: String
+}
+
+type DesktopCreateContactResult {
+  items: [DesktopCreateContactId]
+  count: Int
+}
+
+type DesktopCreateFavoriteId {
+  id: String
+}
+
+type DesktopCreateFavoriteResult {
+  items: [DesktopCreateFavoriteId]
+  count: Int
+}
+
+type DesktopCreateTagResult {
+  items: [DesktopTagDTO]
+  count: Int
+}
+
+type DesktopDeleteActivityResult {
+  count: Int
+}
+
+type DesktopDeleteFavoriteResult {
+  count: Int
+}
+
+type DesktopDeleteTagResult {
+  count: Int
+}
+
+type DesktopFundDTO {
+  id: String
+  fundName: String
+  fundType: String
+  fundTypeDesc: String
+  style: String
+  turnover: String
+  qualityRating: Float
+  active: Boolean
+  equityAUM: Float
+  portfolioValue: Float
+  institutionId: String
+  institutionName: String
+  region: String
+  countryName: String
+  countryCode: String
+  metro: String
+}
+
+type DesktopFundHoldingCurrentDTO {
+  fundId: String
+  institutionId: String
+  fundName: String
+  fundType: String
+  fundStyle: String
+  fundTurnover: String
+  fundQualityRating: Int
+  fundPortfolioValue: Float
+  fundEquityAUM: Float
+  fundRegion: String
+  fundCountryName: String
+  fundCountryCode: String
+  tickerId: String
+  securityId: String
+  securityName: String
+  securityTypeName: String
+  securityIndustry: String
+  securityCapGroup: String
+  securitySector: String
+  securityRegion: String
+  securityCountryName: String
+  securityCountryCode: String
+  filingType: String
+  current: Float
+  marketValue: Float
+  change: Float
+  marketValueChange: Float
+  reportDate: String
+  prevReportDate: String
+  qtrChange: Float
+  marketValueQtrChange: Float
+  currentQtrDate: String
+  prevQtrDate: String
+  percentTSO: Float
+  percentPortfolio: Float
+  changePercent: Float
+  qtrChangePercent: Float
+  marketValueChangePercent: Float
+  marketValueChangeQtrPercent: Float
+  source: String
+  holderType: String
+  previousQtrPosition: Float
+}
+
+type DesktopFundHoldingCurrentResult {
+  items: [DesktopFundHoldingCurrentDTO]
+  count: Int
+  sum(field: String): Float
+}
+
+type DesktopFundHoldingHistoricalDTO {
+  fundId: String
+  fundName: String
+  tickerId: String
+  securityId: String
+  fundStyle: String
+  fundTurnover: String
+  securityName: String
+  source: String
+  holderType: String
+  q1Value: Float
+  q1Change: Float
+  q2Value: Float
+  q2Change: Float
+  q3Value: Float
+  q3Change: Float
+  q4Value: Float
+  q4Change: Float
+  q5Value: Float
+  q5Change: Float
+  q6Value: Float
+  q6Change: Float
+  q7Value: Float
+  q7Change: Float
+  q8Value: Float
+  q8Change: Float
+  q9Value: Float
+  q9Change: Float
+  q10Value: Float
+  q10Change: Float
+  q11Value: Float
+  q11Change: Float
+  q12Value: Float
+  q12Change: Float
+  q13Value: Float
+  q13Change: Float
+  q14Value: Float
+  q14Change: Float
+  q15Value: Float
+  q15Change: Float
+  q16Value: Float
+  q16Change: Float
+  q17Value: Float
+  q17Change: Float
+  q18Value: Float
+  q18Change: Float
+  q19Value: Float
+  q19Change: Float
+  q20Value: Float
+  q20Change: Float
+}
+
+type DesktopFundHoldingHistoricalResult {
+  items: [DesktopFundHoldingHistoricalDTO]
+  count: Int
+}
+
+type DesktopFundResult {
+  items: [DesktopFundDTO]
+  count: Int
+}
+
+type DesktopInstHoldingCurrentDTO {
+  institutionId: String
+  institutionName: String
+  institutionStyle: String
+  institutionType: String
+  institutionTurnover: String
+  institutionQualityRating: Int
+  institutionTotalAUM: Float
+  institutionEquityAUM: Float
+  institutionRegion: String
+  institutionCountryName: String
+  tickerId: String
+  securityId: String
+  securityName: String
+  securityIndustry: String
+  securityCapGroup: String
+  securitySector: String
+  securityRegion: String
+  securityCountryName: String
+  securityCountryCode: String
+  securityActive: Boolean
+  activist: Boolean
+  holderType: String
+  holdingType: String
+  filingType: String
+  current: Float
+  marketValue: Float
+  change: Float
+  marketValueChange: Float
+  reportDate: String
+  prevReportDate: String
+  qtrChange: Float
+  marketValueQtrChange: Float
+  currentQtrDate: String
+  percentTSO: Float
+  percentPortfolio: Float
+  source: String
+  filingSource: String
+  filingOrigin: String
+  previousQtrPosition: Float
+}
+
+type DesktopInstHoldingCurrentResult {
+  items: [DesktopInstHoldingCurrentDTO]
+  count: Int
+  sum(field: String): Float
+}
+
+type DesktopInstHoldingHistoricalDTO {
+  institutionId: String
+  institutionName: String
+  tickerId: String
+  securityId: String
+  securityName: String
+  source: String
+  institutionStyle: String
+  institutionType: String
+  institutionTurnover: String
+  institutionRegion: String
+  percentTSO: Float
+  holderType: String
+  holdingType: String
+  q1Value: Float
+  q1Change: Float
+  q2Value: Float
+  q2Change: Float
+  q3Value: Float
+  q3Change: Float
+  q4Value: Float
+  q4Change: Float
+  q5Value: Float
+  q5Change: Float
+  q6Value: Float
+  q6Change: Float
+  q7Value: Float
+  q7Change: Float
+  q8Value: Float
+  q8Change: Float
+  q9Value: Float
+  q9Change: Float
+  q10Value: Float
+  q10Change: Float
+  q11Value: Float
+  q11Change: Float
+  q12Value: Float
+  q12Change: Float
+  q13Value: Float
+  q13Change: Float
+  q14Value: Float
+  q14Change: Float
+  q15Value: Float
+  q15Change: Float
+  q16Value: Float
+  q16Change: Float
+  q17Value: Float
+  q17Change: Float
+  q18Value: Float
+  q18Change: Float
+  q19Value: Float
+  q19Change: Float
+  q20Value: Float
+  q20Change: Float
+}
+
+type DesktopInstHoldingHistoricalResult {
+  items: [DesktopInstHoldingHistoricalDTO]
+  count: Int
+}
+
+type DesktopInstitutionDTO {
+  id: String
+  institutionName: String
+  institutionType: String
+  style: String
+  turnover: String
+  totalAUM: Int
+  equityAUM: Int
+  qualityRating: Int
+  profile: String
+  investmentApproach: String
+  activist: Boolean
+  active: Boolean
+  address: InstitutionAddress
+}
+
+type DesktopInstitutionResult {
+  items: [DesktopInstitutionDTO]
+  count: Int
+}
+
+type DesktopMe {
+  id: String
+  firstName: String
+  lastName: String
+  phone: String
+  title: String
+  user: String
+  organizationId: String
+  services: [Service]
+  region: String
+  terms: Terms
+  products: [String]
+  demo: Boolean
+  trial: Boolean
+  type: Type
+  client: Client
+  organization: DesktopOrganization
+}
+
+type DesktopMoverDTO {
+  entityId: String
+  entityName: String
+  entityType: String
+  tickerId: String
+  securityId: String
+  securityName: String
+  marketValueChange: Float
+  marketValue: Float
+  percentPortfolio: Float
+  qtrChange: Float
+  change: Float
+  source: String
+}
+
+type DesktopMoverResult {
+  items: [DesktopMoverDTO]
+  count: Int
+  sum(field: String): Float
+}
+
+type DesktopOrganization {
+  id: String
+  name: String
+  symbol: String
+  exchange: String
+  address: String
+  sector: String
+  market: String
+  entitlements: [Entitlement]
+  tickers: [Ticker]
+  suspended: Boolean
+}
+
+type DesktopQuickSearchDTO {
+  id: String
+  _id: String
+  score: Float
+  sourceId: String
+  type: String
+  exchange: String
+  symbol: String
+  name: String
+  institution: [String]
+  entityId: String
+  q4EntityId: String
+  title: [String]
+  phone: [String]
+  email: [String]
+  address: [String]
+  source: String
+  country: [String]
+  countryName: [String]
+  countryCode: [String]
+  locationCity: [String]
+  regionName: [String]
+  stateProvinceCode: String
+  stateProvinceName: String
+}
+
+type DesktopQuickSearchResult {
+  items: [DesktopQuickSearchDTO]
+  count: Int
+}
+
+type DesktopTagDTO {
+  id: String
+  profileId: String
+  organizationId: String
+  name: String
+  entity: TagReferenceDTO
+  created: String
+}
+
+input DesktopTagEntity {
+  entityId: String
+  entityType: String
+}
+
+type DesktopTagResult {
+  items: [DesktopTagDTO]
+  count: Int
+}
+
+type DesktopUpdateActivityResult {
+  count: Int
+}
+
+enum ENGAGEMENT_TYPE {
+  EMAILS
+  EVENTS
+  WEBSITE
+}
+
+type EngagementDTO {
+  organizationId: String
+  entityId: String
+  entityType: ENTITY_TYPE
+  entityName: String
+  periodType: String
+  activist: Boolean
+  total: Int
+  percentageChange: Float
+  pageViews: Int
+  topPageViewsUrl: String
+  topPageViewsTitle: String
+  uniquePageViews: Int
+  topUniquePageViewsUrl: String
+  topUniquePageViewsTitle: String
+  avgTimeSpent: Float
+  topAvgTimeSpentUrl: String
+  topAvgTimeSpentTitle: String
+  emailOpens: Int
+  downloads: Int
+  downloadsPercentageChange: Float
+  mostDownloadedFileName: String
+  mostDownloadedFileUrl: String
+  uniqueRegistrations: Int
+  uniqueRegistrationsName: String
+  uniqueRegistrationsUrl: String
+  registrations: Int
+  registrationsName: String
+  registrationsUrl: String
+  uniqueEventViews: Int
+  uniqueEventViewsName: String
+  uniqueEventViewsUrl: String
+  eventViews: Int
+  eventViewsName: String
+  eventViewsUrl: String
+  currentPosition: Int
+  lastFilingDate: Date
+  monitorConnection: MonitorDTO
+}
+
+type EngagementEventDailyDTO {
+  date: Date
+  name: String
+}
+
+type EngagementEventDailyResult {
+  items: [EngagementEventDailyDTO]
+  count: Int
+}
+
+input EngagementFilter {
+  periodType: PERIOD_TYPE
+  ownsMe: Boolean
+  activist: Boolean
+  includeUnengaged: Boolean
+  isMonitored: Boolean
+  engagementType: [ENGAGEMENT_TYPE]
+}
+
+type EngagementResult {
+  items: [EngagementDTO]
+  count: Int
+}
+
+type Entitlement {
+  status: String
+  type: String
+  enabled: Boolean
+}
+
+enum ENTITY_TYPE {
+  institution
+  fund
+}
+
+type EntityReferenceDTO {
+  item: String
+  type: String
+  fullName: String
+  contactType: String
+  source: String
+  jobs: [JobReferenceDTO]
+}
+
+type EntitySearchDTO {
+  entityId: String
+  entityName: String
+  entityType: ENTITY_TYPE
+}
+
+type EntitySearchResult {
+  items: [EntitySearchDTO]
+  count: Int
+}
+
+type EventMetricsAggregateDTO {
+  registrations: Int
+  registrationsPercentageChange: Float
+  topRegisteredEventName: String
+  topRegisteredEventUrl: String
+  views: Int
+  viewsPercentageChange: Float
+  topViewedEventName: String
+  topViewedEventUrl: String
+}
+
+type EventMetricsAggregateResult {
+  items: [EventMetricsAggregateDTO]
+}
+
+type FavoriteDTO {
+  id: String
+  lists: [String]
+}
+
+type FileUrlDTO {
+  url: String
+  fileS3Id: String
+}
+
+input FundHoldingCurrentFilter {
+  fundType: [String]
+  fundStyle: [String]
+  fundTurnover: [String]
+  securityIndustry: [String]
+  securityCapGroup: [String]
+  securitySector: [String]
+  securityRegion: [String]
+}
+
+type GetSchedulerPageResponse {
+  success: Boolean!
+  message: String!
+  data: [PageListItem]
+}
+
+type GetSchedulerResponse {
+  success: Boolean!
+  message: String!
+  data: Scheduler
+}
+
+type GetUserLoginStatusResponse {
+  vendorAccountId: String!
+  authenticated: Boolean!
+  userId: String!
+}
+
+input GroupBy {
+  by: String
+  operator: GroupByOperator
+}
+
+enum GroupByOperator {
+  sum
+  avg
+}
+
+type InsiderEngagementDTO {
+  contactId: String
+  name: String
+  email: String
+  title: String
+  city: String
+  state: String
+  directPhone: String
+  mobile: String
+  current: Float
+  qtrChange: Float
+  equityAum: Float
+}
+
+type InsiderEngagementResult {
+  items: [InsiderEngagementDTO]
+  count: Int
+}
+
+type InstHoldingCurrentAggregateDTO {
+  entityId: String
+  aggrField: String
+  aggrValue: String
+  current: Float
+  marketValue: Float
+  count: Int
+}
+
+type InstHoldingCurrentAggregateResult {
+  items: [InstHoldingCurrentAggregateDTO]
+  count: Int
+}
+
+type InstHoldingCurrentDTO {
+  identifier: String
+  entityId: String
+  entityName: String
+  entityType: ENTITY_TYPE
+  currentPosition: Int
+  sector: String
+  lastFilingDate: String
+}
+
+input InstHoldingCurrentFilter {
+  isActivist: Boolean
+  position: String
+  holdingType: [String]
+  institutionStyle: [String]
+  institutionType: [String]
+  institutionTurnover: [String]
+  securitySector: [String]
+  securityCapGroup: [String]
+  securityRegion: [String]
+  securityIndustry: [String]
+  activity: Boolean
+}
+
+type InstHoldingCurrentResult {
+  items: [InstHoldingCurrentDTO]
+  count: Int
+}
+
+type InstHoldingDTO {
+  entityId: String
+  entityName: String
+  entityType: ENTITY_TYPE
+  currentPosition: Int
+  sector: String
+  reportDate: String
+  previousReportDate: String
+  qtrChange: Float
+  currentQtrDate: String
+}
+
+input InstHoldingHistoricalFilter {
+  holdingType: [String]
+}
+
+type InstHoldingResult {
+  items: [InstHoldingDTO]
+  count: Int
+}
+
+type InstitutionAddress {
+  addressLine1: String
+  addressLine2: String
+  addressLine3: String
+  city: String
+  stateProvinceCode: String
+  stateProvinceName: String
+  postalCode: String
+  countryCode: String
+  countryName: String
+  region: String
+  metro: String
+  phone: String
+  fax: String
+  hq: String
+}
+
+type InstitutionAddressDTO {
+  id: Int
+  entityId: String
+  addressLine1: String
+  addressLine2: String
+  addressLine3: String
+  city: String
+  stateProvinceCode: String
+  stateProvinceName: String
+  postalCode: String
+  countryCode: String
+  countryName: String
+  region: String
+  metro: String
+  phone: String
+  fax: String
+  hq: Boolean
+}
+
+type InstitutionDTO {
+  entityId: String
+  entityName: String
+  entityType: String
+  style: String
+  managerStyle: String
+  turnover: String
+  profile: String
+  investmentApproach: String
+  qualityRating: Float
+  totalAum: Float
+  equityAum: Float
+  active: Boolean
+  addressId: Int
+  address: [InstitutionAddressDTO]
+  activist: Boolean
+}
+
+type InstitutionReferenceDTO {
+  id: String
+  institutionName: String
+}
+
+type InstitutionResult {
+  items: [InstitutionDTO]
+  count: Int
+}
+
+input JobDataInput {
+  studioEventCreate: StudioEventCreateDataInput
+  studioEventUpdate: null
+  studioEventRemove: null
+  studioPresentationCreate: StudioPresentationCreateDataInput
+  studioPresentationUpdate: null
+  studioPresentationRemove: null
+  studioNewsCreate: StudioNewsCreateDataInput
+  studioNewsUpdate: null
+  studioNewsRemove: null
+  studioPersonCreate: StudioPersonCreateDataInput
+  studioPersonUpdate: StudioPersonUpdateDataInput
+  studioPersonRemove: StudioPersonRemoveDataInput
+  studioPersonManage: StudioPersonManageDataInput
+  studioGovernanceCreate: null
+  studioGovernanceUpdate: null
+  studioGovernanceRemove: null
+  studioJobPostingCreate: null
+  studioJobPostingUpdate: null
+  studioJobPostingRemove: null
+  studioDividendsCreate: null
+  studioDividendsUpdate: null
+  studioDividendsRemove: null
+  studioFAQCreate: null
+  studioFAQUpdate: null
+  studioFAQRemove: null
+  studioAnalystCoverageCreate: null
+  studioAnalystCoverageUpdate: null
+  studioAnalystCoverageRemove: null
+  studioOtherSubmit: StudioOtherSubmitDataInput
+  billingSubmit: null
+  accountSubmit: null
+}
+
+union JobDataUnion =
+    StudioEventCreateDTO
+  | StudioEventUpdateDTO
+  | StudioEventRemoveDTO
+  | StudioPresentationCreateDTO
+  | StudioPresentationUpdateDTO
+  | StudioPresentationRemoveDTO
+  | StudioNewsCreateDTO
+  | StudioNewsUpdateDTO
+  | StudioNewsRemoveDTO
+  | StudioPersonCreateDTO
+  | StudioPersonUpdateDTO
+  | StudioPersonRemoveDTO
+  | StudioPersonManageDTO
+  | StudioGovernanceCreateDTO
+  | StudioGovernanceUpdateDTO
+  | StudioGovernanceRemoveDTO
+  | StudioJobPostingCreateDTO
+  | StudioJobPostingUpdateDTO
+  | StudioJobPostingRemoveDTO
+  | StudioDividendsCreateDTO
+  | StudioDividendsUpdateDTO
+  | StudioDividendsRemoveDTO
+  | StudioFAQCreateDTO
+  | StudioFAQUpdateDTO
+  | StudioFAQRemoveDTO
+  | StudioAnalystCoverageCreateDTO
+  | StudioAnalystCoverageUpdateDTO
+  | StudioAnalystCoverageRemoveDTO
+  | StudioOtherSubmitDTO
+
+enum JobPublishingMethodEnum {
+  none
+  manual
+  automatic
+}
+
+input JobPublishInputSchema {
+  schedule: JobPublishScheduleInput
+}
+
+input JobPublishScheduleInput {
+  date: Date
+  timezone: String
+}
+
+type JobReferenceDTO {
+  title: String
+  address1: String
+  institution: [InstitutionReferenceDTO]
+}
+
+enum JobStatusEnum {
+  processing
+  queued
+  inProgress
+  informationRequired
+  pendingApproval
+  approved
+  published
+  vendorNotified
+  closed
+  mergedAsDuplicate
+}
+
+type ManagedFundDTO {
+  fundId: String
+}
+
+enum MeetingPageStatus {
+  active
+  inactive
+}
+
+type MonitorDTO {
+  id: String
+  type: ENTITY_TYPE
+  dateCreated: String
+  engagementConnection(periodType: PERIOD_TYPE): EngagementDTO
+}
+
+type MonitorResult {
+  success: Boolean
+  data: MonitorDTO
+}
+
+input MoverFilter {
+  securityIndustry: String
+}
+
+type Mutation {
+  createOrganization(
+    name: String!
+    active: Boolean
+    identifiers: [String]
+    isAdmin: Boolean
+    entitlements: [String]
+    studioSubdomain: String
+    type: OrganizationType
+  ): Organization
+  updateOrganization(
+    id: String!
+    name: String!
+    active: Boolean
+    identifiers: [String]
+    isAdmin: Boolean
+    entitlements: [String]
+    studioSubdomain: String
+  ): Organization
+  linkOrganizations(id: String!, managedOrganizationIds: [String!]!): [Organization]
+  unlinkOrganization(id: String!): Organization
+  createUser(
+    organizationId: String!
+    firstName: String!
+    lastName: String!
+    email: String!
+    friendlyName: String
+    active: Boolean
+    roles: [String]
+    title: String
+  ): User
+  updateUser(
+    id: String!
+    organizationId: String!
+    firstName: String!
+    lastName: String!
+    email: String!
+    friendlyName: String
+    active: Boolean
+    roles: [String]
+    title: String
+  ): User
+  createAccessGroup(
+    name: String!
+    organizationId: String
+    managedOrganizationIds: [String!]!
+    userIds: [String!]!
+  ): AccessGroup
+  updateAccessGroup(
+    id: String!
+    name: String!
+    organizationId: String
+    managedOrganizationIds: [String!]!
+    userIds: [String!]!
+  ): AccessGroup
+  deleteAccessGroup(id: String!, organizationId: String): Boolean
+  desktopCreateActivity(
+    category: String
+    title: String
+    start: DesktopActivityDate
+    end: DesktopActivityDate
+    date: String
+    startTime: String
+    endTime: String
+    allDay: Boolean
+    virtual: Boolean
+    body: String
+    address: [DesktopActivityAddress]
+    links: [DesktopActivityLink]
+    participants: [DesktopActivityParticipant]
+  ): DesktopCreateActivityResult
+  desktopUpdateActivity(
+    id: String
+    category: String
+    title: String
+    start: DesktopActivityDate
+    end: DesktopActivityDate
+    startTime: String
+    endTime: String
+    allDay: Boolean
+    virtual: Boolean
+    body: String
+    address: [DesktopActivityAddress]
+    links: [DesktopActivityLink]
+    addressBookLinks: [String]
+    participants: [DesktopActivityParticipant]
+    date: String
+    dateTime: String
+    timezone: String
+  ): DesktopUpdateActivityResult
+  desktopDeleteActivity(id: [String]): DesktopDeleteActivityResult
+  desktopCreateTag(name: String, entity: DesktopTagEntity): DesktopCreateTagResult
+  desktopDeleteTag(id: [String], entityId: [String]): DesktopDeleteTagResult
+  desktopCreateFavorite(contactId: String, contactType: String): DesktopCreateFavoriteResult
+  desktopDeleteFavorite(contactId: [String]): DesktopDeleteFavoriteResult
+  desktopCreateCustomContact(entity: DesktopContactEntity): DesktopCreateContactResult
+  monitorEntity(entityId: String!, entityType: ENTITY_TYPE!): MonitorResult
+  unmonitorEntity(entityId: String!, entityType: ENTITY_TYPE!): UnmonitorResult
+  requestCreate(request: RequestCreateInputSchema!): RequestDTO
+  requestDelete: Boolean
+  requestJobUpdate(id: String!, jobIndex: Int!, updateModel: RequestJobUpdateInputSchema!): RequestDTO
+  requestJobApprove(id: String!, jobIndex: Int!): RequestDTO
+  requestJobPublish(id: String!, jobIndex: Int!, publishRequest: JobPublishInputSchema!): RequestDTO
+  requestSendFeedback(id: String!, jobIndex: Int!, feedback: String!): RequestDTO
+  requestCreateUploadUrl(contentType: String!): FileUrlDTO
+  requestCreateCustomCase(type: CustomCaseTypeEnum!, message: String!): Boolean
+  createPage(page: PageInput): CreatePageResponse
+  deletePage(slug: String): DeletePageResponse
+  updatePageStatus(slug: String!, status: MeetingPageStatus): UpdatePageStatusResponse
+}
+
+scalar null
+
+type Organization {
+  id: String
+  name: String!
+  active: Boolean
+  isAdmin: Boolean
+  managedBy: String
+  identifiers: [String]
+  entitlements: [String]
+  studio: StudioDetails
+  type: OrganizationType
+}
+
+type OrganizationList {
+  items: [Organization]
+  count: Int
+}
+
+type OrganizationSiteDetailsDTO {
+  subdomain: String!
+  siteName: String!
+}
+
+type OrganizationSiteDetailsResult {
+  items: [OrganizationSiteDetailsDTO!]!
+  count: Int!
+}
+
+enum OrganizationType {
+  agency
+  corporate
+}
+
+type Page {
+  name: String!
+  slug: String!
+  duration: Int!
+  location: String!
+  organizationName: String
+}
+
+input PageInput {
+  name: String
+  slug: String
+  duration: Int
+  location: String
+  organizationName: String
+  userId: String
+}
+
+type PageListItem {
+  name: String!
+  slug: String!
+  duration: Int!
+  location: String!
+  vendorEditToken: String!
+  status: MeetingPageStatus
+}
+
+enum PERIOD_TYPE {
+  LAST_7_DAYS
+  LAST_4_WEEKS
+  LAST_6_MONTHS
+  QUARTER_TO_DATE
+  YEAR_TO_DATE
+}
+
+type PersonDTO implements Workflow {
+  workflowId: String!
+  languageId: Int!
+  active: Boolean!
+  isDeleted: Boolean!
+  statusId: Int!
+  status: WorkflowStatus!
+  workingRevisionNumber: Int!
+  publishedRevisionNumber: Int!
+  effectiveDate: Date
+  title: String
+  bucket: String
+  personId: Int!
+  firstName: String!
+  lastName: String!
+  middleName: String!
+  suffix: String!
+  quote: String!
+  description: String!
+  careerHighlight: String!
+  photoPath: String
+  thumbnailPath: String
+  highResolutionPhotoPath: String
+  lowResolutionPhotoPath: String
+  sortOrder: Int!
+  departmentWorkflowId: String!
+  tags: [String!]!
+}
+
+type PersonResult {
+  items: [PersonDTO!]!
+  count: Int!
+}
+
+type Query {
+  organization(id: String): Organization
+  organizations(
+    searchTerm: String
+    active: Boolean
+    type: String
+    pageSize: Int
+    page: [String]
+    managedBy: String
+  ): OrganizationList
+  me: User
+  user(id: String!, userId: String!): User
+  userSearch(email: String!): User
+  users(searchTerm: String, organizationId: String, pageSize: Int, page: [String]): UserList
+  accessGroup(id: String!, organizationId: String): AccessGroup
+  accessGroups(organizationId: String, pageSize: Int, page: [String]): AccessGroupList
+  contact(institutionId: String!, page: Int, limit: Int): ContactResult
+  desktopActivity(
+    id: [String]
+    entityId: String
+    search: String
+    filter: ActivityFilter
+    sortBy: String
+    sortDir: String
+    page: Int
+    limit: Int
+  ): DesktopActivityResult
+  desktopAddressBook(
+    contactId: [String]
+    search: String
+    searchField: String
+    sortBy: String
+    sortDir: String
+    page: Int
+    limit: Int
+  ): DesktopAddressBookResult
+  desktopContact(id: [String], securityId: [String]): DesktopContactResult
+  desktopCorporateParticipant(id: [String], search: String, page: Int, limit: Int): DesktopCorporateParticipantResult
+  desktopFund(id: [String]!, page: Int, limit: Int): DesktopFundResult
+  desktopFundHoldingCurrent(
+    tickerId: [String]
+    fundId: [String]
+    source: String
+    institutionId: [String]
+    search: String
+    searchField: String
+    field: String
+    filter: FundHoldingCurrentFilter
+    group: GroupBy
+    sortBy: String
+    sortDir: String
+    page: Int
+    limit: Int
+  ): DesktopFundHoldingCurrentResult
+  desktopFundHoldingHistorical(
+    fundId: [String]
+    tickerId: [String]
+    quarters: Int
+    quarterDate: String
+    search: String
+    searchField: String
+    source: String
+    sortBy: String
+    sortDir: String
+    page: Int
+    limit: Int
+  ): DesktopFundHoldingHistoricalResult
+  desktopInstitution(id: [String]!, page: Int, limit: Int): DesktopInstitutionResult
+  desktopInstHoldingCurrent(
+    institutionId: [String]
+    tickerId: [String]
+    source: String
+    search: String
+    searchField: String
+    filter: InstHoldingCurrentFilter
+    group: GroupBy
+    page: Int
+    limit: Int
+  ): DesktopInstHoldingCurrentResult
+  desktopInstHoldingHistorical(
+    institutionId: [String]
+    quarters: Int
+    tickerId: [String]
+    quarterDate: String
+    metric: String
+    search: String
+    searchField: String
+    source: String
+    filter: InstHoldingHistoricalFilter
+    group: GroupBy
+    sortBy: String
+    sortDir: String
+    page: Int
+    limit: Int
+  ): DesktopInstHoldingHistoricalResult
+  desktopMe: DesktopMe
+  desktopMover(
+    entityId: String
+    entityType: String
+    moverType: String
+    quarterDate: String
+    source: String
+    filter: MoverFilter
+    page: Int
+    limit: Int
+  ): DesktopMoverResult
+  desktopQuickSearch(query: String, entity: [String], page: Int, limit: Int): DesktopQuickSearchResult
+  desktopTag(id: [String], entityId: String, entityType: String, search: String, page: Int, limit: Int): DesktopTagResult
+  engagement(entityId: [String!], identifier: [String!], filter: EngagementFilter, page: Int, limit: Int): EngagementResult
+  insiderEngagement(identifier: [String!]!, entityId: String!, page: Int, limit: Int): InsiderEngagementResult
+  webMetricsDaily(startDate: String!, endDate: String, entityId: String, entityType: ENTITY_TYPE): WebMetricsDailyResult
+  webMetricsAggregate(periodType: PERIOD_TYPE, entityId: String, entityType: ENTITY_TYPE): WebMetricsAggregateResult
+  engagementEventDaily(startDate: String!, endDate: String): EngagementEventDailyResult
+  eventMetricsAggregate(periodType: PERIOD_TYPE, entityId: String): EventMetricsAggregateResult
+  institution(entityId: [String!]!, page: Int, limit: Int): InstitutionResult
+  instHoldingCurrent(identifier: [String!]!, entityId: [String!]!): InstHoldingCurrentResult
+  instHolding(identifier: [String!]!, entityId: [String!]!): InstHoldingResult
+  instHoldingCurrentAggregate(entityId: [String!]!, aggrField: AGGR_FIELD): InstHoldingCurrentAggregateResult
+  request(id: String): RequestResult
+  requestGetChangeSummary(request: RequestInput!, jobIndex: Int!): ChangeSummary
+  getUserLoginStatus(userId: String): GetUserLoginStatusResponse
+  getSchedulerPages(userId: String): GetSchedulerPageResponse
+  getScheduler(slug: String): GetSchedulerResponse
+  entitySearch(entityType: [ENTITY_TYPE!]!, query: String!, page: Int, limit: Int): EntitySearchResult
+  sampleNode(entityType: ENTITY_TYPE): SampleResult
+  stock(identifiers: [String!]!, startDate: String, endDate: String): StockResult
+  departments(subdomain: String!, profile: DataProfile, languageId: Int): DepartmentResult
+  organizationSites(organizationId: String!): OrganizationSiteDetailsResult
+  people(subdomain: String!, profile: DataProfile, languageId: Int): PersonResult
+  siteCapabilities(subdomain: String!): SiteCapabilitiesDTO
+  siteDetails(subdomain: String!): SiteDetailsDTO
+}
+
+type RequestCaseDetailDTO {
+  id: String
+  number: String
+  status: JobStatusEnum!
+  publishingMethod: JobPublishingMethodEnum
+}
+
+input RequestCreateInputSchema {
+  product: RequestProductEnum!
+  data: StudioRequestDataInput!
+  jobs: [CreateRequestJobInput!]!
+}
+
+union RequestDataUnion = StudioDTO
+
+type RequestDTO {
+  organizationId: String!
+  id: String!
+  product: RequestProductEnum!
+  data: RequestDataUnion
+  jobs: [RequestJobDTO!]!
+  caseId: String
+  caseNumber: String
+  createdAt: Date!
+  lastUpdatedAt: Date
+  createdBy: UserDTO!
+  lastUpdatedBy: UserDTO
+  version: Int
+  schemaVersion: Int
+}
+
+type RequestFileAttachmentDTO {
+  id: String
+  fileName: String
+  comment: String
+  s3Id: String
+}
+
+input RequestFileInput {
+  id: String!
+  fileName: String!
+  comment: String!
+  s3Id: String!
+}
+
+input RequestInput {
+  product: RequestProductEnum!
+  data: StudioRequestDataInput!
+  jobs: [RequestJobInput!]!
+}
+
+type RequestJobDTO {
+  id: String!
+  type: RequestJobEnum
+  data: JobDataUnion
+  schedule: RequestScheduleDTO!
+  instructions: String!
+  files: [RequestFileAttachmentDTO!]!
+  case: RequestCaseDetailDTO
+}
+
+enum RequestJobEnum {
+  studioEventCreate
+  studioEventUpdate
+  studioEventRemove
+  studioPresentationCreate
+  studioPresentationUpdate
+  studioPresentationRemove
+  studioNewsCreate
+  studioNewsUpdate
+  studioNewsRemove
+  studioPersonCreate
+  studioPersonUpdate
+  studioPersonRemove
+  studioPersonManage
+  studioGovernanceCreate
+  studioGovernanceUpdate
+  studioGovernanceRemove
+  studioJobPostingCreate
+  studioJobPostingUpdate
+  studioJobPostingRemove
+  studioDividendsCreate
+  studioDividendsUpdate
+  studioDividendsRemove
+  studioFAQCreate
+  studioFAQUpdate
+  studioFAQRemove
+  studioAnalystCoverageCreate
+  studioAnalystCoverageUpdate
+  studioAnalystCoverageRemove
+  studioOtherSubmit
+  billingSubmit
+  accountSubmit
+  generalQuestionSubmit
+}
+
+input RequestJobInput {
+  id: String!
+  type: RequestJobEnum!
+  schedule: RequestScheduleInput!
+  data: JobDataInput!
+  instructions: String
+  files: [RequestFileInput!]!
+}
+
+input RequestJobUpdateInputSchema {
+  schedule: RequestScheduleInput
+  type: RequestJobEnum
+  data: JobDataInput
+  instructions: String
+  files: [RequestFileInput!]
+}
+
+enum RequestProductEnum {
+  studio
+  question
+}
+
+type RequestResult {
+  items: [RequestDTO!]!
+  count: Int!
+}
+
+type RequestScheduleDTO {
+  date: Date
+  timezone: String
+  coordinateNews: Boolean!
+  instructions: String!
+}
+
+input RequestScheduleInput {
+  date: Date
+  timezone: String
+  coordinateNews: Boolean!
+  instructions: String!
+}
+
+type SampleDTO {
+  entityId: String
+  entityName: String
+  entityType: ENTITY_TYPE
+}
+
+type SampleResult {
+  items: [SampleDTO]
+  count: Int
+}
+
+type Scheduler {
+  schedulerId: String!
+}
+
+type Service {
+  type: String
+  demo: Boolean
+  enabled: Boolean
+}
+
+type SiteCapabilitiesDTO {
+  lastUpdatedAt: Date
+  lastUpdatedByUserId: String
+  lastUpdatedByEmail: String
+  newsAutomationEnabled: Boolean!
+  peopleAutomationEnabled: Boolean!
+}
+
+type SiteDetailsDTO {
+  organizationId: String!
+  defaultDomain: String!
+  status: String!
+  group: String
+  protectionLevel: String!
+}
+
+type StockDTO {
+  currency: String
+  date: String
+  high: Float
+  last: Float
+  lastClose: Float
+  lastCloseChange: Float
+  lastCloseChangePercent: Float
+  low: Float
+  open: Float
+  volume: Float
+}
+
+type StockResult {
+  items: [StockDTO]
+  average: Float
+}
+
+type StudioAnalystCoverageCreateDTO {
+  studioGroupId: Int
+}
+
+type StudioAnalystCoverageRemoveDTO {
+  studioGroupId: Int
+}
+
+type StudioAnalystCoverageUpdateDTO {
+  studioGroupId: Int
+}
+
+type StudioDepartmentSortedDTO {
+  name: String
+  oldOrder: [StudioPersonSummaryDTO!]
+  newOrder: [StudioPersonSummaryDTO!]
+}
+
+input StudioDepartmentSortedInput {
+  name: String
+  oldOrder: [StudioPersonInput!]
+  newOrder: [StudioPersonInput!]
+}
+
+type StudioDetails {
+  subdomain: String!
+}
+
+type StudioDividendsCreateDTO {
+  studioGroupId: Int
+}
+
+type StudioDividendsRemoveDTO {
+  studioGroupId: Int
+}
+
+type StudioDividendsUpdateDTO {
+  studioGroupId: Int
+}
+
+type StudioDTO {
+  studioSiteId: String
+  studioBucketId: Int
+}
+
+input StudioEventCreateDataInput {
+  noSubscriberEmail: Boolean!
+}
+
+type StudioEventCreateDTO {
+  studioGroupId: Int
+  noSubscriberEmail: Boolean!
+}
+
+type StudioEventRemoveDTO {
+  studioGroupId: Int
+}
+
+type StudioEventUpdateDTO {
+  studioGroupId: Int
+}
+
+type StudioFAQCreateDTO {
+  studioGroupId: Int
+}
+
+type StudioFAQRemoveDTO {
+  studioGroupId: Int
+}
+
+type StudioFAQUpdateDTO {
+  studioGroupId: Int
+}
+
+type StudioFileDTO {
+  fileId: String
+  studioPath: String
+}
+
+input StudioFileInput {
+  fileId: String
+  studioPath: String
+}
+
+type StudioGovernanceCreateDTO {
+  studioGroupId: Int
+}
+
+type StudioGovernanceRemoveDTO {
+  studioGroupId: Int
+}
+
+type StudioGovernanceUpdateDTO {
+  studioGroupId: Int
+}
+
+type StudioJobPostingCreateDTO {
+  studioGroupId: Int
+}
+
+type StudioJobPostingRemoveDTO {
+  studioGroupId: Int
+}
+
+type StudioJobPostingUpdateDTO {
+  studioGroupId: Int
+}
+
+input StudioNewsCreateDataInput {
+  noSubscriberEmail: Boolean!
+}
+
+type StudioNewsCreateDTO {
+  studioGroupId: Int
+  noSubscriberEmail: Boolean!
+}
+
+type StudioNewsRemoveDTO {
+  studioGroupId: Int
+}
+
+type StudioNewsUpdateDTO {
+  studioGroupId: Int
+}
+
+input StudioOtherSubmitDataInput {
+  entityType: String!
+}
+
+type StudioOtherSubmitDTO {
+  studioGroupId: Int
+  entityType: String!
+}
+
+type StudioPersonAddDTO {
+  workflowId: String
+  title: String
+  firstName: String!
+  lastName: String
+  middleName: String
+  suffix: String
+  quote: String
+  description: String
+  careerHighlight: String
+  photoPath: StudioFileDTO
+  thumbnailPath: StudioFileDTO
+  highResolutionPhotoPath: StudioFileDTO
+  lowResolutionPhotoPath: StudioFileDTO
+  sortOrder: Int!
+  departmentWorkflowId: String!
+}
+
+type StudioPersonAddedSummaryDTO {
+  workflowId: String
+  title: String
+  isDeleted: Boolean
+  status: StudioWorkflowStatusEnum
+  active: Boolean
+  firstName: String
+  lastName: String
+  middleName: String
+  suffix: String
+  quote: String
+  description: String
+  careerHighlight: String
+  photoPath: StudioFileDTO
+  thumbnailPath: StudioFileDTO
+  highResolutionPhotoPath: StudioFileDTO
+  lowResolutionPhotoPath: StudioFileDTO
+  sortOrder: Int
+  departmentWorkflowId: String
+  tags: [String]
+  effectiveDate: Date
+  departmentName: String
+  publishedRevisionNumber: Int
+}
+
+input StudioPersonAddInput {
+  workflowId: String
+  status: String
+  title: String
+  firstName: String
+  lastName: String
+  middleName: String
+  suffix: String
+  quote: String
+  description: String
+  careerHighlight: String
+  photoPath: StudioFileInput
+  thumbnailPath: StudioFileInput
+  highResolutionPhotoPath: StudioFileInput
+  lowResolutionPhotoPath: StudioFileInput
+  sortOrder: Int
+  departmentWorkflowId: String
+}
+
+input StudioPersonCreateDataInput {
+  entityType: String!
+}
+
+type StudioPersonCreateDTO {
+  studioGroupId: Int
+  entityType: String!
+}
+
+input StudioPersonInput {
+  firstName: String
+  lastName: String
+  middleName: String
+  suffix: String
+  quote: String
+  description: String
+  careerHighlight: String
+  photoPath: StudioFileInput
+  thumbnailPath: StudioFileInput
+  highResolutionPhotoPath: StudioFileInput
+  lowResolutionPhotoPath: StudioFileInput
+  sortOrder: Int
+  departmentWorkflowId: String
+  active: Boolean
+  tags: [String]
+  effectiveDate: Date
+  departmentName: String
+  title: String
+  workflowId: String
+  isDeleted: Boolean
+}
+
+type StudioPersonManageChangeSummaryDTO {
+  peopleAdded: [StudioPersonAddedSummaryDTO!]!
+  peopleRemoved: [StudioPersonSummaryDTO!]!
+  peopleModified: [StudioPersonModifiedSummaryDTO!]!
+  peopleReverted: [StudioPersonSummaryDTO!]!
+  departmentsSorted: [StudioDepartmentSortedDTO!]!
+  changeCount: Int!
+}
+
+input StudioPersonManageChangeSummaryInput {
+  peopleAdded: [StudioPersonInput!]
+  peopleRemoved: [StudioPersonInput!]
+  peopleModified: [StudioPersonModifiedSummaryInput!]
+  peopleReverted: [StudioPersonInput!]
+  departmentsSorted: [StudioDepartmentSortedInput!]
+  changeCount: Int
+}
+
+input StudioPersonManageDataInput {
+  peopleToAdd: [StudioPersonAddInput!]!
+  peopleToRemove: [String]!
+  peopleToModify: [StudioPersonUpdateInput!]!
+  peopleToRevert: [String]!
+  changeSummary: StudioPersonManageChangeSummaryInput
+}
+
+type StudioPersonManageDTO {
+  studioGroupId: Int
+  peopleToAdd: [StudioPersonAddDTO]!
+  peopleToRemove: [String]!
+  peopleToModify: [StudioPersonUpdateType]!
+  peopleToRevert: [String]!
+  changeSummary: StudioPersonManageChangeSummaryDTO
+}
+
+type StudioPersonModifiedFieldsDTO {
+  title: String
+  isDeleted: Boolean
+  firstName: String
+  lastName: String
+  middleName: String
+  suffix: String
+  quote: String
+  description: String
+  careerHighlight: String
+  photoPath: StudioFileDTO
+  thumbnailPath: StudioFileDTO
+  highResolutionPhotoPath: StudioFileDTO
+  lowResolutionPhotoPath: StudioFileDTO
+  sortOrder: Int
+  departmentWorkflowId: String
+  tags: [String]
+  effectiveDate: Date
+}
+
+type StudioPersonModifiedSummaryDTO {
+  workflowId: String!
+  firstName: String!
+  lastName: String
+  departmentName: String!
+  modifiedFields: StudioPersonModifiedFieldsDTO
+}
+
+input StudioPersonModifiedSummaryInput {
+  workflowId: String
+  firstName: String
+  lastName: String
+  departmentName: String
+  modifiedFields: StudioPersonInput
+}
+
+input StudioPersonRemoveDataInput {
+  entityType: String!
+}
+
+type StudioPersonRemoveDTO {
+  studioGroupId: Int
+  entityType: String!
+}
+
+type StudioPersonSummaryDTO {
+  workflowId: String
+  title: String
+  isDeleted: Boolean
+  status: StudioWorkflowStatusEnum
+  active: Boolean
+  firstName: String
+  lastName: String
+  middleName: String
+  suffix: String
+  quote: String
+  description: String
+  careerHighlight: String
+  photoPath: StudioFileDTO
+  thumbnailPath: StudioFileDTO
+  highResolutionPhotoPath: StudioFileDTO
+  lowResolutionPhotoPath: StudioFileDTO
+  sortOrder: Int
+  departmentWorkflowId: String
+  tags: [String]
+  effectiveDate: Date
+  departmentName: String
+}
+
+input StudioPersonSummaryInput {
+  firstName: String
+  lastName: String
+  middleName: String
+  suffix: String
+  quote: String
+  description: String
+  careerHighlight: String
+  photoPath: StudioFileInput
+  thumbnailPath: StudioFileInput
+  highResolutionPhotoPath: StudioFileInput
+  lowResolutionPhotoPath: StudioFileInput
+  sortOrder: Int
+  departmentWorkflowId: String
+  active: Boolean
+  tags: [String]
+  effectiveDate: Date
+}
+
+input StudioPersonUpdateDataInput {
+  entityType: String!
+}
+
+type StudioPersonUpdateDTO {
+  studioGroupId: Int
+  entityType: String!
+}
+
+input StudioPersonUpdateInput {
+  workflowId: String
+  status: String
+  title: String
+  firstName: String
+  lastName: String
+  middleName: String
+  suffix: String
+  quote: String
+  description: String
+  careerHighlight: String
+  photoPath: StudioFileInput
+  thumbnailPath: StudioFileInput
+  highResolutionPhotoPath: StudioFileInput
+  lowResolutionPhotoPath: StudioFileInput
+  sortOrder: Int
+  departmentWorkflowId: String
+}
+
+type StudioPersonUpdateType {
+  workflowId: String!
+  title: String
+  firstName: String
+  lastName: String
+  middleName: String
+  suffix: String
+  quote: String
+  description: String
+  careerHighlight: String
+  photoPath: StudioFileDTO
+  thumbnailPath: StudioFileDTO
+  highResolutionPhotoPath: StudioFileDTO
+  lowResolutionPhotoPath: StudioFileDTO
+  sortOrder: Int
+  departmentWorkflowId: String
+}
+
+input StudioPresentationCreateDataInput {
+  noSubscriberEmail: Boolean!
+}
+
+type StudioPresentationCreateDTO {
+  studioGroupId: Int
+  noSubscriberEmail: Boolean!
+}
+
+type StudioPresentationRemoveDTO {
+  studioGroupId: Int
+}
+
+type StudioPresentationUpdateDTO {
+  studioGroupId: Int
+}
+
+input StudioRequestDataInput {
+  studioSiteId: String
+  studioBucketId: Int
+}
+
+enum StudioWorkflowStatusEnum {
+  newItem
+  live
+  inProgress
+  forApproval
+  editing
+  reviewing
+  unknownState
+}
+
+type TagReferenceDTO {
+  entityType: String
+  entityId: String
+}
+
+type Terms {
+  acknowledged: Boolean
+}
+
+type Ticker {
+  name: String
+  symbol: String
+  exchange: String
+  tickerId: String
+  entityId: String
+  legacySecurityId: String
+  primary: Boolean
+}
+
+type Type {
+  name: String
+  expire: String
+}
+
+type UnmonitorResult {
+  success: Boolean
+  data: MonitorDTO
+}
+
+type UpdatePageStatusResponse {
+  success: Boolean!
+  message: String!
+}
+
+type User {
+  id: String
+  organizationId: String!
+  firstName: String!
+  lastName: String!
+  email: String!
+  friendlyName: String
+  active: Boolean
+  roles: [String]
+  title: String
+  createdAt: String
+  updatedAt: String
+  identityProviderId: String
+}
+
+type UserDTO {
+  id: String!
+  email: String!
+  name: String!
+}
+
+type UserList {
+  items: [User]
+  count: Int
+}
+
+type WebMetricsAggregateDTO {
+  entityId: String
+  periodType: String
+  pageViews: Int
+  pageViewsPercentageChange: Float
+  topPageViewsUrl: String
+  topPageViewsTitle: String
+  uniquePageViews: Int
+  uniquePageViewsPercentageChange: Float
+  topUniquePageViewsUrl: String
+  topUniquePageViewsTitle: String
+  topAvgTimeSpentUrl: String
+  topAvgTimeSpentTitle: String
+  avgTimeSpent: Float
+  avgTimeSpentPercentageChange: Float
+}
+
+type WebMetricsAggregateResult {
+  items: [WebMetricsAggregateDTO]
+}
+
+type WebMetricsDailyDTO {
+  entityId: String
+  date: Date
+  pageViews: Int
+  uniquePageViews: Int
+  avgTimeSpent: Float
+}
+
+type WebMetricsDailyResult {
+  items: [WebMetricsDailyDTO]
+  count: Int
+}
+
+interface Workflow {
+  workflowId: String!
+  languageId: Int!
+  active: Boolean!
+  isDeleted: Boolean!
+  statusId: Int!
+  status: WorkflowStatus!
+  workingRevisionNumber: Int!
+  publishedRevisionNumber: Int!
+  effectiveDate: Date
+  title: String
+  bucket: String
+}
+
+enum WorkflowStatus {
+  newItem
+  live
+  inProgress
+  forApproval
+  editing
+  reviewing
+  unknownState
+}

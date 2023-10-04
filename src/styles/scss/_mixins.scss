@@ -1,0 +1,9 @@
+@import "/node_modules/@q4/nimbus-ui/dist/v1/mixins";
+
+@mixin remove-banner-bottom-padding {
+  .nui-banner {
+    &_inner {
+      padding-bottom: 0;
+    }
+  }
+}

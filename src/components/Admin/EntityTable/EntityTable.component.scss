@@ -1,0 +1,100 @@
+@import "/src/styles/scss/variables";
+@import "/src/styles/scss/mixins";
+
+$table-border-color: rgba($black, 0.1);
+$table-height: gux(6.25);
+$table-rows: 10;
+
+%bottom-border {
+  border-bottom: 1px solid $table-border-color;
+}
+
+.entity-table {
+  &_toolbar {
+    display: flex;
+    align-items: center;
+
+    &,
+    &-group {
+      flex: 1 0 auto;
+    }
+
+    &-group {
+      display: flex;
+      align-items: center;
+    }
+
+    &-actions {
+      margin-left: gux(2);
+    }
+  }
+
+  &_table {
+    &-cell {
+      &--centered {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      &--icon {
+        font-size: $font-size--icon;
+      }
+    }
+
+    .nui-spinner {
+      display: none;
+    }
+
+    .ag-cell {
+      @include truncate();
+
+      &-value {
+        width: 100%;
+      }
+    }
+  }
+
+  &_search {
+    flex: 1 0 auto;
+    text-align: right;
+  }
+
+  &--loading {
+    .nui-table {
+      &--no-data {
+        .ag {
+          &-overlay-panel {
+            display: none;
+          }
+
+          &-body-viewport {
+            @extend %bottom-border;
+          }
+        }
+      }
+    }
+  }
+
+  .nui {
+    &-toolbar {
+      &_inner,
+      &_row {
+        flex: 1 0 auto;
+      }
+    }
+
+    &-table {
+      .ag {
+        &-overlay-panel {
+          @extend %bottom-border;
+        }
+
+        &-body-viewport {
+          @extend %bottom-border;
+          min-height: $table-height * $table-rows;
+        }
+      }
+    }
+  }
+}

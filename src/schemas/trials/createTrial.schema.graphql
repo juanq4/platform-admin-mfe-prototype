@@ -1,0 +1,9 @@
+mutation createTrial($trialType: String!) {
+  createTrial(trialType: $trialType) {
+    entitlement
+    expiryDate
+    product
+    trialName
+    trialType
+  }
+}

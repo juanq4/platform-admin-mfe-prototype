@@ -1,0 +1,11 @@
+query Teams($pageSize: Int, $page: [String], $organizationId: String) {
+  accessGroups(pageSize: $pageSize, page: $page, organizationId: $organizationId) {
+    items {
+      id
+      name
+      organizationId
+      managedOrganizationIds
+      userIds
+    }
+  }
+}

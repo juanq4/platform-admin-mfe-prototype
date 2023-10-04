@@ -1,0 +1,36 @@
+@import "/src/styles/scss/variables";
+@import "/src/styles/scss/mixins";
+
+.entity-table-pagination {
+  display: flex;
+  justify-content: center;
+  padding: gux(6) 0 gux(4.5);
+
+  &_button {
+    @include buttonTheme(
+      $light-grey,
+      $rain,
+      mix($light-grey, black, 90%),
+      mix($rain, black, 90%),
+      mix($light-grey, black, 80%),
+      $opacity--medium
+    );
+
+    &-label + .entity-table-pagination_button-icon {
+      margin-left: gux();
+    }
+
+    &.nui-button--disabled {
+      color: $silver;
+
+      & .nui-button_icon,
+      & .nui-button_label {
+        opacity: $opacity--full;
+      }
+    }
+  }
+
+  .nui-button--v1.nui-button + .nui-button--v1.nui-button {
+    margin-left: 1px;
+  }
+}

@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckMarkCell Component 7386008: [Given] no props are provided [Expect] the component should render 1`] = `
+<div
+  id="root"
+>
+  <span />
+</div>
+`;
+
+exports[`CheckMarkCell Component 7434651: [Given] value is 'null' [Expect] the checkmark to not be visible 1`] = `
+<span
+  id="MockCheckMarkCellId"
+/>
+`;
+
+exports[`CheckMarkCell Component 7434652: [Given] value is 'true' [Expect] the checkmark to be visible 1`] = `
+<span
+  class="q4i-checkmark-4pt"
+  id="MockCheckMarkCellId"
+/>
+`;
+
+exports[`CheckMarkCell Component 7434653: [Given] value is 'false' [Expect] the checkmark to not be visible 1`] = `
+<span
+  id="MockCheckMarkCellId"
+/>
+`;
+
+exports[`mapIdToCheckMarkCell 7386009: [Given] the function is passed not no props [Expect] the component should render 1`] = `
+<div
+  id="root"
+>
+  <span />
+</div>
+`;
+
+exports[`mapIdToCheckMarkCell 7434654: [Given] value is 'null' [Expect] the checkmark to not be visible 1`] = `
+<span
+  id="MockCheckMarkCellCheckMarkCell-4dec165f-4093-4182-bd72-88754"
+/>
+`;
+
+exports[`mapIdToCheckMarkCell 7434655: [Given] value is 'true' [Expect] the checkmark to be visible 1`] = `
+<span
+  class="q4i-checkmark-4pt"
+  id="MockCheckMarkCellCheckMarkCell-4dec165f-4093-4182-bd72-88754"
+/>
+`;
+
+exports[`mapIdToCheckMarkCell 7434656: [Given] value is 'false' [Expect] the checkmark to not be visible 1`] = `
+<span
+  id="MockCheckMarkCellCheckMarkCell-4dec165f-4093-4182-bd72-88754"
+/>
+`;

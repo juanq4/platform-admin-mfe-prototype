@@ -1,0 +1,12 @@
+query Me {
+  me {
+    id
+    firstName
+    lastName
+    friendlyName
+    email
+    title
+    roles
+    active
+  }
+}

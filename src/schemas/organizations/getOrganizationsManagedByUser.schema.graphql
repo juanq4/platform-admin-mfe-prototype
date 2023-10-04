@@ -1,0 +1,11 @@
+query OrganizationsManagedByUser {
+  organizationsManagedByUser {
+    items {
+      ...OrganizationFragment
+      studio {
+        subdomain
+      }
+      managedBy
+    }
+  }
+}

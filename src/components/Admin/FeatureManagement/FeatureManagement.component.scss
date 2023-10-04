@@ -1,0 +1,41 @@
+@import "/src/styles/scss/variables";
+@import "/src/styles/scss/mixins";
+
+.organization-feature-management {
+  & &_toggle {
+    margin-bottom: gux(2);
+    justify-content: flex-start;
+
+    .nui-toggle-buttons_item {
+      flex: none;
+      border-color: $light-grey;
+
+      &--selected.nui-button {
+        @include buttonThemeBase(
+          $light-grey,
+          $light-slate,
+          mix($light-grey, black, 90%),
+          $light-slate,
+          mix($light-grey, black, 80%)
+        );
+      }
+    }
+  }
+
+  .entity-table-pagination {
+    padding-bottom: 0px;
+  }
+
+  .nui {
+    &-placeholder-content_image {
+      height: gux(23);
+      max-width: unset;
+      margin-top: gux(9);
+    }
+
+    &-modal_children {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}

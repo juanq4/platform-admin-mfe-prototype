@@ -1,0 +1,249 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Organizations Select Dropdown component 7395559: renders without crash 1`] = `
+.emotion-0 {
+  margin-left: 0;
+}
+
+.emotion-1 {
+  position: relative;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+
+.emotion-2>*:first-child:last-child {
+  width: 100%;
+}
+
+.emotion-2>*+.emotion-2>* {
+  margin-left: 8px;
+}
+
+.emotion-3 {
+  font-family: 'Open Sans',sans-serif;
+  -webkit-transition: color 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+@media only screen and (max-width: 768px) {
+  .emotion-3 {
+    font-size: 12px;
+    line-height: 12px;
+  }
+}
+
+.emotion-4 .nui-checkbox_box.nui-toggle-input-base_control {
+  background: #ffffff;
+}
+
+.emotion-4 .nui-select_option-checkbox {
+  margin: auto;
+}
+
+.emotion-5 {
+  position: relative;
+  box-sizing: border-box;
+}
+
+.emotion-6 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: hsl(0,0%,100%);
+  border-color: hsl(0,0%,80%);
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 1px;
+  cursor: default;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  min-height: 38px;
+  outline: 0!important;
+  position: relative;
+  -webkit-transition: all 100ms;
+  transition: all 100ms;
+  box-sizing: border-box;
+}
+
+.emotion-6:hover {
+  border-color: hsl(0,0%,70%);
+}
+
+.emotion-7 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding: 2px 8px;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.emotion-8 {
+  color: hsl(0,0%,50%);
+  margin-left: 2px;
+  margin-right: 2px;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  box-sizing: border-box;
+}
+
+.emotion-9 {
+  margin: 0;
+  padding-bottom: 0;
+  padding-top: 0;
+  visibility: visible;
+  color: inherit;
+  box-sizing: border-box;
+}
+
+.emotion-10 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.emotion-11 {
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  background-color: hsl(0,0%,80%);
+  margin-bottom: 8px;
+  margin-top: 8px;
+  width: 1px;
+  box-sizing: border-box;
+}
+
+<div
+  class="nui-grid emotion-0"
+  id="Test"
+>
+  <div
+    class="organizations-link_organizations emotion-1"
+    id="TestOrganizationsField"
+  >
+    <div
+      class="emotion-2"
+    >
+      <span
+        class="emotion-3"
+      >
+        Managed Organizations
+      </span>
+      <div
+        class="nui-select emotion-4 nui-select--light-grey nui-select--default emotion-5"
+        id="TestOrganizationsSelect"
+      >
+        <div
+          class="add-organizations-dropdown nui-select__control emotion-6"
+        >
+          <div
+            class="add-organizations-dropdown nui-select__value-container add-organizations-dropdown nui-select__value-container--is-multi emotion-7"
+          >
+            <div
+              class="add-organizations-dropdown nui-select__placeholder emotion-8"
+            >
+              Select
+            </div>
+            <div
+              class="emotion-9"
+            >
+              <div
+                class="add-organizations-dropdown nui-select__input"
+                style="display: inline-block;"
+              >
+                <input
+                  aria-autocomplete="list"
+                  autocapitalize="none"
+                  autocomplete="off"
+                  autocorrect="off"
+                  id="TestOrganizationsSelectInput"
+                  spellcheck="false"
+                  style="box-sizing: content-box; width: 2px; border: 0px; opacity: 1; outline: 0; padding: 0px;"
+                  tabindex="0"
+                  type="text"
+                  value=""
+                />
+                <div
+                  style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-family: -webkit-small-control; letter-spacing: normal; text-transform: none;"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="add-organizations-dropdown nui-select__indicators emotion-10"
+          >
+            <span
+              class="add-organizations-dropdown nui-select__indicator-separator emotion-11"
+            />
+            <div
+              class="nui-select__indicator nui-select__indicator--dropdown"
+              style="transform: rotate(0deg);"
+            >
+              <i
+                class="ni-arrow-down-4pt"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="nui-chips"
+    id="TestOrganizationsChips"
+  />
+</div>
+`;

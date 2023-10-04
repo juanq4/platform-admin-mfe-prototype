@@ -1,0 +1,15 @@
+query NotificationList($notificationId: String, $pageSize: Int) {
+  notificationList(notificationId: $notificationId, pageSize: $pageSize) {
+    items {
+      id
+      title
+      message
+      link
+      source
+      sentAt
+      readAt
+    }
+    totalCount
+    totalUnreadCount
+  }
+}

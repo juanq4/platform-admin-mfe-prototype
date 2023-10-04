@@ -1,3 +1,13 @@
 {
-  "Q4_PLATFORM_GATEWAY_URL": null
+  "AUTH0_AUDIENCE": "platform-shell-stage.api",
+  "AUTH0_CLIENT_ID": "W2QoA5CtGMn6Pb2lhydDkkn1Bjo7rhY7",
+  "AUTH0_DOMAIN": "auth.stage.q4inc.com",
+  "AUTH0_MANAGEMENT_API_URL": "https://q4-platform-stage.us.auth0.com",
+  "AUTH0_ROLE_AUDIENCE": "platform-shell-stage.q4graph",
+  "HELP_CENTER_URL": "https://help.stage.q4inc.com",
+  "LAUNCHDARKLY_CLIENT_SIDE_ID": "621546af75baf8157707fece",
+  "LAUNCHDARKLY_VERSION_MANAGER_CLIENT_SIDE_ID": "634fe8c5c428a911c3ac2e20",
+  "PLATFORM_SHELL_HOSTED_ZONE": null,
+  "Q4_DESKTOP_URL": "https://staging.q4desktop.com/",
+  "POST_HOG_API_KEY": "phc_RYBLIIva1eXxdrkqMwz0mxAGQEHcDd8iKOPJzUkgIX7"
 }

@@ -1,0 +1,59 @@
+@import "/src/styles/scss/variables";
+@import "/src/styles/scss/mixins";
+
+.add-organizations-dropdown {
+  &.nui-select__option {
+    display: flex;
+    padding: gux() !important; // needed to overwrite nimbus styling
+    height: unset !important; // needed to overwrite nimbus styling
+    min-height: gux(5);
+  }
+
+  .nui-toggle-input-base--steel.nui-toggle-input-base--checked .nui-toggle-input-base_control {
+    background-color: $primary400;
+  }
+
+  .nui-checkbox_box.nui-toggle-input-base_control {
+    background: $white;
+  }
+
+  .nui-select__option--is-disabled {
+    pointer-events: none;
+
+    .nui-checkbox_box.nui-toggle-input-base_control {
+      background: unset;
+      border: solid 1px $neutral300;
+    }
+
+    .nui-toggle-input-base--steel.nui-toggle-input-base--checked .nui-toggle-input-base_control {
+      background-color: $neutral300;
+    }
+
+    [data-org-linked="true"] .nui-checkbox_icon {
+      color: $neutral300;
+    }
+  }
+
+  .nui-select__custom-option {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding-right: gux();
+    line-height: gux(2);
+
+    &-label {
+      white-space: pre-wrap;
+      margin: auto 0;
+    }
+
+    &-status {
+      color: $neutral500;
+      margin: auto 0 auto gux(2.5);
+      font-size: $font-size--sm;
+    }
+  }
+
+  .nui-select_option-checkbox {
+    margin: auto;
+  }
+}

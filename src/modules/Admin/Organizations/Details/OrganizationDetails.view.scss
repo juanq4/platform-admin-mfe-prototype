@@ -1,0 +1,76 @@
+@import "/src/styles/scss/variables";
+@import "/src/styles/scss/mixins";
+
+$field-height: 40px;
+.organizations-detail {
+  &_section {
+    &--padding {
+      padding: 0 gux(2) 0 gux(4);
+    }
+  }
+
+  &_field-caption {
+    font-size: $font-size--caption;
+    line-height: $line-height--caption;
+  }
+
+  &_stock {
+    display: flex;
+    align-items: center;
+    padding: 0;
+
+    &-ticker {
+      width: gux(6.25);
+      padding: 0 0 0 gux(0.5);
+      margin-left: gux(0.5);
+    }
+
+    &-exchange {
+      width: gux(9.5);
+      margin-right: gux(0.5);
+      padding: 0 gux(0.5);
+    }
+  }
+
+  &_status {
+    .nui {
+      &-field {
+        &_label-text {
+          visibility: hidden;
+        }
+
+        &_children {
+          height: $field-height;
+        }
+      }
+
+      &-toggle {
+        justify-content: end;
+      }
+    }
+  }
+
+  &_textbox-copy {
+    position: relative;
+
+    .copy-button {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+
+  .nui-modal_children {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &_region {
+    &--left {
+      flex: 1;
+    }
+    &--center {
+      flex: 2;
+    }
+  }
+}

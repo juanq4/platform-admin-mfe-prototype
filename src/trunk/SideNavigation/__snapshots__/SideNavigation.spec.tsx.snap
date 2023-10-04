@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SideNavigation 7391331: [Given] no props are provided [Expect] the component to render 1`] = `
+.emotion-0 {
+  z-index: 1;
+}
+
+.emotion-0 .nui-navigation--collapsed .nui-navigation_route:not(.nui-navigation_route--active) {
+  -webkit-transition: color 0s!important;
+  transition: color 0s!important;
+}
+
+.emotion-0 .nui-navigation--collapsed .nui-navigation_label-wrapper {
+  -webkit-animation-name: slide-right!important;
+  animation-name: slide-right!important;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+@media only screen and (max-width: 1023px) {
+  .emotion-0 .nui-navigation {
+    position: fixed;
+  }
+}
+
+<div>
+  <div
+    class="emotion-0"
+  >
+    <nav
+      class="nui-navigation nui-navigation--white nui-navigation--responsive nui-navigation--hidden"
+      id="Q4PlatformShellNavigation"
+    >
+      <ul
+        class="nui-navigation_list"
+      />
+      <div
+        class="nui-navigation_collapse-toggle"
+      >
+        <i
+          class="ni-caret-left-4pt"
+          id="Q4PlatformShellNavigationToggle"
+        />
+      </div>
+    </nav>
+  </div>
+</div>
+`;

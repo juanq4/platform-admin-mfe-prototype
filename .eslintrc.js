@@ -73,6 +73,7 @@ module.exports = {
     "security/detect-object-injection": "off", // turn back on later
     "sonarjs/cognitive-complexity": "error",
     "unused-imports/no-unused-imports": "error",
+    "testing-library/no-node-access": "off",
   },
   overrides: [
     {

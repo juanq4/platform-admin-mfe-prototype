@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TickerCell Component 7386712: [Given] no props are provided [Expect] the component should render 1`] = `
+<div
+  id="root"
+>
+  <span />
+</div>
+`;
+
+exports[`TickerCell Component 7434031: [Given] value is 'null' [Expect] the ticker to be 'empty' 1`] = `
+<span
+  id="MockCheckMarkCellId"
+/>
+`;
+
+exports[`TickerCell Component 7434032: [Given] value is '' [Expect] the ticker to be 'empty' 1`] = `
+<span
+  id="MockCheckMarkCellId"
+/>
+`;
+
+exports[`TickerCell Component 7434033: [Given] value is 'ART.NYE' [Expect] the ticker to be 'ART' 1`] = `
+<span
+  id="MockCheckMarkCellId"
+>
+  ART
+</span>
+`;
+
+exports[`mapIdToTickerCell 7386713: [Given] the function is passed not no props [Expect] the component should render 1`] = `
+<div
+  id="root"
+>
+  <span />
+</div>
+`;
+
+exports[`mapIdToTickerCell 7434034: [Given] value is 'null' [Expect] the ticker to be 'empty' 1`] = `
+<span
+  id="MockTickerCellTickerCell-4dec165f-4093-4182-bd72-88754"
+/>
+`;
+
+exports[`mapIdToTickerCell 7434035: [Given] value is '' [Expect] the ticker to be 'empty' 1`] = `
+<span
+  id="MockTickerCellTickerCell-4dec165f-4093-4182-bd72-88754"
+/>
+`;
+
+exports[`mapIdToTickerCell 7434036: [Given] value is 'ART.NYE' [Expect] the ticker to be 'ART' 1`] = `
+<span
+  id="MockTickerCellTickerCell-4dec165f-4093-4182-bd72-88754"
+>
+  ART
+</span>
+`;

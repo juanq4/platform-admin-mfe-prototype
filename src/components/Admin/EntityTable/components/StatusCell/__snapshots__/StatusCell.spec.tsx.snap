@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StatusCell Component 7386710: [Given] no props are provided [Expect] the component should render 1`] = `
+<div
+  id="root"
+>
+  <span>
+    Deactivated
+  </span>
+</div>
+`;
+
+exports[`StatusCell Component 7434605: [Given] value is 'null' [Expect] the status to be 'Deactivated' 1`] = `
+<span
+  id="MockCheckMarkCellId"
+>
+  Deactivated
+</span>
+`;
+
+exports[`StatusCell Component 7434606: [Given] value is 'false' [Expect] the status to be 'Deactivated' 1`] = `
+<span
+  id="MockCheckMarkCellId"
+>
+  Deactivated
+</span>
+`;
+
+exports[`StatusCell Component 7434607: [Given] value is 'true' [Expect] the status to be 'Active' 1`] = `
+<span
+  id="MockCheckMarkCellId"
+>
+  Active
+</span>
+`;
+
+exports[`mapIdToStatusCell 7386711: [Given] the function is passed not no props [Expect] the component should render 1`] = `
+<div
+  id="root"
+>
+  <span>
+    Deactivated
+  </span>
+</div>
+`;
+
+exports[`mapIdToStatusCell 7434624: [Given] value is 'null' [Expect] the status to be 'Deactivated' 1`] = `
+<span
+  id="MockCheckMarkCellStatusCell-4dec165f-4093-4182-bd72-88754"
+>
+  Deactivated
+</span>
+`;
+
+exports[`mapIdToStatusCell 7434629: [Given] value is 'false' [Expect] the status to be 'Deactivated' 1`] = `
+<span
+  id="MockCheckMarkCellStatusCell-4dec165f-4093-4182-bd72-88754"
+>
+  Deactivated
+</span>
+`;
+
+exports[`mapIdToStatusCell 7434642: [Given] value is 'true' [Expect] the status to be 'Active' 1`] = `
+<span
+  id="MockCheckMarkCellStatusCell-4dec165f-4093-4182-bd72-88754"
+>
+  Active
+</span>
+`;

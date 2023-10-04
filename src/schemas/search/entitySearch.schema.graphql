@@ -1,0 +1,14 @@
+query EntitySearch($entityType: [SearchEntityType!]!, $query: String!, $page: Int, $limit: Int) {
+  entitySearch(entityType: $entityType, query: $query, page: $page, limit: $limit) {
+    count
+    items {
+      entityId
+      entityName
+      entityType
+      ... on SecurityEntitySearchDTO {
+        symbol
+        exchange
+      }
+    }
+  }
+}

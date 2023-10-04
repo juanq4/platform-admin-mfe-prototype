@@ -1,0 +1,97 @@
+@import "/src/styles/scss/variables";
+@import "/src/styles/scss/mixins";
+
+.organizations-link {
+  &_organizations {
+    margin-bottom: gux();
+
+    .nui-field_children {
+      flex-direction: column;
+    }
+  }
+
+  &_section {
+    &--padding {
+      padding: 0 gux(4);
+    }
+  }
+
+  &_title {
+    color: $neutral900;
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  &_field {
+    width: 378px;
+    margin-top: 32px;
+
+    .nui-info-icon {
+      vertical-align: text-top;
+    }
+  }
+
+  &_option {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .nui-tooltip {
+    max-width: 207px;
+    width: 207px;
+  }
+}
+
+.organization-link {
+  &.nui-select__option {
+    display: flex;
+    padding: 8px !important; // needed to overwrite nimbus styling
+    height: unset !important; // needed to overwrite nimbus styling
+    min-height: 40px;
+  }
+
+  .nui-select__option--is-disabled {
+    pointer-events: none;
+
+    .nui-checkbox_box.nui-toggle-input-base_control {
+      background: unset;
+      border: solid 1px $neutral300;
+    }
+
+    [data-org-linked="true"] .nui-checkbox_icon {
+      color: $neutral300;
+    }
+  }
+
+  .nui-select__custom-option {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding-right: 8px;
+    line-height: 16px;
+
+    &-label {
+      white-space: pre-wrap;
+      margin: auto 0;
+    }
+
+    &-status {
+      color: $neutral500;
+      margin: auto 0;
+      margin-left: 20px;
+      font-size: 12px;
+    }
+  }
+
+  .nui-toggle-input-base--steel.nui-toggle-input-base--checked .nui-toggle-input-base_control {
+    background-color: $primary400;
+  }
+
+  .nui-checkbox_box.nui-toggle-input-base_control {
+    background: $white;
+  }
+
+  .nui-select_option-checkbox {
+    margin: auto;
+  }
+}

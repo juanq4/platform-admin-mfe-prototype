@@ -1,0 +1,20 @@
+@import "./src/styles/scss/mixins";
+
+.admin {
+  @include remove-banner-bottom-padding;
+  display: flex;
+  flex-direction: column;
+
+  &_banner {
+    flex-shrink: 0;
+
+    &-button {
+      color: #f1af0f !important; // !important required to override nimbus styling
+    }
+  }
+
+  &_content {
+    position: relative;
+    flex: 1 1 auto;
+  }
+}

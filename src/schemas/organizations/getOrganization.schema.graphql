@@ -1,0 +1,10 @@
+query Organization($id: String!) {
+  organization(id: $id) {
+    ...OrganizationFragment
+    isAdmin
+    studio {
+      subdomain
+    }
+    managedBy
+  }
+}

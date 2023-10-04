@@ -1,0 +1,19 @@
+Current:
+  src\modules\admin\Admin.module.tsx
+
+TODO
+
+- Remove unused (but components, module)
+  - https://stackoverflow.com/questions/54148788/how-to-find-dead-code-in-a-large-react-project
+- List used and remove from shell
+- Create github project
+- Create test rails project
+  - Add tests in new project
+  - Remove tests in platform-shell
+- Create launch darkly project
+  - Add flags
+  - Remove flags from platform-shell
+
+FIXME:
+- // @jm fixme
+

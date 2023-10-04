@@ -1,0 +1,22 @@
+@import "/src/styles/scss/variables";
+
+.edit-team-name-form {
+  .ag-theme-balham {
+    .ag-cell-wrap-text {
+      white-space: break-spaces !important;
+      word-break: normal;
+    }
+
+    .ag-header {
+      z-index: 99;
+      overflow: visible;
+
+      &-viewport,
+      &-container,
+      &-row,
+      &-cell {
+        overflow: visible;
+      }
+    }
+  }
+}

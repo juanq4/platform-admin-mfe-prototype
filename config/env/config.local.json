@@ -1,3 +1,13 @@
 {
-  "Q4_PLATFORM_GATEWAY_URL": "https://connect.dev.q4inc.com/api/eds"
+  "AUTH0_AUDIENCE": "platform-shell-dev.api",
+  "AUTH0_CLIENT_ID": "m5lksRzdCqhbOHszJtaFsc10dMh5Savd",
+  "AUTH0_DOMAIN": "auth.dev.q4inc.com",
+  "AUTH0_MANAGEMENT_API_URL": "https://q4-platform-dev.us.auth0.com",
+  "AUTH0_ROLE_AUDIENCE": "platform-shell-dev.q4graph",
+  "HELP_CENTER_URL": "https://help.dev.q4inc.com",
+  "LAUNCHDARKLY_CLIENT_SIDE_ID": "62154708fbcd54151df7aca2",
+  "LAUNCHDARKLY_VERSION_MANAGER_CLIENT_SIDE_ID": "634fe924ce005611a85ee52a",
+  "PLATFORM_SHELL_HOSTED_ZONE": "https://connect.dev.q4inc.com",
+  "Q4_DESKTOP_URL": "https://develop.q4desktop.com/",
+  "POST_HOG_API_KEY": "phc_HbLYxTk2RzseT4Rtq5M7GlqJljQBmkGpPvn55E4Tzgg"
 }

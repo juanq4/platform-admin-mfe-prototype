@@ -1,0 +1,9 @@
+query OrganizationTrials($trialType: String, $expired: Boolean) {
+  organizationTrials(trialType: $trialType, expired: $expired) {
+    trialType
+    trialName
+    entitlement
+    product
+    expiryDate
+  }
+}

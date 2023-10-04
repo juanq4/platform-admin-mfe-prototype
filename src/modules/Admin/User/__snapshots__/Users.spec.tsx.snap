@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Users View 1271127: [Given] I am on the admin users view [When] an error is returned [Expect] the error state to be shown [And] the refresh button to be clickable 1`] = `
+<div
+  class="nui-layout nui-placeholder-content nui-placeholder-content--transparent nui-layout--transparent nui-layout--height-full nui-layout--padding-default nui-layout--flex nui-layout--justify-center nui-layout--align-center nui-layout--v1"
+  id="AdminUsersTableEntityTablePlaceholderContent"
+>
+  <div
+    class="nui-placeholder-content_inner"
+  >
+    <h2
+      class="nui-placeholder-content_title"
+      id="AdminUsersTableEntityTablePlaceholderContentTitle"
+    >
+      Failed To Load Data
+    </h2>
+    <h3
+      class="nui-placeholder-content_subtitle"
+      id="AdminUsersTableEntityTablePlaceholderContentSubtitle"
+    >
+      Please click refresh to try again.
+    </h3>
+    <div
+      class="nui-placeholder-content_actions"
+    >
+      <button
+        class="nui-button nui-button--v1"
+        id="AdminUsersTableEntityTablePlaceholderContentOnErrorButton"
+        type="button"
+      >
+        <span
+          class="nui-button_label"
+          id="AdminUsersTableEntityTablePlaceholderContentOnErrorButtonLabel"
+        >
+          REFRESH
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Users View 1271129: [Given] I am on the admin users view [When] no items are returned [Expect] the placeholder to be present [And] the create button to be clickable 1`] = `
+<div
+  class="nui-layout nui-placeholder-content nui-placeholder-content--transparent nui-layout--transparent nui-layout--height-full nui-layout--padding-default nui-layout--flex nui-layout--justify-center nui-layout--align-center nui-layout--v1"
+  id="AdminUsersTableEntityTablePlaceholder"
+>
+  <div
+    class="nui-placeholder-content_inner"
+  >
+    <h2
+      class="nui-placeholder-content_title"
+      id="AdminUsersTableEntityTablePlaceholderTitle"
+    />
+    <div
+      class="nui-placeholder-content_actions"
+    >
+      <button
+        class="nui-button nui-button--q4-blue nui-button--v1"
+        id="AdminUsersPlaceholderCreateButton"
+        type="button"
+      >
+        <i
+          class="nui-button_icon q4i-add-4pt"
+          id="AdminUsersPlaceholderCreateButtonIcon"
+        />
+        <span
+          class="nui-button_label"
+          id="AdminUsersPlaceholderCreateButtonLabel"
+        >
+          Add User
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;

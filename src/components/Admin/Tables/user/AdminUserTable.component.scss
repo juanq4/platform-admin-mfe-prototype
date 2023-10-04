@@ -1,0 +1,10 @@
+@import "/src/styles/scss/variables";
+@import "/src/styles/scss/mixins";
+
+.admin-user-table {
+  .nui-placeholder-content_image {
+    height: gux(23);
+    max-width: unset;
+    margin-top: gux(9);
+  }
+}

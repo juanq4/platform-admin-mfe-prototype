@@ -1,0 +1,23 @@
+query UsersByOrg($organizationId: String!, $pagination: OffsetPagination!) {
+  usersByOrganization(organizationId: $organizationId, pagination: $pagination) {
+    currentPage
+    records {
+      id
+      organizationId
+      firstName
+      lastName
+      email
+      friendlyName
+      active
+      roles
+      title
+      createdAt
+      updatedAt
+      identityProviderId
+      search
+      emailApp
+    }
+    totalItems
+    totalPages
+  }
+}

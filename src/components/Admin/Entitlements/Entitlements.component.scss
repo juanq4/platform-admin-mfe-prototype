@@ -1,0 +1,43 @@
+@import "/src/styles/scss/variables";
+@import "/src/styles/scss/mixins";
+
+.organization-entitlements {
+
+  .nui-tabs--v1 .nui-tabs_item--selected {
+    pointer-events: all;
+  }
+
+  &_tabs {
+    flex-grow: 1;
+
+    .nui-tabs_item--selected {
+      pointer-events: all;
+    }
+  }
+
+  &_delete-button {
+    margin-left: gux(1);
+    opacity: 0;
+    transition: opacity $transition-duration--default $transition-timing-function--default;
+  }
+
+  &_toolbar {
+    width: 100%;
+
+    &.nui-toolbar--v1 {
+      .nui-toolbar {
+        &_inner {
+          min-height: inherit;
+        }
+
+        &_row {
+          padding: 0;
+        }
+      }
+    }
+  }
+
+  .nui-tabs_item:hover &_delete-button {
+    opacity: 1;
+  }
+}

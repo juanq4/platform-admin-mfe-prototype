@@ -1,0 +1,5 @@
+mutation NotificationToken {
+  notificationToken {
+    token
+  }
+}
