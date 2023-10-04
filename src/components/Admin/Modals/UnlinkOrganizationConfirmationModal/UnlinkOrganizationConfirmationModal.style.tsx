@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 import type { ButtonProps } from "@q4/nimbus-ui";
 import { Button, ButtonTheme, Modal } from "@q4/nimbus-ui";
-import theme from "../../../../styles/theme";
 
 export const UnlinkModal = styled(Modal)`
   .nui-modal_container {
@@ -17,17 +16,17 @@ export const UnlinkModal = styled(Modal)`
     .nui-modal_footer {
       display: flex;
       justify-content: center;
-      background-color: ${theme.colors.slate};
+      background-color: #2a3035;
 
       .cancel-btn {
-        background: ${theme.colors.darkSlate};
-        border-color: ${theme.colors.darkSlate};
-        color: ${theme.colors.white};
+        background: #1d2124;
+        border-color: #1d2124;
+        color: #ffffff;
       }
 
       .nui-button--danger.nui-button--disabled {
-        background-color: ${theme.colors.danger};
-        color: ${theme.colors.white};
+        background-color: #d83e38;
+        color: #ffffff;
       }
     }
   }
@@ -55,13 +54,13 @@ export const ModalMessage = styled.div`
 `;
 
 export const ConfirmationMessage = styled.p`
-  color: ${theme.colors.lightSlate};
+  color: 545B62;
   margin: 0px;
   margin-bottom: 20px;
 `;
 
 export const WarningMessage = styled.p`
-  color: ${theme.colors.danger};
+  color: #d83e38;
   margin: 0px;
 `;
 
@@ -69,7 +68,7 @@ export const CloseButton = styled((props: ButtonProps) => <Button theme={ButtonT
   right: 8px;
   top: 8px;
   position: absolute;
-  color: ${theme.colors.slate};
+  color: #2a3035;
   font-size: 16px;
   background: none;
   height: 16px;
