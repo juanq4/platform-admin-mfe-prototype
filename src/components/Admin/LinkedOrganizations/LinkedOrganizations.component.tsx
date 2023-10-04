@@ -16,7 +16,7 @@ import {
   useSearch,
 } from "../../../hooks";
 import { useUnlinkOrganizations } from "../../../hooks/_apollo";
-import { AdminOrganizationsTableCellRenderer } from "../../../modules/Admin/Details/Organizations.definition";
+import { AdminOrganizationsTableCellRenderer } from "../../../modules/Admin/Organizations/Organizations.definition";
 import { getOrganizationEditLinkedOrganizationsRoute } from "../../../utils";
 import { mapIdToCopyCell, mapIdToStatusCell } from "../EntityTable";
 import type { StatusCellProps, CopyCellProps } from "../EntityTable";

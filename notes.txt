@@ -1,5 +1,4 @@
-Current:
-  src\modules\admin\Admin.module.tsx
+https://docs.google.com/document/d/18qGuxiEmhAZzKmFfxJAxZtl3GlUrGhPLgu_vk7qTxbU/edit
 
 TODO
 
