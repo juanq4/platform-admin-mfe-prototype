@@ -4,7 +4,6 @@ import { ThemeProvider } from "@emotion/react";
 import { StyleGuide, ConfigProvider as NimbusConfig } from "@q4/nimbus-ui";
 import type { RenderOptions, RenderResult } from "@testing-library/react";
 import { render } from "@testing-library/react";
-import theme from "../styles/theme";
 
 // https://testing-library.com/docs/react-testing-library/setup/
 const customRender = (
@@ -17,7 +16,7 @@ const customRender = (
     wrapper: ({ children }) => (
       <NimbusConfig styleGuide={styleGuide}>
         <ApolloMockedProvider>
-          <ThemeProvider theme={theme}>{children}</ThemeProvider>
+          <ThemeProvider>{children}</ThemeProvider>
         </ApolloMockedProvider>
       </NimbusConfig>
     ),
