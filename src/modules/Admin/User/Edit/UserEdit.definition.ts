@@ -1,5 +1,5 @@
 import { IdModelBase, isNullOrWhiteSpace } from "@q4/nimbus-ui";
-import { AdminUserFormIdModel } from "../../../../components/Admin/Forms";
+import { AdminUserFormIdModel } from "../../../../components/Admin/Forms/User/AdminUserForm.definition";
 import { AdminRoutePath } from "../../../../configurations";
 import type { User } from "../../../../definitions";
 

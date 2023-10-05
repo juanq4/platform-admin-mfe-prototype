@@ -1,9 +1,8 @@
 import { MockUserWithId } from "../../../../../../__mocks__";
 import { AdminRoutePath, RoutePathIdLabel } from "../../../../../../configurations";
-import { getOrganizationEditRoute } from "../../../../../../utils";
+import type { UsersEditSpecRouteConfig as RouteConfig } from "../../../../../../utils";
+import { getOrganizationEditRoute, testUserEdit } from "../../../../../../utils";
 import { OrganizationsUserEditDefault } from "../../../../../../utils/organization/organization.definition";
-import type { UsersEditSpecRouteConfig as RouteConfig } from "../../../../utils";
-import { testUserEdit } from "../../../../utils";
 import { OrganizationsUserEditViewIdModel } from "./OrganizationsUserEdit.definition";
 
 const { organizationId } = MockUserWithId;

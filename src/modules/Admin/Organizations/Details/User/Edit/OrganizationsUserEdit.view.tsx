@@ -1,7 +1,8 @@
 import { isNullOrWhiteSpace } from "@q4/nimbus-ui";
 import { memo, useMemo } from "react";
 import { useHistory, useLocation, useParams } from "react-router-dom";
-import { AdminUserForm, AdminUserFormMode } from "../../../../../../components/Admin/Forms";
+import { AdminUserForm } from "../../../../../../components/Admin/Forms/User/AdminUserForm.component";
+import { AdminUserFormMode } from "../../../../../../components/Admin/Forms/User/AdminUserForm.definition";
 import { RoutePathIdLabel } from "../../../../../../configurations";
 import { useClaims, useUserEdit } from "../../../../../../hooks";
 import { getOrganizationDetailsMode, getOrganizationsUserEditReturnUrl } from "../../../../../../utils";

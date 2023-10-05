@@ -1,9 +1,9 @@
 import type { ApolloError } from "@apollo/client";
 import React from "react";
 import { Auth0HookMock } from "../../__mocks__/contexts/Auth0Context.mock";
+import { RootViewIdModel } from "../../components/Root/Root.definition";
 import { TokenClaim } from "../../definitions";
 import { useUserQuery, useOrganizationQuery, useOrganizationsManagedByUserQuery } from "../../schemas/generated/graphql";
-import { RootViewIdModel } from "../../trunk/Root/Root.definition";
 import { throwError } from "../../utils/error/error.utils";
 import { render, screen, waitFor } from "../../utils/testUtils";
 import { UserProvider } from "./user.context";

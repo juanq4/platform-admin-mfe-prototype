@@ -7,4 +7,5 @@ export * from "./useIdTokenClaims";
 export * from "./useOrganization";
 export * from "./useQuery";
 export * from "./useTeam";
+export * from "./useToastNotificationService";
 export * from "./useUser";

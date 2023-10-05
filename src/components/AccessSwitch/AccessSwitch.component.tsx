@@ -1,6 +1,6 @@
 import { Children, memo, useMemo } from "react";
 import { Switch } from "react-router-dom";
-import { mapRoutesByPermission } from "../../utils";
+import { mapRoutesByPermission } from "../../utils/permission/permission.utils";
 import type { AccessSwitchProps, AccessSwitchRoute } from "./AccessSwitch.definition";
 
 const AccessSwitchBase = (props: AccessSwitchProps): JSX.Element => {

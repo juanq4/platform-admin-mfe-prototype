@@ -1,6 +1,6 @@
 import { MockUser } from "../../../../__mocks__/";
 import { AdminRoutePath } from "../../../../configurations";
-import { testUserCreate } from "../../utils";
+import { testUserCreate } from "../../../../utils";
 import { UsersCreateReturnRoute, UsersCreateViewIdModel } from "./UsersCreate.definition";
 
 const mockHistoryPush = jest.fn();

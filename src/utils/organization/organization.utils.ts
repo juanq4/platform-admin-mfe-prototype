@@ -11,12 +11,12 @@ import type {
   OrganizationTypeOption,
   Team,
 } from "../../definitions";
+import { SiteFilterActive, SiteFilterLive, SiteFilterStatus } from "../../definitions";
 import type { OrganizationMutationModel } from "../../hooks";
 import {
   OrganizationCurrencyLabel,
   OrganizationDetailsMode,
 } from "../../modules/Admin/Organizations/Details/OrganizationDetails.definition";
-import { SiteFilterActive, SiteFilterLive, SiteFilterStatus } from "../../definitions";
 import { hasRequiredPermission } from "../permission/permission.utils";
 import { OrganizationsUserEditDefault as ViewDefaults } from "./organization.definition";
 
