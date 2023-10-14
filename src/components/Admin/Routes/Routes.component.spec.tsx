@@ -19,9 +19,9 @@ import type { UsersQueryVariables } from "../../../schemas/generated/graphql";
 import { getDefaultAdminRoute } from "../../../utils/route/route.utils";
 import { render, screen } from "../../../utils/testUtils";
 import { AdminOrganizationTableDefault } from "../Tables/organization/AdminOrganizationTable.definition";
+import { AdminUserTableDefault } from "../Tables/user/AdminUserTable.definition";
 import { AdminRoutes } from "./Routes.component";
 import { AdminRoutesIdModel } from "./Routes.definition";
-import { AdminUserTableDefault } from "../Tables/user/AdminUserTable.definition";
 
 jest.mock("../../../utils/route/route.utils");
 const mockGetDefaultAdminRoute = getDefaultAdminRoute as jest.Mock;
