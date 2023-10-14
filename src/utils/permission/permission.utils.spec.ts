@@ -1,9 +1,11 @@
 import { isEmpty } from "@q4/nimbus-ui";
 import { Entitlement, Permission } from "@q4/platform-definitions";
-import { LDContextMock } from "../../__mocks__";
-import type { Features, PermissionCondition } from "../../configurations";
-import { FeatureFlag, PermissionCollection, PermissionRule, AdminRoutePath, AppRoutePath } from "../../configurations";
-import { hasRequiredPermission, mapRoutesByPermission } from "./permission.utils";
+import { LDContextMock } from "../../__mocks__/contexts/LDContextMock.mock";
+import type { PermissionCondition } from "../../configurations/access.configuration";
+import { PermissionCollection, PermissionRule } from "../../configurations/access.configuration";
+import type { Features } from "../../configurations/feature.configuration";
+import { FeatureFlag } from "../../configurations/feature.configuration";
+import { AppRoutePath, AdminRoutePath } from "../../configurations/navigation.configuration";
 
 type HasRequiredPermissionTestCase = {
   id: string;

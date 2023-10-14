@@ -1,4 +1,4 @@
-import { FeatureFlag } from "../../configurations";
+import { FeatureFlag } from "../../configurations/feature.configuration";
 import { isFeatureTrue } from "./feature.utils";
 
 const AdminFeatureTrue = {

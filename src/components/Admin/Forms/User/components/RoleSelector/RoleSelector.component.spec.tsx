@@ -2,14 +2,14 @@ import { SelectClassName, StyleGuide } from "@q4/nimbus-ui";
 import { Entitlement } from "@q4/platform-definitions";
 import type { ReactElement } from "react";
 import React from "react";
-import {
-  MockAdminOrganization,
-  MockAgencyOrganization,
-  MockCorporateOrganization,
-  MockNoRolesUser,
-} from "../../../../../../__mocks__";
-import { AppRole, PermissionCollection } from "../../../../../../configurations";
-import { useClaims } from "../../../../../../hooks/useClaims";
+// import {
+//   MockAdminOrganization,
+//   MockAgencyOrganization,
+//   MockCorporateOrganization,
+//   MockNoRolesUser,
+// } from "../../../../../../__mocks__";
+import { AppRole, PermissionCollection } from "../../../../../../configurations/access.configuration";
+import { useClaims } from "../../../../../../hooks/useClaims/useClaims.hook";
 import { fireEvent, render, screen } from "../../../../../../utils/testUtils";
 import { AdminUserFormIdModel } from "../../AdminUserForm.definition";
 import { RoleSelector } from "./RoleSelector.component";

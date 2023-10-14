@@ -1,6 +1,6 @@
 import { AutomationListId, IdModelBase } from "@q4/nimbus-ui";
 import type { Key } from "react";
-import type { Organization } from "../../../../../definitions";
+import type { Organization } from "../../../../../definitions/organization.definition";
 import type { EntityTableCellPropsBase } from "../../EntityTable.definition";
 
 export type TickerCellProps = EntityTableCellPropsBase<Organization["identifiers"]>;

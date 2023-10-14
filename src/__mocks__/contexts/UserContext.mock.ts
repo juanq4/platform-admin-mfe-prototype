@@ -1,5 +1,6 @@
-import type { UserContextState } from "../../contexts";
-import { MockOrganization1, MockUser2 } from "../data";
+import type { UserContextState } from "../../contexts/user/user.definition";
+import { MockOrganization1 } from "../data/organizations.mock";
+import { MockUser2 } from "../data/users.mock";
 
 export const UserContextMock: UserContextState = {
   userId: MockUser2.id,

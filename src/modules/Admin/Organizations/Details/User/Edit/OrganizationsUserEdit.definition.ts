@@ -1,7 +1,8 @@
+import type { User } from "@auth0/auth0-react";
 import { IdModelBase, isNullOrWhiteSpace } from "@q4/nimbus-ui";
-import { AdminUserFormIdModel } from "../../../../../../components/Admin/Forms";
-import type { RoutePathIdLabel } from "../../../../../../configurations";
-import type { Organization, User } from "../../../../../../definitions";
+import type { Organization } from "@q4/platform-definitions";
+import { AdminUserFormIdModel } from "../../../../../../components/Admin/Forms/User/AdminUserForm.definition";
+import type { RoutePathIdLabel } from "../../../../../../configurations/navigation.configuration";
 
 export interface OrganizationsUserEditParams {
   [RoutePathIdLabel.Id]: Organization["id"];

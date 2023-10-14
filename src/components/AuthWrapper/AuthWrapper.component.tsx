@@ -1,11 +1,10 @@
 import type { AppState } from "@auth0/auth0-react";
 import { Auth0Provider } from "@auth0/auth0-react";
 import { createBrowserHistory } from "history";
-import { useCallback } from "react";
+import React, { useCallback } from "react";
 import { Router } from "react-router-dom";
-import { env } from "../../../config";
-import { AuthenticationGate } from "./AuthenticationGate.component";
 import "../../../node_modules/@q4/nimbus-ui/dist/_styles.css";
+import { env } from "../../../config/env/env";
 
 export const history = createBrowserHistory();
 

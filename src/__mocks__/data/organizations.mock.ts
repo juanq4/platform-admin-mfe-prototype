@@ -1,5 +1,5 @@
 import { Entitlement, OrganizationCurrency, OrganizationRegion, OrganizationType } from "@q4/platform-definitions";
-import { Organization } from "../../definitions";
+import { Organization } from "../../definitions/organization.definition";
 
 export const MockOrganization1 = new Organization({
   active: true,

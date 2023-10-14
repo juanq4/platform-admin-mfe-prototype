@@ -1,6 +1,8 @@
-import { MockOrganization1, MockUser } from "../../../../../../__mocks__";
-import { AdminRoutePath } from "../../../../../../configurations";
-import { getOrganizationEditRoute, testUserCreate } from "../../../../../../utils";
+import { MockOrganization1 } from "../../../../../../__mocks__/data/organizations.mock";
+import { MockUser } from "../../../../../../__mocks__/data/users.mock";
+import { AdminRoutePath } from "../../../../../../configurations/navigation.configuration";
+import { getOrganizationEditRoute } from "../../../../../../utils/organization/organization.utils";
+import { testUserCreate } from "../../../../../../utils/users/usersCreate.spec.utils";
 import { OrganizationsUserCreateViewIdModel } from "./OrganizationsUserCreate.definition";
 
 const organizationId = MockOrganization1.id;

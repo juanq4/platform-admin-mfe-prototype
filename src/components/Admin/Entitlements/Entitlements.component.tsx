@@ -15,20 +15,22 @@ import {
 import { Entitlement as EntitlementConstant } from "@q4/platform-definitions";
 import { camelCase, startCase } from "lodash";
 import type { ReactNode } from "react";
-import { memo, useCallback, useMemo, useRef, useState } from "react";
-import type { CamelCaseEntitlement } from "../../../configurations";
-import { EntitlementLabel, FeatureFlag } from "../../../configurations";
-import { useClaims, useFeatureFlags } from "../../../hooks";
+import React, { memo, useCallback, useMemo, useRef, useState } from "react";
+import type { CamelCaseEntitlement } from "../../../configurations/entitlement.configuration";
+import { EntitlementLabel } from "../../../configurations/entitlement.configuration";
+import { FeatureFlag } from "../../../configurations/feature.configuration";
+import { useClaims } from "../../../hooks/useClaims/useClaims.hook";
+import { useFeatureFlags } from "../../../hooks/useFeatureFlags/useFeatureFlags.hook";
 import { OrganizationDetailsMode } from "../../../modules/Admin/Organizations/Details/OrganizationDetails.definition";
 import {
   isEngagementAnalyticsEntitlement,
-  getOrganizationDetailsMode,
   getDefaultEntitlementSelection,
-} from "../../../utils";
-import { AdminStudioSitesTable } from "../Tables";
+} from "../../../utils/entitlement/entitlement.utils";
+import { getOrganizationDetailsMode } from "../../../utils/organization/organization.utils";
+import { AdminStudioSitesTable } from "../Tables/sites/AdminStudioSitesTable.component";
 import { EngagementAnalyticsTierSelectorComponent } from "./EngagementAnalyticsTierSelector/EngagementAnalyticsTierSelector.component";
-import { EntitlementsClassName, EntitlementsIdModel, BaseEntitlementKeys } from "./Entitlements.definition";
 import type { EntitlementsProps, Entitlement } from "./Entitlements.definition";
+import { EntitlementsClassName, EntitlementsIdModel, BaseEntitlementKeys } from "./Entitlements.definition";
 
 const EntitlementsBase = (props: EntitlementsProps): JSX.Element => {
   const {

@@ -1,10 +1,10 @@
 import { isNullOrWhiteSpace } from "@q4/nimbus-ui";
 import { useCallback, useMemo, useState } from "react";
 import { useAdminData } from "../../../contexts/admin/data/data.hook";
-import type { User } from "../../../definitions";
-import { QueryPaginationDefault } from "../../../hooks/useQuery";
-import type { UsersQueryVariables } from "../../../hooks/useUser";
+import type { User } from "../../../definitions/user.definition";
+import type { UsersQueryVariables } from "../../../schemas/generated/graphql";
 import { useUsersQuery } from "../../../schemas/generated/graphql";
+import { QueryPaginationDefault } from "../../useQuery/useQuery.definition";
 import { usePagination } from "../usePagination/usePagination.hook";
 import type { AdminUserTableHookModel, AdminUserTableHookProps } from "./useAdminUserTable.definition";
 

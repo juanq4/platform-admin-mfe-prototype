@@ -1,17 +1,23 @@
 import { ButtonClassName, TableClassName, ToastContainer } from "@q4/nimbus-ui";
 import type { GridReadyEvent } from "@q4/nimbus-ui/dist/dependencies/agGrid/community";
 import React from "react";
-import { MockOrganization1, MockOrganizations, MockQ4AdminUser, MockUser14, MockUsers } from "../../../../../../__mocks__";
+import { MockOrganization1, MockOrganizations } from "../../../../../../__mocks__/data/organizations.mock";
 import { MockTeam1, MockTeam2 } from "../../../../../../__mocks__/data/teams.mock";
-import { AdminUserTableHeader } from "../../../../../../components";
-import type { Organization, User } from "../../../../../../definitions";
-import { TeamCreateMessage, TeamPostKey, useTable, useToastNotificationService } from "../../../../../../hooks";
+import { MockUsers, MockUser14, MockQ4AdminUser } from "../../../../../../__mocks__/data/users.mock";
+import { AdminUserTableHeader } from "../../../../../../components/Admin/Tables/user/AdminUserTable.definition";
+import type { Organization } from "../../../../../../definitions/organization.definition";
+import type { User } from "../../../../../../definitions/user.definition";
 import { useClaims } from "../../../../../../hooks/useClaims/useClaims.hook";
 import { useOrganizationQuery } from "../../../../../../hooks/useOrganization/useOrganization.hook";
+import { TeamPostKey, TeamCreateMessage } from "../../../../../../hooks/useTeam/useTeam.definition";
 import { useTeamsQuery, useTeamCreate } from "../../../../../../hooks/useTeam/useTeam.hook";
+import { useToastNotificationService } from "../../../../../../hooks/useToastNotificationService/useToastNotificationService.hook";
 import { useUsersQuery } from "../../../../../../hooks/useUser/useUser.hook";
 import { useOrganizationsQuery } from "../../../../../../schemas/generated/graphql";
-import { getOrganizationEditRoute, getOrganizationLabelWithTicker } from "../../../../../../utils";
+import {
+  getOrganizationLabelWithTicker,
+  getOrganizationEditRoute,
+} from "../../../../../../utils/organization/organization.utils";
 import { getOrganizationRouteBasedOnPermission } from "../../../../../../utils/route/route.utils";
 import { render, screen, fireEvent, waitFor } from "../../../../../../utils/testUtils";
 import { TeamDescriptions, TeamErrorsLanguage } from "../OrganizationsTeam.definition";

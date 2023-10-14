@@ -1,9 +1,8 @@
 import React from "react";
-import { CheckMarkCellIdModel } from "..";
-import { getAppWrapper } from "../../../../../__mocks__";
+// import { getAppWrapper } from "../../../../../__mocks__";
 import { render, screen } from "../../../../../utils/testUtils";
 import { CheckMarkCell } from "./CheckMarkCell.component";
-import { CheckMarkCellListId } from "./CheckMarkCell.definition";
+import { CheckMarkCellIdModel, CheckMarkCellListId } from "./CheckMarkCell.definition";
 import { mapIdToCheckMarkCell } from "./CheckMarkCell.utils";
 
 function testCheckMarkCell(id: string): void {

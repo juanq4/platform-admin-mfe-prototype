@@ -1,13 +1,17 @@
 import { isNullOrWhiteSpace } from "@q4/nimbus-ui";
-import { memo, useMemo } from "react";
+import React, { memo, useMemo } from "react";
 import { useHistory, useLocation, useParams } from "react-router-dom";
 import { AdminUserForm } from "../../../../../../components/Admin/Forms/User/AdminUserForm.component";
 import { AdminUserFormMode } from "../../../../../../components/Admin/Forms/User/AdminUserForm.definition";
-import { RoutePathIdLabel } from "../../../../../../configurations";
-import { useClaims, useUserEdit } from "../../../../../../hooks";
-import { getOrganizationDetailsMode, getOrganizationsUserEditReturnUrl } from "../../../../../../utils";
-import { OrganizationsUserEditViewIdModel as ViewIdModel } from "./OrganizationsUserEdit.definition";
+import { RoutePathIdLabel } from "../../../../../../configurations/navigation.configuration";
+import { useUserEdit } from "../../../../../../hooks/admin/useUserEdit/useUserEdit.hook";
+import { useClaims } from "../../../../../../hooks/useClaims/useClaims.hook";
+import {
+  getOrganizationsUserEditReturnUrl,
+  getOrganizationDetailsMode,
+} from "../../../../../../utils/organization/organization.utils";
 import type { OrganizationsUserEditParams } from "./OrganizationsUserEdit.definition";
+import { OrganizationsUserEditViewIdModel as ViewIdModel } from "./OrganizationsUserEdit.definition";
 
 const OrganizationsUserEditBase = (): JSX.Element => {
   const params = useParams<OrganizationsUserEditParams>();

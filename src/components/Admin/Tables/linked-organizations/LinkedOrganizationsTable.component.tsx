@@ -1,7 +1,7 @@
-import { memo, useMemo, useRef } from "react";
+import React, { memo, useMemo, useRef } from "react";
 import { AdminOrganizationsTableCellRenderer } from "../../../../modules/Admin/Organizations/Organizations.definition";
-import type { EntityTableColumnDef } from "../../EntityTable/";
-import { EntityTable } from "../../EntityTable/";
+import { EntityTable } from "../../EntityTable/EntityTable.component";
+import type { EntityTableColumnDef } from "../../EntityTable/EntityTable.definition";
 import type { LinkedOrganizationsTableProps } from "./LinkedOrganizationTable.definition";
 import {
   AdminLinkedTableHeader,

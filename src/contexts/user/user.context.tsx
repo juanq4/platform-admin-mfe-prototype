@@ -4,7 +4,7 @@ import { createContext, useCallback, useEffect, useMemo, useState } from "react"
 import { useHistory } from "react-router-dom";
 import { managedOrganizationIdKey } from "../../components/AuthWrapper/AuthWrapper.definition";
 import { AppRoutePath } from "../../configurations/navigation.configuration";
-import { TokenClaim } from "../../definitions";
+import { TokenClaim } from "../../definitions/token.definition";
 import { useOrganizationQuery, useUserQuery } from "../../schemas/generated/graphql";
 import { throwError } from "../../utils/error/error.utils";
 import type { UserContextState, UserProviderProps } from "./user.definition";

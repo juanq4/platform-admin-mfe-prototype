@@ -1,6 +1,6 @@
 import React from "react";
 import { screen, render } from "../../../../utils/testUtils";
-import { OrganizationTeamsLanguage } from "../../Teams";
+import { OrganizationTeamsLanguage } from "../../Teams/Teams.definition";
 import { AdminTeamTable } from "./AdminTeamTable.component";
 import type { AdminTeamTableProps } from "./AdminTeamTable.definition";
 import { AdminTeamTableEntityKey, AdminTeamTableHeader, AdminTeamTableIdModel } from "./AdminTeamTable.definition";

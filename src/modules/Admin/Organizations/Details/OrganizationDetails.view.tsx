@@ -19,41 +19,50 @@ import {
   SpinnerTheme,
   Select,
   RadioButton,
+  CopyButton,
 } from "@q4/nimbus-ui";
-import { OrganizationType, Entitlement as EntitlementConstant, OrganizationRegion } from "@q4/platform-definitions";
-import { memo, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
-import { generatePath, useHistory, useLocation, useParams } from "react-router-dom";
-import { CopyButton } from "../../../../components/Admin/CopyButton";
-import type { Entitlement } from "../../../../components/Admin/Entitlements/Entitlements.definition";
-import { OrganizationFeatureManagement } from "../../../../components/Admin/FeatureManagement";
-import { AdminLoadingSpinner } from "../../../../components/Admin/LoadingSpinner";
-import { AdminRoutePath, RoutePathIdLabel } from "../../../../configurations";
-import { AdminLoadingContext, useAdminEditContext } from "../../../../contexts";
-import type { OrganizationCurrencyOption, OrganizationStockInfo, OrganizationTypeOption } from "../../../../definitions";
-import { Organization, OrganizationEditState } from "../../../../definitions";
+import type { Entitlement } from "@q4/platform-definitions";
 import {
-  OrganizationCreateMessage,
+  OrganizationType,
+  Entitlement as EntitlementConstant,
+  OrganizationRegion,
+  Organization,
+} from "@q4/platform-definitions";
+import React, { memo, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
+import { generatePath, useHistory, useLocation, useParams } from "react-router-dom";
+import { OrganizationFeatureManagement } from "../../../../components/Admin/FeatureManagement/FeatureManagement.component";
+import { AdminLoadingSpinner } from "../../../../components/Admin/LoadingSpinner/LoadingSpinner.component";
+import { AdminRoutePath, RoutePathIdLabel } from "../../../../configurations/navigation.configuration";
+import { useAdminEditContext } from "../../../../contexts/admin/edit/useEditContext.hook";
+import { AdminLoadingContext } from "../../../../contexts/admin/loading/loading.context";
+import type {
+  OrganizationStockInfo,
+  OrganizationTypeOption,
+  OrganizationCurrencyOption,
+} from "../../../../definitions/organization.definition";
+import { Organization, OrganizationEditState } from "../../../../definitions/organization.definition";
+import { useClaims } from "../../../../hooks/useClaims/useClaims.hook";
+import {
   OrganizationEditMessage,
-  useClaims,
-  useToastNotificationService,
+  OrganizationCreateMessage,
+} from "../../../../hooks/useOrganization/useOrganization.definition";
+import {
   useOrganizationCreate,
-  useOrganizationQuery,
   useOrganizationUpdate,
   useSitesByOrganizationsLazyQuery,
-} from "../../../../hooks";
-import { OrganizationsDocument } from "../../../../schemas/generated/graphql";
-import {
-  buildOrganizationTypeOptions,
-  checkIfEntitlementExists,
-  getOrganizationCreateTeamNewRoute,
-  getOrganizationDetailsMode,
-  getOrganizationEditUserNewRoute,
-  filterEntitlement,
-  siteFilter,
-  buildOrganizationCurrencyOptions,
-} from "../../../../utils";
+} from "../../../../hooks/useOrganization/useOrganization.hook";
+import { useToastNotificationService } from "../../../../hooks/useToastNotificationService/useToastNotificationService.hook";
+import { OrganizationsDocument, useOrganizationQuery } from "../../../../schemas/generated/graphql";
+import { checkIfEntitlementExists, filterEntitlement } from "../../../../utils/entitlement/entitlement.utils";
 import { mapErrorsToKey } from "../../../../utils/error/error.utils";
-import type { OrganizationDetailsError, OrganizationsEditParam } from "./OrganizationDetails.definition";
+import {
+  getOrganizationDetailsMode,
+  siteFilter,
+  getOrganizationEditUserNewRoute,
+  buildOrganizationTypeOptions,
+  buildOrganizationCurrencyOptions,
+  getOrganizationCreateTeamNewRoute,
+} from "../../../../utils/organization/organization.utils";
 import {
   OrganizationDetailsClassName,
   OrganizationsEditErrorSelectTheme,
@@ -64,6 +73,7 @@ import {
   OrganizationDetailsModeData,
   OrganizationRegionLabel,
 } from "./OrganizationDetails.definition";
+import type { OrganizationDetailsError, OrganizationsEditParam } from "./OrganizationDetails.definition";
 import { StockTicker } from "./StockTicker/StockTicker.view";
 
 const OrganizationDetailsBase = (): JSX.Element => {

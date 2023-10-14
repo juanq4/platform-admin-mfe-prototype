@@ -1,8 +1,9 @@
 import { Entitlement } from "@q4/platform-definitions";
 import { mockFlags } from "jest-launchdarkly-mock";
 import React from "react";
-import { getAppWrapper, NimbusConfig } from "../../../__mocks__";
-import { FeatureFlag } from "../../../configurations";
+import { NimbusConfig } from "../../../__mocks__/contexts/NimbusConfig.mock";
+import { getAppWrapper } from "../../../__mocks__/utils/wrappers";
+import { FeatureFlag } from "../../../configurations/feature.configuration";
 import { useClaims } from "../../../hooks/useClaims/useClaims.hook";
 import { OrganizationDetailsMode } from "../../../modules/Admin/Organizations/Details/OrganizationDetails.definition";
 import { getOrganizationDetailsMode } from "../../../utils/organization/organization.utils";

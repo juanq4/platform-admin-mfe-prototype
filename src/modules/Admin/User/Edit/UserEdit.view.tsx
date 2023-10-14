@@ -1,10 +1,12 @@
 import React, { memo, useMemo } from "react";
 import { useHistory, useParams } from "react-router-dom";
-import { AdminUserForm, AdminUserFormMode } from "../../../../components/Admin/Forms";
-import { RoutePathIdLabel } from "../../../../configurations";
-import { useClaims, useUserEdit } from "../../../../hooks";
-import { UserEditViewDefault, UserEditViewIdModel as ViewIdModel } from "./UserEdit.definition";
+import { AdminUserForm } from "../../../../components/Admin/Forms/User/AdminUserForm.component";
+import { AdminUserFormMode } from "../../../../components/Admin/Forms/User/AdminUserForm.definition";
+import { RoutePathIdLabel } from "../../../../configurations/navigation.configuration";
+import { useUserEdit } from "../../../../hooks/admin/useUserEdit/useUserEdit.hook";
+import { useClaims } from "../../../../hooks/useClaims/useClaims.hook";
 import type { UserEditParams } from "./UserEdit.definition";
+import { UserEditViewDefault, UserEditViewIdModel as ViewIdModel } from "./UserEdit.definition";
 
 const UsersEditBase = (): JSX.Element => {
   const params = useParams<UserEditParams>();

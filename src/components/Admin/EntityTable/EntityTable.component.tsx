@@ -21,12 +21,13 @@ import {
 import { Environment } from "@q4/platform-sdk-definitions";
 import { useMemo, useRef } from "react";
 import { env } from "../../../../config/env/env";
-import ErrorImage from "../../../assets/admin/adminError.svg";
-import { useTable } from "../../../hooks/admin";
+import ErrorImage from "../../../assets/icons/adminError.svg";
+import { useTable } from "../../../hooks/admin/useTable/useTable.hook";
 import { EntityTableClassName, EntityTableIdModel, EntityTableState } from "./EntityTable.definition";
 import type { EntityTableProps } from "./EntityTable.definition";
-import type { EntityTablePaginationDirection } from "./components/";
-import { EntityTablePagination, EntityTablePaginationDefault } from "./components/";
+import { EntityTablePagination } from "./components/Pagination/Pagination.component";
+import type { EntityTablePaginationDirection } from "./components/Pagination/Pagination.definition";
+import { EntityTablePaginationDefault } from "./components/Pagination/Pagination.definition";
 
 const { InitialPage } = EntityTablePaginationDefault;
 

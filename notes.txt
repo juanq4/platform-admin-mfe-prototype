@@ -1,5 +1,7 @@
 https://docs.google.com/document/d/18qGuxiEmhAZzKmFfxJAxZtl3GlUrGhPLgu_vk7qTxbU/edit
 
+Current LoadingSpinner
+
 TODO
 
 - Remove unused (but components, module)
@@ -11,8 +13,11 @@ TODO
   - Remove tests in platform-shell
 - Create launch darkly project
   - Add flags
-  - Remove flags from platform-shell
+  - Remove flags from platform-shellß
 
 FIXME: // @jm fixme
 - src/context/user
+
+DONE
+- Fix circular references
 

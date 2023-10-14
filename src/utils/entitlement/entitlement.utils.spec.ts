@@ -1,6 +1,6 @@
 import { Entitlement } from "@q4/platform-definitions";
-import type { EntitlementCondition } from "../../configurations";
-import { FeatureFlag } from "../../configurations";
+import type { EntitlementCondition } from "../../configurations/entitlement.configuration";
+import { FeatureFlag } from "../../configurations/feature.configuration";
 import { getAppEntitlementInUse, hasRequiredEntitlement } from "./entitlement.utils";
 
 describe("hasRequiredEntitlement", () => {

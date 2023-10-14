@@ -1,6 +1,6 @@
 import { OrganizationType } from "@q4/platform-definitions";
-import { GET_ORGANIZATION, GET_ORGANIZATIONS } from "../../schemas";
-import { MockOrganization12, MockOrganizations } from "../data";
+import { GET_ORGANIZATION, GET_ORGANIZATIONS } from "../../schemas/organizations/organizations.schema";
+import { MockOrganization12, MockOrganizations } from "../data/organizations.mock";
 
 export const getOrganizationAgencyMock = {
   request: {

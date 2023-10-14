@@ -1,10 +1,15 @@
 import "./OrganizationsSelectDropdown.component.scss";
 import type { ChipsItemProps } from "@q4/nimbus-ui";
 import { Chips, Field, isEmpty, isNullOrWhiteSpace, SelectPreset, Text } from "@q4/nimbus-ui";
-import { memo, useCallback, useMemo } from "react";
+import type { Organization } from "@q4/platform-definitions";
+import React, { memo, useCallback, useMemo } from "react";
 import { StatusCellLabel } from "../../../../../../../components/Admin/EntityTable/components/StatusCell/StatusCell.definition";
-import type { Organization, OrganizationTeamOption, Team } from "../../../../../../../definitions";
-import { getOrganizationLabelWithTicker, orderOrganizationsAlphabetically } from "../../../../../../../utils";
+import type { OrganizationTeamOption } from "../../../../../../../definitions/organization.definition";
+import type { Team } from "../../../../../../../definitions/team.definition";
+import {
+  orderOrganizationsAlphabetically,
+  getOrganizationLabelWithTicker,
+} from "../../../../../../../utils/organization/organization.utils";
 import { CustomGrid } from "../../Create/OrganizationTeamCreate.style";
 import {
   CustomAsyncSelect,

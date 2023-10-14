@@ -1,6 +1,6 @@
 import React from "react";
-import { MockUser } from "../../../__mocks__";
-import { QueryPaginationDefault } from "../../../hooks";
+import { MockUser } from "../../../__mocks__/data/users.mock";
+import { QueryPaginationDefault } from "../../../hooks/useQuery/useQuery.definition";
 import { useUsersByOrgQuery } from "../../../schemas/generated/graphql";
 import { fireEvent, render, screen, waitFor } from "../../../utils/testUtils";
 import { OrganizationUsers } from "./Users.component";

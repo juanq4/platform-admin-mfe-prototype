@@ -1,8 +1,12 @@
 import { IdModelBase, isNullOrWhiteSpace } from "@q4/nimbus-ui";
-import type { Organization } from "../../../../definitions";
-import type { OrganizationsQueryVariables } from "../../../../hooks";
-import { CopyCellListId, EntityTableIdModel, StatusCellListId, TypeCellListId, TickerCellListId } from "../../EntityTable/";
-import type { EntityTableProps } from "../../EntityTable/";
+import type { Organization } from "../../../../definitions/organization.definition";
+import type { OrganizationsQueryVariables } from "../../../../schemas/generated/graphql";
+import type { EntityTableProps } from "../../EntityTable/EntityTable.definition";
+import { EntityTableIdModel } from "../../EntityTable/EntityTable.definition";
+import { CopyCellListId } from "../../EntityTable/components/CopyCell/CopyCell.definition";
+import { StatusCellListId } from "../../EntityTable/components/StatusCell/StatusCell.definition";
+import { TickerCellListId } from "../../EntityTable/components/TickerCell/TickerCell.definition";
+import { TypeCellListId } from "../../EntityTable/components/TypeCell/TypeCell.definition";
 
 export enum AdminOrganizationsTableHeader {
   Name = "Organization Name",

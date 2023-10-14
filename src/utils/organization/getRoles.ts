@@ -1,9 +1,15 @@
 import { Entitlement, OrganizationType } from "@q4/platform-definitions";
-import type { Permission } from "@q4/platform-definitions";
-import { PermissionRule, CorporateRoles, Role, PermissionCollection, Q4Role, AppRole } from "../../configurations";
-import type { Organization } from "../../definitions";
-import { hasEngagementAnalyticsEntitlement } from "../entitlement";
-import { hasRequiredPermission } from "../permission";
+import type { Organization, Permission } from "@q4/platform-definitions";
+import { Role } from "@q4/platform-sdk-definitions";
+import {
+  PermissionRule,
+  PermissionCollection,
+  Q4Role,
+  AppRole,
+  CorporateRoles,
+} from "../../configurations/access.configuration";
+import { hasEngagementAnalyticsEntitlement } from "../entitlement/entitlement.utils";
+import { hasRequiredPermission } from "../permission/permission.utils";
 
 function hasPermission(userPermissions: Permission[], permissions: Permission[]): boolean {
   const adminPermissionCondition = {

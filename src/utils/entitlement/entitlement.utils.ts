@@ -1,7 +1,8 @@
 import { isEmpty } from "@q4/nimbus-ui";
 import { Entitlement, EngagementAnalyticsTier } from "@q4/platform-definitions";
-import type { EntitlementCondition, Features } from "../../configurations";
-import { isFeatureTrue } from "../feature";
+import type { EntitlementCondition } from "../../configurations/entitlement.configuration";
+import type { Features } from "../../configurations/feature.configuration";
+import { isFeatureTrue } from "../feature/feature.utils";
 
 export function hasRequiredEntitlement(
   entitlements: string[],

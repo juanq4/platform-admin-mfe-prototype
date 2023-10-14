@@ -1,10 +1,9 @@
 import { OrganizationType } from "@q4/platform-definitions";
 import React from "react";
-import { TypeCellIdModel } from "..";
-import { getAppWrapper } from "../../../../../__mocks__";
 import { render, screen } from "../../../../../utils/testUtils";
+import { TypeCellIdModel, TypeCellListId } from "../TypeCell/TypeCell.definition";
+// import { getAppWrapper } from "../../../../../__mocks__";
 import { TypeCell } from "./TypeCell.component";
-import { TypeCellListId } from "./TypeCell.definition";
 import { mapIdToTypeCell } from "./TypeCell.utils";
 
 const mockTypeCellValues = [null, OrganizationType.AGENCY, OrganizationType.CORP, OrganizationType.ADMIN];

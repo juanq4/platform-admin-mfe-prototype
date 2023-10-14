@@ -1,6 +1,6 @@
 import { useContext, useMemo } from "react";
 import { UserContext } from "../../contexts/user/user.context";
-import { TokenClaim } from "../../definitions";
+import { TokenClaim } from "../../definitions/token.definition";
 import type { Claims } from "./useClaims.definition";
 
 export const useClaims = (): Claims => {

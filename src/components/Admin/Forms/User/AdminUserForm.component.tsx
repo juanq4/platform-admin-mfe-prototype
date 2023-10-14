@@ -21,12 +21,13 @@ import {
 } from "@q4/nimbus-ui";
 import { Entitlement, Permission } from "@q4/platform-definitions";
 import { validate as validateEmail } from "email-validator";
-import { memo, useCallback, useMemo, useRef, useState } from "react";
+import React, { memo, useCallback, useMemo, useRef, useState } from "react";
 import { Role } from "../../../../configurations/access.configuration";
-import { UserApplications, User } from "../../../../definitions";
-import { useClaims, useToastNotificationService, useOrganizationQuery } from "../../../../hooks";
-import { UsersByOrgDocument } from "../../../../schemas/generated/graphql";
-import { mapErrorsToKey } from "../../../../utils";
+import { User, UserApplications } from "../../../../definitions/user.definition";
+import { useClaims } from "../../../../hooks/useClaims/useClaims.hook";
+import { useToastNotificationService } from "../../../../hooks/useToastNotificationService/useToastNotificationService.hook";
+import { UsersByOrgDocument, useOrganizationQuery } from "../../../../schemas/generated/graphql";
+import { mapErrorsToKey } from "../../../../utils/error/error.utils";
 import { NotFoundError } from "../../../Errors/NotFoundError/NotFoundError.component";
 import {
   AdminUserFormClassName,

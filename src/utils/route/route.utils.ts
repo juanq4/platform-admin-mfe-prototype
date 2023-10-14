@@ -2,10 +2,11 @@ import type { NavigationRoute } from "@q4/nimbus-ui";
 import { Permission } from "@q4/platform-definitions";
 import { matchPath } from "react-router";
 import { generatePath } from "react-router-dom";
-import { AccessRouteMap, AppRoutePath, AdminRoutePath } from "../../configurations";
+import { AccessRouteMap } from "../../configurations/access.configuration";
+import { AdminRoutePath, AppRoutePath } from "../../configurations/navigation.configuration";
 import { OrganizationDetailsMode } from "../../modules/Admin/Organizations/Details/OrganizationDetails.definition";
 import { getOrganizationDetailsMode } from "../organization/organization.utils";
-import { hasRequiredPermission } from "../permission/";
+import { hasRequiredPermission } from "../permission/permission.utils";
 
 export function getDefaultRedirectRoute(userPermissions: Permission[]): string {
   const { permissionCondition } = AccessRouteMap[AdminRoutePath.Organizations];

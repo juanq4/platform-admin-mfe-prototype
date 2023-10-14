@@ -1,8 +1,8 @@
 import { IdModelBase, isNullOrWhiteSpace } from "@q4/nimbus-ui";
-import type { Team } from "../../../../definitions";
-import type { QueryPaginationVariablesBase } from "../../../../hooks";
-import type { EntityTableProps } from "../../EntityTable";
-import { EntityTableIdModel } from "../../EntityTable";
+import type { Team } from "../../../../definitions/team.definition";
+import type { QueryPaginationVariablesBase } from "../../../../hooks/useQuery/useQuery.definition";
+import type { EntityTableProps } from "../../EntityTable/EntityTable.definition";
+import { EntityTableIdModel } from "../../EntityTable/EntityTable.definition";
 
 export const AdminTeamTableDefault = {
   ToolbarTitle: "Teams",

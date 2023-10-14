@@ -1,7 +1,8 @@
 import { TextPreset } from "@q4/nimbus-ui";
 import { Entitlement } from "@q4/platform-definitions";
 import { memo } from "react";
-import { isEngagementAnalyticsEntitlement } from "../../../../utils";
+// import { isEngagementAnalyticsEntitlement } from "../../../../utils";
+import { isEngagementAnalyticsEntitlement } from "../../../../utils/entitlement/entitlement.utils";
 import type { EngagementAnalyticsTierSelectorProps } from "./EngagementAnalyticsTierSelector.definition";
 import {
   EngagementAnalyticsTierFriendlyNames,

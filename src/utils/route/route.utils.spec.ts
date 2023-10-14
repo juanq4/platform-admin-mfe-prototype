@@ -1,4 +1,5 @@
-import { PermissionCollection, AdminRoutePath, AppRoutePath } from "../../configurations";
+import { PermissionCollection } from "../../configurations/access.configuration";
+import { AppRoutePath, AdminRoutePath } from "../../configurations/navigation.configuration";
 import { getDefaultRedirectRoute, getOrganizationRouteBasedOnPermission, isRoute } from "./route.utils";
 
 describe("getDefaultRedirectRoute", () => {

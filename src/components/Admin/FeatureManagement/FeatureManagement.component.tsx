@@ -1,24 +1,25 @@
 import "./FeatureManagement.component.scss";
 import { ButtonSize, getClassName, isNullOrWhiteSpace, Swapable, ToggleButtons, ToggleButtonsTheme } from "@q4/nimbus-ui";
 import type { ToggleButtonsProps } from "@q4/nimbus-ui";
+import type { Organization } from "@q4/platform-definitions";
 import { OrganizationType, Permission } from "@q4/platform-definitions";
 import type { KeyboardEvent, MouseEvent } from "react";
-import { memo, useCallback, useEffect, useMemo, useState } from "react";
-import { FeatureFlag } from "../../../configurations";
-import type { Organization } from "../../../definitions";
-import { useClaims, useFeatureFlags } from "../../../hooks";
+import React, { memo, useCallback, useEffect, useMemo, useState } from "react";
+import { FeatureFlag } from "../../../configurations/feature.configuration";
+import { useClaims } from "../../../hooks/useClaims/useClaims.hook";
+import { useFeatureFlags } from "../../../hooks/useFeatureFlags/useFeatureFlags.hook";
 import { useManagedByAdminOrganization } from "../../../hooks/useManagedByAdminOrganization/useManagedByAdminOrganization.hook";
-import { Entitlements } from "../Entitlements";
-import { LinkedOrganizations } from "../LinkedOrganizations";
-import { OrganizationTeams } from "../Teams";
-import { OrganizationUsers } from "../Users";
+import { Entitlements } from "../Entitlements/Entitlements.component";
+import { LinkedOrganizations } from "../LinkedOrganizations/LinkedOrganizations.component";
+import { OrganizationTeams } from "../Teams/Teams.component";
+import { OrganizationUsers } from "../Users/Users.component";
+import type { ToggleButtonState, OrganizationFeatureManagementProps } from "./FeatureManagement.definition";
 import {
   OrganizationFeatureManagementClassName,
   OrganizationFeatureManagementIdModel,
   OrganizationFeatureManagementLanguage,
   OrganizationFeatureManagementSection,
 } from "./FeatureManagement.definition";
-import type { ToggleButtonState, OrganizationFeatureManagementProps } from "./FeatureManagement.definition";
 import { FeatureHeadContainer } from "./FeatureManagement.style";
 import { ManagedLink } from "./ManagedLink/ManagedLink.component";
 

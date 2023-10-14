@@ -1,7 +1,7 @@
 import React from "react";
-import { CheckMarkCellIdModel } from "..";
-import { getAppWrapper } from "../../../../../__mocks__";
 import { render, screen } from "../../../../../utils/testUtils";
+import { CheckMarkCellIdModel } from "../CheckMarkCell/CheckMarkCell.definition";
+// import { getAppWrapper } from "../../../../../__mocks__";
 import { StatusCell } from "./StatusCell.component";
 import { StatusCellListId } from "./StatusCell.definition";
 import { mapIdToStatusCell } from "./StatusCell.utils";

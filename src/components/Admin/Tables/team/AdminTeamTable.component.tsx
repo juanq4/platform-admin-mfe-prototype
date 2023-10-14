@@ -1,8 +1,7 @@
 import React, { memo, useMemo, useRef } from "react";
-import type { Team } from "../../../../definitions";
-import type { EntityTableColumnDef } from "../../EntityTable";
-import { EntityTable } from "../../EntityTable/";
-import type { AdminTeamTableEntity, AdminTeamTableProps } from "./AdminTeamTable.definition";
+import type { Team } from "../../../../definitions/team.definition";
+import { EntityTable } from "../../EntityTable/EntityTable.component";
+import type { EntityTableColumnDef } from "../../EntityTable/EntityTable.definition";
 import {
   AdminTeamTableClassName,
   AdminTeamTableDefault,
@@ -10,6 +9,7 @@ import {
   AdminTeamTableHeader,
   AdminTeamTableIdModel,
 } from "./AdminTeamTable.definition";
+import type { AdminTeamTableEntity, AdminTeamTableProps } from "./AdminTeamTable.definition";
 
 const AdminTeamTableBase = (props: AdminTeamTableProps): JSX.Element => {
   const { id, items, tableProps, ...entityTableProps } = props;

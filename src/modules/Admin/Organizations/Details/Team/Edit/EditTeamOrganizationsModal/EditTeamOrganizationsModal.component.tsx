@@ -1,7 +1,8 @@
 import { ButtonTheme, isEmpty, Modal, Text, TextPreset } from "@q4/nimbus-ui";
-import { memo, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
-import { AdminDataContext } from "../../../../../../../contexts";
-import type { Organization, Team } from "../../../../../../../definitions";
+import type { Organization } from "@q4/platform-definitions";
+import React, { memo, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
+import { AdminDataContext } from "../../../../../../../contexts/admin/data/data.context";
+import type { Team } from "../../../../../../../definitions/team.definition";
 import {
   CustomGrid,
   CustomGridColumn,

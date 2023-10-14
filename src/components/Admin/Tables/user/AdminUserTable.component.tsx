@@ -1,9 +1,10 @@
 import "./AdminUserTable.component.scss";
 import React, { memo, useMemo, useRef } from "react";
-import { EntityTable } from "../../EntityTable/";
-import type { EntityTableColumnDef } from "../../EntityTable/";
-import type { StatusCellProps } from "../../EntityTable/components";
-import { mapIdToStatusCell } from "../../EntityTable/components";
+import { EntityTable } from "../../EntityTable/EntityTable.component";
+import type { EntityTableColumnDef } from "../../EntityTable/EntityTable.definition";
+import type { StatusCellProps } from "../../EntityTable/components/StatusCell/StatusCell.definition";
+import { mapIdToStatusCell } from "../../EntityTable/components/StatusCell/StatusCell.utils";
+import type { AdminUserTableProps } from "./AdminUserTable.definition";
 import {
   AdminUserTableCellRenderer,
   AdminUserTableClassName,
@@ -11,7 +12,6 @@ import {
   AdminUserTableIdModel,
   AdminUserTableDefault,
 } from "./AdminUserTable.definition";
-import type { AdminUserTableProps } from "./AdminUserTable.definition";
 
 const AdminUserTableBase = (props: AdminUserTableProps): JSX.Element => {
   const { id, tableProps = {}, omitColumns, showCheckbox, ...entityTableProps } = props;

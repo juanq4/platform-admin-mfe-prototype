@@ -1,6 +1,6 @@
 import { renderHook } from "@testing-library/react";
-import { MockOrganization1, MockAdminOrganization } from "../../__mocks__";
-import type { Organization } from "../../definitions";
+import { MockAdminOrganization } from "../../__mocks__/data/organizations.mock";
+import type { Organization } from "../../definitions/organization.definition";
 import { useOrganizationsQuery } from "../../schemas/generated/graphql";
 import { useManagedByAdminOrganization } from "./useManagedByAdminOrganization.hook";
 

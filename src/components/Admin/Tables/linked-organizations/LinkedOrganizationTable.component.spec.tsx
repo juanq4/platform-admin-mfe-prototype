@@ -1,5 +1,6 @@
 import React from "react";
-import { getAppWrapper, NimbusConfig } from "../../../../__mocks__";
+import { NimbusConfig } from "../../../../__mocks__/contexts/NimbusConfig.mock";
+import { getAppWrapper } from "../../../../__mocks__/utils/wrappers";
 import { render, screen } from "../../../../utils/testUtils";
 import { LinkedOrganizationTableIdModel } from "./LinkedOrganizationTable.definition";
 import { LinkedOrganizationTable } from "./LinkedOrganizationsTable.component";

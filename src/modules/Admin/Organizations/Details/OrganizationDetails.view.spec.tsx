@@ -8,32 +8,33 @@ import React from "react";
 import { MemoryRouter } from "react-router-dom";
 import { select } from "react-select-event";
 import {
-  MockOrganization1,
   MockOrganization12,
+  MockOrganization1,
+  MockOrganization2,
+  MockOrganization7,
   MockOrganization13,
   MockOrganization14,
   MockOrganization16,
   MockOrganization17,
-  MockAdminOrganization,
-  MockOrganization2,
-  MockOrganization3,
-  MockOrganization7,
-  MockUser,
   MockOrganization19,
-} from "../../../../__mocks__";
-import { OrganizationFeatureManagementLanguage, OrganizationTeamsLanguage } from "../../../../components";
-import { AccessRouteMap, AdminRoutePath, FeatureFlag } from "../../../../configurations";
+  MockAdminOrganization,
+  MockOrganization3,
+} from "../../../../__mocks__/data/organizations.mock";
+import { MockUser } from "../../../../__mocks__/data/users.mock";
+import { OrganizationFeatureManagementLanguage } from "../../../../components/Admin/FeatureManagement/FeatureManagement.definition";
+import { OrganizationTeamsLanguage } from "../../../../components/Admin/Teams/Teams.definition";
+import { AccessRouteMap } from "../../../../configurations/access.configuration";
+import { FeatureFlag } from "../../../../configurations/feature.configuration";
+import { AdminRoutePath } from "../../../../configurations/navigation.configuration";
 import { AdminEditProvider, AdminEditContext } from "../../../../contexts/admin/edit/edit.context";
 import type { AdminEditContextProps } from "../../../../contexts/admin/edit/edit.definition";
-import type { Team } from "../../../../definitions";
-import { OrganizationEditState, RoleLabel } from "../../../../definitions";
+import { OrganizationEditState } from "../../../../definitions/organization.definition";
+import type { Team } from "../../../../definitions/team.definition";
+import { useClaims } from "../../../../hooks/useClaims/useClaims.hook";
 import {
   OrganizationCreateMessage,
   OrganizationEditMessage,
-  QueryPaginationDefault,
-  useClaims,
-  useToastNotificationService,
-} from "../../../../hooks";
+} from "../../../../hooks/useOrganization/useOrganization.definition";
 import {
   useOrganizationQuery,
   useOrganizationsLazyQuery,
@@ -41,6 +42,8 @@ import {
   useOrganizationUpdate,
   useSitesByOrganizationsLazyQuery,
 } from "../../../../hooks/useOrganization/useOrganization.hook";
+import { QueryPaginationDefault } from "../../../../hooks/useQuery/useQuery.definition";
+import { useToastNotificationService } from "../../../../hooks/useToastNotificationService/useToastNotificationService.hook";
 import {
   useEntitySearchQuery,
   useTeamsQuery,
@@ -48,12 +51,12 @@ import {
   useUsersQuery,
 } from "../../../../schemas/generated/graphql";
 import {
-  capitalize,
-  getOrganizationEditLinkedOrganizationsRoute,
   getOrganizationEditRoute,
-  getOrganizationEditUserNewRoute,
   getOrganizationViewRoute,
-} from "../../../../utils";
+  capitalize,
+  getOrganizationEditUserNewRoute,
+  getOrganizationEditLinkedOrganizationsRoute,
+} from "../../../../utils/organization/organization.utils";
 import { act, cleanup, fireEvent, render, screen, waitFor, within } from "../../../../utils/testUtils";
 import { Admin } from "../../Admin.view";
 import {

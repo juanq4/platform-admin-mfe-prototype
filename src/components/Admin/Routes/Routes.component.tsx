@@ -2,8 +2,6 @@ import { Permission } from "@q4/platform-definitions";
 import { memo, useContext } from "react";
 import { Route } from "react-router";
 import { Redirect, useLocation } from "react-router-dom";
-import { AdminRoutePath } from "../../../configurations";
-import { AdminLoadingContext } from "../../../contexts";
 import { OrganizationsLink } from "../../../modules/Admin/Organizations/Details/Link/OrganizationsLink.view";
 import { OrganizationDetails } from "../../../modules/Admin/Organizations/Details/OrganizationDetails.view";
 import { OrganizationTeamCreate } from "../../../modules/Admin/Organizations/Details/Team/Create/OrganizationTeamCreate.view";
@@ -19,7 +17,7 @@ import { AccessSwitch } from "../../AccessSwitch/AccessSwitch.component";
 import { ConditionalRoute } from "../../ConditionalRoute/ConditionalRoute.component";
 import { NotFoundError } from "../../Errors/NotFoundError/NotFoundError.component";
 import type { AccessSwitchProps } from "../../component.definition";
-import { AdminLoadingSpinner } from "../LoadingSpinner";
+import { AdminLoadingSpinner } from "../LoadingSpinner/LoadingSpinner.component";
 import { AdminRoutesIdModel } from "./Routes.definition";
 
 const AdminRoutesBase = (props: AccessSwitchProps): JSX.Element => {

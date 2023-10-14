@@ -1,4 +1,5 @@
-import type { Organization, User } from "../../../../../../definitions";
+import type { Organization } from "../../../../../../definitions/organization.definition";
+import type { User } from "../../../../../../definitions/user.definition";
 
 export interface RoleSelectorProps {
   id: string;

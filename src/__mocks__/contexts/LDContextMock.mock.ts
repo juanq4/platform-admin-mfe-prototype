@@ -1,5 +1,5 @@
 import type { LDContext } from "launchdarkly-react-client-sdk/lib/context";
-import { FeatureFlag } from "../../configurations";
+import { FeatureFlag } from "../../configurations/feature.configuration";
 
 export const LDContextMock: LDContext = {
   flags: {

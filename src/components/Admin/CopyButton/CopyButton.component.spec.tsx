@@ -1,6 +1,7 @@
 import { ToastContainer } from "@q4/nimbus-ui";
 import React from "react";
-import { getAppWrapper, mockClipboardWrite, NimbusConfig } from "../../../__mocks__";
+import { NimbusConfig } from "../../../__mocks__/contexts/NimbusConfig.mock";
+import { getAppWrapper } from "../../../__mocks__/utils/wrappers";
 import { fireEvent, render, screen, waitFor } from "../../../utils/testUtils";
 import { CopyButton } from "./CopyButton.component";
 import type { CopyButtonProps } from "./CopyButton.definition";

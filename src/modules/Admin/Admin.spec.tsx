@@ -1,13 +1,14 @@
 import { Permission } from "@q4/platform-definitions";
 import React from "react";
 import { MemoryRouter } from "react-router-dom";
-import { UserContextMock } from "../../__mocks__";
 import { Auth0HookMock, MockAuth0Token } from "../../__mocks__/contexts/Auth0Context.mock";
-import { AdminRoutePath, FeatureFlag } from "../../configurations";
+import { FeatureFlag } from "../../configurations/feature.configuration";
+import { AdminRoutePath } from "../../configurations/navigation.configuration";
 import { UserContext } from "../../contexts/user/user.context";
-import { useClaims, useFeatureFlags, useIdTokenClaims } from "../../hooks";
+import { useClaims } from "../../hooks/useClaims/useClaims.hook";
+import { useFeatureFlags } from "../../hooks/useFeatureFlags/useFeatureFlags.hook";
+import { useIdTokenClaims } from "../../hooks/useIdTokenClaims/useIdTokenClaims.hook";
 import { fireEvent, render, screen } from "../../utils/testUtils";
-import { ClientAccounts } from "../../views/ClientAccounts/ClientAccounts.view";
 import { AdminViewDefault } from "./Admin.definition";
 import { Admin } from "./Admin.view";
 

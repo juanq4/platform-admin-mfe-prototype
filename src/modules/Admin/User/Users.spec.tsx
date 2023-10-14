@@ -3,21 +3,22 @@ import type { Permission } from "@q4/platform-definitions";
 import React from "react";
 import { MemoryRouter } from "react-router-dom";
 import { CombinedError } from "urql";
-import { NimbusConfig, MockUser1 } from "../../../__mocks__";
 import {
   Auth0HookMock,
   MockAuth0Claims,
   MockAuth0Token,
   MockAuth0User,
 } from "../../../__mocks__/contexts/Auth0Context.mock";
-import { AdminRoutesIdModel } from "../../../components";
-import { AccessRouteMap, AdminRoutePath } from "../../../configurations";
-import type { AdminLoadingContextProps } from "../../../contexts";
+import { NimbusConfig } from "../../../__mocks__/contexts/NimbusConfig.mock";
+import { MockUser1 } from "../../../__mocks__/data/users.mock";
+import { AdminRoutesIdModel } from "../../../components/Admin/Routes/Routes.definition";
+import { AdminRoutePath } from "../../../configurations/navigation.configuration";
 import { AdminLoadingProvider, AdminLoadingContext } from "../../../contexts/admin/loading/loading.context";
-import type { User } from "../../../definitions";
-import { QueryPaginationDefault } from "../../../hooks";
+import type { AdminLoadingContextProps } from "../../../contexts/admin/loading/loading.definition";
+import type { User } from "../../../definitions/user.definition";
 import { useClaims } from "../../../hooks/useClaims/useClaims.hook";
 import { useIdTokenClaims } from "../../../hooks/useIdTokenClaims/useIdTokenClaims.hook";
+import { QueryPaginationDefault } from "../../../hooks/useQuery/useQuery.definition";
 import { useUsersLazyQuery } from "../../../schemas/generated/graphql";
 import { throttle } from "../../../utils/api/api.utils";
 import { fireEvent, render, screen, waitFor } from "../../../utils/testUtils";

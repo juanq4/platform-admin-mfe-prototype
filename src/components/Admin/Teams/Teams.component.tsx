@@ -2,12 +2,13 @@ import { isEmpty, isNullOrWhiteSpace } from "@q4/nimbus-ui";
 import type { RowClickedEvent } from "@q4/nimbus-ui/dist/dependencies/agGrid/community";
 import React, { memo, useCallback, useEffect, useMemo } from "react";
 import { useHistory } from "react-router-dom";
-import { useAdminUserTable, useToastNotificationService } from "../../../hooks";
+import { useAdminUserTable } from "../../../hooks/admin/useAdminUserTable/useAdminUserTable.hook";
+import { useToastNotificationService } from "../../../hooks/useToastNotificationService/useToastNotificationService.hook";
 import { useOrganizationsQuery, useTeamsQuery } from "../../../schemas/generated/graphql";
-import { getOrganizationEditTeamRoute } from "../../../utils";
-import { AdminTeamTable } from "../Tables/team/";
-import type { OrganizationTeamsProps } from "./Teams.definition";
+import { getOrganizationEditTeamRoute } from "../../../utils/organization/organization.utils";
+import { AdminTeamTable } from "../Tables/team/AdminTeamTable.component";
 import { OrganizationTeamsIdModel, OrganizationTeamsLanguage } from "./Teams.definition";
+import type { OrganizationTeamsProps } from "./Teams.definition";
 
 const Teams = (props: OrganizationTeamsProps): JSX.Element => {
   const history = useHistory();

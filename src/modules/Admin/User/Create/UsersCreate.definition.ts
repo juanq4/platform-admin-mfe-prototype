@@ -1,7 +1,7 @@
 import { IdModelBase, isNullOrWhiteSpace } from "@q4/nimbus-ui";
-import { AdminUserFormIdModel } from "../../../../components/Admin/Forms";
-import { AdminRoutePath } from "../../../../configurations";
-import { User } from "../../../../definitions";
+import { AdminUserFormIdModel } from "../../../../components/Admin/Forms/User/AdminUserForm.definition";
+import { AdminRoutePath } from "../../../../configurations/navigation.configuration";
+import { User } from "../../../../definitions/user.definition";
 
 export const UsersCreateReturnRoute = AdminRoutePath.Users;
 export const UsersCreateDefaultUser = new User();

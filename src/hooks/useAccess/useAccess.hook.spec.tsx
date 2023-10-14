@@ -1,11 +1,11 @@
 import { Entitlement, OrganizationType, Permission } from "@q4/platform-definitions";
 import { renderHook } from "@testing-library/react";
 import { mockFlags } from "jest-launchdarkly-mock";
-import { FeatureFlag } from "../../configurations";
-import { useUser } from "../../contexts";
-import { hasEngagementAnalyticsEntitlement } from "../../utils";
-import { useAccount } from "../useAccount";
-import { useClaims } from "../useClaims";
+import { FeatureFlag } from "../../configurations/feature.configuration";
+import { useUser } from "../../contexts/user/user.hook";
+import { hasEngagementAnalyticsEntitlement } from "../../utils/entitlement/entitlement.utils";
+import { useAccount } from "../useAccount/useAccount.hook";
+import { useClaims } from "../useClaims/useClaims.hook";
 import { useAccess } from "./useAccess.hook";
 
 jest.mock("../../contexts/user/user.hook");

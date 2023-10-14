@@ -1,4 +1,4 @@
-import { env } from "../../../config/";
+import { env } from "../../../config/env/env";
 import { RoleLabel } from "../../definitions/role.definition";
 import { generateRoleLabel } from "./role.utils";
 

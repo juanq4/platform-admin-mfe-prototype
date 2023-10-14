@@ -1,6 +1,6 @@
 import { isNullOrWhiteSpace } from "@q4/nimbus-ui";
 import React, { memo, useMemo } from "react";
-import { CopyButton } from "../../../CopyButton/";
+import { CopyButton } from "../../../CopyButton/CopyButton.component";
 import { EntityTableClassName } from "../../EntityTable.definition";
 import { CopyCellIdModel } from "./CopyCell.definition";
 import type { CopyCellProps } from "./CopyCell.definition";

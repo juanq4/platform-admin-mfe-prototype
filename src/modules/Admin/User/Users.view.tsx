@@ -1,16 +1,19 @@
 import { ButtonTheme, isNullOrWhiteSpace } from "@q4/nimbus-ui";
 import type { RowClickedEvent } from "@q4/nimbus-ui/dist/dependencies/agGrid/community";
-import { memo, useCallback, useMemo, useState } from "react";
+import React, { memo, useCallback, useMemo, useState } from "react";
 import { generatePath, useHistory, useLocation } from "react-router-dom";
-import AddUserImage from "../../../assets/admin/addUserImage.svg";
-import { AdminUserTable } from "../../../components/Admin/Tables";
-import { AdminRoutePath, RoutePathIdLabel } from "../../../configurations";
-import { useAdminData, useAdminLoadingContext } from "../../../contexts";
-import type { User } from "../../../definitions";
-import type { UsersQueryVariables } from "../../../hooks";
-import { QueryPaginationDefault, useClaims, usePagination, useSearch } from "../../../hooks";
+import AddUserImage from "../../../assets/icons/addUserImage.svg";
+import { AdminUserTable } from "../../../components/Admin/Tables/user/AdminUserTable.component";
+import { AdminRoutePath, RoutePathIdLabel } from "../../../configurations/navigation.configuration";
+import { useAdminData } from "../../../contexts/admin/data/data.hook";
+import { useAdminLoadingContext } from "../../../contexts/admin/loading/useLoadingContext.hook";
+import { usePagination } from "../../../hooks/admin/usePagination/usePagination.hook";
+import { useSearch } from "../../../hooks/admin/useSearch/useSearch.hook";
+import { useClaims } from "../../../hooks/useClaims/useClaims.hook";
+import { QueryPaginationDefault } from "../../../hooks/useQuery/useQuery.definition";
 import { useUsersLazyQuery } from "../../../schemas/generated/graphql";
-import { hasRequiredPermission } from "../../../utils";
+import type { User, UsersQueryVariables } from "../../../schemas/generated/graphql";
+import { hasRequiredPermission } from "../../../utils/permission/permission.utils";
 import {
   AdminOrganizationCondition,
   AdminUsersViewIdModel as ViewIdModel,

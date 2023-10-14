@@ -1,8 +1,8 @@
 import { Fallback, FallbackImage } from "@q4/nimbus-ui";
-import { useMemo } from "react";
+import React, { useMemo } from "react";
 import { useHistory } from "react-router-dom";
-import { Email } from "../../../configurations";
-import { isRoute } from "../../../utils";
+import { Email } from "../../../configurations/q4-platform-common.configuration";
+import { isRoute } from "../../../utils/route/route.utils";
 import {
   NotFoundErrorIdModel,
   noAccessErrorSubtitle,

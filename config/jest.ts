@@ -3,8 +3,8 @@ global.getConfigEnvironment = () => "local";
 import "@testing-library/jest-dom";
 import "@testing-library/jest-dom/extend-expect";
 import { TextEncoder, TextDecoder } from "util";
-import { reactTransitionGroupConfig } from "@q4/nimbus-ui";
-import { createAppWrapper, destroyAppWrapper, mockWindowMethods } from "../src/__mocks__";
+import { createAppWrapper, destroyAppWrapper, reactTransitionGroupConfig } from "@q4/nimbus-ui";
+import { mockWindowMethods } from "../src/__mocks__/utils/helpers";
 import { configure } from "../src/utils/testUtils";
 
 // getConfigEnvironment is not defined in env.ts, which prevents swc-jest from running

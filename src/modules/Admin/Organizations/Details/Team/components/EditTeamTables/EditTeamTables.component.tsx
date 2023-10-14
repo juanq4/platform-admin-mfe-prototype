@@ -1,19 +1,22 @@
 import "./EditTeamTables.component.scss";
 import { isEmpty, isNullOrWhiteSpace, Origin } from "@q4/nimbus-ui";
 import type { IHeaderParams } from "@q4/nimbus-ui/dist/dependencies/agGrid/community";
+import type { Organization } from "@q4/platform-definitions";
 import React, { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
-import type { EntityTablePaginationDirection } from "../../../../../../../components";
 import type { EntityTableColumnDef } from "../../../../../../../components/Admin/EntityTable/EntityTable.definition";
-import { AdminOrganizationTable } from "../../../../../../../components/Admin/Tables/organization";
-import { AdminUserTable, AdminUserTableHeader } from "../../../../../../../components/Admin/Tables/user";
-import type { Organization, User } from "../../../../../../../definitions";
-import { QueryPaginationDefault, usePagination } from "../../../../../../../hooks";
-import type { OrganizationsQueryVariables, UsersQueryVariables } from "../../../../../../../hooks";
+import type { EntityTablePaginationDirection } from "../../../../../../../components/Admin/EntityTable/components/Pagination/Pagination.definition";
+import { AdminOrganizationTable } from "../../../../../../../components/Admin/Tables/organization/AdminOrganizationTable.component";
+import { AdminUserTable } from "../../../../../../../components/Admin/Tables/user/AdminUserTable.component";
+import { AdminUserTableHeader } from "../../../../../../../components/Admin/Tables/user/AdminUserTable.definition";
+import type { User } from "../../../../../../../definitions/user.definition";
+import { usePagination } from "../../../../../../../hooks/admin/usePagination/usePagination.hook";
+import { QueryPaginationDefault } from "../../../../../../../hooks/useQuery/useQuery.definition";
+import type { OrganizationsQueryVariables, UsersQueryVariables } from "../../../../../../../schemas/generated/graphql";
 import { WideTableWrapper } from "../../OrganizationsTeam.style";
 import { AddUsersTeamsFormLanguage } from "../AddUsersForm/AddUsersTeamsForm.definition";
 import { CustomInfoIcon } from "../AddUsersForm/AddUsersTeamsForm.style";
-import type { EditTeamTablesProps } from "./EditTeamTables.definition";
 import { EditTeamTablesIdModel, EditTeamTablesLanguage } from "./EditTeamTables.definition";
+import type { EditTeamTablesProps } from "./EditTeamTables.definition";
 
 const EditTeamTablesBase = (props: EditTeamTablesProps): JSX.Element => {
   const { id, organizationTable, usersTable, onEditOrganizations, onEditUsers } = props;

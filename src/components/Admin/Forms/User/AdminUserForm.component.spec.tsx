@@ -1,26 +1,26 @@
+import { User } from "@auth0/auth0-react";
 import { SelectClassName, StyleGuide } from "@q4/nimbus-ui";
 import { Entitlement, OrganizationType } from "@q4/platform-definitions";
+import { Role } from "@q4/platform-sdk-definitions";
 import React from "react";
-import type { AdminUserFormProps } from "..";
-import { AdminUserFormErrorTextboxTheme, AdminUserFormIdModel } from "..";
-import {
-  MockOrganization1,
-  MockOrganization12,
-  MockOrganization7,
-  MockUser,
-  MockUser1,
-  MockUser14,
-  MockUser2,
-} from "../../../../__mocks__";
-import { PermissionCollection, Role } from "../../../../configurations";
-import { UserApplications, User } from "../../../../definitions";
-import type { OrganizationQueryResponse } from "../../../../hooks";
+import { MockOrganization1, MockOrganization12, MockOrganization7 } from "../../../../__mocks__/data/organizations.mock";
+import { MockUser, MockUser1, MockUser14, MockUser2 } from "../../../../__mocks__/data/users.mock";
+import { PermissionCollection } from "../../../../configurations/access.configuration";
+import { UserApplications } from "../../../../definitions/user.definition";
 import { useClaims } from "../../../../hooks/useClaims/useClaims.hook";
+import type { OrganizationQueryResponse } from "../../../../hooks/useOrganization/useOrganization.definition";
 import { useOrganizationQuery } from "../../../../hooks/useOrganization/useOrganization.hook";
-import { getRoles } from "../../../../utils";
+import { getRoles } from "../../../../utils/organization/getRoles";
 import { fireEvent, render, screen, waitFor } from "../../../../utils/testUtils";
 import { AdminUserForm } from "./AdminUserForm.component";
-import { AdminUserFormLabel, AdminUserFormMode, AdminUserFormWording } from "./AdminUserForm.definition";
+import type { AdminUserFormProps } from "./AdminUserForm.definition";
+import {
+  AdminUserFormErrorTextboxTheme,
+  AdminUserFormIdModel,
+  AdminUserFormLabel,
+  AdminUserFormMode,
+  AdminUserFormWording,
+} from "./AdminUserForm.definition";
 import { getAdminFormUser } from "./AdminUserForm.utils";
 
 jest.mock("../../../../hooks/useOrganization/useOrganization.hook");

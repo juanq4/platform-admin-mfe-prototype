@@ -2,23 +2,17 @@ import { useMutation, useQuery } from "@apollo/client";
 import type { ButtonProps } from "@q4/nimbus-ui";
 import { ButtonTheme, Text, TextPreset, isNullOrWhiteSpace, useVisibility } from "@q4/nimbus-ui";
 import { OrganizationType } from "@q4/platform-definitions";
-import { memo, useCallback, useContext, useEffect, useMemo, useState } from "react";
+import React, { memo, useCallback, useContext, useEffect, useMemo, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
-import { AdminDataContext } from "../../../../../../contexts";
-import { Team } from "../../../../../../definitions";
+import { AdminDataContext } from "../../../../../../contexts/admin/data/data.context";
+import { Team } from "../../../../../../definitions/team.definition";
 import { useToastNotificationService } from "../../../../../../hooks/useToastNotificationService/useToastNotificationService.hook";
 import { EditTeamNameModal } from "../../../../../../modules/Admin/Organizations/Details/Team/Edit/EditTeamNameModal/EditTeamNameModal.component";
 import { EditTeamOrganizationsModal } from "../../../../../../modules/Admin/Organizations/Details/Team/Edit/EditTeamOrganizationsModal/EditTeamOrganizationsModal.component";
-import {
-  DELETE_TEAM,
-  GET_ORGANIZATION,
-  GET_ORGANIZATIONS,
-  GET_TEAM,
-  GET_TEAMS,
-  GET_USERS_QUERY,
-  UPDATE_TEAM,
-} from "../../../../../../schemas";
-import { getOrganizationViewRoute, orderUsersAlphabetically } from "../../../../../../utils";
+import { GET_ORGANIZATION, GET_ORGANIZATIONS } from "../../../../../../schemas/organizations/organizations.schema";
+import { GET_TEAM, GET_TEAMS, DELETE_TEAM, UPDATE_TEAM } from "../../../../../../schemas/teams/teams.schema";
+import { GET_USERS_QUERY } from "../../../../../../schemas/users/users.shema";
+import { getOrganizationViewRoute } from "../../../../../../utils/organization/organization.utils";
 import { fetchPolicy } from "../OrganizationsTeam.definition";
 import type { EditTeamOrganizationsModalProps } from "./EditTeamOrganizationsModal/EditTeamOrganizationsModal.definition";
 import { EditTeamUsersModal } from "./EditTeamUsersModal/EditTeamUsersModal.component";

@@ -1,5 +1,5 @@
-import { Role } from "../../configurations";
-import { User } from "../../definitions";
+import { Role } from "../../configurations/access.configuration";
+import { User } from "../../definitions/user.definition";
 
 const organizationId = "c249912d-8a48-44af-b265-45f192b895bd";
 

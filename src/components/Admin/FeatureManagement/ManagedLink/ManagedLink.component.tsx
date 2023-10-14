@@ -1,8 +1,9 @@
 import { AnchorTarget, Button, ButtonSize, ButtonTheme } from "@q4/nimbus-ui";
-import { memo, useCallback, useMemo } from "react";
+import React, { memo, useCallback, useMemo } from "react";
 import { useHistory } from "react-router-dom";
-import { useClaims, useOrganizationQuery } from "../../../../hooks";
-import { getOrganizationRouteBasedOnPermission } from "../../../../utils";
+import { useClaims } from "../../../../hooks/useClaims/useClaims.hook";
+import { useOrganizationQuery } from "../../../../hooks/useOrganization/useOrganization.hook";
+import { getOrganizationRouteBasedOnPermission } from "../../../../utils/route/route.utils";
 import type { ManagedLinkProps } from "./ManagedLink.definition";
 
 const Link = (props: ManagedLinkProps): JSX.Element => {

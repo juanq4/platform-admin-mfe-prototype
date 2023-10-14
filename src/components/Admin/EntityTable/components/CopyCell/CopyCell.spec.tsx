@@ -1,7 +1,8 @@
 import React from "react";
-import { CheckMarkCellIdModel } from "..";
-import { getAppWrapper, NimbusConfig } from "../../../../../__mocks__";
+import { NimbusConfig } from "../../../../../__mocks__/contexts/NimbusConfig.mock";
+import { getAppWrapper } from "../../../../../__mocks__/utils/wrappers";
 import { render, screen } from "../../../../../utils/testUtils";
+import { CheckMarkCellIdModel } from "../CheckMarkCell/CheckMarkCell.definition";
 import { CopyCell } from "./CopyCell.component";
 import { CopyCellListId } from "./CopyCell.definition";
 import { mapIdToCopyCell } from "./CopyCell.utils";

@@ -1,6 +1,13 @@
 import React, { memo, useMemo, useRef } from "react";
-import { EntityTable, mapIdToCopyCell, mapIdToStatusCell, mapIdToTickerCell } from "../../EntityTable/";
-import type { CopyCellProps, EntityTableColumnDef, StatusCellProps, TickerCellProps } from "../../EntityTable/";
+import { EntityTable } from "../../EntityTable/EntityTable.component";
+import type { EntityTableColumnDef } from "../../EntityTable/EntityTable.definition";
+import type { CopyCellProps } from "../../EntityTable/components/CopyCell/CopyCell.definition";
+import { mapIdToCopyCell } from "../../EntityTable/components/CopyCell/CopyCell.utils";
+import type { StatusCellProps } from "../../EntityTable/components/StatusCell/StatusCell.definition";
+import { mapIdToStatusCell } from "../../EntityTable/components/StatusCell/StatusCell.utils";
+import type { TickerCellProps } from "../../EntityTable/components/TickerCell/TickerCell.definition";
+import { mapIdToTickerCell } from "../../EntityTable/components/TickerCell/TickerCell.utils";
+import type { AdminOrganizationTableProps } from "./AdminOrganizationTable.definition";
 import {
   AdminOrganizationTableDefault,
   AdminOrganizationsTableCellRenderer,
@@ -9,7 +16,6 @@ import {
   AdminOrganizationsTableHeader,
   AdminOrganizationsTableFields,
 } from "./AdminOrganizationTable.definition";
-import type { AdminOrganizationTableProps } from "./AdminOrganizationTable.definition";
 
 const AdminOrganizationTableBase = (props: AdminOrganizationTableProps): JSX.Element => {
   const { id, tableProps = {}, ...entityTableProps } = props;

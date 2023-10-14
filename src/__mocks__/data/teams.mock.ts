@@ -1,4 +1,4 @@
-import { Team } from "../../definitions";
+import { Team } from "../../definitions/team.definition";
 import { MockOrganization1, MockOrganization2, MockOrganization10 } from "./organizations.mock";
 import { MockUser, MockUser1, MockUser2, MockUser4, MockUser8 } from "./users.mock";
 

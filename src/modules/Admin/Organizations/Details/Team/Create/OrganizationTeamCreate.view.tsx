@@ -12,30 +12,31 @@ import {
   TextPreset,
   useVisibility,
 } from "@q4/nimbus-ui";
+import type { Organization } from "@q4/platform-definitions";
 import { OrganizationType } from "@q4/platform-definitions";
-import { memo, useCallback, useMemo, useRef, useState } from "react";
+import React, { memo, useCallback, useMemo, useRef, useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
-import { AdminLoadingSpinner } from "../../../../../../components/Admin/LoadingSpinner";
+import { AdminLoadingSpinner } from "../../../../../../components/Admin/LoadingSpinner/LoadingSpinner.component";
 import { Role } from "../../../../../../configurations/access.configuration";
-import type { Organization, Team, User } from "../../../../../../definitions";
+import type { Team } from "../../../../../../definitions/team.definition";
+import type { User } from "../../../../../../definitions/user.definition";
+import { useClaims } from "../../../../../../hooks/useClaims/useClaims.hook";
+import { TeamCreateMessage } from "../../../../../../hooks/useTeam/useTeam.definition";
+import { useTeamCreate } from "../../../../../../hooks/useTeam/useTeam.hook";
+import { useToastNotificationService } from "../../../../../../hooks/useToastNotificationService/useToastNotificationService.hook";
+import { AddOrganizationsForm } from "../../../../../../modules/Admin/Organizations/Details/Team/components/AddOrganizationsForm/AddOrganizationsForm.component";
 import {
-  TeamCreateMessage,
   useOrganizationQuery,
-  useClaims,
-  useTeamCreate,
+  useOrganizationsQuery,
   useTeamsQuery,
   useUsersQuery,
-  useToastNotificationService,
-} from "../../../../../../hooks";
-import { AddOrganizationsForm } from "../../../../../../modules/Admin/Organizations/Details/Team/components/AddOrganizationsForm/AddOrganizationsForm.component";
-import { useOrganizationsQuery } from "../../../../../../schemas/generated/graphql";
+} from "../../../../../../schemas/generated/graphql";
+import { mapErrorsToKey } from "../../../../../../utils/error/error.utils";
 import {
-  getOrganizationRouteBasedOnPermission,
-  getOrganizationViewRoute,
-  mapErrorsToKey,
   orderOrganizationsAlphabetically,
-  orderUsersAlphabetically,
-} from "../../../../../../utils";
+  getOrganizationViewRoute,
+} from "../../../../../../utils/organization/organization.utils";
+import { getOrganizationRouteBasedOnPermission } from "../../../../../../utils/route/route.utils";
 import { fetchPolicy, requestPolicy, TeamDescriptions, TeamErrorsLanguage } from "../OrganizationsTeam.definition";
 import type { TeamFormError, OrganizationsTeamParam } from "../OrganizationsTeam.definition";
 import { CustomGrid, CustomGridColumn, WideTableWrapper } from "../OrganizationsTeam.style";

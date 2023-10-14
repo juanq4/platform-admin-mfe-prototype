@@ -1,16 +1,6 @@
-import { GET_TEAM, GET_TEAMS, UPDATE_TEAM, DELETE_TEAM } from "../../schemas";
-import {
-  MockOrganization1,
-  MockOrganization12,
-  MockOrganization2,
-  MockTeam1,
-  MockTeam2,
-  MockTeam3,
-  MockTeam4,
-  MockTeam5,
-  MockTeam6,
-  MockTeam7,
-} from "../data";
+import { GET_TEAM, GET_TEAMS, DELETE_TEAM, UPDATE_TEAM } from "../../schemas/teams/teams.schema";
+import { MockOrganization12, MockOrganization2, MockOrganization1 } from "../data/organizations.mock";
+import { MockTeam3, MockTeam1, MockTeam2, MockTeam6, MockTeam7, MockTeam4, MockTeam5 } from "../data/teams.mock";
 
 export const getTeamMock = {
   request: {

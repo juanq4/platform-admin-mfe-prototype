@@ -1,4 +1,4 @@
-import { AdminRoutePath } from "../../configurations";
+import { AdminRoutePath } from "../../configurations/navigation.configuration";
 
 export const OrganizationsUserEditDefault = {
   ReturnUrl: {

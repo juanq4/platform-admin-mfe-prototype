@@ -16,14 +16,19 @@ import {
 } from "@q4/nimbus-ui";
 import type { Tab } from "@q4/nimbus-ui";
 import { Permission } from "@q4/platform-definitions";
-import { memo, useMemo } from "react";
+import React, { memo, useMemo } from "react";
 import { useHistory } from "react-router-dom";
-import { RouteTabs } from "../../components/Admin/RouteTabs";
-import { AdminRoutes } from "../../components/Admin/Routes";
-import { FeatureFlag } from "../../configurations";
-import { AdminLoadingProvider, AdminEditProvider, AdminDataProvider, useUser } from "../../contexts";
-import { useAccount, useClaims, useFeatureFlags } from "../../hooks";
-import { mapRoutesByPermission } from "../../utils";
+import { RouteTabs } from "../../components/Admin/RouteTabs/RouteTabs.component";
+import { AdminRoutes } from "../../components/Admin/Routes/Routes.component";
+import { FeatureFlag } from "../../configurations/feature.configuration";
+import { AdminDataProvider } from "../../contexts/admin/data/data.context";
+import { AdminEditProvider } from "../../contexts/admin/edit/edit.context";
+import { AdminLoadingProvider } from "../../contexts/admin/loading/loading.context";
+import { useUser } from "../../contexts/user/user.hook";
+import { useAccount } from "../../hooks/useAccount/useAccount.hook";
+import { useClaims } from "../../hooks/useClaims/useClaims.hook";
+import { useFeatureFlags } from "../../hooks/useFeatureFlags/useFeatureFlags.hook";
+import { mapRoutesByPermission } from "../../utils/permission/permission.utils";
 import { AdminViewClassName, AdminViewTabs, AdminViewDefault, AdminViewIdModel as ViewIdModel } from "./Admin.definition";
 
 const AdminBase = (): JSX.Element => {

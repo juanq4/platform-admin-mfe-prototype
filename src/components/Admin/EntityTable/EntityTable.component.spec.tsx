@@ -1,8 +1,10 @@
 import { ButtonIdModel, ButtonTheme } from "@q4/nimbus-ui";
 import React from "react";
-import { getAppWrapper, NimbusConfig, MockOrganizations } from "../../../__mocks__";
-import AddUserImage from "../../../assets/admin/addUserImage.svg";
-import type { Organization } from "../../../definitions";
+import { NimbusConfig } from "../../../__mocks__/contexts/NimbusConfig.mock";
+import { MockOrganizations } from "../../../__mocks__/data/organizations.mock";
+import { getAppWrapper } from "../../../__mocks__/utils/wrappers";
+import AddUserImage from "../../../assets/icons/addUserImage.svg";
+import type { Organization } from "../../../definitions/organization.definition";
 import { fireEvent, render, screen } from "../../../utils/testUtils";
 import { EntityTable } from "./EntityTable.component";
 import { EntityTableIdModel } from "./EntityTable.definition";

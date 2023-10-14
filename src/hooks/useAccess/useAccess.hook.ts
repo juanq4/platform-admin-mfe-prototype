@@ -1,11 +1,11 @@
 import { Entitlement, OrganizationType, Permission } from "@q4/platform-definitions";
 import { useMemo } from "react";
-import { FeatureFlag } from "../../configurations";
-import { useUser } from "../../contexts";
-import { hasEngagementAnalyticsEntitlement } from "../../utils";
-import { useAccount } from "../useAccount";
-import { useClaims } from "../useClaims";
-import { useFeatureFlags } from "../useFeatureFlags";
+import { FeatureFlag } from "../../configurations/feature.configuration";
+import { useUser } from "../../contexts/user/user.hook";
+import { hasEngagementAnalyticsEntitlement } from "../../utils/entitlement/entitlement.utils";
+import { useAccount } from "../useAccount/useAccount.hook";
+import { useClaims } from "../useClaims/useClaims.hook";
+import { useFeatureFlags } from "../useFeatureFlags/useFeatureFlags.hook";
 import type { AccessHookModel } from "./useAccess.definition";
 
 export const useAccess = (): AccessHookModel => {

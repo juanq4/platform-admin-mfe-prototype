@@ -1,9 +1,10 @@
 import { isEmpty, isNil } from "@q4/nimbus-ui";
 import type { Permission } from "@q4/platform-definitions";
-import { AccessRouteMap, PermissionRule, PermissionDefault } from "../../configurations";
-import type { PermissionCondition, Features } from "../../configurations";
-import { hasRequiredEntitlement } from "../entitlement";
-import { isFeatureTrue } from "../feature";
+import type { PermissionCondition } from "../../configurations/access.configuration";
+import { AccessRouteMap, PermissionDefault, PermissionRule } from "../../configurations/access.configuration";
+import type { Features } from "../../configurations/feature.configuration";
+import { hasRequiredEntitlement } from "../entitlement/entitlement.utils";
+import { isFeatureTrue } from "../feature/feature.utils";
 
 export function mapRoutesByPermission<TRoute, TPath extends string>(
   routes: TRoute[],

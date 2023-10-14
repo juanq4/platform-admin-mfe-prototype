@@ -1,7 +1,7 @@
 import { Entitlement, Permission } from "@q4/platform-definitions";
-import { env } from "../../config";
-import { RoleLabel } from "../definitions";
-import { generateRoleLabel } from "../utils/role";
+import { env } from "../../config/env/env";
+import { RoleLabel } from "../definitions/role.definition";
+import { generateRoleLabel } from "../utils/role/role.utils";
 import type { EntitlementCondition } from "./entitlement.configuration";
 import type { FeatureFlag } from "./feature.configuration";
 import { AdminRoutePath, AppRoutePath } from "./navigation.configuration";

@@ -2,16 +2,16 @@ import { Button, ButtonTheme, isNullOrWhiteSpace, PlaceholderContent, Text, Text
 import type { RowClickedEvent } from "@q4/nimbus-ui/dist/dependencies/agGrid/community";
 import React, { memo, useCallback, useMemo, useState } from "react";
 import { generatePath, useHistory, useLocation } from "react-router-dom";
-import AddUserImage from "../../../assets/admin/addUserImage.svg";
-import ErrorImage from "../../../assets/admin/adminError.svg";
-import { AdminRoutePath, RoutePathIdLabel } from "../../../configurations";
-import { QueryPaginationDefault } from "../../../hooks";
+import AddUserImage from "../../../assets/icons/addUserImage.svg";
+import ErrorImage from "../../../assets/icons/adminError.svg";
+import { AdminRoutePath, RoutePathIdLabel } from "../../../configurations/navigation.configuration";
+import { QueryPaginationDefault } from "../../../hooks/useQuery/useQuery.definition";
 import { useUsersByOrgQuery } from "../../../schemas/generated/graphql";
 import type { StatusCellProps } from "../EntityTable/components/StatusCell/StatusCell.definition";
 import { StatusCellListId } from "../EntityTable/components/StatusCell/StatusCell.definition";
 import { mapIdToStatusCell } from "../EntityTable/components/StatusCell/StatusCell.utils";
 import { EntityTableV2 } from "../EntityTableV2/EntityTableV2.component";
-import { AdminUserTableCellRenderer, AdminUserTableHeader } from "../Tables";
+import { AdminUserTableHeader, AdminUserTableCellRenderer } from "../Tables/user/AdminUserTable.definition";
 import type { OrganizationUsersProps } from "./Users.defintion";
 import { UsersTableId } from "./Users.defintion";
 

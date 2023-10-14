@@ -1,30 +1,31 @@
 import { Button, ButtonTheme, isEmpty, isNullOrWhiteSpace, useVisibility } from "@q4/nimbus-ui";
 import { Permission } from "@q4/platform-definitions";
-import { memo, useCallback, useMemo, useState } from "react";
+import React, { memo, useCallback, useMemo, useState } from "react";
 import { useHistory } from "react-router-dom";
-import { useAdminLoadingContext } from "../../../contexts";
-import type { Organization } from "../../../definitions/organization.definition";
+import UnlinkOrganizationIcon from "../../../assets/icons/unlinkOrganization.svg";
+import { useAdminLoadingContext } from "../../../contexts/admin/loading/useLoadingContext.hook";
 import { OrganizationEditState } from "../../../definitions/organization.definition";
-import type { OrganizationsQueryVariables } from "../../../hooks";
-import {
-  OrganizationUnlinkMessage,
-  QueryPaginationDefault,
-  useClaims,
-  useToastNotificationService,
-  useOrganizationsLazyQuery,
-  usePagination,
-  useSearch,
-} from "../../../hooks";
-import { useUnlinkOrganizations } from "../../../hooks/_apollo";
+import type { Organization } from "../../../definitions/organization.definition";
+import { useUnlinkOrganizations } from "../../../hooks/_apollo/useOrganization/useOrganization.hook";
+import { usePagination } from "../../../hooks/admin/usePagination/usePagination.hook";
+import { useSearch } from "../../../hooks/admin/useSearch/useSearch.hook";
+import { useClaims } from "../../../hooks/useClaims/useClaims.hook";
+import type { OrganizationsQueryVariables } from "../../../hooks/useOrganization/useOrganization.definition";
+import { OrganizationUnlinkMessage } from "../../../hooks/useOrganization/useOrganization.definition";
+import { QueryPaginationDefault } from "../../../hooks/useQuery/useQuery.definition";
+import { useToastNotificationService } from "../../../hooks/useToastNotificationService/useToastNotificationService.hook";
 import { AdminOrganizationsTableCellRenderer } from "../../../modules/Admin/Organizations/Organizations.definition";
-import { getOrganizationEditLinkedOrganizationsRoute } from "../../../utils";
-import { mapIdToCopyCell, mapIdToStatusCell } from "../EntityTable";
-import type { StatusCellProps, CopyCellProps } from "../EntityTable";
+import { useOrganizationsLazyQuery } from "../../../schemas/generated/graphql";
+import { getOrganizationEditLinkedOrganizationsRoute } from "../../../utils/organization/organization.utils";
+import type { CopyCellProps } from "../EntityTable/components/CopyCell/CopyCell.definition";
+import { mapIdToCopyCell } from "../EntityTable/components/CopyCell/CopyCell.utils";
+import type { StatusCellProps } from "../EntityTable/components/StatusCell/StatusCell.definition";
+import { mapIdToStatusCell } from "../EntityTable/components/StatusCell/StatusCell.utils";
 import { UnlinkOrganizationModal } from "../Modals/UnlinkOrganizationConfirmationModal/UnlinkOrganizationConfirmationModal.component";
-import { AdminUserTableCellRenderer, LinkedOrganizationTable } from "../Tables";
-import type { OrganizationsProps } from "./LinkedOrganizations.definition";
+import { LinkedOrganizationTable } from "../Tables/linked-organizations/LinkedOrganizationsTable.component";
+import { AdminUserTableCellRenderer } from "../Tables/user/AdminUserTable.definition";
 import { OrganizationsIdModel } from "./LinkedOrganizations.definition";
-import UnlinkOrganizationIcon from "./UnlinkOrganizationIcon.svg";
+import type { OrganizationsProps } from "./LinkedOrganizations.definition";
 
 const isValidKey = (lastOrganization: OrganizationEditState): boolean => !isNullOrWhiteSpace(lastOrganization?.id);
 

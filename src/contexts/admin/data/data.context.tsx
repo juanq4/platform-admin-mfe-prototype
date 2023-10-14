@@ -1,6 +1,7 @@
 import { createContext, useState } from "react";
-import type { Organization, User } from "../../../definitions";
-import { Team } from "../../../definitions";
+import type { Organization } from "../../../definitions/organization.definition";
+import { Team } from "../../../definitions/team.definition";
+import type { User } from "../../../definitions/user.definition";
 import type { AdminDataContextProps, AdminDataContextState } from "./data.definition";
 
 export const AdminDataContext = createContext<Partial<AdminDataContextState>>({});

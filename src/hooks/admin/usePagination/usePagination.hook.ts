@@ -3,7 +3,7 @@ import { useState, useRef, useEffect, useCallback } from "react";
 import {
   EntityTablePaginationDefault,
   EntityTablePaginationDirection,
-} from "../../../components/Admin/EntityTable/components";
+} from "../../../components/Admin/EntityTable/components/Pagination/Pagination.definition";
 import type { PaginationHookModel, PaginationHookProps } from "./usePagination.definition";
 
 export const usePagination = <TEntity, TPageRef>(

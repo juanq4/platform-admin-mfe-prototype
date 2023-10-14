@@ -1,4 +1,4 @@
-import { NimbusConfig, NimbusProviderImplementationMock } from "../contexts";
+import { NimbusConfig, NimbusProviderImplementationMock } from "../contexts/NimbusConfig.mock";
 
 export const createAppWrapper = (): void => {
   const body = global.document.querySelector("body");

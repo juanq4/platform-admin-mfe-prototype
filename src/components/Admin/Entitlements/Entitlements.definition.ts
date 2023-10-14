@@ -2,8 +2,12 @@ import type { BaseComponentProps } from "@q4/nimbus-ui";
 import { ButtonIdModel, IdModelBase, isNullOrWhiteSpace, MessageIdModel, PopoverMenuIdModel } from "@q4/nimbus-ui";
 import { BaseEntitlement } from "@q4/platform-definitions";
 import type { Entitlement as StrictEntitlement } from "@q4/platform-definitions";
-import type { Organization, OrganizationStudioDetails } from "../../../definitions";
-import type { LazyQueryResponse, SitesByOrganizationResponse, SitesByOrgQueryVariables } from "../../../hooks";
+import type { Organization, OrganizationStudioDetails } from "../../../definitions/organization.definition";
+import type {
+  SitesByOrganizationResponse,
+  SitesByOrgQueryVariables,
+} from "../../../hooks/useOrganization/useOrganization.definition";
+import type { LazyQueryResponse } from "../../../hooks/useQuery/useQuery.definition";
 import { AdminStudioSitesTableIdModel } from "../Tables/sites/AdminStudioSitesTable.definition";
 import { EngagementAnalyticsTierSelectorIdModel } from "./EngagementAnalyticsTierSelector/EngagementAnalyticsTierSelector.definition";
 

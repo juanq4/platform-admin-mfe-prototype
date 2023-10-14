@@ -1,18 +1,23 @@
 import { TableClassName, ToastContainer } from "@q4/nimbus-ui";
 import { fireEvent } from "@testing-library/react";
 import React from "react";
-import { MockOrganization1, MockOrganization12, MockOrganization2, MockOrganization3, MockUser } from "../../../__mocks__";
-import type { Team } from "../../../definitions";
-import { useToastNotificationService } from "../../../hooks";
-import type { AdminUserTableHookModel } from "../../../hooks";
+import {
+  MockOrganization12,
+  MockOrganization2,
+  MockOrganization3,
+  MockOrganization1,
+} from "../../../__mocks__/data/organizations.mock";
+import { MockUser } from "../../../__mocks__/data/users.mock";
+import type { Team } from "../../../definitions/team.definition";
+import type { AdminUserTableHookModel } from "../../../hooks/admin/useAdminUserTable/useAdminUserTable.definition";
 import { useAdminUserTable } from "../../../hooks/admin/useAdminUserTable/useAdminUserTable.hook";
+import { useToastNotificationService } from "../../../hooks/useToastNotificationService/useToastNotificationService.hook";
 import { useOrganizationsQuery, useTeamsQuery } from "../../../schemas/generated/graphql";
-import { getOrganizationEditTeamRoute } from "../../../utils";
+import { getOrganizationEditTeamRoute } from "../../../utils/organization/organization.utils";
 import { render, screen, waitFor } from "../../../utils/testUtils";
-import type { OrganizationTeamsProps } from "../Teams";
-import { OrganizationTeamsLanguage } from "../Teams";
 import { OrganizationTeams } from "./Teams.component";
-import { OrganizationTeamsIdModel } from "./Teams.definition";
+import type { OrganizationTeamsProps } from "./Teams.definition";
+import { OrganizationTeamsIdModel, OrganizationTeamsLanguage } from "./Teams.definition";
 
 jest.mock("../../../schemas/generated/graphql");
 const mockUseOrganizationsQuery = useOrganizationsQuery as jest.Mock;

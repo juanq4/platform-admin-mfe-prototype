@@ -1,7 +1,7 @@
 import type { BaseComponentProps } from "@q4/nimbus-ui";
 import { ButtonIdModel, IdModelBase, isNullOrWhiteSpace } from "@q4/nimbus-ui";
 import type React from "react";
-import type { OrganizationEditState } from "../../../definitions";
+import type { OrganizationEditState } from "../../../definitions/organization.definition";
 import { CopyCellListId } from "../EntityTable/components/CopyCell/CopyCell.definition";
 import { StatusCellListId } from "../EntityTable/components/StatusCell/StatusCell.definition";
 import { OrganizationsUnlinkIdModel } from "../Modals/UnlinkOrganizationConfirmationModal/UnlinkOrganizationConfirmationModal.definition";

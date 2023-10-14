@@ -2,17 +2,18 @@ import { arrayIndexFound, isEmpty, isNullOrWhiteSpace } from "@q4/nimbus-ui";
 import type { Permission } from "@q4/platform-definitions";
 import { OrganizationCurrency, OrganizationType } from "@q4/platform-definitions";
 import { generatePath, matchPath } from "react-router-dom";
-import type { PermissionCondition } from "../../configurations";
-import { AdminRoutePath, PermissionCollection, PermissionRule, RoutePathIdLabel } from "../../configurations";
+import type { PermissionCondition } from "../../configurations/access.configuration";
+import { PermissionRule, PermissionCollection } from "../../configurations/access.configuration";
+import { AdminRoutePath, RoutePathIdLabel } from "../../configurations/navigation.configuration";
 import type {
   Organization,
   OrganizationCurrencyOption,
   OrganizationEditState,
   OrganizationTypeOption,
-  Team,
-} from "../../definitions";
-import { SiteFilterActive, SiteFilterLive, SiteFilterStatus } from "../../definitions";
-import type { OrganizationMutationModel } from "../../hooks";
+} from "../../definitions/organization.definition";
+import { SiteFilterActive, SiteFilterLive, SiteFilterStatus } from "../../definitions/studio.definition";
+import type { Team } from "../../definitions/team.definition";
+import type { OrganizationMutationModel } from "../../hooks/useOrganization/useOrganization.definition";
 import {
   OrganizationCurrencyLabel,
   OrganizationDetailsMode,

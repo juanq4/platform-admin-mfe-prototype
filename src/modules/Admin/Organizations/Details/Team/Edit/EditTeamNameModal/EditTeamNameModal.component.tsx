@@ -8,21 +8,19 @@ import {
   Text,
   TextPreset,
 } from "@q4/nimbus-ui";
-import { memo, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
+import type { Organization } from "@q4/platform-definitions";
+import React, { memo, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
 import { AdminLoadingSpinner } from "../../../../../../../components/Admin/LoadingSpinner/LoadingSpinner.component";
-import { AdminDataContext } from "../../../../../../../contexts";
-import type { Team, User, Organization } from "../../../../../../../definitions";
+import { AdminDataContext } from "../../../../../../../contexts/admin/data/data.context";
+import type { Team } from "../../../../../../../definitions/team.definition";
+import type { User } from "../../../../../../../definitions/user.definition";
 import { TeamEditModal } from "../../../../../../../modules/Admin/Organizations/Details/Team/Edit/OrganizationTeamEdit.style";
 import {
   CustomGrid,
   CustomGridColumn,
 } from "../../../../../../../modules/Admin/Organizations/Details/Team/OrganizationsTeam.style";
-import {
-  getUsersWithTeams,
-  mapErrorsToKey,
-  orderOrganizationsAlphabetically,
-  orderUsersAlphabetically,
-} from "../../../../../../../utils";
+import { mapErrorsToKey } from "../../../../../../../utils/error/error.utils";
+import { orderOrganizationsAlphabetically } from "../../../../../../../utils/organization/organization.utils";
 import type { TeamFormError } from "../../OrganizationsTeam.definition";
 import { TeamDescriptions, TeamErrorsLanguage } from "../../OrganizationsTeam.definition";
 import { EditTeamTablesForm } from "../../components/EditTeamTables/EditTeamTables.component";

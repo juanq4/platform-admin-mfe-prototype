@@ -1,21 +1,27 @@
 import { isNullOrWhiteSpace } from "@q4/nimbus-ui";
 import type { RowClickedEvent } from "@q4/nimbus-ui/dist/dependencies/agGrid/community";
+import type { Organization } from "@q4/platform-definitions";
 import { Permission } from "@q4/platform-definitions";
-import { memo, useCallback, useMemo, useRef, useState } from "react";
+import React, { memo, useCallback, useMemo, useRef, useState } from "react";
 import { generatePath, useHistory, useLocation } from "react-router-dom";
-import type { CopyCellProps, StatusCellProps, EntityTableColumnDef, TypeCellProps } from "../../../components";
 import { EntityTable } from "../../../components/Admin/EntityTable/EntityTable.component";
+import type { EntityTableColumnDef } from "../../../components/Admin/EntityTable/EntityTable.definition";
+import type { CopyCellProps } from "../../../components/Admin/EntityTable/components/CopyCell/CopyCell.definition";
 import { mapIdToCopyCell } from "../../../components/Admin/EntityTable/components/CopyCell/CopyCell.utils";
+import type { StatusCellProps } from "../../../components/Admin/EntityTable/components/StatusCell/StatusCell.definition";
 import { mapIdToStatusCell } from "../../../components/Admin/EntityTable/components/StatusCell/StatusCell.utils";
+import type { TypeCellProps } from "../../../components/Admin/EntityTable/components/TypeCell/TypeCell.definition";
 import { mapIdToTypeCell } from "../../../components/Admin/EntityTable/components/TypeCell/TypeCell.utils";
-import { AdminRoutePath, RoutePathIdLabel } from "../../../configurations";
-import { useAdminLoadingContext } from "../../../contexts";
-import type { Organization } from "../../../definitions";
-import { QueryPaginationDefault, useClaims, usePagination, useSearch } from "../../../hooks";
-import type { OrganizationsQueryVariables } from "../../../hooks";
+import { AdminRoutePath, RoutePathIdLabel } from "../../../configurations/navigation.configuration";
+import { useAdminLoadingContext } from "../../../contexts/admin/loading/useLoadingContext.hook";
+import { usePagination } from "../../../hooks/admin/usePagination/usePagination.hook";
+import { useSearch } from "../../../hooks/admin/useSearch/useSearch.hook";
+import { useClaims } from "../../../hooks/useClaims/useClaims.hook";
+import { QueryPaginationDefault } from "../../../hooks/useQuery/useQuery.definition";
 import { OrganizationDetailsMode } from "../../../modules/Admin/Organizations/Details/OrganizationDetails.definition";
 import { useOrganizationsLazyQuery } from "../../../schemas/generated/graphql";
-import { getOrganizationDetailsMode } from "../../../utils";
+import type { OrganizationsQueryVariables } from "../../../schemas/generated/graphql";
+import { getOrganizationDetailsMode } from "../../../utils/organization/organization.utils";
 import {
   AdminOrganizationsTableCellRenderer,
   AdminOrganizationsToolbarActions,

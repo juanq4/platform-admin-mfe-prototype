@@ -2,7 +2,7 @@ import { isNil } from "@q4/nimbus-ui";
 import { useCallback, useContext, useMemo, useRef, useState } from "react";
 import { useQuery, Context as GraphqlContext } from "urql";
 import type { UseMutationState, UseQueryArgs, UseQueryResponse, OperationResult } from "urql";
-import { User } from "../../definitions";
+import { User } from "../../definitions/user.definition";
 import type { QueryHookProps, QueryPaginationVariablesBase } from "../useQuery/useQuery.definition";
 import { QueryPaginationDefault } from "../useQuery/useQuery.definition";
 import { useMutation } from "../useQuery/useQuery.hook";

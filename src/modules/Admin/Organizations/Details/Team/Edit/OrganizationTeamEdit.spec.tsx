@@ -2,54 +2,44 @@ import { MockedProvider } from "@apollo/client/testing";
 import type { MockedResponse } from "@apollo/client/testing";
 import type { NotificationService } from "@q4/nimbus-ui";
 import { ButtonClassName, StyleGuide, TableClassName, ConfigProvider as NimbusConfig } from "@q4/nimbus-ui";
+import type { Organization } from "@q4/platform-definitions";
+import { Role } from "@q4/platform-sdk-definitions";
 import React from "react";
 import {
+  MockOrganization12,
   MockOrganization1,
+  MockOrganization15,
   MockOrganization2,
   MockOrganization10,
-  MockOrganization12,
-  MockTeam3,
   MockOrganizations,
   MockOrganization11,
-  MockUsers,
-  MockUser,
-  MockUsersLong,
-  MockTeam2,
-  MockUser1,
-  MockUser2,
-  MockUser8,
-  MockTeam1,
-  MockTeam8,
-  AdminDataContextMock,
   MockOrganization13,
   MockOrganization14,
-  MockUser4,
-  MockOrganization15,
+} from "../../../../../../__mocks__/data/organizations.mock";
+import {
+  MockUsers,
   MockUser14,
-} from "../../../../../../__mocks__";
-import {
-  getOrganizationAgencyMock,
-  getOrganizationsMock,
-  getTeamMock,
-  getTeamsMock,
-  getUsersMock,
-  removeTeamMock,
-  updateTeamMock,
-} from "../../../../../../__mocks__/apollo";
-import {
-  AdminOrganizationsTableHeader,
-  AdminUserTableHeader,
-  EntityTablePaginationLabels,
-  StatusCellLabel,
-} from "../../../../../../components";
-import { Role } from "../../../../../../configurations";
-import { AdminDataContext } from "../../../../../../contexts";
-import type { AdminDataContextState } from "../../../../../../contexts";
-import type { Organization, User } from "../../../../../../definitions";
-import { Team } from "../../../../../../definitions";
+  MockUser4,
+  MockUser,
+  MockUser8,
+  MockUser1,
+  MockUser2,
+  MockUsersLong,
+} from "../../../../../../__mocks__/data/users.mock";
+import { EntityTablePaginationLabels } from "../../../../../../components/Admin/EntityTable/components/Pagination/Pagination.definition";
+import { StatusCellLabel } from "../../../../../../components/Admin/EntityTable/components/StatusCell/StatusCell.definition";
+import { AdminOrganizationsTableHeader } from "../../../../../../components/Admin/Tables/organization/AdminOrganizationTable.definition";
+import { AdminUserTableHeader } from "../../../../../../components/Admin/Tables/user/AdminUserTable.definition";
+import { AdminDataContext } from "../../../../../../contexts/admin/data/data.context";
+import type { AdminDataContextState } from "../../../../../../contexts/admin/data/data.definition";
+import { Team } from "../../../../../../definitions/team.definition";
+import type { User } from "../../../../../../definitions/user.definition";
 import { useToastNotificationService } from "../../../../../../hooks/useToastNotificationService/useToastNotificationService.hook";
-import { GET_TEAM, DELETE_TEAM, UPDATE_TEAM } from "../../../../../../schemas";
-import { getOrganizationLabelWithTicker, getOrganizationViewRoute, orderUsersAlphabetically } from "../../../../../../utils";
+import { UPDATE_TEAM, GET_TEAM, DELETE_TEAM } from "../../../../../../schemas/teams/teams.schema";
+import {
+  getOrganizationLabelWithTicker,
+  getOrganizationViewRoute,
+} from "../../../../../../utils/organization/organization.utils";
 import { render, screen, fireEvent, waitFor, within } from "../../../../../../utils/testUtils";
 import { TeamDescriptions, TeamErrorsLanguage } from "../OrganizationsTeam.definition";
 import { AddUsersTeamsFormLanguage } from "../components/AddUsersForm/AddUsersTeamsForm.definition";
@@ -426,7 +416,7 @@ describe("Organization Team Edit view", () => {
       fireEvent.click(getCloseButton());
 
       expect(
-        within(screen.getByTestId(ViewIdModel.teamNameEditModal.dataTables.orgsTable.id)).queryByText(MockTeam3.name),
+        within(screen.queryByTestId(ViewIdModel.teamNameEditModal.dataTables.orgsTable.id)).queryByText(MockTeam3.name),
       ).not.toBeInTheDocument();
 
       await waitFor(() => {

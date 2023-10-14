@@ -6,15 +6,15 @@ import type {
   IHeaderParams,
   RowDataChangedEvent,
 } from "@q4/nimbus-ui/dist/dependencies/agGrid/community";
-import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
+import React, { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { EntityTableColumnDef } from "../../../../../../../components/Admin/EntityTable/EntityTable.definition";
 import type { EntityTablePaginationDirection } from "../../../../../../../components/Admin/EntityTable/components/Pagination/Pagination.definition";
 import { AdminUserTable } from "../../../../../../../components/Admin/Tables/user/AdminUserTable.component";
 import { AdminUserTableHeader } from "../../../../../../../components/Admin/Tables/user/AdminUserTable.definition";
-import type { User } from "../../../../../../../definitions";
-import type { UsersQueryVariables } from "../../../../../../../hooks";
-import { QueryPaginationDefault, usePagination } from "../../../../../../../hooks";
-import { getUsersWithTeams, searchUserFromList } from "../../../../../../../utils";
+import type { User } from "../../../../../../../definitions/user.definition";
+import { usePagination } from "../../../../../../../hooks/admin/usePagination/usePagination.hook";
+import { QueryPaginationDefault } from "../../../../../../../hooks/useQuery/useQuery.definition";
+import type { UsersQueryVariables } from "../../../../../../../schemas/generated/graphql";
 import { EditTeamTablesLanguage } from "../EditTeamTables/EditTeamTables.definition";
 import { AddUsersTeamsFormIdModel, AddUsersTeamsFormLanguage } from "./AddUsersTeamsForm.definition";
 import type { AddUsersTeamsFormProps } from "./AddUsersTeamsForm.definition";

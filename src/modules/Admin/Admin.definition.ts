@@ -1,6 +1,6 @@
 import { BannerIdModel, IdModelBase, LayoutIdModel } from "@q4/nimbus-ui";
 import type { Tab } from "@q4/nimbus-ui";
-import { AdminRoutePath } from "../../configurations";
+import { AdminRoutePath } from "../../configurations/navigation.configuration";
 
 export enum AdminViewClassName {
   Base = "admin",

@@ -1,19 +1,25 @@
 import { isNullOrWhiteSpace } from "@q4/nimbus-ui";
-import { memo, useMemo, useState } from "react";
+import React, { memo, useMemo, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
-import type { AdminUserFormProps } from "../../../../components/Admin/Forms";
 import { AdminUserForm } from "../../../../components/Admin/Forms/User/AdminUserForm.component";
+import type { AdminUserFormProps } from "../../../../components/Admin/Forms/User/AdminUserForm.definition";
 import { AdminUserFormMode } from "../../../../components/Admin/Forms/User/AdminUserForm.definition";
-import { RoutePathIdLabel } from "../../../../configurations";
-import type { User } from "../../../../definitions";
-import { useClaims, UserCreateMessages, useUserCreate } from "../../../../hooks";
-import { getOrganizationDetailsMode, getOrganizationEditRoute, getOrganizationViewRoute } from "../../../../utils";
+import { RoutePathIdLabel } from "../../../../configurations/navigation.configuration";
+import type { User } from "../../../../definitions/user.definition";
+import { useClaims } from "../../../../hooks/useClaims/useClaims.hook";
+import { UserCreateMessages } from "../../../../hooks/useUser/useUser.definition";
+import { useUserCreate } from "../../../../hooks/useUser/useUser.hook";
+import {
+  getOrganizationDetailsMode,
+  getOrganizationEditRoute,
+  getOrganizationViewRoute,
+} from "../../../../utils/organization/organization.utils";
 import { OrganizationDetailsMode } from "../../Organizations/Details/OrganizationDetails.definition";
+import type { OrganizationsUserCreateParams } from "../../Organizations/Details/User/Create/OrganizationsUserCreate.definition";
 import {
   OrganizationsUserCreateViewIdModel as ViewIdModel,
   OrganizationUserCreateDefaultUser,
 } from "../../Organizations/Details/User/Create/OrganizationsUserCreate.definition";
-import type { OrganizationsUserCreateParams } from "../../Organizations/Details/User/Create/OrganizationsUserCreate.definition";
 
 const OrganizationsUserCreateBase = (): JSX.Element => {
   const params = useParams<OrganizationsUserCreateParams>();

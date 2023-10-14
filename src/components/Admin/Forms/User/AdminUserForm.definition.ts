@@ -13,8 +13,9 @@ import {
 } from "@q4/nimbus-ui";
 import type { BaseComponentProps, ErrorModel, ModalProps } from "@q4/nimbus-ui";
 import type { Dispatch, Key, SetStateAction } from "react";
-import type { Organization, User } from "../../../../definitions";
-import type { ApiResponse } from "../../../../services";
+import type { Organization } from "../../../../definitions/organization.definition";
+import type { User } from "../../../../definitions/user.definition";
+import type { ApiResponse } from "../../../../hooks/useQuery/useQuery.definition";
 import { NotFoundErrorIdModel } from "../../../Errors/NotFoundError/NotFoundError.definition";
 
 export const AdminUserFormErrorTextboxTheme = TextboxTheme.Spice;

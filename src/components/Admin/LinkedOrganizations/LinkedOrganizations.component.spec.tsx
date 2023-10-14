@@ -13,7 +13,7 @@ import { OrganizationEditState } from "../../../definitions/organization.definit
 import { useUnlinkOrganizations } from "../../../hooks/_apollo/useOrganization/useOrganization.hook";
 import { useTable } from "../../../hooks/admin/useTable/useTable.hook";
 import { useClaims } from "../../../hooks/useClaims/useClaims.hook";
-import { OrganizationUnlinkMessage } from "../../../hooks/useOrganization";
+import { OrganizationUnlinkMessage } from "../../../hooks/useOrganization/useOrganization.definition";
 import { useOrganizationsLazyQuery } from "../../../hooks/useOrganization/useOrganization.hook";
 import { useToastNotificationService } from "../../../hooks/useToastNotificationService/useToastNotificationService.hook";
 import { fireEvent, render, screen, waitFor, within } from "../../../utils/testUtils";

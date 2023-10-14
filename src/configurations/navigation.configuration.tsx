@@ -1,4 +1,4 @@
-import { env } from "../../config";
+import { env } from "../../config/env/env";
 import AdminIcon from "../assets/icons/admin.svg";
 import CRMIcon from "../assets/icons/crm.svg";
 import EventsIcon from "../assets/icons/events.svg";

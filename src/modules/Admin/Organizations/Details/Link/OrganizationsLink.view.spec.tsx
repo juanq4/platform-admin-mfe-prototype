@@ -13,15 +13,16 @@ import {
   MockAgencyOrganization,
   MockQ4IncCorpOrganization,
 } from "../../../../../__mocks__/data/organizations.mock";
-import { OrganizationEditState, OrganizationLinkedStatus } from "../../../../../definitions";
-import type { useOrganizationsQuery } from "../../../../../hooks";
-import { OrganizationsLinkMessage, useToastNotificationService } from "../../../../../hooks";
+import { OrganizationEditState, OrganizationLinkedStatus } from "../../../../../definitions/organization.definition";
 import { useLinkOrganizations } from "../../../../../hooks/_apollo/useOrganization/useOrganization.hook";
 import { useManagedByAdminOrganization } from "../../../../../hooks/useManagedByAdminOrganization/useManagedByAdminOrganization.hook";
+import { OrganizationsLinkMessage } from "../../../../../hooks/useOrganization/useOrganization.definition";
+import type { useOrganizationsQuery } from "../../../../../hooks/useOrganization/useOrganization.hook";
 import {
   OrganizationsWithManagedByQuery,
   useOrganizationQuery,
 } from "../../../../../hooks/useOrganization/useOrganization.hook";
+import { useToastNotificationService } from "../../../../../hooks/useToastNotificationService/useToastNotificationService.hook";
 import { within, render, screen, fireEvent, waitFor } from "../../../../../utils/testUtils";
 import {
   OrganizationLinkAdminWording,

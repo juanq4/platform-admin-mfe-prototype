@@ -1,8 +1,8 @@
 import { ButtonTheme, isEmpty, isNullOrWhiteSpace, Modal, Text, TextPreset } from "@q4/nimbus-ui";
 import { memo, useEffect, useMemo, useRef, useState } from "react";
-import { Role } from "../../../../../../../configurations";
+import { Role } from "../../../../../../../configurations/access.configuration";
 import { useAdminData } from "../../../../../../../contexts/admin/data/data.hook";
-import type { User } from "../../../../../../../definitions";
+import type { User } from "../../../../../../../definitions/user.definition";
 import { TeamDescriptions } from "../../OrganizationsTeam.definition";
 import { CustomGrid, CustomGridColumn, WideTableWrapper } from "../../OrganizationsTeam.style";
 import { AddUsersTeamsForm } from "../../components/AddUsersForm/AddUsersTeamsForm.component";

@@ -1,9 +1,12 @@
+import type { User } from "@auth0/auth0-react";
 import React, { memo, useState } from "react";
 import { useHistory } from "react-router-dom";
-import { AdminUserForm, AdminUserFormMode } from "../../../../components/Admin/Forms";
-import type { AdminUserFormProps } from "../../../../components/Admin/Forms";
-import type { User } from "../../../../definitions";
-import { useUserCreate, UserCreateMessages, useClaims } from "../../../../hooks";
+import { AdminUserForm } from "../../../../components/Admin/Forms/User/AdminUserForm.component";
+import type { AdminUserFormProps } from "../../../../components/Admin/Forms/User/AdminUserForm.definition";
+import { AdminUserFormMode } from "../../../../components/Admin/Forms/User/AdminUserForm.definition";
+import { useClaims } from "../../../../hooks/useClaims/useClaims.hook";
+import { UserCreateMessages } from "../../../../hooks/useUser/useUser.definition";
+import { useUserCreate } from "../../../../hooks/useUser/useUser.hook";
 import {
   UsersCreateDefaultUser,
   UsersCreateReturnRoute,

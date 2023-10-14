@@ -1,5 +1,5 @@
 import React from "react";
-import { MockUser11, MockUser12, MockUser13, MockUsersLong } from "../../../../../../../__mocks__";
+import { MockUsersLong, MockUser13, MockUser12, MockUser11 } from "../../../../../../../__mocks__/data/users.mock";
 import { useAdminData } from "../../../../../../../contexts/admin/data/data.hook";
 import { fireEvent, render, screen, waitFor } from "../../../../../../../utils/testUtils";
 import { TeamEditLanguage, TeamEditViewIdModel as ViewIdModel } from "../OrganizationsTeamEdit.definition";

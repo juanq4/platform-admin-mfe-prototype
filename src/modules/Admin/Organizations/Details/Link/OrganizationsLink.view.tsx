@@ -18,21 +18,20 @@ import {
   Origin,
   TooltipTheme,
 } from "@q4/nimbus-ui";
+import type { Organization } from "@q4/platform-definitions";
 import { OrganizationType } from "@q4/platform-definitions";
-import { memo, useMemo, useRef, useState } from "react";
+import React, { memo, useMemo, useRef, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
-import { AdminLoadingSpinner } from "../../../../../components/Admin/LoadingSpinner";
-import { OrganizationEditState, OrganizationLinkedStatus } from "../../../../../definitions";
-import type { LinkedOrganization, Organization, OrganizationLinkedOption } from "../../../../../definitions";
-import { useLinkOrganizations } from "../../../../../hooks/_apollo/useOrganization";
+import { AdminLoadingSpinner } from "../../../../../components/Admin/LoadingSpinner/LoadingSpinner.component";
+import type { LinkedOrganization, OrganizationLinkedOption } from "../../../../../definitions/organization.definition";
+import { OrganizationEditState, OrganizationLinkedStatus } from "../../../../../definitions/organization.definition";
+import { useLinkOrganizations } from "../../../../../hooks/_apollo/useOrganization/useOrganization.hook";
 import { useManagedByAdminOrganization } from "../../../../../hooks/useManagedByAdminOrganization/useManagedByAdminOrganization.hook";
-import {
-  OrganizationsLinkMessage,
-  OrganizationsWithManagedByQuery,
-  useOrganizationQuery,
-} from "../../../../../hooks/useOrganization";
+import { OrganizationsLinkMessage } from "../../../../../hooks/useOrganization/useOrganization.definition";
+import { OrganizationsWithManagedByQuery } from "../../../../../hooks/useOrganization/useOrganization.hook";
 import { useToastNotificationService } from "../../../../../hooks/useToastNotificationService/useToastNotificationService.hook";
-import { getOrganizationEditRoute } from "../../../../../utils/organization";
+import { useOrganizationQuery } from "../../../../../schemas/generated/graphql";
+import { getOrganizationEditRoute } from "../../../../../utils/organization/organization.utils";
 import type { OrganizationsLinkParam } from "./OrganizationsLink.definition";
 import {
   OrganizationLinkAdminWording,
