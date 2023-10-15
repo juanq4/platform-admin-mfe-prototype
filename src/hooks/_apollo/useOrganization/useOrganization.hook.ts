@@ -1,22 +1,22 @@
-import type { ApolloCache, DefaultContext, MutationTuple, QueryResult } from "@apollo/client";
-import { gql, useMutation, useQuery } from "@apollo/client";
+import type { ApolloCache, DefaultContext, MutationTuple } from "@apollo/client";
+import { gql, useMutation } from "@apollo/client";
 import type { Organization } from "@q4/platform-definitions";
-import { useClaims } from "../../useClaims/useClaims.hook";
+// import { useClaims } from "../../useClaims/useClaims.hook";
 import { OrganizationsBase } from "../../useOrganization/useOrganization.definition";
 
-export const GET_ORGANIZATION_QUERY = gql`
-  query Organization($organizationId: String) {
-    organization(id: $organizationId) {
-      id
-      name
-      entitlements
-      identifiers
-      q4SecurityId
-      region
-      currency
-    }
-  }
-`;
+// export const GET_ORGANIZATION_QUERY = gql`
+//   query Organization($organizationId: String) {
+//     organization(id: $organizationId) {
+//       id
+//       name
+//       entitlements
+//       identifiers
+//       q4SecurityId
+//       region
+//       currency
+//     }
+//   }
+// `;
 
 const LINK_ORGANIZATIONS = gql`
   mutation LinkOrganizations($managedOrganizationIds: [String!]!, $linkOrganizationsId: String!) {
@@ -35,23 +35,23 @@ const UNLINK_ORGANIZATION = gql`
   }
 `;
 
-export const useOrganization = (): QueryResult<{ organization: Organization }, { organizationId: string }> => {
-  const { organizationId } = useClaims();
+// export const useOrganization = (): QueryResult<{ organization: Organization }, { organizationId: string }> => {
+//   const { organizationId } = useClaims();
 
-  return useQuery(GET_ORGANIZATION_QUERY, {
-    skip: !organizationId,
-    variables: { organizationId },
-  });
-};
+//   return useQuery(GET_ORGANIZATION_QUERY, {
+//     skip: !organizationId,
+//     variables: { organizationId },
+//   });
+// };
 
-export const useCurrentOrganization = (): QueryResult<{ organization: Organization }, { organizationId: string }> => {
-  const { newClaimOrganizationId: organizationId } = useClaims();
+// export const useCurrentOrganization = (): QueryResult<{ organization: Organization }, { organizationId: string }> => {
+//   const { newClaimOrganizationId: organizationId } = useClaims();
 
-  return useQuery(GET_ORGANIZATION_QUERY, {
-    skip: !organizationId,
-    variables: { organizationId },
-  });
-};
+//   return useQuery(GET_ORGANIZATION_QUERY, {
+//     skip: !organizationId,
+//     variables: { organizationId },
+//   });
+// };
 
 export const useLinkOrganizations = (): MutationTuple<
   { linkOrganizations: Organization[] },

@@ -17,6 +17,8 @@ TODO
 
 FIXME: // @jm fixme
 - src/context/user
+- User }
+- { Organization }
 
 DONE
 - Fix circular references

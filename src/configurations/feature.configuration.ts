@@ -1,5 +1,6 @@
 import type { LDFlagSet } from "launchdarkly-js-sdk-common";
 
+// @jm fixme
 export enum FeatureFlag {
   AdminClientAccountAccess = "admin-client-account-access",
   AdminUserManagement = "admin-user-management",

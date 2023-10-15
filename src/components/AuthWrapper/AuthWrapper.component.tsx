@@ -1,32 +1,32 @@
-import type { AppState } from "@auth0/auth0-react";
-import { Auth0Provider } from "@auth0/auth0-react";
-import { createBrowserHistory } from "history";
-import React, { useCallback } from "react";
-import { Router } from "react-router-dom";
-import "../../../node_modules/@q4/nimbus-ui/dist/_styles.css";
-import { env } from "../../../config/env/env";
+// import type { AppState } from "@auth0/auth0-react";
+// import { Auth0Provider } from "@auth0/auth0-react";
+// import { createBrowserHistory } from "history";
+// import React, { useCallback } from "react";
+// import { Router } from "react-router-dom";
+// import "../../../node_modules/@q4/nimbus-ui/dist/_styles.css";
+// import { env } from "../../../config/env/env";
 
-export const history = createBrowserHistory();
+// export const history = createBrowserHistory();
 
-export const AuthWrapper = (): JSX.Element => {
-  const handleRedirectCallback = useCallback(
-    (appState: AppState) => history.push(appState?.returnTo || window.location.pathname),
-    [],
-  );
+// export const AuthWrapper = (): JSX.Element => {
+//   const handleRedirectCallback = useCallback(
+//     (appState: AppState) => history.push(appState?.returnTo || window.location.pathname),
+//     [],
+//   );
 
-  return (
-    <Auth0Provider
-      domain={env.auth0.domain}
-      clientId={env.auth0.clientId}
-      redirectUri={window.location.origin}
-      audience={env.auth0.audience}
-      cacheLocation="localstorage"
-      useRefreshTokens
-      onRedirectCallback={handleRedirectCallback}
-    >
-      <Router history={history}>
-        <AuthenticationGate />
-      </Router>
-    </Auth0Provider>
-  );
-};
+//   return (
+//     <Auth0Provider
+//       domain={env.auth0.domain}
+//       clientId={env.auth0.clientId}
+//       redirectUri={window.location.origin}
+//       audience={env.auth0.audience}
+//       cacheLocation="localstorage"
+//       useRefreshTokens
+//       onRedirectCallback={handleRedirectCallback}
+//     >
+//       <Router history={history}>
+//         <AuthenticationGate />
+//       </Router>
+//     </Auth0Provider>
+//   );
+// };

@@ -1,6 +1,6 @@
 import { arrayIndexFound, isEmpty, isNullOrWhiteSpace } from "@q4/nimbus-ui";
 import type { OrganizationCurrency, OrganizationRegion, OrganizationType } from "@q4/platform-definitions";
-import type { Entitlement } from "../components";
+import type { Entitlement } from "../components/Admin/Entitlements/Entitlements.definition";
 import { EntityBase } from "./entity.definition";
 import type { Team } from "./team.definition";
 

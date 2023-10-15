@@ -1,9 +1,9 @@
-import { throttle as throttleFn } from "lodash";
+// import { throttle as throttleFn } from "lodash";
 
-const ThrottleDefault = {
-  Wait: 600,
-};
+// const ThrottleDefault = {
+//   Wait: 600,
+// };
 
-export const throttle = throttleFn((command: () => void) => {
-  command();
-}, ThrottleDefault.Wait);
+// export const throttle = throttleFn((command: () => void) => {
+//   command();
+// }, ThrottleDefault.Wait);

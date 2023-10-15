@@ -1,5 +1,5 @@
 import type { OperationContext } from "urql";
-import type { User } from "../../definitions";
+import type { User } from "../../definitions/user.definition";
 import type { ApiResponse, MutationResponse, QueryPaginationVariablesBase } from "../useQuery/useQuery.definition";
 
 export enum UserUpdateMessages {

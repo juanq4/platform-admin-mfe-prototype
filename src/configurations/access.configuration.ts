@@ -40,7 +40,7 @@ export const Q4Role = {
   Q4ManageClientRole: generateRoleLabel(RoleLabel.Q4ClientTeam, roleLabelSuffix),
 };
 
-export const Q4Roles = Object.values(Q4Role);
+// export const Q4Roles = Object.values(Q4Role);
 
 export const CorporateRole = {
   CorporateAdmin: generateRoleLabel(RoleLabel.CorporateAdmin, roleLabelSuffix),
@@ -52,7 +52,8 @@ export const CorporateRoles = Object.values(CorporateRole);
 export const AgencyRole = {
   AgencyUser: generateRoleLabel(RoleLabel.AgencyUser, roleLabelSuffix),
 };
-export const AgencyRoles = Object.values(AgencyRole);
+
+// export const AgencyRoles = Object.values(AgencyRole);
 
 export const AppRole = {
   WebsiteManagementUser: RoleLabel.WebsiteManagementUser,
@@ -66,7 +67,8 @@ export const AppRole = {
   EventManagementAdmin: RoleLabel.EventManagementAdmin,
   EventManagementUser: RoleLabel.EventManagementUser,
 };
-export const AppRoles = Object.values(AppRole);
+
+// export const AppRoles = Object.values(AppRole);
 
 export const Role = {
   ...Q4Role,

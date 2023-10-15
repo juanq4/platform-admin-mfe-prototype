@@ -1,4 +1,4 @@
-import { Entitlement } from "@q4/platform-definitions";
+import type { Entitlement } from "@q4/platform-definitions";
 import type { FeatureFlag } from "./feature.configuration";
 
 // When adding a new Entitlement, one must
@@ -8,7 +8,7 @@ import type { FeatureFlag } from "./feature.configuration";
 // - update the EntitlementsIdModel according to the comments in said model, otherwise the code will break
 // - add a new element to the entitlementElements array in Entitlements.component.tsx
 
-export const Entitlements = Object.values(Entitlement);
+// export const Entitlements = Object.values(Entitlement);
 
 export enum CamelCaseEntitlement {
   Studio = "studio",

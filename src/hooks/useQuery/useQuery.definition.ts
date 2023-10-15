@@ -44,12 +44,12 @@ export const QueryPaginationDefault = {
   PageSize: 10,
 };
 
-export enum QueryRequestPolicy {
-  CacheAndNetwork = "cache-and-network",
-  CacheFirst = "cache-first",
-  CacheOnly = "cache-only",
-  NetworkOnly = "network-only",
-}
+// export enum QueryRequestPolicy {
+//   CacheAndNetwork = "cache-and-network",
+//   CacheFirst = "cache-first",
+//   CacheOnly = "cache-only",
+//   NetworkOnly = "network-only",
+// }
 
 export type MutationHookModel<TEntity extends EntityBase, TPayload extends EntityBase = TEntity> = (
   variables?: TPayload,

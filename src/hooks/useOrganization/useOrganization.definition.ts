@@ -13,6 +13,7 @@ export interface SitesByOrgQueryVariables {
 }
 
 export type SitesItems = Pick<StudioApiResponse, "subdomain" | "siteName">;
+
 export interface SitesByOrganizationResponse {
   organizationSites: {
     items: SitesItems[];
