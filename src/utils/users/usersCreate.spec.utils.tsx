@@ -7,6 +7,9 @@ import { Auth0HookMock, MockAuth0Token } from "../../__mocks__/contexts/Auth0Con
 import { MockOrganization1 } from "../../__mocks__/data/organizations.mock";
 import { MockUser } from "../../__mocks__/data/users.mock";
 import { getAdminFormUser } from "../../components/Admin/Forms/User/AdminUserForm.utils";
+import { Admin } from "../../components/AdminContent/AdminContent.view";
+import { OrganizationDetailsMode } from "../../components/AdminContent/Organizations/Details/OrganizationDetails.definition";
+import type { UsersCreateViewIdModel } from "../../components/AdminContent/User/Create/UsersCreate.definition";
 import { AccessRouteMap, PermissionCollection } from "../../configurations/access.configuration";
 import type { AdminRoutePath } from "../../configurations/navigation.configuration";
 import { OrganizationClaim } from "../../configurations/q4-platform-common.configuration";
@@ -15,9 +18,6 @@ import { useClaims } from "../../hooks/useClaims/useClaims.hook";
 import { useIdTokenClaims } from "../../hooks/useIdTokenClaims/useIdTokenClaims.hook";
 import { useOrganizationQuery } from "../../hooks/useOrganization/useOrganization.hook";
 import { useUserCreate } from "../../hooks/useUser/useUser.hook";
-import { Admin } from "../../modules/Admin/Admin.view";
-import { OrganizationDetailsMode } from "../../modules/Admin/Organizations/Details/OrganizationDetails.definition";
-import type { UsersCreateViewIdModel } from "../../modules/Admin/User/Create/UsersCreate.definition";
 import { getOrganizationDetailsMode } from "../organization/organization.utils";
 import { fireEvent, render, screen, waitFor } from "../testUtils";
 

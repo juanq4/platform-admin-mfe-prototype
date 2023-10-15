@@ -2,6 +2,10 @@ import { arrayIndexFound, isEmpty, isNullOrWhiteSpace } from "@q4/nimbus-ui";
 import type { Permission } from "@q4/platform-definitions";
 import { OrganizationCurrency, OrganizationType } from "@q4/platform-definitions";
 import { generatePath, matchPath } from "react-router-dom";
+import {
+  OrganizationCurrencyLabel,
+  OrganizationDetailsMode,
+} from "../../components/AdminContent/Organizations/Details/OrganizationDetails.definition";
 import type { PermissionCondition } from "../../configurations/access.configuration";
 import { PermissionRule, PermissionCollection } from "../../configurations/access.configuration";
 import { AdminRoutePath, RoutePathIdLabel } from "../../configurations/navigation.configuration";
@@ -14,10 +18,6 @@ import type {
 import { SiteFilterActive, SiteFilterLive, SiteFilterStatus } from "../../definitions/studio.definition";
 import type { Team } from "../../definitions/team.definition";
 import type { OrganizationMutationModel } from "../../hooks/useOrganization/useOrganization.definition";
-import {
-  OrganizationCurrencyLabel,
-  OrganizationDetailsMode,
-} from "../../modules/Admin/Organizations/Details/OrganizationDetails.definition";
 import { hasRequiredPermission } from "../permission/permission.utils";
 import { OrganizationsUserEditDefault as ViewDefaults } from "./organization.definition";
 

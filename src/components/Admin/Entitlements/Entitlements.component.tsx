@@ -21,12 +21,12 @@ import { EntitlementLabel } from "../../../configurations/entitlement.configurat
 import { FeatureFlag } from "../../../configurations/feature.configuration";
 import { useClaims } from "../../../hooks/useClaims/useClaims.hook";
 import { useFeatureFlags } from "../../../hooks/useFeatureFlags/useFeatureFlags.hook";
-import { OrganizationDetailsMode } from "../../../modules/Admin/Organizations/Details/OrganizationDetails.definition";
 import {
   isEngagementAnalyticsEntitlement,
   getDefaultEntitlementSelection,
 } from "../../../utils/entitlement/entitlement.utils";
 import { getOrganizationDetailsMode } from "../../../utils/organization/organization.utils";
+import { OrganizationDetailsMode } from "../../AdminContent/Organizations/Details/OrganizationDetails.definition";
 import { AdminStudioSitesTable } from "../Tables/sites/AdminStudioSitesTable.component";
 import { EngagementAnalyticsTierSelectorComponent } from "./EngagementAnalyticsTierSelector/EngagementAnalyticsTierSelector.component";
 import type { EntitlementsProps, Entitlement } from "./Entitlements.definition";

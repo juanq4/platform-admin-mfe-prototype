@@ -1,8 +1,8 @@
 import { isEmpty } from "@q4/nimbus-ui";
 import { OrganizationType } from "@q4/platform-definitions";
+import { OrganizationDetailsMode } from "../../components/AdminContent/Organizations/Details/OrganizationDetails.definition";
 import { PermissionCollection, Q4Role, AppRole, CorporateRoles } from "../../configurations/access.configuration";
 import { RoutePathIdLabel, AdminRoutePath } from "../../configurations/navigation.configuration";
-import { OrganizationDetailsMode } from "../../modules/Admin/Organizations/Details/OrganizationDetails.definition";
 import { getRoles } from "./getRoles";
 import { OrganizationsUserEditDefault as ViewDefaults } from "./organization.definition";
 import {

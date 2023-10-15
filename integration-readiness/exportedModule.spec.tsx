@@ -2,7 +2,7 @@
 import type { MfeProps } from "@q4/platform-definitions";
 import { render } from "@testing-library/react";
 import React from "react";
-import { Admin } from "../src/modules/Admin/Admin.view";
+import { Admin } from "../src/components/AdminContent/AdminContent.view";
 
 describe("SampleModule", () => {
   let defaultSampleModuleProps: MfeProps;

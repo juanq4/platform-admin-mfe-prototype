@@ -1,8 +1,8 @@
 import { TabsClassName, ConfigProvider as NimbusConfig, StyleGuide } from "@q4/nimbus-ui";
 import React from "react";
 import { AdminRoutePath } from "../../../configurations/navigation.configuration";
-import { AdminViewTabs } from "../../../modules/Admin/Admin.definition";
 import { fireEvent, render, screen } from "../../../utils/testUtils";
+import { AdminViewTabs } from "../../AdminContent/AdminContent.definition";
 import { RouteTabs } from "./RouteTabs.component";
 
 describe("Route Tabs Component", () => {

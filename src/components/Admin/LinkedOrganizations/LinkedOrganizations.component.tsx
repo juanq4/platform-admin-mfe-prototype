@@ -14,9 +14,9 @@ import type { OrganizationsQueryVariables } from "../../../hooks/useOrganization
 import { OrganizationUnlinkMessage } from "../../../hooks/useOrganization/useOrganization.definition";
 import { QueryPaginationDefault } from "../../../hooks/useQuery/useQuery.definition";
 import { useToastNotificationService } from "../../../hooks/useToastNotificationService/useToastNotificationService.hook";
-import { AdminOrganizationsTableCellRenderer } from "../../../modules/Admin/Organizations/Organizations.definition";
 import { useOrganizationsLazyQuery } from "../../../schemas/generated/graphql";
 import { getOrganizationEditLinkedOrganizationsRoute } from "../../../utils/organization/organization.utils";
+import { AdminOrganizationsTableCellRenderer } from "../../AdminContent/Organizations/Organizations.definition";
 import type { CopyCellProps } from "../EntityTable/components/CopyCell/CopyCell.definition";
 import { mapIdToCopyCell } from "../EntityTable/components/CopyCell/CopyCell.utils";
 import type { StatusCellProps } from "../EntityTable/components/StatusCell/StatusCell.definition";
