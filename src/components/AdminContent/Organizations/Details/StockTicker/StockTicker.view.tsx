@@ -1,6 +1,6 @@
 import { AsyncSelect, SelectPreset } from "@q4/nimbus-ui";
-import { memo, useRef, useState } from "react";
-import type { OrganizationStockOption } from "../../../../../definitions";
+import React, { memo, useRef, useState } from "react";
+import type { OrganizationStockOption } from "../../../../../definitions/organization.definition";
 import type { SecurityEntitySearchDto } from "../../../../../schemas/generated/graphql";
 import { SearchEntityType, useEntitySearchQuery } from "../../../../../schemas/generated/graphql";
 import { OrganizationDetailsViewIdModel as ViewIdModel } from "../OrganizationDetails.definition";

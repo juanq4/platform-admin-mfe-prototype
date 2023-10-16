@@ -8,16 +8,16 @@ import type {
 } from "@q4/nimbus-ui/dist/dependencies/agGrid/community";
 import React, { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { User } from "../../../../../../../definitions/user.definition";
-import { usePagination } from "../../../../../../../hooks/admin/usePagination/usePagination.hook";
+import { usePagination } from "../../../../../../../hooks/usePagination/usePagination.hook";
 import { QueryPaginationDefault } from "../../../../../../../hooks/useQuery/useQuery.definition";
 import type { UsersQueryVariables } from "../../../../../../../schemas/generated/graphql";
-import type { EntityTableColumnDef } from "../../../../../../Admin/EntityTable/EntityTable.definition";
-import type { EntityTablePaginationDirection } from "../../../../../../Admin/EntityTable/components/Pagination/Pagination.definition";
-import { AdminUserTable } from "../../../../../../Admin/Tables/user/AdminUserTable.component";
-import { AdminUserTableHeader } from "../../../../../../Admin/Tables/user/AdminUserTable.definition";
+import type { EntityTableColumnDef } from "../../../../../../EntityTable/EntityTable.definition";
+import type { EntityTablePaginationDirection } from "../../../../../../EntityTable/components/Pagination/Pagination.definition";
+import { AdminUserTable } from "../../../../../../Tables/user/AdminUserTable.component";
+import { AdminUserTableHeader } from "../../../../../../Tables/user/AdminUserTable.definition";
 import { EditTeamTablesLanguage } from "../EditTeamTables/EditTeamTables.definition";
-import { AddUsersTeamsFormIdModel, AddUsersTeamsFormLanguage } from "./AddUsersTeamsForm.definition";
 import type { AddUsersTeamsFormProps } from "./AddUsersTeamsForm.definition";
+import { AddUsersTeamsFormIdModel, AddUsersTeamsFormLanguage } from "./AddUsersTeamsForm.definition";
 import { CustomInfoIcon } from "./AddUsersTeamsForm.style";
 
 const AddUsersTeamsFormBase = (props: AddUsersTeamsFormProps): JSX.Element => {

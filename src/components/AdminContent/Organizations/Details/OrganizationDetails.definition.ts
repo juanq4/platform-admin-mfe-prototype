@@ -12,7 +12,7 @@ import {
   TextboxTheme,
 } from "@q4/nimbus-ui";
 import type { Key } from "react";
-import { OrganizationFeatureManagementIdModel } from "../../../Admin/FeatureManagement/FeatureManagement.definition";
+import { OrganizationFeatureManagementIdModel } from "../../../FeatureManagement/FeatureManagement.definition";
 
 export interface OrganizationsEditParam {
   id: string;

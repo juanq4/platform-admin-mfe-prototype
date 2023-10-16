@@ -6,7 +6,7 @@ import { OrganizationsUserEditViewIdModel } from "./OrganizationsUserEdit.defini
 
 const { organizationId } = MockUserWithId;
 
-jest.mock("../../../../../../hooks/useToastNotificationService/useToastNotificationService.hook");
+jest.mock("../../../../../hooks/useToastNotificationService/useToastNotificationService.hook");
 
 const routes: RouteConfig[] = [
   {

@@ -31,13 +31,13 @@ import { OrganizationsWithManagedByQuery } from "../../../../../hooks/useOrganiz
 import { useToastNotificationService } from "../../../../../hooks/useToastNotificationService/useToastNotificationService.hook";
 import { useOrganizationQuery } from "../../../../../schemas/generated/graphql";
 import { getOrganizationEditRoute } from "../../../../../utils/organization/organization.utils";
-import { AdminLoadingSpinner } from "../../../../Admin/LoadingSpinner/LoadingSpinner.component";
-import type { OrganizationsLinkParam } from "./OrganizationsLink.definition";
+import { AdminLoadingSpinner } from "../../../../LoadingSpinner/LoadingSpinner.component";
 import {
   OrganizationLinkAdminWording,
   OrganizationLinkAgencyWording,
   OrganizationsLinkViewIdModel as ViewIdModel,
 } from "./OrganizationsLink.definition";
+import type { OrganizationsLinkParam } from "./OrganizationsLink.definition";
 
 const OrganizationsLinkBase = (): JSX.Element => {
   const [isVisible, handleCloseRequest] = useVisibility();

@@ -1,9 +1,14 @@
-import { useMemo } from "react";
+import { useCallback, useContext, useMemo, useState } from "react";
 import { useQuery } from "urql";
 import type { UseMutationState, UseQueryResponse } from "urql";
 import { Organization } from "../../definitions/organization.definition";
 import { getOrganizationPayloadBase } from "../../utils/organization/organization.utils";
-import type { QueryHookProps, QueryPaginationVariablesBase, LazyQueryHookResponse } from "../useQuery/useQuery.definition";
+import type {
+  QueryHookProps,
+  QueryPaginationVariablesBase,
+  LazyQueryHookResponse,
+  QueryGetByIdVariablesBase,
+} from "../useQuery/useQuery.definition";
 import { useLazyQuery, useMutation } from "../useQuery/useQuery.hook";
 import { getDefaultPageSize } from "../useQuery/useQuery.utils";
 import {
@@ -23,6 +28,8 @@ import type {
   OrganizationMutationModel,
   SitesByOrganizationResponse,
   SitesByOrgQueryVariables,
+  OrganizationQueryResponse,
+  OrganizationsLazyQueryResponse,
 } from "./useOrganization.definition";
 
 export const useOrganizationsQuery = (
@@ -46,52 +53,52 @@ export const OrganizationsWithManagedByQuery = (
   });
 };
 
-// export const useOrganizationsLazyQuery = (): [
-//   OrganizationsLazyQueryResponse & { fetching: boolean; isCalled: boolean },
-//   (props?: QueryHookProps<Organization[]>) => void,
-// ] => {
-//   const { query } = useContext(GraphqlContext);
+export const useOrganizationsLazyQuery = (): [
+  OrganizationsLazyQueryResponse & { fetching: boolean; isCalled: boolean },
+  (props?: QueryHookProps<Organization[]>) => void,
+] => {
+  const { query } = useContext(GraphqlContext);
 
-//   const [fetching, setFetching] = useState(false);
-//   const [isCalled, setIsCalled] = useState(false);
-//   const [data, setData] = useState<OrganizationsLazyQueryResponse>(null);
+  const [fetching, setFetching] = useState(false);
+  const [isCalled, setIsCalled] = useState(false);
+  const [data, setData] = useState<OrganizationsLazyQueryResponse>(null);
 
-//   const getOrganizations = useCallback(
-//     (props?: QueryHookProps<Organization[]>) => {
-//       setFetching((current) => {
-//         if (current) return current;
-//         setFetching(true);
-//         setIsCalled(true);
-//         const { variables } = props || {};
-//         const pageSize = getDefaultPageSize(variables?.pageSize);
+  const getOrganizations = useCallback(
+    (props?: QueryHookProps<Organization[]>) => {
+      setFetching((current) => {
+        if (current) return current;
+        setFetching(true);
+        setIsCalled(true);
+        const { variables } = props || {};
+        const pageSize = getDefaultPageSize(variables?.pageSize);
 
-//         query<OrganizationsQueryResponse, QueryPaginationVariablesBase>(OrganizationGraphQuery.Organizations, {
-//           ...variables,
-//           pageSize,
-//         })
-//           .toPromise()
-//           .then((response) => {
-//             setData(response);
-//           })
-//           .finally(() => {
-//             setFetching(false);
-//           });
-//       });
-//     },
-//     [query],
-//   );
+        query<OrganizationsQueryResponse, QueryPaginationVariablesBase>(OrganizationGraphQuery.Organizations, {
+          ...variables,
+          pageSize,
+        })
+          .toPromise()
+          .then((response) => {
+            setData(response);
+          })
+          .finally(() => {
+            setFetching(false);
+          });
+      });
+    },
+    [query],
+  );
 
-//   return [{ ...data, fetching, isCalled }, getOrganizations];
-// };
+  return [{ ...data, fetching, isCalled }, getOrganizations];
+};
 
-// export const useOrganizationQuery = (
-//   props: QueryHookProps<Organization, QueryGetByIdVariablesBase>,
-// ): UseQueryResponse<OrganizationQueryResponse, QueryGetByIdVariablesBase> => {
-//   return useQuery<OrganizationQueryResponse, QueryGetByIdVariablesBase>({
-//     query: OrganizationGraphQuery.Organization,
-//     ...props,
-//   });
-// };
+export const useOrganizationQuery = (
+  props: QueryHookProps<Organization, QueryGetByIdVariablesBase>,
+): UseQueryResponse<OrganizationQueryResponse, QueryGetByIdVariablesBase> => {
+  return useQuery<OrganizationQueryResponse, QueryGetByIdVariablesBase>({
+    query: OrganizationGraphQuery.Organization,
+    ...props,
+  });
+};
 
 export const useOrganizationCreate = (): [
   UseMutationState<OrganizationPostResponse, OrganizationMutationModel | OrganizationPostPayload>,

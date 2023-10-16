@@ -1,10 +1,10 @@
 import React, { memo, useMemo } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { RoutePathIdLabel } from "../../../../configurations/navigation.configuration";
-import { useUserEdit } from "../../../../hooks/admin/useUserEdit/useUserEdit.hook";
 import { useClaims } from "../../../../hooks/useClaims/useClaims.hook";
-import { AdminUserForm } from "../../../Admin/Forms/User/AdminUserForm.component";
-import { AdminUserFormMode } from "../../../Admin/Forms/User/AdminUserForm.definition";
+import { useUserEdit } from "../../../../hooks/useUserEdit/useUserEdit.hook";
+import { AdminUserForm } from "../../../Forms/User/AdminUserForm.component";
+import { AdminUserFormMode } from "../../../Forms/User/AdminUserForm.definition";
 import type { UserEditParams } from "./UserEdit.definition";
 import { UserEditViewDefault, UserEditViewIdModel as ViewIdModel } from "./UserEdit.definition";
 

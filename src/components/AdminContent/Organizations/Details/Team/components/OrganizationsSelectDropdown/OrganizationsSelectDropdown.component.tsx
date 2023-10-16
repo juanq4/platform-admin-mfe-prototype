@@ -9,7 +9,7 @@ import {
   orderOrganizationsAlphabetically,
   getOrganizationLabelWithTicker,
 } from "../../../../../../../utils/organization/organization.utils";
-import { StatusCellLabel } from "../../../../../../Admin/EntityTable/components/StatusCell/StatusCell.definition";
+import { StatusCellLabel } from "../../../../../../EntityTable/components/StatusCell/StatusCell.definition";
 import { CustomGrid } from "../../Create/OrganizationTeamCreate.style";
 import {
   CustomAsyncSelect,

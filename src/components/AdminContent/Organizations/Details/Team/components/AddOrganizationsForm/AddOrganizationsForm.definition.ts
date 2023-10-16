@@ -1,6 +1,6 @@
 import { IdModelBase, isNullOrWhiteSpace } from "@q4/nimbus-ui";
 import type { BaseComponentProps } from "@q4/nimbus-ui";
-import type { Organization, Team } from "../../../../../../../definitions";
+import type { Organization, Team } from "../../../../../../definitions";
 import type { TeamFormError } from "../../OrganizationsTeam.definition";
 import { OrganizationsSelectDropdownIdModel } from "../OrganizationsSelectDropdown/OrganizationsSelectDropdown.definition";
 import { TeamNameFieldIdModel } from "../TeamNameField/TeamNameField.definition";

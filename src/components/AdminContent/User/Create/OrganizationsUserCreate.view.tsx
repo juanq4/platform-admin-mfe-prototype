@@ -11,9 +11,9 @@ import {
   getOrganizationEditRoute,
   getOrganizationViewRoute,
 } from "../../../../utils/organization/organization.utils";
-import { AdminUserForm } from "../../../Admin/Forms/User/AdminUserForm.component";
-import { AdminUserFormMode } from "../../../Admin/Forms/User/AdminUserForm.definition";
-import type { AdminUserFormProps } from "../../../Admin/Forms/User/AdminUserForm.definition";
+import { AdminUserForm } from "../../../Forms/User/AdminUserForm.component";
+import { AdminUserFormMode } from "../../../Forms/User/AdminUserForm.definition";
+import type { AdminUserFormProps } from "../../../Forms/User/AdminUserForm.definition";
 import { OrganizationDetailsMode } from "../../Organizations/Details/OrganizationDetails.definition";
 import type { OrganizationsUserCreateParams } from "../../Organizations/Details/User/Create/OrganizationsUserCreate.definition";
 import {

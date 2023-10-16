@@ -1,7 +1,7 @@
 import { ButtonTheme, isEmpty, Modal, Text, TextPreset } from "@q4/nimbus-ui";
 import type { Organization } from "@q4/platform-definitions";
 import React, { memo, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
-import { AdminDataContext } from "../../../../../../../contexts/admin/data/data.context";
+import { AdminDataContext } from "../../../../../../../contexts/data/data.context";
 import type { Team } from "../../../../../../../definitions/team.definition";
 import { TeamDescriptions } from "../../OrganizationsTeam.definition";
 import { CustomGrid, CustomGridColumn } from "../../OrganizationsTeam.style";

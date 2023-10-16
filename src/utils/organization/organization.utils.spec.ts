@@ -127,25 +127,25 @@ describe("getOrganizationsUserEditReturnUrl", () => {
     return `?${query}`;
   }
 
-  test("7425314: [Given] there is an organizationId [And] returnUrl is 'undefined' [Then] expect the return url to be '/admin/organizations/edit/mockOrganizationId'", () => {
+  test("7425314: [Given] there is an organizationId [And] returnUrl is 'undefined' [Then] expect the return url to be '/organizations/edit/mockOrganizationId'", () => {
     const mockQuery = getMockQuery(null);
     const value = getOrganizationsUserEditReturnUrl(mockOrganizationId, mockQuery, OrganizationDetailsMode.Edit);
     expect(value).toBe(mockOrganizationsEditRoute);
   });
 
-  test("7425316: [Given] there is an organizationId [And] returnUrl is '/admin/users' [Then] expect the return url to be '/admin/users'", () => {
+  test("7425316: [Given] there is an organizationId [And] returnUrl is '/users' [Then] expect the return url to be '/users'", () => {
     const mockQuery = getMockQuery([ViewDefaults.ReturnUrl.Users]);
     const value = getOrganizationsUserEditReturnUrl(mockOrganizationId, mockQuery, OrganizationDetailsMode.Edit);
     expect(value).toBe(ViewDefaults.ReturnUrl.Users);
   });
 
-  test("7425317: [Given] there is an organizationId [And] returnUrl is '/admin/users', '/admin/organizations' [Then] expect the return url to be '/admin/users'", () => {
+  test("7425317: [Given] there is an organizationId [And] returnUrl is '/users', '/organizations' [Then] expect the return url to be '/users'", () => {
     const mockQuery = getMockQuery([ViewDefaults.ReturnUrl.Users, AdminRoutePath.Organizations]);
     const value = getOrganizationsUserEditReturnUrl(mockOrganizationId, mockQuery, OrganizationDetailsMode.Edit);
     expect(value).toBe(ViewDefaults.ReturnUrl.Users);
   });
 
-  test("7425318: [Given] there is an organizationId [And] returnUrl is '/admin/organizations' [Then] expect the return url to be '/admin/organizations/edit/mockOrgananizationId'", () => {
+  test("7425318: [Given] there is an organizationId [And] returnUrl is '/organizations' [Then] expect the return url to be '/organizations/edit/mockOrgananizationId'", () => {
     const mockQuery = getMockQuery([AdminRoutePath.Organizations]);
     const value = getOrganizationsUserEditReturnUrl(mockOrganizationId, mockQuery, OrganizationDetailsMode.Edit);
     expect(value).toBe(mockOrganizationsEditRoute);

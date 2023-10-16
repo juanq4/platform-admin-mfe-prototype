@@ -1,4 +1,4 @@
-import type { AdminDataContextState } from "../../contexts/admin/data/data.definition";
+import type { AdminDataContextState } from "../../contexts/data/data.definition";
 import { MockOrganization12, MockOrganizations } from "../data/organizations.mock";
 import { MockTeam3, MockTeams } from "../data/teams.mock";
 import { MockUsers } from "../data/users.mock";

@@ -19,16 +19,16 @@ import { Permission } from "@q4/platform-definitions";
 import React, { memo, useMemo } from "react";
 import { useHistory } from "react-router-dom";
 import { FeatureFlag } from "../../configurations/feature.configuration";
-import { AdminDataProvider } from "../../contexts/admin/data/data.context";
-import { AdminEditProvider } from "../../contexts/admin/edit/edit.context";
-import { AdminLoadingProvider } from "../../contexts/admin/loading/loading.context";
+import { AdminDataProvider } from "../../contexts/data/data.context";
+import { AdminEditProvider } from "../../contexts/edit/edit.context";
+import { AdminLoadingProvider } from "../../contexts/loading/loading.context";
 import { useUser } from "../../contexts/user/user.hook";
 import { useAccount } from "../../hooks/useAccount/useAccount.hook";
 import { useClaims } from "../../hooks/useClaims/useClaims.hook";
 import { useFeatureFlags } from "../../hooks/useFeatureFlags/useFeatureFlags.hook";
 import { mapRoutesByPermission } from "../../utils/permission/permission.utils";
-import { RouteTabs } from "../Admin/RouteTabs/RouteTabs.component";
-import { AdminRoutes } from "../Admin/Routes/Routes.component";
+import { RouteTabs } from "../RouteTabs/RouteTabs.component";
+import { AdminRoutes } from "../Routes/Routes.component";
 import {
   AdminViewClassName,
   AdminViewTabs,

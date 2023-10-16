@@ -1,9 +1,9 @@
 import type { BaseComponentProps } from "@q4/nimbus-ui";
 import { ButtonIdModel, IdModelBase, InfoIconIdModel, isNullOrWhiteSpace } from "@q4/nimbus-ui";
-import type { AdminOrganizationTableProps } from "../../../../../../Admin/Tables/organization/AdminOrganizationTable.definition";
-import { AdminOrganizationTableIdModel } from "../../../../../../Admin/Tables/organization/AdminOrganizationTable.definition";
-import type { AdminUserTableProps } from "../../../../../../Admin/Tables/user/AdminUserTable.definition";
-import { AdminUserTableIdModel } from "../../../../../../Admin/Tables/user/AdminUserTable.definition";
+import type { AdminOrganizationTableProps } from "../../../../../../Tables/organization/AdminOrganizationTable.definition";
+import { AdminOrganizationTableIdModel } from "../../../../../../Tables/organization/AdminOrganizationTable.definition";
+import type { AdminUserTableProps } from "../../../../../../Tables/user/AdminUserTable.definition";
+import { AdminUserTableIdModel } from "../../../../../../Tables/user/AdminUserTable.definition";
 
 export enum EditTeamTablesLanguage {
   OrgsTitle = "Organizations",

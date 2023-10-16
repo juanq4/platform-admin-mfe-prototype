@@ -37,19 +37,19 @@ export enum AppRoutePath {
 
 export enum AdminRoutePath {
   Home = "/admin",
-  Users = "/admin/users",
-  UsersCreate = "/admin/users/edit",
-  UsersEdit = "/admin/users/edit/:userId",
-  Organizations = "/admin/organizations",
-  OrganizationsCreate = "/admin/organizations/add",
-  OrganizationsEdit = "/admin/organizations/edit/:id",
-  OrganizationsView = "/admin/organizations/view/:id",
-  OrganizationsEditLinkedOrganizations = "/admin/organizations/edit/:id/linked-organizations",
-  OrganizationsUserCreate = "/admin/organizations/edit/:id/user/add",
-  OrganizationsUserEdit = "/admin/organizations/edit/:id/user/edit/:userId",
-  OrganizationsUserEditWithReturnUrl = "/admin/organizations/edit/:id/user/edit/:userId/?returnUrl=:returnUrl",
-  OrganizationsTeamCreate = "/admin/organizations/edit/:id/team/add",
-  OrganizationsTeamEdit = "/admin/organizations/edit/:id/team/:teamId/edit",
+  Users = "/users",
+  UsersCreate = "/users/edit",
+  UsersEdit = "/users/edit/:userId",
+  Organizations = "/organizations",
+  OrganizationsCreate = "/organizations/add",
+  OrganizationsEdit = "/organizations/edit/:id",
+  OrganizationsView = "/organizations/view/:id",
+  OrganizationsEditLinkedOrganizations = "/organizations/edit/:id/linked-organizations",
+  OrganizationsUserCreate = "/organizations/edit/:id/user/add",
+  OrganizationsUserEdit = "/organizations/edit/:id/user/edit/:userId",
+  OrganizationsUserEditWithReturnUrl = "/organizations/edit/:id/user/edit/:userId/?returnUrl=:returnUrl",
+  OrganizationsTeamCreate = "/organizations/edit/:id/team/add",
+  OrganizationsTeamEdit = "/organizations/edit/:id/team/:teamId/edit",
 }
 
 export type RoutePathType = `${AdminRoutePath}`;

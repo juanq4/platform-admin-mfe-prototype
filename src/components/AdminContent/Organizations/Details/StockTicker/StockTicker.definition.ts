@@ -1,4 +1,4 @@
-import type { OrganizationEditState, OrganizationStockInfo } from "../../../../../definitions";
+import type { OrganizationEditState, OrganizationStockInfo } from "../../../../definitions";
 
 export interface StockTickerProps {
   initValue: OrganizationEditState;

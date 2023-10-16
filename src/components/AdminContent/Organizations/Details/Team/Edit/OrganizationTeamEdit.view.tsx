@@ -4,7 +4,7 @@ import { ButtonTheme, Text, TextPreset, isNullOrWhiteSpace, useVisibility } from
 import { OrganizationType } from "@q4/platform-definitions";
 import React, { memo, useCallback, useContext, useEffect, useMemo, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
-import { AdminDataContext } from "../../../../../../contexts/admin/data/data.context";
+import { AdminDataContext } from "../../../../../../contexts/data/data.context";
 import { Team } from "../../../../../../definitions/team.definition";
 import { useToastNotificationService } from "../../../../../../hooks/useToastNotificationService/useToastNotificationService.hook";
 import { GET_ORGANIZATION, GET_ORGANIZATIONS } from "../../../../../../schemas/organizations/organizations.schema";

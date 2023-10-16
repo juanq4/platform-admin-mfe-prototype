@@ -1,7 +1,7 @@
 import { ButtonIdModel, IdModelBase, isNullOrWhiteSpace } from "@q4/nimbus-ui";
 import { AccessRouteMap } from "../../../configurations/access.configuration";
 import { AdminRoutePath } from "../../../configurations/navigation.configuration";
-import { AdminUserTableIdModel } from "../../Admin/Tables/user/AdminUserTable.definition";
+import { AdminUserTableIdModel } from "../../Tables/user/AdminUserTable.definition";
 
 export const AdminUserViewCreateRoute = AdminRoutePath.UsersCreate;
 

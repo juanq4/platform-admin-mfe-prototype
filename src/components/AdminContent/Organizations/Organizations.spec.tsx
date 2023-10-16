@@ -4,7 +4,7 @@ import { MemoryRouter } from "react-router-dom";
 import { Auth0HookMock } from "../../../__mocks__/contexts/Auth0Context.mock";
 import { NimbusConfig } from "../../../__mocks__/contexts/NimbusConfig.mock";
 import { MockOrganizations } from "../../../__mocks__/data/organizations.mock";
-import { AdminRoutesIdModel } from "../../../components/Admin/Routes/Routes.definition";
+import { AdminRoutesIdModel } from "../../../components/Routes/Routes.definition";
 import { AccessRouteMap, PermissionCollection } from "../../../configurations/access.configuration";
 import { AdminRoutePath } from "../../../configurations/navigation.configuration";
 import type { Organization } from "../../../definitions/organization.definition";
@@ -325,7 +325,7 @@ describe("Organizations View", () => {
     expect(screen.getByText(AdminOrganizationsToolbarActions.CreateNewLabel)).toBeInTheDocument;
   });
 
-  test("5308710: [Given] an authenticated user with q4graph:manage:organizations permission can see Create Organization button [When] Create Organization button is clicked [Then] expect user to be redirected to /admin/organizations/edit page", () => {
+  test("5308710: [Given] an authenticated user with q4graph:manage:organizations permission can see Create Organization button [When] Create Organization button is clicked [Then] expect user to be redirected to /organizations/edit page", () => {
     mockUseClaims.mockReturnValue({ permissions: requiredPermissions });
     mockUseOrganizationsLazyQuery.mockReturnValue(organizationsLazyQueryHook);
     render(<Organizations />);

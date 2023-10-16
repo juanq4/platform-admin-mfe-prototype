@@ -1,7 +1,8 @@
 import type { BaseComponentProps } from "@q4/nimbus-ui";
 import { IdModelBase, InfoIconIdModel, isNullOrWhiteSpace } from "@q4/nimbus-ui";
-import type { Team, User } from "../../../../../../../definitions";
-import { AdminUserTableIdModel } from "../../../../../../Admin/Tables/user/AdminUserTable.definition";
+import type { Team } from "../../../../../../../definitions/team.definition";
+import type { User } from "../../../../../../../definitions/user.definition";
+import { AdminUserTableIdModel } from "../../../../../../Tables/user/AdminUserTable.definition";
 
 export enum AddUsersTeamsFormLanguage {
   Teams = "Users not part of any teams have full access to all linked organizations",

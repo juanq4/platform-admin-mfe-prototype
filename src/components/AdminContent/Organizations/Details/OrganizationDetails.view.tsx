@@ -31,8 +31,8 @@ import {
 import React, { memo, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
 import { generatePath, useHistory, useLocation, useParams } from "react-router-dom";
 import { AdminRoutePath, RoutePathIdLabel } from "../../../../configurations/navigation.configuration";
-import { useAdminEditContext } from "../../../../contexts/admin/edit/useEditContext.hook";
-import { AdminLoadingContext } from "../../../../contexts/admin/loading/loading.context";
+import { useAdminEditContext } from "../../../../contexts/edit/useEditContext.hook";
+import { AdminLoadingContext } from "../../../../contexts/loading/loading.context";
 import type {
   OrganizationStockInfo,
   OrganizationTypeOption,
@@ -61,8 +61,8 @@ import {
   buildOrganizationCurrencyOptions,
   getOrganizationCreateTeamNewRoute,
 } from "../../../../utils/organization/organization.utils";
-import { OrganizationFeatureManagement } from "../../../Admin/FeatureManagement/FeatureManagement.component";
-import { AdminLoadingSpinner } from "../../../Admin/LoadingSpinner/LoadingSpinner.component";
+import { OrganizationFeatureManagement } from "../../../FeatureManagement/FeatureManagement.component";
+import { AdminLoadingSpinner } from "../../../LoadingSpinner/LoadingSpinner.component";
 import {
   OrganizationDetailsClassName,
   OrganizationsEditErrorSelectTheme,

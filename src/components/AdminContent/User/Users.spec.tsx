@@ -11,10 +11,10 @@ import {
 } from "../../../__mocks__/contexts/Auth0Context.mock";
 import { NimbusConfig } from "../../../__mocks__/contexts/NimbusConfig.mock";
 import { MockUser1 } from "../../../__mocks__/data/users.mock";
-import { AdminRoutesIdModel } from "../../../components/Admin/Routes/Routes.definition";
+import { AdminRoutesIdModel } from "../../../components/Routes/Routes.definition";
 import { AdminRoutePath } from "../../../configurations/navigation.configuration";
-import { AdminLoadingProvider, AdminLoadingContext } from "../../../contexts/admin/loading/loading.context";
-import type { AdminLoadingContextProps } from "../../../contexts/admin/loading/loading.definition";
+import { AdminLoadingProvider, AdminLoadingContext } from "../../../contexts/loading/loading.context";
+import type { AdminLoadingContextProps } from "../../../contexts/loading/loading.definition";
 import type { User } from "../../../definitions/user.definition";
 import { useClaims } from "../../../hooks/useClaims/useClaims.hook";
 import { useIdTokenClaims } from "../../../hooks/useIdTokenClaims/useIdTokenClaims.hook";
@@ -37,7 +37,7 @@ jest.mock("../../../hooks/useIdTokenClaims/useIdTokenClaims.hook");
 const mockUseIdTokenClaims = useIdTokenClaims as jest.Mock;
 jest.mock("../../../hooks/useClaims/useClaims.hook");
 const mockUseClaims = useClaims as jest.Mock;
-jest.mock("../../../contexts/admin/loading/loading.context");
+jest.mock("../../../contexts/loading/loading.context");
 const mockAdminLoadingProvider = AdminLoadingProvider as jest.Mock;
 
 const mockHistoryPush = jest.fn();

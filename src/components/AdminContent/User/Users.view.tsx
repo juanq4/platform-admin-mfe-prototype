@@ -4,16 +4,16 @@ import React, { memo, useCallback, useMemo, useState } from "react";
 import { generatePath, useHistory, useLocation } from "react-router-dom";
 import AddUserImage from "../../../assets/icons/addUserImage.svg";
 import { AdminRoutePath, RoutePathIdLabel } from "../../../configurations/navigation.configuration";
-import { useAdminData } from "../../../contexts/admin/data/data.hook";
-import { useAdminLoadingContext } from "../../../contexts/admin/loading/useLoadingContext.hook";
-import { usePagination } from "../../../hooks/admin/usePagination/usePagination.hook";
-import { useSearch } from "../../../hooks/admin/useSearch/useSearch.hook";
-import { useClaims } from "../../../hooks/useClaims/useClaims.hook";
+import { useAdminData } from "../../../contexts/data/data.hook";
+import { useAdminLoadingContext } from "../../../contexts/loading/useLoadingContext.hook";
+import { usePagination } from "../../../hooks/usePagination/usePagination.hook";
 import { QueryPaginationDefault } from "../../../hooks/useQuery/useQuery.definition";
+import { useSearch } from "../../../hooks/useSearch/useSearch.hook";
+// import { useClaims } from "../../../hooks/useClaims/useClaims.hook";
 import { useUsersLazyQuery } from "../../../schemas/generated/graphql";
 import type { User, UsersQueryVariables } from "../../../schemas/generated/graphql";
 import { hasRequiredPermission } from "../../../utils/permission/permission.utils";
-import { AdminUserTable } from "../../Admin/Tables/user/AdminUserTable.component";
+import { AdminUserTable } from "../../Tables/user/AdminUserTable.component";
 import {
   AdminOrganizationCondition,
   AdminUsersViewIdModel as ViewIdModel,

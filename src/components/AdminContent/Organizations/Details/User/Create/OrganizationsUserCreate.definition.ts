@@ -2,7 +2,7 @@ import { IdModelBase, isNullOrWhiteSpace } from "@q4/nimbus-ui";
 import { AdminRoutePath } from "../../../../../../configurations/navigation.configuration";
 import type { Organization } from "../../../../../../definitions/organization.definition";
 import { User } from "../../../../../../definitions/user.definition";
-import { AdminUserFormIdModel } from "../../../../../Admin/Forms/User/AdminUserForm.definition";
+import { AdminUserFormIdModel } from "../../../../../Forms/User/AdminUserForm.definition";
 
 export const OrganizationUserCreateReturnRoute = AdminRoutePath.OrganizationsUserCreate;
 export const OrganizationUserCreateDefaultUser = new User();

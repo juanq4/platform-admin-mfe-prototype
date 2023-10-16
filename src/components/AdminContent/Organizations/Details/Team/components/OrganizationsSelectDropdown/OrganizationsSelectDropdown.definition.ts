@@ -1,6 +1,6 @@
 import type { BaseComponentProps } from "@q4/nimbus-ui";
 import { ChipsIdModel, FieldIdModel, IdModelBase, isNullOrWhiteSpace, SelectIdModel } from "@q4/nimbus-ui";
-import type { Organization, Team } from "../../../../../../../definitions";
+import type { Organization, Team } from "../../../../../../definitions";
 
 export enum OrganizationsSelectDropdownLanguage {
   Placeholder = "Select",

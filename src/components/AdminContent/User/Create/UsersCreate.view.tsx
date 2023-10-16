@@ -4,9 +4,9 @@ import { useHistory } from "react-router-dom";
 import { useClaims } from "../../../../hooks/useClaims/useClaims.hook";
 import { UserCreateMessages } from "../../../../hooks/useUser/useUser.definition";
 import { useUserCreate } from "../../../../hooks/useUser/useUser.hook";
-import { AdminUserForm } from "../../../Admin/Forms/User/AdminUserForm.component";
-import type { AdminUserFormProps } from "../../../Admin/Forms/User/AdminUserForm.definition";
-import { AdminUserFormMode } from "../../../Admin/Forms/User/AdminUserForm.definition";
+import { AdminUserForm } from "../../../Forms/User/AdminUserForm.component";
+import type { AdminUserFormProps } from "../../../Forms/User/AdminUserForm.definition";
+import { AdminUserFormMode } from "../../../Forms/User/AdminUserForm.definition";
 import {
   UsersCreateDefaultUser,
   UsersCreateReturnRoute,

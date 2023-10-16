@@ -1,17 +1,19 @@
 import { ChipClassName, SelectClassName, ToastContainer } from "@q4/nimbus-ui";
 import { OrganizationType } from "@q4/platform-definitions";
+import { fireEvent, within, waitFor } from "@testing-library/react";
 import React from "react";
+import { render } from "react-dom";
 import {
   MockOrganization1,
-  MockAdminOrganization,
+  MockOrganizations,
   MockOrganization2,
   MockOrganization3,
   MockOrganization4,
-  MockOrganization9,
-  MockOrganizations,
-  MockOrganization12,
   MockAgencyOrganization,
+  MockAdminOrganization,
+  MockOrganization9,
   MockQ4IncCorpOrganization,
+  MockOrganization12,
 } from "../../../../../__mocks__/data/organizations.mock";
 import { OrganizationEditState, OrganizationLinkedStatus } from "../../../../../definitions/organization.definition";
 import { useLinkOrganizations } from "../../../../../hooks/_apollo/useOrganization/useOrganization.hook";
@@ -23,7 +25,6 @@ import {
   useOrganizationQuery,
 } from "../../../../../hooks/useOrganization/useOrganization.hook";
 import { useToastNotificationService } from "../../../../../hooks/useToastNotificationService/useToastNotificationService.hook";
-import { within, render, screen, fireEvent, waitFor } from "../../../../../utils/testUtils";
 import {
   OrganizationLinkAdminWording,
   OrganizationLinkAgencyWording,
@@ -31,24 +32,24 @@ import {
 } from "./OrganizationsLink.definition";
 import { OrganizationsLink } from "./OrganizationsLink.view";
 
-jest.mock("../../../../../hooks/_apollo/useOrganization/useOrganization.hook");
+jest.mock("../../../../hooks/_apollo/useOrganization/useOrganization.hook");
 const mockUseLinkOrganizations = useLinkOrganizations as jest.Mock;
-jest.mock("../../../../../hooks/useToastNotificationService/useToastNotificationService.hook");
+jest.mock("../../../../hooks/useToastNotificationService/useToastNotificationService.hook");
 const mockUseToastNotificationService = useToastNotificationService as jest.Mock;
-jest.mock("../../../../../hooks/useOrganization/useOrganization.hook");
+jest.mock("../../../../hooks/useOrganization/useOrganization.hook");
 const mockOrganizationsWithManagedByQuery = OrganizationsWithManagedByQuery as jest.Mock;
 const mockUseOrganizationQuery = useOrganizationQuery as jest.Mock;
-jest.mock("../../../../../hooks/useManagedByAdminOrganization/useManagedByAdminOrganization.hook");
+jest.mock("../../../../hooks/useManagedByAdminOrganization/useManagedByAdminOrganization.hook");
 const mockUseManagedByAdminOrganization = useManagedByAdminOrganization as jest.Mock;
 
 const { id: mockOrganizationId, name: mockOrganizationName } = MockOrganization1;
 const idModel = OrganizationsLinkViewIdModel;
-const returnRoute = `/admin/organizations/edit/${mockOrganizationId}`;
+const returnRoute = `/organizations/edit/${mockOrganizationId}`;
 
 const mockHistoryPush = jest.fn();
 const mockLinkOrganizations = jest.fn((): Promise<unknown> => Promise.resolve({ data: [] }));
 
-jest.mock("../../../../../hooks/useClaims/useClaims.hook");
+jest.mock("../../../../hooks/useClaims/useClaims.hook");
 jest.mock("react-router-dom", () => {
   const orginal = jest.requireActual("react-router-dom");
   return {
@@ -236,7 +237,7 @@ describe("Organization Link View [Given] user with required permissions ", () =>
     expect(exitButton).toBeInTheDocument();
   });
 
-  test(`4765054: [Given] an authenticated user with with q4graph:manage:agency:linked-organizations permission is on Link Organization page [When] page exit icon X is clicked [Then] expect user to be navigated back to /admin/organizations/edit/${mockOrganizationId}/linked-organization`, async () => {
+  test(`4765054: [Given] an authenticated user with with q4graph:manage:agency:linked-organizations permission is on Link Organization page [When] page exit icon X is clicked [Then] expect user to be navigated back to /organizations/edit/${mockOrganizationId}/linked-organization`, async () => {
     customRender();
 
     const exitButton = screen.getByTestId(idModel.modal.exit.id);

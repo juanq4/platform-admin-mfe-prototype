@@ -21,13 +21,13 @@ import {
   MockOrganization3,
 } from "../../../../__mocks__/data/organizations.mock";
 import { MockUser } from "../../../../__mocks__/data/users.mock";
-import { OrganizationFeatureManagementLanguage } from "../../../../components/Admin/FeatureManagement/FeatureManagement.definition";
-import { OrganizationTeamsLanguage } from "../../../../components/Admin/Teams/Teams.definition";
+import { OrganizationFeatureManagementLanguage } from "../../../../components/FeatureManagement/FeatureManagement.definition";
+import { OrganizationTeamsLanguage } from "../../../../components/Teams/Teams.definition";
 import { AccessRouteMap } from "../../../../configurations/access.configuration";
 import { FeatureFlag } from "../../../../configurations/feature.configuration";
 import { AdminRoutePath } from "../../../../configurations/navigation.configuration";
-import { AdminEditProvider, AdminEditContext } from "../../../../contexts/admin/edit/edit.context";
-import type { AdminEditContextProps } from "../../../../contexts/admin/edit/edit.definition";
+import { AdminEditProvider, AdminEditContext } from "../../../../contexts/edit/edit.context";
+import type { AdminEditContextProps } from "../../../../contexts/edit/edit.definition";
 import { OrganizationEditState } from "../../../../definitions/organization.definition";
 import type { Team } from "../../../../definitions/team.definition";
 import { useClaims } from "../../../../hooks/useClaims/useClaims.hook";
@@ -76,7 +76,7 @@ const mockUseSitesByOrganizationsLazyQuery = useSitesByOrganizationsLazyQuery as
 jest.mock("../../../../schemas/generated/graphql");
 const mockUseUsersQuery = useUsersQuery as jest.Mock;
 
-jest.mock("../../../../contexts/admin/edit/edit.context");
+jest.mock("../../../../contexts/edit/edit.context");
 const mockAdminEditProvider = AdminEditProvider as jest.Mock;
 jest.mock("../../../../schemas/generated/graphql");
 const mockUseTeamsQuery = useTeamsQuery as jest.Mock;
@@ -107,7 +107,7 @@ jest.mock("react-router-dom", () => {
 jest.mock("../../../../hooks/useClaims/useClaims.hook");
 const mockUseClaims = useClaims as jest.Mock;
 
-jest.mock("../../../../hooks/admin/useTable/useTable.hook");
+jest.mock("../../../../hooks/useTable/useTable.hook");
 
 const queryOrganizations = jest.fn();
 
@@ -750,7 +750,7 @@ describe("Organization Edit View", () => {
     );
   });
 
-  test("4633531: [Given] an authenticated user with q4graph:manage:agency:linked-organizations permission is on /admin/organizations/edit page [And] user selects Agency as organization type [When] user saves org details [Then] org created with Agency type", async () => {
+  test("4633531: [Given] an authenticated user with q4graph:manage:agency:linked-organizations permission is on /organizations/edit page [And] user selects Agency as organization type [When] user saves org details [Then] org created with Agency type", async () => {
     const { id } = mockOrganization12;
     const post = jest.fn().mockResolvedValue({ success: true, data: { id } });
     customRender({
@@ -764,7 +764,7 @@ describe("Organization Edit View", () => {
     });
   });
 
-  test("4633532: [Given] an authenticated user with q4graph:manage:agency:linked-organizations permission is on /admin/organizations/edit page [When] user creates new Agency type organization [Then] expect Organization Type (Required) dropdown to in editable state", async () => {
+  test("4633532: [Given] an authenticated user with q4graph:manage:agency:linked-organizations permission is on /organizations/edit page [When] user creates new Agency type organization [Then] expect Organization Type (Required) dropdown to in editable state", async () => {
     const { id } = mockOrganization12;
     const post = jest.fn().mockResolvedValue({ success: true, data: { id } });
     customRender({
@@ -813,7 +813,7 @@ describe("Organization Edit View", () => {
     await waitFor(() => {
       expect(mockSetEntity).toBeCalledTimes(2);
       expect(screen.getByText(OrganizationDetailsTitle.Edit)).toBeInTheDocument();
-      expect(window.history.replaceState).toHaveBeenCalledWith(null, "", `/admin/organizations/edit/${id}`);
+      expect(window.history.replaceState).toHaveBeenCalledWith(null, "", `/organizations/edit/${id}`);
     });
   });
 
@@ -889,7 +889,7 @@ describe("Organization Edit View", () => {
     expect(mockSetEntity).toBeCalledTimes(1);
   });
 
-  test.skip("4633529: [Given] an authenticated user with q4graph:manage:agency:linked-organizations permission is on /admin/organizations/edit  page [When] user try to save organization details without selecting organization type [Then] expect validation error message", async () => {
+  test.skip("4633529: [Given] an authenticated user with q4graph:manage:agency:linked-organizations permission is on /organizations/edit  page [When] user try to save organization details without selecting organization type [Then] expect validation error message", async () => {
     const org = { ...mockOrganization12, type: undefined };
     const fieldId = ViewIdModel.nameField.error;
     mockUseEntitySearchQuery.mockReturnValue({
@@ -1120,7 +1120,7 @@ describe("Organization Edit View", () => {
         pathname: getOrganizationEditUserNewRoute(mockOrganization1.id),
         state: expect.objectContaining({
           background: expect.objectContaining({
-            pathname: `/admin/organizations/edit/${mockOrganization1.id}`,
+            pathname: `/organizations/edit/${mockOrganization1.id}`,
           }),
         }),
       }),
@@ -1634,7 +1634,7 @@ describe("Organization Edit View", () => {
     expect(engagementAnalyticsTab).toBeVisible();
   });
 
-  test("4633526: [Given] an authenticated user with q4graph:manage:agency:linked-organizations permission is on /admin/organizations/edit page [Then] expect dropdown field with Organization Type (Required) label name visible", () => {
+  test("4633526: [Given] an authenticated user with q4graph:manage:agency:linked-organizations permission is on /organizations/edit page [Then] expect dropdown field with Organization Type (Required) label name visible", () => {
     customRender({
       permissions: mockPermissions[0],
     });
@@ -1643,7 +1643,7 @@ describe("Organization Edit View", () => {
     expect(within(field).getByText("Required")).toBeInTheDocument();
   });
 
-  test("4633527: [Given] an authenticated user with q4graph:manage:agency:linked-organizations permission is on /admin/organizations/edit page [Then] expect Organization Type (Required) dropdown field to have no default populated value", () => {
+  test("4633527: [Given] an authenticated user with q4graph:manage:agency:linked-organizations permission is on /organizations/edit page [Then] expect Organization Type (Required) dropdown field to have no default populated value", () => {
     customRender({
       permissions: mockPermissions[0],
     });
@@ -1651,7 +1651,7 @@ describe("Organization Edit View", () => {
     expect(typeInput.value).toBeFalsy();
   });
 
-  test("4633528: [Given] an authenticated user with q4graph:manage:agency:linked-organizations permission is on /admin/organizations/edit page [When] Organization Type (Required) dropdown is expanded [Then] expect dropdown to contain values with name Agency and Corp", () => {
+  test("4633528: [Given] an authenticated user with q4graph:manage:agency:linked-organizations permission is on /organizations/edit page [When] Organization Type (Required) dropdown is expanded [Then] expect dropdown to contain values with name Agency and Corp", () => {
     customRender({
       permissions: mockPermissions[0],
     });
@@ -1669,7 +1669,7 @@ describe("Organization Edit View", () => {
     expect(targetOptionAdmin).toBe(undefined);
   });
 
-  test("4633533: [Given] an authenticated user with q4graph:manage:agency:linked-organizations permission is on /admin/organizations/edit page [When] user creates new Agency type organization [Then] expect Users to be the default selected tab", async () => {
+  test("4633533: [Given] an authenticated user with q4graph:manage:agency:linked-organizations permission is on /organizations/edit page [When] user creates new Agency type organization [Then] expect Users to be the default selected tab", async () => {
     customRenderEditRouteWithEditLinkedOrg();
 
     await waitFor(() => {
@@ -1709,7 +1709,7 @@ describe("Organization Edit View", () => {
     expect(within(table).getByText(linkedOrgButtonText)).toBeVisible();
   });
 
-  test("4750743: [Given] an authenticated user with q4graph:manage:agency:linked-organizations permission is viewing Agency type org info [When] user clicks + LINK ORGANIZATIONS button [Then] expect URL to be /admin/organizations/edit/:id/linked-organizations", async () => {
+  test("4750743: [Given] an authenticated user with q4graph:manage:agency:linked-organizations permission is viewing Agency type org info [When] user clicks + LINK ORGANIZATIONS button [Then] expect URL to be /organizations/edit/:id/linked-organizations", async () => {
     customRenderEditRouteWithEditLinkedOrg();
     clickOnLinkedToggle();
 

@@ -14,9 +14,9 @@ import {
 } from "@q4/nimbus-ui";
 import type { Organization } from "@q4/platform-definitions";
 import { OrganizationType } from "@q4/platform-definitions";
+import { Role } from "@q4/platform-sdk-definitions";
 import React, { memo, useCallback, useMemo, useRef, useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
-import { Role } from "../../../../../../configurations/access.configuration";
 import type { Team } from "../../../../../../definitions/team.definition";
 import type { User } from "../../../../../../definitions/user.definition";
 import { TeamCreateMessage } from "../../../../../../hooks/useTeam/useTeam.definition";
@@ -34,9 +34,9 @@ import {
   getOrganizationViewRoute,
 } from "../../../../../../utils/organization/organization.utils";
 import { getOrganizationRouteBasedOnPermission } from "../../../../../../utils/route/route.utils";
-import { AdminLoadingSpinner } from "../../../../../Admin/LoadingSpinner/LoadingSpinner.component";
-import { fetchPolicy, requestPolicy, TeamDescriptions, TeamErrorsLanguage } from "../OrganizationsTeam.definition";
+import { AdminLoadingSpinner } from "../../../../../LoadingSpinner/LoadingSpinner.component";
 import type { TeamFormError, OrganizationsTeamParam } from "../OrganizationsTeam.definition";
+import { fetchPolicy, requestPolicy, TeamDescriptions, TeamErrorsLanguage } from "../OrganizationsTeam.definition";
 import { CustomGrid, CustomGridColumn, WideTableWrapper } from "../OrganizationsTeam.style";
 import { AddOrganizationsForm } from "../components/AddOrganizationsForm/AddOrganizationsForm.component";
 import { AddUsersTeamsForm } from "../components/AddUsersForm/AddUsersTeamsForm.component";

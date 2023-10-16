@@ -1,8 +1,8 @@
 import { ButtonIdModel, IdModelBase, isNullOrWhiteSpace } from "@q4/nimbus-ui";
-import { EntityTableIdModel } from "../../Admin/EntityTable/EntityTable.definition";
-import { CopyCellListId } from "../../Admin/EntityTable/components/CopyCell/CopyCell.definition";
-import { StatusCellListId } from "../../Admin/EntityTable/components/StatusCell/StatusCell.definition";
-import { TypeCellListId } from "../../Admin/EntityTable/components/TypeCell/TypeCell.definition";
+import { EntityTableIdModel } from "../../EntityTable/EntityTable.definition";
+import { CopyCellListId } from "../../EntityTable/components/CopyCell/CopyCell.definition";
+import { StatusCellListId } from "../../EntityTable/components/StatusCell/StatusCell.definition";
+import { TypeCellListId } from "../../EntityTable/components/TypeCell/TypeCell.definition";
 
 export enum OrganizationsTableHeader {
   Name = "Organization Name",

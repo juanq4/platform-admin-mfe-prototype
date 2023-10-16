@@ -1,7 +1,7 @@
 import { IdModelBase, isNullOrWhiteSpace } from "@q4/nimbus-ui";
 import { AdminRoutePath } from "../../../../configurations/navigation.configuration";
 import type { User } from "../../../../definitions/user.definition";
-import { AdminUserFormIdModel } from "../../../Admin/Forms/User/AdminUserForm.definition";
+import { AdminUserFormIdModel } from "../../../Forms/User/AdminUserForm.definition";
 
 export interface UserEditParams {
   userId: User["id"];
