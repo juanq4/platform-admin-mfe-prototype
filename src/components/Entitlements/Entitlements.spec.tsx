@@ -11,7 +11,7 @@ import { Entitlements } from "./Entitlements.component";
 import { EntitlementsIdModel } from "./Entitlements.definition";
 import type { EntitlementsProps } from "./Entitlements.definition";
 
-jest.mock("../../../hooks/useClaims/useClaims.hook");
+jest.mock("../../../contexts/session/useSession.hook");
 const mockUseClaims = useClaims as jest.Mock;
 
 jest.mock("../../../utils/organization/organization.utils");

@@ -19,7 +19,7 @@ jest.mock("../../../schemas/generated/graphql");
 const mockUseOrganizationsLazyQuery = useOrganizationsLazyQuery as jest.Mock;
 jest.mock("../../../utils/api/api.utils");
 const mockThrottle = throttle as unknown as jest.Mock;
-jest.mock("../../../hooks/useClaims/useClaims.hook");
+jest.mock("../../../contexts/session/useSession.hook");
 const mockUseClaims = useClaims as jest.Mock;
 const mockHistoryPush = jest.fn();
 jest.mock("react-router-dom", () => {

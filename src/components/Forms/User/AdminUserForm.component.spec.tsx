@@ -24,7 +24,7 @@ import { getAdminFormUser } from "./AdminUserForm.utils";
 
 jest.mock("../../../../hooks/useOrganization/useOrganization.hook");
 const mockUseOrganizationQuery = useOrganizationQuery as jest.Mock;
-jest.mock("../../../../hooks/useClaims/useClaims.hook");
+jest.mock("../../../../contexts/session/useSession.hook");
 const mockUseClaims = useClaims as jest.Mock;
 
 jest.mock("react-router-dom", () => {

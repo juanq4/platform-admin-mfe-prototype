@@ -26,7 +26,7 @@ import { TeamCreateLanguage, TeamCreateViewIdModel as ViewIdModel } from "./Orga
 
 jest.mock("../../../../../schemas/generated/graphql");
 const mockUseOrganizationsQuery = useOrganizationsQuery as jest.Mock;
-jest.mock("../../../../../hooks/useClaims/useClaims.hook");
+jest.mock("../../../../../contexts/session/useSession.hook");
 const mockUseClaims = useClaims as jest.Mock;
 jest.mock("../../../../../hooks/useOrganization/useOrganization.hook");
 const mockUseOrganizationQuery = useOrganizationQuery as jest.Mock;

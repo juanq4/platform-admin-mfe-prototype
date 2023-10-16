@@ -13,7 +13,7 @@ import { AdminViewDefault } from "./AdminContent.definition";
 
 jest.mock("../../hooks/useIdTokenClaims/useIdTokenClaims.hook");
 const mockUseIdTokenClaims = useIdTokenClaims as jest.Mock;
-jest.mock("../../hooks/useClaims/useClaims.hook");
+jest.mock("../../contexts/session/useSession.hook");
 const mockUseClaims = useClaims as jest.Mock;
 jest.mock("../../hooks/useFeatureFlags/useFeatureFlags.hook");
 const mockUseFeatureFlags = useFeatureFlags as jest.Mock;

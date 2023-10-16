@@ -20,7 +20,7 @@ import { useUserCreate } from "../../hooks/useUser/useUser.hook";
 import { getOrganizationDetailsMode } from "../organization/organization.utils";
 import { fireEvent, render, screen, waitFor } from "../testUtils";
 
-jest.mock("../../../hooks/useClaims/useClaims.hook");
+jest.mock("../../../contexts/session/useSession.hook");
 const mockUseClaims = useClaims as jest.Mock;
 jest.mock("../../../hooks/useIdTokenClaims/useIdTokenClaims.hook");
 const mockUseIdTokenClaims = useIdTokenClaims as jest.Mock;

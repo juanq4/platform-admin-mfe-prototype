@@ -49,7 +49,7 @@ const returnRoute = `/organizations/edit/${mockOrganizationId}`;
 const mockHistoryPush = jest.fn();
 const mockLinkOrganizations = jest.fn((): Promise<unknown> => Promise.resolve({ data: [] }));
 
-jest.mock("../../../../hooks/useClaims/useClaims.hook");
+jest.mock("../../../../contexts/session/useSession.hook");
 jest.mock("react-router-dom", () => {
   const orginal = jest.requireActual("react-router-dom");
   return {

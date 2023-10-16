@@ -35,15 +35,3 @@ export function mockClipboardWrite(): void {
     });
   });
 }
-
-export function mockGlobalOpen(): void {
-  const { open } = global;
-
-  beforeAll(() => {
-    global.open = jest.fn();
-  });
-
-  afterAll(() => {
-    global.open = open;
-  });
-}

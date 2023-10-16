@@ -34,7 +34,7 @@ jest.mock("../../../utils/api/api.utils");
 const mockThrottle = throttle as unknown as jest.Mock;
 jest.mock("../../../hooks/useIdTokenClaims/useIdTokenClaims.hook");
 const mockUseIdTokenClaims = useIdTokenClaims as jest.Mock;
-jest.mock("../../../hooks/useClaims/useClaims.hook");
+jest.mock("../../../contexts/session/useSession.hook");
 const mockUseClaims = useClaims as jest.Mock;
 jest.mock("../../../contexts/loading/loading.context");
 const mockAdminLoadingProvider = AdminLoadingProvider as jest.Mock;

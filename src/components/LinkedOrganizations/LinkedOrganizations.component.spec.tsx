@@ -26,7 +26,7 @@ jest.mock("../../../hooks/_apollo/useOrganization/useOrganization.hook");
 const mockUseUnlinkOrganizations = useUnlinkOrganizations as jest.Mock;
 jest.mock("../../../hooks/useOrganization/useOrganization.hook");
 const mockUseOrganizationsLazyQuery = useOrganizationsLazyQuery as jest.Mock;
-jest.mock("../../../hooks/useClaims/useClaims.hook");
+jest.mock("../../../contexts/session/useSession.hook");
 const mockUseClaims = useClaims as jest.Mock;
 jest.mock("../../../hooks/useToastNotificationService/useToastNotificationService.hook");
 const mockUseToastNotificationService = useToastNotificationService as jest.Mock;

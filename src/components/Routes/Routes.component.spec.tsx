@@ -33,7 +33,7 @@ jest.mock("../../hooks/useIdTokenClaims/useIdTokenClaims.hook");
 const mockUseIdTokenClaims = useIdTokenClaims as jest.Mock;
 jest.mock("../../hooks/useAccess/useAccess.hook");
 const mockUseAccess = useAccess as jest.Mock;
-jest.mock("../../hooks/useClaims/useClaims.hook");
+jest.mock("../../contexts/session/useSession.hook");
 const mockUseClaims = useClaims as jest.Mock;
 jest.mock("../../contexts/data/data.hook");
 const mockUseAdminData = useAdminData as jest.Mock;

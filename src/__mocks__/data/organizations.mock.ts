@@ -11,59 +11,70 @@ export const MockOrganization1 = new Organization({
   currency: OrganizationCurrency.USD,
   region: OrganizationRegion.NORTH_AMERICA,
 });
+
 export const MockOrganization2 = new Organization({
   active: true,
   id: "bb420769-2a66-44ff-9631-4aaa4de40b01",
   name: "MedReLeaf Inc.",
 });
+
 export const MockOrganization3 = new Organization({
   active: true,
   id: "1446f546-39e5-4aec-8c60-04b52a4a8fab",
   name: "C.H. Robinson Worldwide, Inc.",
   identifiers: ["CHR.XNYS"],
 });
+
 export const MockOrganization4 = new Organization({
   active: true,
   id: "ca332ab4-e664-4504-bfde-ed86db35bd7d",
   name: "Ritchie Bros. Auctioneers",
 });
+
 export const MockOrganization5 = new Organization({
   active: true,
   id: "45e80fa5-da8e-4a92-83fe-892ebadce60a",
   name: "Valvoline Inc",
 });
+
 export const MockOrganization6 = new Organization({
   active: true,
   id: "dd55e16d-23f2-4454-adbf-5e486ccd7ae0",
   name: "Finning International Inc.",
 });
+
 export const MockOrganization7 = new Organization({
   active: true,
   id: "1093454e-cde4-4ddb-8eb7-dbbda52919ef",
   name: "Q4 Inc",
   isAdmin: true,
 });
+
 export const MockOrganization8 = new Organization({
   active: true,
   id: "6427c40f-8349-4c43-ad95-b0ba5ec907b8",
   name: "Sellas Life Sciences",
 });
+
 export const MockOrganization9 = new Organization({
   active: true,
   id: "972ad416-ce01-430c-8c99-7022860697c9",
   name: "Cars.com",
   identifiers: ["CAR.XNYS"],
 });
+
 export const MockOrganization10 = new Organization({
   active: true,
   id: "e7b39d33-b90e-4f5a-8fec-7177288e523c",
   name: "Real Matters",
 });
+
 export const MockOrganization11 = new Organization({
   active: true,
   id: "21230be5-0300-461b-87cd-2ade4d23fd1d",
   name: "Continental Building Products, Inc.",
 });
+
 export const MockOrganization12 = new Organization({
   active: true,
   id: "09cf9cf0-6622-4801-a3cd-30e7a4b11a2a",
@@ -72,6 +83,7 @@ export const MockOrganization12 = new Organization({
   entitlements: [],
   type: OrganizationType.AGENCY,
 });
+
 export const MockOrganization13 = new Organization({
   active: true,
   id: "7f6ba8d8-fd4c-4911-bfb3-722c2e9fa37b",
@@ -82,6 +94,7 @@ export const MockOrganization13 = new Organization({
   region: OrganizationRegion.NORTH_AMERICA,
   currency: OrganizationCurrency.USD,
 });
+
 export const MockOrganization14 = new Organization({
   active: true,
   id: "b0efb333-6e1a-486b-ab5b-801b7e0039b2",
@@ -92,6 +105,7 @@ export const MockOrganization14 = new Organization({
   managedBy: MockOrganization12.id,
   delegateOrganizationIds: [MockOrganization12.id],
 });
+
 export const MockOrganization15 = new Organization({
   active: false,
   id: "b0efb333-6e1a-486b-ab5b-801b7e0039fe",
