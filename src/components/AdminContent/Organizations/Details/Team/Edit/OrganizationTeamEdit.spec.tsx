@@ -46,7 +46,7 @@ import { TeamDescriptions, TeamErrorsLanguage } from "../OrganizationsTeam.defin
 import { AddUsersTeamsFormLanguage } from "../components/AddUsersForm/AddUsersTeamsForm.definition";
 import { EditTeamTablesLanguage } from "../components/EditTeamTables/EditTeamTables.definition";
 import { OrganizationsSelectDropdownLanguage } from "../components/OrganizationsSelectDropdown/OrganizationsSelectDropdown.definition";
-import { OrganizationTeamEdit } from "./OrganizationTeamEdit.view";
+import { OrganizationTeamEdit } from "./OrganizationTeamEdit.component";
 import {
   TeamEditLanguage,
   TeamEditMessage,

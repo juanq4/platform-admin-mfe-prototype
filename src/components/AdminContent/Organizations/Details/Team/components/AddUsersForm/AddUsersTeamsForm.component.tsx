@@ -1,4 +1,4 @@
-import "./AddUsersTeamsForm.component.scss";
+import "./AddUsersTeamsForm.scss";
 import { isEmpty, isNullOrWhiteSpace, Origin } from "@q4/nimbus-ui";
 import type {
   RowClickedEvent,

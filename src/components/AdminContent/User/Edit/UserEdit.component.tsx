@@ -1,7 +1,7 @@
 import React, { memo, useMemo } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { RoutePathIdLabel } from "../../../../configurations/navigation.configuration";
-import { useClaims } from "../../../../hooks/useClaims/useClaims.hook";
+// import { useClaims } from "../../../../hooks/useClaims/useClaims.hook";
 import { useUserEdit } from "../../../../hooks/useUserEdit/useUserEdit.hook";
 import { AdminUserForm } from "../../../Forms/User/AdminUserForm.component";
 import { AdminUserFormMode } from "../../../Forms/User/AdminUserForm.definition";

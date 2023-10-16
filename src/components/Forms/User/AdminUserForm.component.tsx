@@ -1,4 +1,4 @@
-import "./AdminUserForm.component.scss";
+import "./AdminUserForm.scss";
 import { useApolloClient } from "@apollo/client";
 import {
   Grid,
@@ -24,7 +24,7 @@ import { validate as validateEmail } from "email-validator";
 import React, { memo, useCallback, useMemo, useRef, useState } from "react";
 import { Role } from "../../../configurations/access.configuration";
 import { User, UserApplications } from "../../../definitions/user.definition";
-// import { useClaims } from "../../../hooks/useClaims/useClaims.hook";
+// // import { useClaims } from "../../../hooks/useClaims/useClaims.hook";
 import { useToastNotificationService } from "../../../hooks/useToastNotificationService/useToastNotificationService.hook";
 import { UsersByOrgDocument, useOrganizationQuery } from "../../../schemas/generated/graphql";
 import { mapErrorsToKey } from "../../../utils/error/error.utils";

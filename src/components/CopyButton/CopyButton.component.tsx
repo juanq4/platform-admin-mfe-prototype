@@ -1,4 +1,4 @@
-import "./CopyButton.component.scss";
+import "./CopyButton.scss";
 import { Button, ButtonTheme, NotificationService } from "@q4/nimbus-ui";
 import React, { memo, useCallback, useMemo, useRef } from "react";
 import type { CopyButtonProps } from "./CopyButton.definition";

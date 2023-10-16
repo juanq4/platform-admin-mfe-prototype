@@ -7,7 +7,7 @@ import { useAdminLoadingContext } from "../../contexts/loading/useLoadingContext
 import { OrganizationEditState } from "../../definitions/organization.definition";
 import type { Organization } from "../../definitions/organization.definition";
 import { useUnlinkOrganizations } from "../../hooks/_apollo/useOrganization/useOrganization.hook";
-import { useClaims } from "../../hooks/useClaims/useClaims.hook";
+// import { useClaims } from "../../hooks/useClaims/useClaims.hook";
 import type { OrganizationsQueryVariables } from "../../hooks/useOrganization/useOrganization.definition";
 import { OrganizationUnlinkMessage } from "../../hooks/useOrganization/useOrganization.definition";
 import { usePagination } from "../../hooks/usePagination/usePagination.hook";

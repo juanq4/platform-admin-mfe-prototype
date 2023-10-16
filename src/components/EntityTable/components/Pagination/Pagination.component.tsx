@@ -1,4 +1,4 @@
-import "./Pagination.component.scss";
+import "./Pagination.scss";
 import { Button, ButtonTheme } from "@q4/nimbus-ui";
 import React, { memo, useMemo } from "react";
 import {

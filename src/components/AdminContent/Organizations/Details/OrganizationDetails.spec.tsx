@@ -21,8 +21,6 @@ import {
   MockOrganization3,
 } from "../../../../__mocks__/data/organizations.mock";
 import { MockUser } from "../../../../__mocks__/data/users.mock";
-import { OrganizationFeatureManagementLanguage } from "../../../../components/FeatureManagement/FeatureManagement.definition";
-import { OrganizationTeamsLanguage } from "../../../../components/Teams/Teams.definition";
 import { AccessRouteMap } from "../../../../configurations/access.configuration";
 import { FeatureFlag } from "../../../../configurations/feature.configuration";
 import { AdminRoutePath } from "../../../../configurations/navigation.configuration";
@@ -30,7 +28,7 @@ import { AdminEditProvider, AdminEditContext } from "../../../../contexts/edit/e
 import type { AdminEditContextProps } from "../../../../contexts/edit/edit.definition";
 import { OrganizationEditState } from "../../../../definitions/organization.definition";
 import type { Team } from "../../../../definitions/team.definition";
-import { useClaims } from "../../../../hooks/useClaims/useClaims.hook";
+// // import { useClaims } from "../../../../hooks/useClaims/useClaims.hook";
 import {
   OrganizationCreateMessage,
   OrganizationEditMessage,
@@ -58,7 +56,9 @@ import {
   getOrganizationEditLinkedOrganizationsRoute,
 } from "../../../../utils/organization/organization.utils";
 import { act, cleanup, fireEvent, render, screen, waitFor, within } from "../../../../utils/testUtils";
-import { Admin } from "../../AdminContent.view";
+import { OrganizationFeatureManagementLanguage } from "../../../FeatureManagement/FeatureManagement.definition";
+import { OrganizationTeamsLanguage } from "../../../Teams/Teams.definition";
+import { AdminContent } from "../../AdminContent.component";
 import {
   OrganizationCurrencyLabel,
   OrganizationDetailsTitle,
@@ -331,7 +331,7 @@ describe("Organization Edit View", () => {
             initialEntries={[AdminRoutePath.OrganizationsCreate, mockEditRoute, mockViewRoute]}
             initialIndex={index}
           >
-            <Admin />
+            <AdminContent />
             <ToastContainer />
           </MemoryRouter>
         );

@@ -1,4 +1,4 @@
-import "./AdminContent.view.scss";
+import "./AdminContent.scss";
 import {
   Banner,
   BannerControlType,
@@ -24,7 +24,7 @@ import { AdminEditProvider } from "../../contexts/edit/edit.context";
 import { AdminLoadingProvider } from "../../contexts/loading/loading.context";
 import { useUser } from "../../contexts/user/user.hook";
 import { useAccount } from "../../hooks/useAccount/useAccount.hook";
-import { useClaims } from "../../hooks/useClaims/useClaims.hook";
+// // import { useClaims } from "../../hooks/useClaims/useClaims.hook";
 import { useFeatureFlags } from "../../hooks/useFeatureFlags/useFeatureFlags.hook";
 import { mapRoutesByPermission } from "../../utils/permission/permission.utils";
 import { RouteTabs } from "../RouteTabs/RouteTabs.component";
@@ -36,7 +36,7 @@ import {
   AdminViewIdModel as ViewIdModel,
 } from "./AdminContent.definition";
 
-const AdminBase = (): JSX.Element => {
+const Component = (): JSX.Element => {
   useV1Brand(Brand.Classic);
   const claims = useClaims();
   const features = useFeatureFlags();
@@ -105,4 +105,4 @@ const AdminBase = (): JSX.Element => {
   );
 };
 
-export const Admin = memo(AdminBase);
+export const AdminContent = memo(Component);

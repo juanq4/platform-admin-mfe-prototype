@@ -25,12 +25,12 @@ import {
   useOrganizationQuery,
 } from "../../../../../hooks/useOrganization/useOrganization.hook";
 import { useToastNotificationService } from "../../../../../hooks/useToastNotificationService/useToastNotificationService.hook";
+import { OrganizationsLink } from "./OrganizationsLink.component";
 import {
   OrganizationLinkAdminWording,
   OrganizationLinkAgencyWording,
   OrganizationsLinkViewIdModel,
 } from "./OrganizationsLink.definition";
-import { OrganizationsLink } from "./OrganizationsLink.view";
 
 jest.mock("../../../../hooks/_apollo/useOrganization/useOrganization.hook");
 const mockUseLinkOrganizations = useLinkOrganizations as jest.Mock;

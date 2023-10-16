@@ -21,7 +21,7 @@ import { getOrganizationRouteBasedOnPermission } from "../../../../../../utils/r
 import { AdminUserTableHeader } from "../../../../../Tables/user/AdminUserTable.definition";
 import { TeamDescriptions, TeamErrorsLanguage } from "../OrganizationsTeam.definition";
 import { AddUsersTeamsFormLanguage } from "../components/AddUsersForm/AddUsersTeamsForm.definition";
-import { OrganizationTeamCreate } from "./OrganizationTeamCreate.view";
+import { OrganizationTeamCreate } from "./OrganizationTeamCreate.component";
 import { TeamCreateLanguage, TeamCreateViewIdModel as ViewIdModel } from "./OrganizationsTeamCreate.definition";
 
 jest.mock("../../../../../schemas/generated/graphql");

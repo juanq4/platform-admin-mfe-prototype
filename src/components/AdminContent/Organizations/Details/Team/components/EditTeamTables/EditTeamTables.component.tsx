@@ -1,4 +1,4 @@
-import "./EditTeamTables.component.scss";
+import "./EditTeamTables.scss";
 import { isEmpty, isNullOrWhiteSpace, Origin } from "@q4/nimbus-ui";
 import type { IHeaderParams } from "@q4/nimbus-ui/dist/dependencies/agGrid/community";
 import type { Organization } from "@q4/platform-definitions";

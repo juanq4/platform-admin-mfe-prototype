@@ -8,14 +8,14 @@ import { CombinedError } from "urql";
 import { Auth0HookMock, MockAuth0Token } from "../../__mocks__/contexts/Auth0Context.mock";
 import { MockOrganization1 } from "../../__mocks__/data/organizations.mock";
 import { MockUserWithId, MockUserNoRolesWithId } from "../../__mocks__/data/users.mock";
-import { Admin } from "../../components/AdminContent/AdminContent.view";
+import { AdminContent } from "../../components/AdminContent/AdminContent.component";
 import { OrganizationDetailsMode } from "../../components/AdminContent/Organizations/Details/OrganizationDetails.definition";
 import type { UserEditViewIdModel } from "../../components/AdminContent/User/Edit/UserEdit.definition";
 import { AccessRouteMap, PermissionCollection, Role } from "../../configurations/access.configuration";
 import { OrganizationClaim } from "../../configurations/q4-platform-common.configuration";
 import type { TupleOf } from "../../definitions/typescript.definition";
 import type { User } from "../../definitions/user.definition";
-import { useClaims } from "../../hooks/useClaims/useClaims.hook";
+// import { useClaims } from "../../hooks/useClaims/useClaims.hook";
 import { useIdTokenClaims } from "../../hooks/useIdTokenClaims/useIdTokenClaims.hook";
 import { useOrganizationQuery } from "../../hooks/useOrganization/useOrganization.hook";
 import { useToastNotificationService } from "../../hooks/useToastNotificationService/useToastNotificationService.hook";
@@ -169,7 +169,7 @@ export function testUserEdit(
       render(
         <MockedProvider mocks={mocks} addTypename={false}>
           <Router history={history}>
-            <Admin />
+            <AdminContent />
             <ToastContainer />
           </Router>
         </MockedProvider>,

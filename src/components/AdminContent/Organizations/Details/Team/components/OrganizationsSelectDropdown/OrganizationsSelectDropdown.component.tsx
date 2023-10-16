@@ -1,4 +1,4 @@
-import "./OrganizationsSelectDropdown.component.scss";
+import "./OrganizationsSelectDropdown.scss";
 import type { ChipsItemProps } from "@q4/nimbus-ui";
 import { Chips, Field, isEmpty, isNullOrWhiteSpace, SelectPreset, Text } from "@q4/nimbus-ui";
 import type { Organization } from "@q4/platform-definitions";

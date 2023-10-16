@@ -106,9 +106,9 @@ export const OrganizationDetailsModeData: { [key: string]: OrganizationDetailsMo
     saveErrMsg: "fail",
     saveSuccessMsg: "success",
   },
-  [OrganizationDetailsMode.View]: {
-    title: OrganizationDetailsTitle.View,
-    buttonLabel: OrganizationDetailsLabel.View,
+  [OrganizationDetailsMode.component]: {
+    title: OrganizationDetailsTitle.component,
+    buttonLabel: OrganizationDetailsLabel.component,
     saveErrMsg: "",
     saveSuccessMsg: "",
   },

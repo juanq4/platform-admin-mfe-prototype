@@ -1,4 +1,4 @@
-import "./AdminUserTable.component.scss";
+import "./AdminUserTable.scss";
 import React, { memo, useMemo, useRef } from "react";
 import { EntityTable } from "../../EntityTable/EntityTable.component";
 import type { EntityTableColumnDef } from "../../EntityTable/EntityTable.definition";

@@ -9,7 +9,7 @@ import { useAdminLoadingContext } from "../../../contexts/loading/useLoadingCont
 import { usePagination } from "../../../hooks/usePagination/usePagination.hook";
 import { QueryPaginationDefault } from "../../../hooks/useQuery/useQuery.definition";
 import { useSearch } from "../../../hooks/useSearch/useSearch.hook";
-// import { useClaims } from "../../../hooks/useClaims/useClaims.hook";
+// // import { useClaims } from "../../../hooks/useClaims/useClaims.hook";
 import { useUsersLazyQuery } from "../../../schemas/generated/graphql";
 import type { User, UsersQueryVariables } from "../../../schemas/generated/graphql";
 import { hasRequiredPermission } from "../../../utils/permission/permission.utils";

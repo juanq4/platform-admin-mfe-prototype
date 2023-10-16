@@ -6,7 +6,7 @@ import { CombinedError } from "urql";
 import { Auth0HookMock, MockAuth0Token } from "../../__mocks__/contexts/Auth0Context.mock";
 import { MockOrganization1 } from "../../__mocks__/data/organizations.mock";
 import { MockUser } from "../../__mocks__/data/users.mock";
-import { Admin } from "../../components/AdminContent/AdminContent.view";
+import { AdminContent } from "../../components/AdminContent/AdminContent.component";
 import { OrganizationDetailsMode } from "../../components/AdminContent/Organizations/Details/OrganizationDetails.definition";
 import type { UsersCreateViewIdModel } from "../../components/AdminContent/User/Create/UsersCreate.definition";
 import { getAdminFormUser } from "../../components/Forms/User/AdminUserForm.utils";
@@ -14,7 +14,7 @@ import { AccessRouteMap, PermissionCollection } from "../../configurations/acces
 import type { AdminRoutePath } from "../../configurations/navigation.configuration";
 import { OrganizationClaim } from "../../configurations/q4-platform-common.configuration";
 import type { TupleOf } from "../../definitions/typescript.definition";
-// import { useClaims } from "../../hooks/useClaims/useClaims.hook";
+// // import { useClaims } from "../../hooks/useClaims/useClaims.hook";
 import { useIdTokenClaims } from "../../hooks/useIdTokenClaims/useIdTokenClaims.hook";
 import { useOrganizationQuery } from "../../hooks/useOrganization/useOrganization.hook";
 import { useUserCreate } from "../../hooks/useUser/useUser.hook";
@@ -105,7 +105,7 @@ export function testUserCreate(
 
       render(
         <MemoryRouter initialEntries={[route]}>
-          <Admin />
+          <AdminContent />
           <ToastContainer />
         </MemoryRouter>,
       );

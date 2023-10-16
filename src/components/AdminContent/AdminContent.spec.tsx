@@ -8,8 +8,8 @@ import { UserContext } from "../../contexts/user/user.context";
 import { useFeatureFlags } from "../../hooks/useFeatureFlags/useFeatureFlags.hook";
 import { useIdTokenClaims } from "../../hooks/useIdTokenClaims/useIdTokenClaims.hook";
 import { fireEvent, render, screen } from "../../utils/testUtils";
+import { Admin } from "./AdminContent.component";
 import { AdminViewDefault } from "./AdminContent.definition";
-import { Admin } from "./AdminContent.view";
 
 jest.mock("../../hooks/useIdTokenClaims/useIdTokenClaims.hook");
 const mockUseIdTokenClaims = useIdTokenClaims as jest.Mock;

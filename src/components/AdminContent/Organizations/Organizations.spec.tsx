@@ -8,13 +8,13 @@ import { AdminRoutesIdModel } from "../../../components/Routes/Routes.definition
 import { AccessRouteMap, PermissionCollection } from "../../../configurations/access.configuration";
 import { AdminRoutePath } from "../../../configurations/navigation.configuration";
 import type { Organization } from "../../../definitions/organization.definition";
-import { useClaims } from "../../../hooks/useClaims/useClaims.hook";
+// // import { useClaims } from "../../../hooks/useClaims/useClaims.hook";
 import { useOrganizationsLazyQuery } from "../../../schemas/generated/graphql";
 import { throttle } from "../../../utils/api/api.utils";
 import { fireEvent, render, screen, waitFor } from "../../../utils/testUtils";
-import { Admin } from "../AdminContent.view";
+import { AdminContent } from "../AdminContent.component";
+import { Organizations } from "./Organizations.component";
 import { AdminOrganizationsToolbarActions, AdminOrganizationsViewIdModel as ViewIdModel } from "./Organizations.definition";
-import { Organizations } from "./Organizations.view";
 
 jest.mock("../../../schemas/generated/graphql");
 const mockUseOrganizationsLazyQuery = useOrganizationsLazyQuery as jest.Mock;
@@ -93,7 +93,7 @@ describe("Organizations View", () => {
     render(
       <MemoryRouter initialEntries={[AdminRoutePath.Organizations]}>
         <NimbusConfig.ConfigProvider>
-          <Admin />
+          <AdminContent />
         </NimbusConfig.ConfigProvider>
       </MemoryRouter>,
     );

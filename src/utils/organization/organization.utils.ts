@@ -127,7 +127,7 @@ export const getOrganizationDetailsMode = (permissions: Permission[], organizati
       return OrganizationDetailsMode.Create;
     }
   } else if (hasOrgDetailsModePermission(permissions, PermissionCollection.ReadOrganizations)) {
-    return OrganizationDetailsMode.View;
+    return OrganizationDetailsMode.component;
   }
 
   return null;

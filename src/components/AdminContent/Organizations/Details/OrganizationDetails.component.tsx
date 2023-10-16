@@ -1,5 +1,5 @@
 /* eslint-disable sonarjs/cognitive-complexity */
-import "./OrganizationDetails.view.scss";
+import "./OrganizationDetails.scss";
 import { useApolloClient } from "@apollo/client";
 import {
   ButtonTheme,
@@ -22,12 +22,7 @@ import {
   CopyButton,
 } from "@q4/nimbus-ui";
 import type { Entitlement } from "@q4/platform-definitions";
-import {
-  OrganizationType,
-  Entitlement as EntitlementConstant,
-  OrganizationRegion,
-  Organization,
-} from "@q4/platform-definitions";
+import { OrganizationType, Entitlement as EntitlementConstant, OrganizationRegion } from "@q4/platform-definitions";
 import React, { memo, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
 import { generatePath, useHistory, useLocation, useParams } from "react-router-dom";
 import { AdminRoutePath, RoutePathIdLabel } from "../../../../configurations/navigation.configuration";
@@ -39,7 +34,7 @@ import type {
   OrganizationCurrencyOption,
 } from "../../../../definitions/organization.definition";
 import { Organization, OrganizationEditState } from "../../../../definitions/organization.definition";
-import { useClaims } from "../../../../hooks/useClaims/useClaims.hook";
+// // import { useClaims } from "../../../../hooks/useClaims/useClaims.hook";
 import {
   OrganizationEditMessage,
   OrganizationCreateMessage,
@@ -74,7 +69,7 @@ import {
   OrganizationRegionLabel,
 } from "./OrganizationDetails.definition";
 import type { OrganizationDetailsError, OrganizationsEditParam } from "./OrganizationDetails.definition";
-import { StockTicker } from "./StockTicker/StockTicker.view";
+import { StockTicker } from "./StockTicker/StockTicker.component";
 
 const OrganizationDetailsBase = (): JSX.Element => {
   const history = useHistory();

@@ -1,7 +1,7 @@
 import type { User } from "@auth0/auth0-react";
 import React, { memo, useState } from "react";
 import { useHistory } from "react-router-dom";
-import { useClaims } from "../../../../hooks/useClaims/useClaims.hook";
+// import { useClaims } from "../../../../hooks/useClaims/useClaims.hook";
 import { UserCreateMessages } from "../../../../hooks/useUser/useUser.definition";
 import { useUserCreate } from "../../../../hooks/useUser/useUser.hook";
 import { AdminUserForm } from "../../../Forms/User/AdminUserForm.component";

@@ -1,4 +1,4 @@
-import "./OrganizationsLink.view.scss";
+import "./OrganizationsLink.scss";
 import type { ChipsItemProps } from "@q4/nimbus-ui";
 import {
   ButtonTheme,

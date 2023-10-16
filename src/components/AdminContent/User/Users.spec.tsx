@@ -16,13 +16,13 @@ import { AdminRoutePath } from "../../../configurations/navigation.configuration
 import { AdminLoadingProvider, AdminLoadingContext } from "../../../contexts/loading/loading.context";
 import type { AdminLoadingContextProps } from "../../../contexts/loading/loading.definition";
 import type { User } from "../../../definitions/user.definition";
-import { useClaims } from "../../../hooks/useClaims/useClaims.hook";
+// // import { useClaims } from "../../../hooks/useClaims/useClaims.hook";
 import { useIdTokenClaims } from "../../../hooks/useIdTokenClaims/useIdTokenClaims.hook";
 import { QueryPaginationDefault } from "../../../hooks/useQuery/useQuery.definition";
 import { useUsersLazyQuery } from "../../../schemas/generated/graphql";
 import { throttle } from "../../../utils/api/api.utils";
 import { fireEvent, render, screen, waitFor } from "../../../utils/testUtils";
-import { Admin } from "../AdminContent.view";
+import { AdminContent } from "../AdminContent.component";
 import {
   AdminOrganizationCondition,
   AdminUsersViewIdModel as ViewIdModel,
@@ -96,7 +96,7 @@ describe("Users View", () => {
     render(
       <MemoryRouter initialEntries={[AdminRoutePath.Users]}>
         <NimbusConfig.ConfigProvider>
-          <Admin />
+          <AdminContent />
           <ToastContainer />
         </NimbusConfig.ConfigProvider>
       </MemoryRouter>,

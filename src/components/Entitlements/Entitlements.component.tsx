@@ -1,4 +1,4 @@
-import "./Entitlements.component.scss";
+import "./Entitlements.scss";
 import type { SwapableProps } from "@q4/nimbus-ui";
 import {
   Button,
@@ -19,7 +19,7 @@ import React, { memo, useCallback, useMemo, useRef, useState } from "react";
 import type { CamelCaseEntitlement } from "../../configurations/entitlement.configuration";
 import { EntitlementLabel } from "../../configurations/entitlement.configuration";
 import { FeatureFlag } from "../../configurations/feature.configuration";
-// import { useClaims } from "../../hooks/useClaims/useClaims.hook";
+// // import { useClaims } from "../../hooks/useClaims/useClaims.hook";
 import { useFeatureFlags } from "../../hooks/useFeatureFlags/useFeatureFlags.hook";
 import { isEngagementAnalyticsEntitlement, getDefaultEntitlementSelection } from "../../utils/entitlement/entitlement.utils";
 import { getOrganizationDetailsMode } from "../../utils/organization/organization.utils";
@@ -196,7 +196,7 @@ const EntitlementsBase = (props: EntitlementsProps): JSX.Element => {
           selected={selectedEntitlement}
           onChange={handleEntitlementTabChange}
         />
-        {getOrganizationDetailsMode(claims.permissions, organizationId) !== OrganizationDetailsMode.View && (
+        {getOrganizationDetailsMode(claims.permissions, organizationId) !== OrganizationDetailsMode.component && (
           <Button
             id={idModel.menuButton.id}
             label="Add Entitlement"

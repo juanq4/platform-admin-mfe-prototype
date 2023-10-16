@@ -1,4 +1,4 @@
-import "./EntityTable.component.scss";
+import "./EntityTable.scss";
 import type { ButtonProps } from "@q4/nimbus-ui";
 import {
   Search,
