@@ -9,7 +9,6 @@ import { OrganizationClaim } from "../../configurations/q4-platform-common.confi
 import { useAdminData } from "../../contexts/data/data.hook";
 import { AdminLoadingProvider } from "../../contexts/loading/loading.context";
 // import { useAccess } from "../../hooks/useAccess/useAccess.hook";
-// // import { useClaims } from "../../hooks/useClaims/useClaims.hook";
 import { useIdTokenClaims } from "../../hooks/useIdTokenClaims/useIdTokenClaims.hook";
 import type { OrganizationsLazyQueryResponse } from "../../hooks/useOrganization/useOrganization.definition";
 import { useOrganizationsLazyQuery } from "../../hooks/useOrganization/useOrganization.hook";

@@ -7,7 +7,6 @@ import { MockOrganization1, MockOrganization12, MockOrganization7 } from "../../
 import { MockUser, MockUser1, MockUser14, MockUser2 } from "../../../__mocks__/data/users.mock";
 import { PermissionCollection } from "../../../configurations/access.configuration";
 import { UserApplications } from "../../../definitions/user.definition";
-// // import { useClaims } from "../../../hooks/useClaims/useClaims.hook";
 import type { OrganizationQueryResponse } from "../../../hooks/useOrganization/useOrganization.definition";
 import { useOrganizationQuery } from "../../../hooks/useOrganization/useOrganization.hook";
 import { getRoles } from "../../../utils/organization/getRoles";

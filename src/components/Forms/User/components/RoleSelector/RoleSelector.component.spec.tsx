@@ -2,13 +2,6 @@ import { SelectClassName, StyleGuide } from "@q4/nimbus-ui";
 import { Entitlement } from "@q4/platform-definitions";
 import type { ReactElement } from "react";
 import React from "react";
-// import {
-//   MockAdminOrganization,
-//   MockAgencyOrganization,
-//   MockCorporateOrganization,
-//   MockNoRolesUser,
-// } from "../../../../__mocks__";
-// // import { useClaims } from "../../../../hooks/useClaims/useClaims.hook";
 import {
   MockCorporateOrganization,
   MockAgencyOrganization,

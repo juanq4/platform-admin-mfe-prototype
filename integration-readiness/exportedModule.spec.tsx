@@ -1,8 +1,9 @@
+// @jm fixme should use module Admin not Admin
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import type { MfeProps } from "@q4/platform-definitions";
 import { render } from "@testing-library/react";
 import React from "react";
-import { Admin } from "../src/components/AdminContent/AdminContent.component";
+import { Admin } from "../src/modules/Admin/Admin.component";
 
 describe("SampleModule", () => {
   let defaultSampleModuleProps: MfeProps;

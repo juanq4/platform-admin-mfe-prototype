@@ -8,7 +8,7 @@ import { UserContext } from "../../contexts/user/user.context";
 import { useFeatureFlags } from "../../hooks/useFeatureFlags/useFeatureFlags.hook";
 import { useIdTokenClaims } from "../../hooks/useIdTokenClaims/useIdTokenClaims.hook";
 import { fireEvent, render, screen } from "../../utils/testUtils";
-import { Admin } from "./AdminContent.component";
+import { AdminContent } from "./AdminContent.component";
 import { AdminViewDefault } from "./AdminContent.definition";
 
 jest.mock("../../hooks/useIdTokenClaims/useIdTokenClaims.hook");
@@ -44,7 +44,7 @@ describe("Users View", () => {
     return render(
       <MemoryRouter initialEntries={[AdminRoutePath.Organizations]}>
         <UserContext.Provider value={mockUserContext}>
-          <Admin />
+          <AdminContent />
           <ClientAccounts />
         </UserContext.Provider>
       </MemoryRouter>,

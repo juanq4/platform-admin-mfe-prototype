@@ -15,7 +15,6 @@ import { AccessRouteMap, PermissionCollection, Role } from "../../configurations
 import { OrganizationClaim } from "../../configurations/q4-platform-common.configuration";
 import type { TupleOf } from "../../definitions/typescript.definition";
 import type { User } from "../../definitions/user.definition";
-// import { useClaims } from "../../hooks/useClaims/useClaims.hook";
 import { useIdTokenClaims } from "../../hooks/useIdTokenClaims/useIdTokenClaims.hook";
 import { useOrganizationQuery } from "../../hooks/useOrganization/useOrganization.hook";
 import { useToastNotificationService } from "../../hooks/useToastNotificationService/useToastNotificationService.hook";

@@ -11,7 +11,6 @@ import {
 } from "../../__mocks__/data/organizations.mock";
 import { OrganizationEditState } from "../../definitions/organization.definition";
 import { useUnlinkOrganizations } from "../../hooks/_apollo/useOrganization/useOrganization.hook";
-// // import { useClaims } from "../../hooks/useClaims/useClaims.hook";
 import { OrganizationUnlinkMessage } from "../../hooks/useOrganization/useOrganization.definition";
 import { useOrganizationsLazyQuery } from "../../hooks/useOrganization/useOrganization.hook";
 import { useTable } from "../../hooks/useTable/useTable.hook";

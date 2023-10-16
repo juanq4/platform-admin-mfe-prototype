@@ -14,7 +14,6 @@ import { AccessRouteMap, PermissionCollection } from "../../configurations/acces
 import type { AdminRoutePath } from "../../configurations/navigation.configuration";
 import { OrganizationClaim } from "../../configurations/q4-platform-common.configuration";
 import type { TupleOf } from "../../definitions/typescript.definition";
-// // import { useClaims } from "../../hooks/useClaims/useClaims.hook";
 import { useIdTokenClaims } from "../../hooks/useIdTokenClaims/useIdTokenClaims.hook";
 import { useOrganizationQuery } from "../../hooks/useOrganization/useOrganization.hook";
 import { useUserCreate } from "../../hooks/useUser/useUser.hook";

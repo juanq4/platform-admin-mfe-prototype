@@ -8,7 +8,6 @@ import { AdminRoutesIdModel } from "../../../components/Routes/Routes.definition
 import { AccessRouteMap, PermissionCollection } from "../../../configurations/access.configuration";
 import { AdminRoutePath } from "../../../configurations/navigation.configuration";
 import type { Organization } from "../../../definitions/organization.definition";
-// // import { useClaims } from "../../../hooks/useClaims/useClaims.hook";
 import { useOrganizationsLazyQuery } from "../../../schemas/generated/graphql";
 import { throttle } from "../../../utils/api/api.utils";
 import { fireEvent, render, screen, waitFor } from "../../../utils/testUtils";

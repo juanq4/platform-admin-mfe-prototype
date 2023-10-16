@@ -120,10 +120,10 @@ const OrganizationsBase = (): JSX.Element => {
   const [loading] = useAdminLoadingContext(ViewIdModel.id, organizationLoading);
   // #endregion
 
-  const claims = useClaims();
+  const session = useSession();
 
   const toolbarActions = useMemo(() => {
-    const canCreateOrganizations = claims.permissions.includes(Permission.ManageOrgs);
+    const canCreateOrganizations = session.permissions.includes(Permission.ManageOrgs);
     return canCreateOrganizations
       ? [
           {
@@ -138,13 +138,13 @@ const OrganizationsBase = (): JSX.Element => {
           },
         ]
       : undefined;
-  }, [claims.permissions, history, location]);
+  }, [session.permissions, history, location]);
 
   const handleRowClick = useCallback(
     (event: RowClickedEvent) => {
       if (isNullOrWhiteSpace(event?.data?.id)) return;
 
-      if (getOrganizationDetailsMode(claims.permissions, event.data.id) == OrganizationDetailsMode.Edit) {
+      if (getOrganizationDetailsMode(session.permissions, event.data.id) == OrganizationDetailsMode.Edit) {
         history.push({
           pathname: generatePath(AdminRoutePath.OrganizationsEdit, { [RoutePathIdLabel.Id]: event.data.id }),
           state: { background: location, show: "orgnizationEditModal" },
@@ -156,7 +156,7 @@ const OrganizationsBase = (): JSX.Element => {
         });
       }
     },
-    [claims.permissions, history, location],
+    [session.permissions, history, location],
   );
 
   const handleError = useCallback(() => {

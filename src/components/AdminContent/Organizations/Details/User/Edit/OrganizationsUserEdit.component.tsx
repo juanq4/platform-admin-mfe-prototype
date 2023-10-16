@@ -2,6 +2,7 @@ import { isNullOrWhiteSpace } from "@q4/nimbus-ui";
 import React, { memo, useMemo } from "react";
 import { useHistory, useLocation, useParams } from "react-router-dom";
 import { RoutePathIdLabel } from "../../../../../../configurations/navigation.configuration";
+import { useSession } from "../../../../../../contexts/session/useSession.hook";
 import { useUserEdit } from "../../../../../../hooks/useUserEdit/useUserEdit.hook";
 import {
   getOrganizationsUserEditReturnUrl,
@@ -9,7 +10,6 @@ import {
 } from "../../../../../../utils/organization/organization.utils";
 import { AdminUserForm } from "../../../../../Forms/User/AdminUserForm.component";
 import { AdminUserFormMode } from "../../../../../Forms/User/AdminUserForm.definition";
-// // import { useClaims } from "../../../../hooks/useClaims/useClaims.hook";
 import type { OrganizationsUserEditParams } from "./OrganizationsUserEdit.definition";
 import { OrganizationsUserEditViewIdModel as ViewIdModel } from "./OrganizationsUserEdit.definition";
 
@@ -17,7 +17,7 @@ const OrganizationsUserEditBase = (): JSX.Element => {
   const params = useParams<OrganizationsUserEditParams>();
   const history = useHistory();
   const location = useLocation();
-  const claims = useClaims();
+  const session = useSession();
   const organizationId = useMemo(() => params[RoutePathIdLabel.Id], [params]);
   const userId = useMemo(() => params[RoutePathIdLabel.UserId], [params]);
   const { loading, userState, onSave } = useUserEdit(userId, organizationId);
@@ -29,7 +29,7 @@ const OrganizationsUserEditBase = (): JSX.Element => {
     const route = getOrganizationsUserEditReturnUrl(
       organizationId,
       location.search,
-      getOrganizationDetailsMode(claims.permissions, organizationId),
+      getOrganizationDetailsMode(session.permissions, organizationId),
     );
     history.push(route);
   }

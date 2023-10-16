@@ -28,7 +28,6 @@ import { AdminEditProvider, AdminEditContext } from "../../../../contexts/edit/e
 import type { AdminEditContextProps } from "../../../../contexts/edit/edit.definition";
 import { OrganizationEditState } from "../../../../definitions/organization.definition";
 import type { Team } from "../../../../definitions/team.definition";
-// // import { useClaims } from "../../../../hooks/useClaims/useClaims.hook";
 import {
   OrganizationCreateMessage,
   OrganizationEditMessage,

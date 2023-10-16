@@ -1,18 +1,18 @@
 import { ComboBox } from "@q4/nimbus-ui";
 import { useMemo } from "react";
+import { useSession } from "../../../../../contexts/session/useSession.hook";
 import { useComboBox } from "../../../../../hooks/useComboBox/useComboBox.hook";
-// // import { useClaims } from "../../../../../hooks/useClaims/useClaims.hook";
 import { getRoles } from "../../../../../utils/organization/getRoles";
 import type { RoleSelectorProps } from "./RoleSelector.definition";
 
 export const RoleSelector = (props: RoleSelectorProps): JSX.Element => {
   const { id, organization, user, handleUserChange, disabled } = props;
 
-  const claims = useClaims();
+  const session = useSession();
 
   const roles = useMemo(
-    () => (organization ? getRoles(organization, claims.permissions) : []),
-    [organization, claims.permissions],
+    () => (organization ? getRoles(organization, session.permissions) : []),
+    [organization, session.permissions],
   );
 
   const {

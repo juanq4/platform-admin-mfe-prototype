@@ -1,7 +1,7 @@
 import type { User } from "@auth0/auth0-react";
 import React, { memo, useState } from "react";
 import { useHistory } from "react-router-dom";
-// import { useClaims } from "../../../../hooks/useClaims/useClaims.hook";
+import { useSession } from "../../../../contexts/session/useSession.hook";
 import { UserCreateMessages } from "../../../../hooks/useUser/useUser.definition";
 import { useUserCreate } from "../../../../hooks/useUser/useUser.hook";
 import { AdminUserForm } from "../../../Forms/User/AdminUserForm.component";
@@ -14,11 +14,10 @@ import {
 } from "./UsersCreate.definition";
 
 const UsersCreateBase = (): JSX.Element => {
-  const history = useHistory();
   const [user, setUser] = useState(UsersCreateDefaultUser);
 
-  const { organizationId } = useClaims();
-
+  const history = useHistory();
+  const session = useSession();
   const [{ fetching: saving }, post] = useUserCreate();
 
   function handleSave(updated: User): ReturnType<AdminUserFormProps["onSave"]> {
@@ -39,7 +38,7 @@ const UsersCreateBase = (): JSX.Element => {
         id={ViewIdModel.form.id}
         user={user}
         saving={saving}
-        organizationId={organizationId}
+        organizationId={session.organizationId}
         title="Add User"
         primaryActionLabel="ADD USER"
         mode={AdminUserFormMode.Create}

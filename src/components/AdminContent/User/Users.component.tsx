@@ -6,10 +6,10 @@ import AddUserImage from "../../../assets/icons/addUserImage.svg";
 import { AdminRoutePath, RoutePathIdLabel } from "../../../configurations/navigation.configuration";
 import { useAdminData } from "../../../contexts/data/data.hook";
 import { useAdminLoadingContext } from "../../../contexts/loading/useLoadingContext.hook";
+import { useSession } from "../../../contexts/session/useSession.hook";
 import { usePagination } from "../../../hooks/usePagination/usePagination.hook";
 import { QueryPaginationDefault } from "../../../hooks/useQuery/useQuery.definition";
 import { useSearch } from "../../../hooks/useSearch/useSearch.hook";
-// // import { useClaims } from "../../../hooks/useClaims/useClaims.hook";
 import { useUsersLazyQuery } from "../../../schemas/generated/graphql";
 import type { User, UsersQueryVariables } from "../../../schemas/generated/graphql";
 import { hasRequiredPermission } from "../../../utils/permission/permission.utils";
@@ -23,20 +23,20 @@ import {
 const UsersBase = (): JSX.Element => {
   const history = useHistory();
   const location = useLocation();
-  const claims = useClaims();
+  const session = useSession();
   const { setCachedVariables } = useAdminData();
 
   const hasOrganizationAccess = useMemo(
-    () => hasRequiredPermission(claims.permissions, AdminOrganizationCondition),
-    [claims.permissions],
+    () => hasRequiredPermission(session.permissions, AdminOrganizationCondition),
+    [session.permissions],
   );
   /*
    * Note: if the user has access to the organization view then they should see all users
    * so we don't need an organizationId if that is the case.
    */
   const organizationId = useMemo(
-    () => (hasOrganizationAccess ? null : claims.organizationId),
-    [hasOrganizationAccess, claims.organizationId],
+    () => (hasOrganizationAccess ? null : session.organizationId),
+    [hasOrganizationAccess, session.organizationId],
   );
 
   const pageState = useState<UsersQueryVariables["page"]>(null);

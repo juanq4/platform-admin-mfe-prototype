@@ -17,6 +17,7 @@ import { OrganizationType } from "@q4/platform-definitions";
 import { Role } from "@q4/platform-sdk-definitions";
 import React, { memo, useCallback, useMemo, useRef, useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
+import { useSession } from "../../../../../../contexts/session/useSession.hook";
 import type { Team } from "../../../../../../definitions/team.definition";
 import type { User } from "../../../../../../definitions/user.definition";
 import { TeamCreateMessage } from "../../../../../../hooks/useTeam/useTeam.definition";
@@ -232,10 +233,10 @@ const OrganizationTeamCreateBase = (): JSX.Element => {
     setAddedUsers(addedUsers.filter((addedUser) => addedUser !== userId));
   }
 
-  const claims = useClaims();
+  const session = useSession();
 
   const handleExit = () => {
-    const organizationRoute = getOrganizationRouteBasedOnPermission(claims.permissions, organization.id);
+    const organizationRoute = getOrganizationRouteBasedOnPermission(session.permissions, organization.id);
     history.replace(organizationRoute);
   };
 
