@@ -1,4 +1,3 @@
-import { User } from "@auth0/auth0-react";
 import { SelectClassName, StyleGuide } from "@q4/nimbus-ui";
 import { Entitlement, OrganizationType } from "@q4/platform-definitions";
 import { Role } from "@q4/platform-sdk-definitions";
@@ -6,7 +5,7 @@ import React from "react";
 import { MockOrganization1, MockOrganization12, MockOrganization7 } from "../../../__mocks__/data/organizations.mock";
 import { MockUser, MockUser1, MockUser14, MockUser2 } from "../../../__mocks__/data/users.mock";
 import { PermissionCollection } from "../../../configurations/access.configuration";
-import { UserApplications } from "../../../definitions/user.definition";
+import { User, UserApplications } from "../../../definitions/user.definition";
 import type { OrganizationQueryResponse } from "../../../hooks/useOrganization/useOrganization.definition";
 import { useOrganizationQuery } from "../../../hooks/useOrganization/useOrganization.hook";
 import { getRoles } from "../../../utils/organization/getRoles";
