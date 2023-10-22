@@ -1,5 +1,5 @@
 import { useFlags } from "launchdarkly-react-client-sdk";
-import type { Features } from "../../configurations";
+import type { Features } from "../../configurations/feature.configuration";
 
 // useFlags does not support generic at the moment, we wrap it into a hook to avoid type casting
 // Known issue -> https://github.com/launchdarkly/js-sdk-common/issues/32

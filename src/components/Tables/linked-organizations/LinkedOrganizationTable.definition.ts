@@ -1,7 +1,7 @@
 import { IdModelBase, isNullOrWhiteSpace } from "@q4/nimbus-ui";
 import type React from "react";
-import type { Organization } from "../../../../definitions";
-import type { OrganizationsQueryVariables } from "../../../../hooks/useOrganization/useOrganization.definition";
+import type { Organization } from "../../../definitions/organization.definition";
+import type { OrganizationsQueryVariables } from "../../../hooks/useOrganization/useOrganization.definition";
 import { EntityTableIdModel } from "../../EntityTable/EntityTable.definition";
 import type { EntityTableProps } from "../../EntityTable/EntityTable.definition";
 import { CopyCellListId } from "../../EntityTable/components/CopyCell/CopyCell.definition";

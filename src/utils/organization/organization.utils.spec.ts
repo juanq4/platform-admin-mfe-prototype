@@ -222,12 +222,8 @@ describe("hasOrgDetailsModePermission()", () => {
     expect(getOrganizationDetailsMode([], null)).toEqual(null);
 
     // view mode
-    expect(getOrganizationDetailsMode(PermissionCollection.ReadOrganizations, orgId)).toEqual(
-      OrganizationDetailsMode.component,
-    );
-    expect(getOrganizationDetailsMode(PermissionCollection.ReadOrganizations, null)).toEqual(
-      OrganizationDetailsMode.component,
-    );
+    expect(getOrganizationDetailsMode(PermissionCollection.ReadOrganizations, orgId)).toEqual(OrganizationDetailsMode.View);
+    expect(getOrganizationDetailsMode(PermissionCollection.ReadOrganizations, null)).toEqual(OrganizationDetailsMode.View);
 
     // edit mode
     expect(getOrganizationDetailsMode(PermissionCollection.CrudOrganizations, orgId)).toEqual(OrganizationDetailsMode.Edit);

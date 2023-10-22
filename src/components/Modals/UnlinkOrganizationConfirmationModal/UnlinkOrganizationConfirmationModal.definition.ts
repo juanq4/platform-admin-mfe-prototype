@@ -1,7 +1,7 @@
 import { ButtonIdModel, IdModelBase } from "@q4/nimbus-ui";
 import type { BaseComponentProps } from "@q4/nimbus-ui";
 import type { Key } from "react";
-import type { OrganizationEditState } from "../../../../definitions";
+import type { OrganizationEditState } from "../../../definitions/organization.definition";
 
 export interface UnlinkOrganizationModalProps extends BaseComponentProps {
   linkedOrganization: OrganizationEditState;

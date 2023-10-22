@@ -1,11 +1,11 @@
 import { ButtonIdModel, IdModelBase, isNullOrWhiteSpace, ToggleButtonsIdModel } from "@q4/nimbus-ui";
 import type { BaseComponentProps } from "@q4/nimbus-ui";
-import type { OrganizationEditState } from "../../../definitions/organization.definition";
+import type { OrganizationEditState } from "../../definitions/organization.definition";
 import type {
   SitesByOrganizationResponse,
   SitesByOrgQueryVariables,
-} from "../../../hooks/useOrganization/useOrganization.definition";
-import type { LazyQueryResponse } from "../../../hooks/useQuery/useQuery.definition";
+} from "../../hooks/useOrganization/useOrganization.definition";
+import type { LazyQueryResponse } from "../../hooks/useQuery/useQuery.definition";
 import type { Entitlement } from "../Entitlements/Entitlements.definition";
 import { EntitlementsIdModel } from "../Entitlements/Entitlements.definition";
 import { OrganizationsIdModel } from "../LinkedOrganizations/LinkedOrganizations.definition";

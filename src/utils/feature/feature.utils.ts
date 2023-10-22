@@ -1,5 +1,5 @@
 import { isEmpty, isNil } from "@q4/nimbus-ui";
-import type { Features } from "../../configurations";
+import type { Features } from "../../configurations/feature.configuration";
 
 // Current logic is
 // if the featureFlag does not exist, assume the feature is true

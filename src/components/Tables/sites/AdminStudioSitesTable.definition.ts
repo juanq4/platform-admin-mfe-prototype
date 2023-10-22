@@ -1,7 +1,11 @@
 import { isNullOrWhiteSpace, RadioButtonListId } from "@q4/nimbus-ui";
-import type { OrganizationStudioDetails } from "../../../../definitions";
-import type { LazyQueryResponse, SitesByOrganizationResponse, SitesByOrgQueryVariables } from "../../../../hooks";
-import type { EntityTableProps } from "../../EntityTable";
+import type { OrganizationStudioDetails } from "../../../definitions/organization.definition";
+import type {
+  SitesByOrganizationResponse,
+  SitesByOrgQueryVariables,
+} from "../../../hooks/useOrganization/useOrganization.definition";
+import type { LazyQueryResponse } from "../../../hooks/useQuery/useQuery.definition";
+import type { EntityTableProps } from "../../EntityTable/EntityTable.definition";
 import { EntityTableIdModel } from "../../EntityTable/EntityTable.definition";
 
 export interface AdminStudioSitesViewModel {

@@ -1,6 +1,6 @@
 import { IdModelBase, isNullOrWhiteSpace } from "@q4/nimbus-ui";
-import type { User } from "../../../../definitions/user.definition";
-import type { UsersQueryVariables } from "../../../../schemas/generated/graphql";
+import type { User } from "../../../definitions/user.definition";
+import type { UsersQueryVariables } from "../../../schemas/generated/graphql";
 import type { EntityTableColumnDef, EntityTableProps } from "../../EntityTable/EntityTable.definition";
 import { EntityTableIdModel } from "../../EntityTable/EntityTable.definition";
 import { StatusCellListId } from "../../EntityTable/components/StatusCell/StatusCell.definition";

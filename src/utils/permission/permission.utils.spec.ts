@@ -6,6 +6,7 @@ import { PermissionCollection, PermissionRule } from "../../configurations/acces
 import type { Features } from "../../configurations/feature.configuration";
 import { FeatureFlag } from "../../configurations/feature.configuration";
 import { AppRoutePath, AdminRoutePath } from "../../configurations/navigation.configuration";
+import { mapRoutesByPermission, hasRequiredPermission } from "./permission.utils";
 
 type HasRequiredPermissionTestCase = {
   id: string;

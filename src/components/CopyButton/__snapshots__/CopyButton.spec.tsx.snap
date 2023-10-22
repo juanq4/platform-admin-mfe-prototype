@@ -1,0 +1,209 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`7449693: [Given] the label is 'this is a mock string' [Expect] the returned label to match' 1`] = `false`;
+
+exports[`7449694: [Given] the label is 'null' [Expect] the returned label to match' 1`] = `true`;
+
+exports[`CopyButton Component 7378438: [Given] no props are provided [Expect] the component to render 1`] = `
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  position: relative;
+  background-color: #0f5ca3;
+  color: #ffffff;
+  border-color: transparent;
+  font-family: inherit;
+  height: 40px;
+  padding: 12px 16px;
+  border-width: 1px;
+  border-style: solid;
+  font-size: 14px;
+  line-height: 16px;
+  text-transform: none;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  cursor: pointer!important;
+  border-radius: 4px;
+  padding: 0;
+  width: 40px;
+  text-align: center;
+}
+
+.emotion-0:hover {
+  background: #0a3d6d;
+  color: #ffffff;
+}
+
+.emotion-0:hover [data-type="nui-tooltip"] {
+  opacity: 1;
+  visibility: visible;
+}
+
+.emotion-0:focus {
+  background: #0a3d6d;
+  border-color: #4ea1ef;
+  box-shadow: 0px 0px 3px #4ea1ef;
+}
+
+.emotion-0:active {
+  background: #051f36;
+}
+
+.emotion-0:disabled {
+  pointer-events: none;
+  cursor: default;
+  background: #f7fafc;
+  color: #61707c;
+  border-color: transparent;
+}
+
+@media only screen and (max-width: 768px) {
+  .emotion-0 {
+    height: 40px;
+    padding: 12px;
+    width: 40px;
+  }
+}
+
+.emotion-1 {
+  font-size: 12px;
+  line-height: 40px;
+}
+
+.emotion-1+span {
+  margin-left: 4px;
+}
+
+@media only screen and (max-width: 768px) {
+  .emotion-1 {
+    line-height: 16px;
+  }
+}
+
+<div
+  id="root"
+>
+  <button
+    class="copy-button emotion-0"
+    disabled=""
+    type="button"
+  >
+    <i
+      class="copy-button_icon q4i-clone-duplicate-4pt emotion-1"
+    />
+  </button>
+</div>
+`;
+
+exports[`CopyButton Component 7378439: [Given] the copy the text value is 'null' [Expect] the button to be disabled 1`] = `
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  position: relative;
+  background-color: #0f5ca3;
+  color: #ffffff;
+  border-color: transparent;
+  font-family: inherit;
+  height: 40px;
+  padding: 12px 16px;
+  border-width: 1px;
+  border-style: solid;
+  font-size: 14px;
+  line-height: 16px;
+  text-transform: none;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  cursor: pointer!important;
+  border-radius: 4px;
+  padding: 0;
+  width: 40px;
+  text-align: center;
+}
+
+.emotion-0:hover {
+  background: #0a3d6d;
+  color: #ffffff;
+}
+
+.emotion-0:hover [data-type="nui-tooltip"] {
+  opacity: 1;
+  visibility: visible;
+}
+
+.emotion-0:focus {
+  background: #0a3d6d;
+  border-color: #4ea1ef;
+  box-shadow: 0px 0px 3px #4ea1ef;
+}
+
+.emotion-0:active {
+  background: #051f36;
+}
+
+.emotion-0:disabled {
+  pointer-events: none;
+  cursor: default;
+  background: #f7fafc;
+  color: #61707c;
+  border-color: transparent;
+}
+
+@media only screen and (max-width: 768px) {
+  .emotion-0 {
+    height: 40px;
+    padding: 12px;
+    width: 40px;
+  }
+}
+
+.emotion-1 {
+  font-size: 12px;
+  line-height: 40px;
+}
+
+.emotion-1+span {
+  margin-left: 4px;
+}
+
+@media only screen and (max-width: 768px) {
+  .emotion-1 {
+    line-height: 16px;
+  }
+}
+
+<button
+  class="copy-button emotion-0"
+  disabled=""
+  id="MockCopyButtonId"
+  type="button"
+>
+  <i
+    class="copy-button_icon q4i-clone-duplicate-4pt emotion-1"
+    id="MockCopyButtonIdIcon"
+  />
+</button>
+`;
+
+exports[`isCopyButtonDisabled 7449693: [Given] the label is 'this is a mock string' [Expect] the returned label to match' 1`] = `false`;
+
+exports[`isCopyButtonDisabled 7449694: [Given] the label is 'null' [Expect] the returned label to match' 1`] = `true`;
