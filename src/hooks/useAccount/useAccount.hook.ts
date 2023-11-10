@@ -1,11 +1,10 @@
-import { useContext } from "react";
-import { UserContext } from "../../contexts/user/user.context";
-import type { User } from "../../definitions";
+import { useUser } from "../../contexts/user/user.hook";
+import type { User } from "../../definitions/user.definition";
 import type { AccountHookModel } from "./useAccount.definition";
 
 // TODO: Delete useAccount hook. Use generated query hooks instead.
 export const useAccount = (): AccountHookModel => {
-  const { organization, user } = useContext(UserContext);
+  const { organization, user } = useUser();
 
   return [
     {

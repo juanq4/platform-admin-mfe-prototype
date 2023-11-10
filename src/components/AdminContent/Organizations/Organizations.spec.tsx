@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { CombinedError } from "@urql/core";
 import React from "react";
 import { MemoryRouter } from "react-router-dom";
@@ -8,6 +9,7 @@ import { AdminRoutesIdModel } from "../../../components/Routes/Routes.definition
 import { AccessRouteMap, PermissionCollection } from "../../../configurations/access.configuration";
 import { AdminRoutePath } from "../../../configurations/navigation.configuration";
 import type { Organization } from "../../../definitions/organization.definition";
+import { useClaims } from "../../../hooks/useClaims/useClaims.hook";
 import { useOrganizationsLazyQuery } from "../../../schemas/generated/graphql";
 import { throttle } from "../../../utils/api/api.utils";
 import { fireEvent, render, screen, waitFor } from "../../../utils/testUtils";
@@ -19,7 +21,7 @@ jest.mock("../../../schemas/generated/graphql");
 const mockUseOrganizationsLazyQuery = useOrganizationsLazyQuery as jest.Mock;
 jest.mock("../../../utils/api/api.utils");
 const mockThrottle = throttle as unknown as jest.Mock;
-jest.mock("../../../contexts/session/useSession.hook");
+jest.mock("../../../hooks/useClaims/useClaims.hook");
 const mockUseClaims = useClaims as jest.Mock;
 const mockHistoryPush = jest.fn();
 jest.mock("react-router-dom", () => {
@@ -82,7 +84,10 @@ describe("Organizations View", () => {
     );
   });
 
-  function customRender(permissions = requiredPermissions, mockOrganizationsQueryHook = organizationsLazyQueryHook) {
+  function customRender(
+    permissions: any = requiredPermissions,
+    mockOrganizationsQueryHook: any = organizationsLazyQueryHook,
+  ) {
     mockUseClaims.mockReturnValue({ permissions });
     mockUseOrganizationsLazyQuery.mockReturnValue(mockOrganizationsQueryHook);
     mockThrottle.mockImplementation((command) => {

@@ -2,10 +2,11 @@ import { isNullOrWhiteSpace } from "@q4/nimbus-ui";
 import type { RowClickedEvent } from "@q4/nimbus-ui/dist/dependencies/agGrid/community";
 import type { Organization } from "@q4/platform-definitions";
 import { Permission } from "@q4/platform-definitions";
-import React, { memo, useCallback, useMemo, useRef, useState } from "react";
+import { memo, useCallback, useMemo, useRef, useState } from "react";
 import { generatePath, useHistory, useLocation } from "react-router-dom";
 import { AdminRoutePath, RoutePathIdLabel } from "../../../configurations/navigation.configuration";
 import { useAdminLoadingContext } from "../../../contexts/loading/useLoadingContext.hook";
+import { useClaims } from "../../../hooks/useClaims/useClaims.hook";
 import { usePagination } from "../../../hooks/usePagination/usePagination.hook";
 import { QueryPaginationDefault } from "../../../hooks/useQuery/useQuery.definition";
 import { useSearch } from "../../../hooks/useSearch/useSearch.hook";
@@ -120,10 +121,10 @@ const OrganizationsBase = (): JSX.Element => {
   const [loading] = useAdminLoadingContext(ViewIdModel.id, organizationLoading);
   // #endregion
 
-  const session = useSession();
+  const claims = useClaims();
 
   const toolbarActions = useMemo(() => {
-    const canCreateOrganizations = session.permissions.includes(Permission.ManageOrgs);
+    const canCreateOrganizations = claims.permissions.includes(Permission.ManageOrgs);
     return canCreateOrganizations
       ? [
           {
@@ -138,13 +139,13 @@ const OrganizationsBase = (): JSX.Element => {
           },
         ]
       : undefined;
-  }, [session.permissions, history, location]);
+  }, [claims.permissions, history, location]);
 
   const handleRowClick = useCallback(
     (event: RowClickedEvent) => {
       if (isNullOrWhiteSpace(event?.data?.id)) return;
 
-      if (getOrganizationDetailsMode(session.permissions, event.data.id) == OrganizationDetailsMode.Edit) {
+      if (getOrganizationDetailsMode(claims.permissions, event.data.id) == OrganizationDetailsMode.Edit) {
         history.push({
           pathname: generatePath(AdminRoutePath.OrganizationsEdit, { [RoutePathIdLabel.Id]: event.data.id }),
           state: { background: location, show: "orgnizationEditModal" },
@@ -156,7 +157,7 @@ const OrganizationsBase = (): JSX.Element => {
         });
       }
     },
-    [session.permissions, history, location],
+    [claims.permissions, history, location],
   );
 
   const handleError = useCallback(() => {

@@ -1,5 +1,5 @@
-import type { Team } from "../../definitions";
-import type { MutationHookModel, MutationResponse, QueryGetByIdVariablesBase } from "../useQuery";
+import type { Team } from "../../definitions/team.definition";
+import type { QueryGetByIdVariablesBase, MutationHookModel, MutationResponse } from "../useQuery/useQuery.definition";
 
 export enum TeamCreateMessage {
   Failed = "Failed to create team.",

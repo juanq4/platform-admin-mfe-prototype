@@ -6,7 +6,7 @@ import { OrganizationType, Permission } from "@q4/platform-definitions";
 import type { KeyboardEvent, MouseEvent } from "react";
 import React, { memo, useCallback, useEffect, useMemo, useState } from "react";
 import { FeatureFlag } from "../../configurations/feature.configuration";
-import { useSession } from "../../contexts/session/useSession.hook";
+import { useClaims } from "../../hooks/useClaims/useClaims.hook";
 import { useFeatureFlags } from "../../hooks/useFeatureFlags/useFeatureFlags.hook";
 import { useManagedByAdminOrganization } from "../../hooks/useManagedByAdminOrganization/useManagedByAdminOrganization.hook";
 import { Entitlements } from "../Entitlements/Entitlements.component";
@@ -37,7 +37,7 @@ const OrganizationFeatureManagementBase = (props: OrganizationFeatureManagementP
     onCreateTeam,
   } = props;
 
-  const session = useSession();
+  const claims = useClaims();
   const features = useFeatureFlags();
 
   const idModel = useMemo(() => new OrganizationFeatureManagementIdModel(id), [id]);
@@ -50,10 +50,10 @@ const OrganizationFeatureManagementBase = (props: OrganizationFeatureManagementP
 
   const canReadLinkedOrgs = useMemo(
     () =>
-      session.permissions.some(
+      claims.permissions.some(
         (permission) => permission === Permission.ManageLinkedOrgs || permission === Permission.ReadLinkedOrgs,
       ),
-    [session.permissions],
+    [claims.permissions],
   );
 
   const orgIsAdminType = organization?.type === OrganizationType.ADMIN;

@@ -11,6 +11,7 @@ import {
 } from "../../__mocks__/data/organizations.mock";
 import { OrganizationEditState } from "../../definitions/organization.definition";
 import { useUnlinkOrganizations } from "../../hooks/_apollo/useOrganization/useOrganization.hook";
+import { useClaims } from "../../hooks/useClaims/useClaims.hook";
 import { OrganizationUnlinkMessage } from "../../hooks/useOrganization/useOrganization.definition";
 import { useOrganizationsLazyQuery } from "../../hooks/useOrganization/useOrganization.hook";
 import { useTable } from "../../hooks/useTable/useTable.hook";
@@ -20,15 +21,15 @@ import { AdminLinkedTableHeader } from "../Tables/linked-organizations/LinkedOrg
 import { LinkedOrganizations } from "./LinkedOrganizations.component";
 import { OrganizationsIdModel } from "./LinkedOrganizations.definition";
 
-jest.mock("../../../hooks/useTable/useTable.hook");
+jest.mock("../../hooks/useTable/useTable.hook");
 
-jest.mock("../../../hooks/_apollo/useOrganization/useOrganization.hook");
+jest.mock("../../hooks/_apollo/useOrganization/useOrganization.hook");
 const mockUseUnlinkOrganizations = useUnlinkOrganizations as jest.Mock;
-jest.mock("../../../hooks/useOrganization/useOrganization.hook");
+jest.mock("../../hooks/useOrganization/useOrganization.hook");
 const mockUseOrganizationsLazyQuery = useOrganizationsLazyQuery as jest.Mock;
-jest.mock("../../../contexts/session/useSession.hook");
+jest.mock("../../hooks/useClaims/useClaims.hook");
 const mockUseClaims = useClaims as jest.Mock;
-jest.mock("../../../hooks/useToastNotificationService/useToastNotificationService.hook");
+jest.mock("../../hooks/useToastNotificationService/useToastNotificationService.hook");
 const mockUseToastNotificationService = useToastNotificationService as jest.Mock;
 
 let mockHandleGridReady: (grid: GridReadyEvent) => void;

@@ -1,7 +1,7 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import type { IdToken } from "@auth0/auth0-react";
 import { Entitlements } from "../../configurations/entitlement.configuration";
-// import type { Claims } from "../../hooks/useClaims/useClaims.definition";
+import type { Claims } from "../../hooks/useClaims/useClaims.definition";
 
 jest.mock("@auth0/auth0-react", () => ({
   withAuthenticationRequired: jest.fn().mockImplementation((component) => component),

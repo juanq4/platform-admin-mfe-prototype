@@ -119,7 +119,7 @@ const mockProps: OrganizationTeamsProps = {
 const adminUserTableMock: AdminUserTableHookModel = {
   users: [{ ...MockUser, active: true }],
   loading: false,
-  stale: false,
+  // stale: false,
   currentPage: 0,
   pageRefs: null as never,
   handlePageChange: jest.fn(),

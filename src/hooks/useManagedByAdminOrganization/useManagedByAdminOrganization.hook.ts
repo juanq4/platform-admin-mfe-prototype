@@ -1,6 +1,6 @@
 import { OrganizationType } from "@q4/platform-definitions";
 import { useMemo } from "react";
-import type { Organization } from "../../definitions";
+import type { Organization } from "../../definitions/organization.definition";
 import { useOrganizationsQuery } from "../../schemas/generated/graphql";
 import type { UseManagedByAdminOrganizationResponse } from "./useManagedByAdminOrganization.definition";
 

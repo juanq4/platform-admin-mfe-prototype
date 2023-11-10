@@ -1,6 +1,7 @@
 import type { IdToken } from "@auth0/auth0-react";
 import type { BaseComponentWithChildrenProps } from "@q4/nimbus-ui";
-import type { Organization, User } from "../../definitions";
+import type { Organization } from "../../definitions/organization.definition";
+import type { User } from "../../definitions/user.definition";
 
 export interface UserContextState {
   // TODO: remove uncertainty in IDs

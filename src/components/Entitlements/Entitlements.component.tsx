@@ -15,11 +15,11 @@ import {
 import { Entitlement as EntitlementConstant } from "@q4/platform-definitions";
 import { camelCase, startCase } from "lodash";
 import type { ReactNode } from "react";
-import React, { memo, useCallback, useMemo, useRef, useState } from "react";
+import { memo, useCallback, useMemo, useRef, useState } from "react";
 import type { CamelCaseEntitlement } from "../../configurations/entitlement.configuration";
 import { EntitlementLabel } from "../../configurations/entitlement.configuration";
 import { FeatureFlag } from "../../configurations/feature.configuration";
-import { useSession } from "../../contexts/session/useSession.hook";
+import { useClaims } from "../../hooks/useClaims/useClaims.hook";
 import { useFeatureFlags } from "../../hooks/useFeatureFlags/useFeatureFlags.hook";
 import { isEngagementAnalyticsEntitlement, getDefaultEntitlementSelection } from "../../utils/entitlement/entitlement.utils";
 import { getOrganizationDetailsMode } from "../../utils/organization/organization.utils";
@@ -48,7 +48,7 @@ const EntitlementsBase = (props: EntitlementsProps): JSX.Element => {
 
   const [menuVisible, handleMenuShow, handleMenuHide] = useVisibility();
   const [messageVisible, handleMessageShow, handleMessageHide] = useVisibility();
-  const session = useSession();
+  const claims = useClaims();
   const flags = useFeatureFlags();
 
   const idModel = useMemo(() => new EntitlementsIdModel(id), [id]);
@@ -100,7 +100,7 @@ const EntitlementsBase = (props: EntitlementsProps): JSX.Element => {
           label: (
             <>
               {label}
-              {getOrganizationDetailsMode(session.permissions, organizationId) === OrganizationDetailsMode.Edit && (
+              {getOrganizationDetailsMode(claims.permissions, organizationId) === OrganizationDetailsMode.Edit && (
                 <Button
                   className={EntitlementsClassName.DeleteButton}
                   id={idModel[`${camelCaseEntitlement}TabRemove`].id}
@@ -114,7 +114,7 @@ const EntitlementsBase = (props: EntitlementsProps): JSX.Element => {
           value: entitlement,
         };
       }),
-    [entitlements, idModel, session.permissions, organizationId, handleRemoveEntitlementClick],
+    [entitlements, idModel, claims.permissions, organizationId, handleRemoveEntitlementClick],
   );
 
   const entitlementLayers = useMemo<SwapableProps["layers"]>(() => {
@@ -196,7 +196,7 @@ const EntitlementsBase = (props: EntitlementsProps): JSX.Element => {
           selected={selectedEntitlement}
           onChange={handleEntitlementTabChange}
         />
-        {getOrganizationDetailsMode(session.permissions, organizationId) !== OrganizationDetailsMode.component && (
+        {getOrganizationDetailsMode(claims.permissions, organizationId) !== OrganizationDetailsMode.View && (
           <Button
             id={idModel.menuButton.id}
             label="Add Entitlement"

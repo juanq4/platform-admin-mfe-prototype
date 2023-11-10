@@ -2,7 +2,10 @@ import { Permission } from "@q4/platform-definitions";
 import { generatePath } from "react-router";
 import { OrganizationDetailsMode } from "../../components/AdminContent/Organizations/Details/OrganizationDetails.definition";
 import { AccessRouteMap } from "../../configurations/access.configuration";
-import { AdminRoutePath, AppRoutePath } from "../../configurations/navigation.configuration";
+import {
+  AdminRoutePath,
+  // AppRoutePath
+} from "../../configurations/navigation.configuration";
 import { getOrganizationDetailsMode } from "../organization/organization.utils";
 import { hasRequiredPermission } from "../permission/permission.utils";
 
@@ -13,12 +16,13 @@ export function getDefaultRedirectRoute(userPermissions: Permission[]): string {
     return AdminRoutePath.Home;
   }
 
-  return AppRoutePath.Default;
+  return "";
+  //return AppRoutePath.Default;
 }
 
 export function isRoute(route: string): boolean {
   return (
-    Object.values(AppRoutePath).includes(route as AppRoutePath) ||
+    // Object.values(AppRoutePath).includes(route as AppRoutePath) ||
     Object.values(AdminRoutePath).includes(route as AdminRoutePath)
   );
 }

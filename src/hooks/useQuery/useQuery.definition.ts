@@ -1,6 +1,6 @@
 import type { OrganizationType } from "@q4/platform-definitions";
 import type { OperationContext, OperationResult, UseQueryArgs } from "urql";
-import type { EntityBase } from "../../definitions";
+import type { EntityBase } from "../../definitions/entity.definition";
 
 export class ApiResponse<T> {
   success: boolean;

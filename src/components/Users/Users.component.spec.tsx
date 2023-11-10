@@ -18,7 +18,7 @@ jest.mock("react-router-dom", () => {
   };
 });
 
-jest.mock("../../../schemas/generated/graphql");
+jest.mock("../../schemas/generated/graphql");
 
 const mockUsersByOrg = useUsersByOrgQuery as jest.Mock;
 

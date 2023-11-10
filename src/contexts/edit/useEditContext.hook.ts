@@ -1,6 +1,6 @@
 import { isEmpty, isNullOrWhiteSpace } from "@q4/nimbus-ui";
 import { useCallback, useContext, useEffect, useMemo } from "react";
-import type { EntityBase, EntityModel } from "../../../definitions";
+import type { EntityBase, EntityModel } from "../../definitions/entity.definition";
 import { AdminEditContext } from "./edit.context";
 import type { AdminEditContextState } from "./edit.definition";
 

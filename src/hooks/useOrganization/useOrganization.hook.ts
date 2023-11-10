@@ -1,5 +1,5 @@
 import { useCallback, useContext, useMemo, useState } from "react";
-import { useQuery } from "urql";
+import { useQuery, Context as GraphqlContext } from "urql";
 import type { UseMutationState, UseQueryResponse } from "urql";
 import { Organization } from "../../definitions/organization.definition";
 import { getOrganizationPayloadBase } from "../../utils/organization/organization.utils";

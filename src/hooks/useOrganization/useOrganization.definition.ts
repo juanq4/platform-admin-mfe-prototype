@@ -1,6 +1,6 @@
 import type { OperationResult } from "urql";
-import type { Organization, OrganizationEditState } from "../../definitions";
-import type { OrganizationSiteFilter, StudioApiResponse } from "../../services";
+import type { Organization, OrganizationEditState } from "../../definitions/organization.definition";
+import type { OrganizationSiteFilter, StudioApiResponse } from "../../definitions/studio.definition";
 import type { MutationHookModel, MutationResponse, QueryPaginationVariablesBase } from "../useQuery/useQuery.definition";
 
 export interface OrganizationsQueryVariables extends QueryPaginationVariablesBase {

@@ -20,13 +20,12 @@ import { FeatureFlag } from "../../configurations/feature.configuration";
 import { AdminDataProvider } from "../../contexts/data/data.context";
 import { AdminEditProvider } from "../../contexts/edit/edit.context";
 import { AdminLoadingProvider } from "../../contexts/loading/loading.context";
-import { useSession } from "../../contexts/session/useSession.hook";
 import { useUser } from "../../contexts/user/user.hook";
-import { useAccount } from "../../hooks/useAccount/useAccount.hook";
+import { useClaims } from "../../hooks/useClaims/useClaims.hook";
 import { useFeatureFlags } from "../../hooks/useFeatureFlags/useFeatureFlags.hook";
 import { mapRoutesByPermission } from "../../utils/permission/permission.utils";
 import { RouteTabs } from "../RouteTabs/RouteTabs.component";
-import { AdminRoutes } from "../Routes/Routes.component";
+import { Routes } from "../Routes/Routes.component";
 import {
   AdminViewClassName,
   AdminViewTabs,
@@ -36,20 +35,19 @@ import {
 
 const Component = (): JSX.Element => {
   useV1Brand(Brand.Classic);
-  const session = useSession();
+  const claims = useClaims();
   const features = useFeatureFlags();
-  const [{ entitlements }] = useAccount();
   const history = useHistory();
   const { onSetAdminClientSelector } = useUser();
 
   const tabs = useMemo(() => {
     const getPath = (x: Tab) => x.value;
-    return mapRoutesByPermission(AdminViewTabs, session.permissions, features, entitlements, getPath);
-  }, [entitlements, features, session.permissions]);
+    return mapRoutesByPermission(AdminViewTabs, claims.permissions, features, claims.entitlements, getPath);
+  }, [claims.entitlements, features, claims.permissions]);
 
   const adminClientSelectorFeatureEnabled = features?.[FeatureFlag.AdminClientAccountAccess];
   const showClientSelectorButton =
-    session.permissions?.includes(Permission.ImpersonateClient) && adminClientSelectorFeatureEnabled;
+    claims.permissions?.includes(Permission.ImpersonateClient) && adminClientSelectorFeatureEnabled;
 
   return (
     <Layout
@@ -93,7 +91,7 @@ const Component = (): JSX.Element => {
         <AdminLoadingProvider>
           <AdminDataProvider>
             <AdminEditProvider>
-              <AdminRoutes entitlements={entitlements} features={features} permissions={session.permissions} />
+              <Routes entitlements={claims.entitlements} features={features} permissions={claims.permissions} />
             </AdminEditProvider>
           </AdminDataProvider>
         </AdminLoadingProvider>

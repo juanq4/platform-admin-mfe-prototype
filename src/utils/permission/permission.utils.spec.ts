@@ -5,7 +5,10 @@ import type { PermissionCondition } from "../../configurations/access.configurat
 import { PermissionCollection, PermissionRule } from "../../configurations/access.configuration";
 import type { Features } from "../../configurations/feature.configuration";
 import { FeatureFlag } from "../../configurations/feature.configuration";
-import { AppRoutePath, AdminRoutePath } from "../../configurations/navigation.configuration";
+import {
+  // AppRoutePath,
+  AdminRoutePath,
+} from "../../configurations/navigation.configuration";
 import { mapRoutesByPermission, hasRequiredPermission } from "./permission.utils";
 
 type HasRequiredPermissionTestCase = {
@@ -28,9 +31,10 @@ function getMockLDFlags(adminUserManagement: boolean): Partial<Features> {
 describe("mapRoutesByPermission", () => {
   const mockAllEntitlements = [Entitlement.Studio, Entitlement.EngagementAnalytics, Entitlement.Earnings];
   const mockAllPermissions = Object.values(Permission);
-  const appRoutes = Object.values(AppRoutePath);
+  // const appRoutes = Object.values(AppRoutePath);
   const adminRoutes = Object.values(AdminRoutePath);
-  const allRoutes = [...adminRoutes, ...appRoutes];
+  // const allRoutes = [...adminRoutes, ...appRoutes];
+  const allRoutes = [...adminRoutes];
   const getPath = (route: string): string => route;
 
   test("7394147: [Given] no values are passed [Then] expect an empty array to be returned", () => {

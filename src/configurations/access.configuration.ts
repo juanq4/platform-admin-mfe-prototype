@@ -4,7 +4,7 @@ import { RoleLabel } from "../definitions/role.definition";
 import { generateRoleLabel } from "../utils/role/role.utils";
 import type { EntitlementCondition } from "./entitlement.configuration";
 import type { FeatureFlag } from "./feature.configuration";
-import { AdminRoutePath, AppRoutePath } from "./navigation.configuration";
+import { AdminRoutePath } from "./navigation.configuration";
 
 export const PermissionCollection: { [key: string]: Permission[] } = {
   ReadOrganizations: [Permission.ReadOrgs],
@@ -129,7 +129,7 @@ const RouteAccess: Record<string, AccessCondition> = {
 };
 
 const AppAccessRouteMap: Record<string, AccessCondition> = {
-  [AppRoutePath.Earnings]: RouteAccess.Earnings,
+  ["/app/earnings"]: RouteAccess.Earnings,
 };
 
 export const AdminAccessRouteMap: Record<string, AccessCondition> = {

@@ -1,7 +1,7 @@
 import React, { memo, useMemo } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { RoutePathIdLabel } from "../../../../configurations/navigation.configuration";
-import { useSession } from "../../../../contexts/session/useSession.hook";
+import { useClaims } from "../../../../hooks/useClaims/useClaims.hook";
 import { useUserEdit } from "../../../../hooks/useUserEdit/useUserEdit.hook";
 import { AdminUserForm } from "../../../Forms/User/AdminUserForm.component";
 import { AdminUserFormMode } from "../../../Forms/User/AdminUserForm.definition";
@@ -12,8 +12,8 @@ const UsersEditBase = (): JSX.Element => {
   const params = useParams<UserEditParams>();
   const userId = useMemo(() => params[RoutePathIdLabel.UserId], [params]);
   const history = useHistory();
-  const session = useSession();
-  const { loading, userState, onSave } = useUserEdit(userId, session.organizationId);
+  const claims = useClaims();
+  const { loading, userState, onSave } = useUserEdit(userId, claims.organizationId);
 
   const [user, setUser] = userState;
 

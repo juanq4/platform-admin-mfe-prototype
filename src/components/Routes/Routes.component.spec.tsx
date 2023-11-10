@@ -9,6 +9,7 @@ import { OrganizationClaim } from "../../configurations/q4-platform-common.confi
 import { useAdminData } from "../../contexts/data/data.hook";
 import { AdminLoadingProvider } from "../../contexts/loading/loading.context";
 // import { useAccess } from "../../hooks/useAccess/useAccess.hook";
+import { useClaims } from "../../hooks/useClaims/useClaims.hook";
 import { useIdTokenClaims } from "../../hooks/useIdTokenClaims/useIdTokenClaims.hook";
 import type { OrganizationsLazyQueryResponse } from "../../hooks/useOrganization/useOrganization.definition";
 import { useOrganizationsLazyQuery } from "../../hooks/useOrganization/useOrganization.hook";
@@ -33,7 +34,7 @@ jest.mock("../../hooks/useIdTokenClaims/useIdTokenClaims.hook");
 const mockUseIdTokenClaims = useIdTokenClaims as jest.Mock;
 jest.mock("../../hooks/useAccess/useAccess.hook");
 const mockUseAccess = useAccess as jest.Mock;
-jest.mock("../../contexts/session/useSession.hook");
+jest.mock("../../hooks/useClaims/useClaims.hook");
 const mockUseClaims = useClaims as jest.Mock;
 jest.mock("../../contexts/data/data.hook");
 const mockUseAdminData = useAdminData as jest.Mock;

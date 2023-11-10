@@ -1,17 +1,18 @@
 import { ButtonTheme, isNullOrWhiteSpace } from "@q4/nimbus-ui";
 import type { RowClickedEvent } from "@q4/nimbus-ui/dist/dependencies/agGrid/community";
-import React, { memo, useCallback, useMemo, useState } from "react";
+import { memo, useCallback, useMemo, useState } from "react";
 import { generatePath, useHistory, useLocation } from "react-router-dom";
 import AddUserImage from "../../../assets/icons/addUserImage.svg";
 import { AdminRoutePath, RoutePathIdLabel } from "../../../configurations/navigation.configuration";
 import { useAdminData } from "../../../contexts/data/data.hook";
 import { useAdminLoadingContext } from "../../../contexts/loading/useLoadingContext.hook";
-import { useSession } from "../../../contexts/session/useSession.hook";
+import type { User } from "../../../definitions/user.definition";
+import { useClaims } from "../../../hooks/useClaims/useClaims.hook";
 import { usePagination } from "../../../hooks/usePagination/usePagination.hook";
 import { QueryPaginationDefault } from "../../../hooks/useQuery/useQuery.definition";
 import { useSearch } from "../../../hooks/useSearch/useSearch.hook";
+import type { UsersQueryVariables } from "../../../hooks/useUser/useUser.definition";
 import { useUsersLazyQuery } from "../../../schemas/generated/graphql";
-import type { User, UsersQueryVariables } from "../../../schemas/generated/graphql";
 import { hasRequiredPermission } from "../../../utils/permission/permission.utils";
 import { AdminUserTable } from "../../Tables/user/AdminUserTable.component";
 import {
@@ -23,20 +24,20 @@ import {
 const UsersBase = (): JSX.Element => {
   const history = useHistory();
   const location = useLocation();
-  const session = useSession();
+  const claims = useClaims();
   const { setCachedVariables } = useAdminData();
 
   const hasOrganizationAccess = useMemo(
-    () => hasRequiredPermission(session.permissions, AdminOrganizationCondition),
-    [session.permissions],
+    () => hasRequiredPermission(claims.permissions, AdminOrganizationCondition),
+    [claims.permissions],
   );
   /*
    * Note: if the user has access to the organization view then they should see all users
    * so we don't need an organizationId if that is the case.
    */
   const organizationId = useMemo(
-    () => (hasOrganizationAccess ? null : session.organizationId),
-    [hasOrganizationAccess, session.organizationId],
+    () => (hasOrganizationAccess ? null : claims.organizationId),
+    [hasOrganizationAccess, claims.organizationId],
   );
 
   const pageState = useState<UsersQueryVariables["page"]>(null);

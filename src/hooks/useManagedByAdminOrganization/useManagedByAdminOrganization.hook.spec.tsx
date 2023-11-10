@@ -1,8 +1,9 @@
 import { renderHook } from "@testing-library/react";
-import { MockAdminOrganization } from "../../__mocks__/data/organizations.mock";
+import { MockAdminOrganization, MockOrganization1 } from "../../__mocks__/data/organizations.mock";
 import type { Organization } from "../../definitions/organization.definition";
 import { useOrganizationsQuery } from "../../schemas/generated/graphql";
 import { useManagedByAdminOrganization } from "./useManagedByAdminOrganization.hook";
+import { PropsWithChildren } from "react";
 
 jest.mock("../../schemas/generated/graphql");
 const mockUseOrganizationsQuery = useOrganizationsQuery as jest.Mock;
@@ -16,7 +17,8 @@ const organizationsQueryHook = {
 } as unknown as ReturnType<typeof useOrganizationsQuery>;
 
 const renderuseManagedByAdminOrganizationHook = (organization: Organization) => {
-  const wrapper = ({ children }) => children;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const wrapper = ({ children }: any) => children;
 
   const { result } = renderHook(
     () => {

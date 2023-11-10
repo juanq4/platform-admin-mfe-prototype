@@ -103,7 +103,7 @@ jest.mock("react-router-dom", () => {
   };
 });
 
-jest.mock("../../../../contexts/session/useSession.hook");
+jest.mock("../../../../hooks/useClaims/useClaims.hook");
 const mockUseClaims = useClaims as jest.Mock;
 
 jest.mock("../../../../hooks/useTable/useTable.hook");

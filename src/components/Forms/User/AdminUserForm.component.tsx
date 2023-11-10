@@ -23,8 +23,8 @@ import { Entitlement, Permission } from "@q4/platform-definitions";
 import { validate as validateEmail } from "email-validator";
 import React, { memo, useCallback, useMemo, useRef, useState } from "react";
 import { Role } from "../../../configurations/access.configuration";
-import { useSession } from "../../../contexts/session/useSession.hook";
 import { User, UserApplications } from "../../../definitions/user.definition";
+import { useClaims } from "../../../hooks/useClaims/useClaims.hook";
 import { useToastNotificationService } from "../../../hooks/useToastNotificationService/useToastNotificationService.hook";
 import { UsersByOrgDocument, useOrganizationQuery } from "../../../schemas/generated/graphql";
 import { mapErrorsToKey } from "../../../utils/error/error.utils";
@@ -69,7 +69,7 @@ const AdminUserFormBase = (props: AdminUserFormProps): JSX.Element => {
 
   const organization = organizationQuery.data?.organization;
 
-  const session = useSession();
+  const claims = useClaims();
   const client = useApolloClient();
 
   const notifications = useToastNotificationService();
@@ -83,9 +83,9 @@ const AdminUserFormBase = (props: AdminUserFormProps): JSX.Element => {
     return roleEditPermissionRules.some(
       (rolePermissionRule) =>
         user?.roles?.some((role) => role === rolePermissionRule.role) &&
-        !session.permissions?.includes(rolePermissionRule.permission),
+        !claims.permissions?.includes(rolePermissionRule.permission),
     );
-  }, [isEditMode, organization?.isAdmin, user?.roles, session.permissions]);
+  }, [isEditMode, organization?.isAdmin, user?.roles, claims.permissions]);
 
   const isFieldDisabled = useMemo(
     () => saving || organizationQuery.fetching || isNotPermissionedToEdit,

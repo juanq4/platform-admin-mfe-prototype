@@ -1,6 +1,8 @@
 import type { BaseComponentWithChildrenProps } from "@q4/nimbus-ui";
 import type { Dispatch, SetStateAction } from "react";
-import type { Organization, User, Team } from "../../../definitions";
+import type { Organization } from "../../definitions/organization.definition";
+import type { Team } from "../../definitions/team.definition";
+import type { User } from "../../definitions/user.definition";
 
 export type AdminDataContextProps = Pick<BaseComponentWithChildrenProps, "children" | "key">;
 

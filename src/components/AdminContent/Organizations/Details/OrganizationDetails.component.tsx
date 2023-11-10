@@ -23,18 +23,18 @@ import {
 } from "@q4/nimbus-ui";
 import type { Entitlement } from "@q4/platform-definitions";
 import { OrganizationType, Entitlement as EntitlementConstant, OrganizationRegion } from "@q4/platform-definitions";
-import React, { memo, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
+import { memo, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
 import { generatePath, useHistory, useLocation, useParams } from "react-router-dom";
 import { AdminRoutePath, RoutePathIdLabel } from "../../../../configurations/navigation.configuration";
 import { useAdminEditContext } from "../../../../contexts/edit/useEditContext.hook";
 import { AdminLoadingContext } from "../../../../contexts/loading/loading.context";
-import { useSession } from "../../../../contexts/session/useSession.hook";
 import type {
   OrganizationStockInfo,
   OrganizationTypeOption,
   OrganizationCurrencyOption,
 } from "../../../../definitions/organization.definition";
 import { Organization, OrganizationEditState } from "../../../../definitions/organization.definition";
+import { useClaims } from "../../../../hooks/useClaims/useClaims.hook";
 import {
   OrganizationEditMessage,
   OrganizationCreateMessage,
@@ -77,10 +77,10 @@ const OrganizationDetailsBase = (): JSX.Element => {
   const [globalLoading] = useContext(AdminLoadingContext);
   const params = useParams<OrganizationsEditParam>();
   const organizationId = useMemo(() => params.id, [params.id]);
-  const session = useSession();
+  const claims = useClaims();
   const client = useApolloClient();
 
-  const organizationDetailsMode = useRef(getOrganizationDetailsMode(session.permissions, organizationId));
+  const organizationDetailsMode = useRef(getOrganizationDetailsMode(claims.permissions, organizationId));
   const organizationDetailsModeData = useRef(OrganizationDetailsModeData[organizationDetailsMode.current]);
 
   const { entity: context, setEntity: setContext } = useAdminEditContext(Organization, organizationId);

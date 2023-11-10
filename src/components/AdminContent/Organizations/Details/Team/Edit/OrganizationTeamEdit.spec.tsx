@@ -38,6 +38,7 @@ import {
   getOrganizationLabelWithTicker,
   getOrganizationViewRoute,
 } from "../../../../../../utils/organization/organization.utils";
+import { screen } from "../../../../../../utils/testUtils";
 import { EntityTablePaginationLabels } from "../../../../../EntityTable/components/Pagination/Pagination.definition";
 import { StatusCellLabel } from "../../../../../EntityTable/components/StatusCell/StatusCell.definition";
 import { AdminOrganizationsTableHeader } from "../../../../../Tables/organization/AdminOrganizationTable.definition";

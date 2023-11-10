@@ -1,8 +1,9 @@
 import { useMemo } from "react";
 import type { UseMutationState, UseQueryResponse } from "urql";
-import { useMutation, useQuery } from "urql";
+import { useQuery } from "urql";
 import { Team } from "../../definitions/team.definition";
 import type { QueryHookProps, QueryPaginationVariablesBase } from "../useQuery/useQuery.definition";
+import { useMutation } from "../useQuery/useQuery.hook";
 import { getDefaultPageSize } from "../useQuery/useQuery.utils";
 import type {
   QueryGetTeamByIdVariablesBase,

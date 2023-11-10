@@ -1,4 +1,4 @@
-import type { Organization } from "../../definitions";
+import type { Organization } from "../../definitions/organization.definition";
 
 // It is easier to mock this helper function than it is to mock pendo
 export const updatePendoOrganization = (organization: Organization): void => {

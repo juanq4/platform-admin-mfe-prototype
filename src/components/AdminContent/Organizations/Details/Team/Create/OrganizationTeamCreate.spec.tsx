@@ -1,12 +1,12 @@
 import { ButtonClassName, TableClassName, ToastContainer } from "@q4/nimbus-ui";
 import type { GridReadyEvent } from "@q4/nimbus-ui/dist/dependencies/agGrid/community";
-import { waitFor, fireEvent } from "@testing-library/react";
 import React from "react";
-import { render } from "react-dom";
 import { MockOrganization1, MockOrganizations } from "../../../../../../__mocks__/data/organizations.mock";
+import { MockTeam1, MockTeam2 } from "../../../../../../__mocks__/data/teams.mock";
 import { MockUsers, MockUser14, MockQ4AdminUser } from "../../../../../../__mocks__/data/users.mock";
 import type { Organization } from "../../../../../../definitions/organization.definition";
 import type { User } from "../../../../../../definitions/user.definition";
+import { useClaims } from "../../../../../../hooks/useClaims/useClaims.hook";
 import { useOrganizationsQuery, useOrganizationQuery } from "../../../../../../hooks/useOrganization/useOrganization.hook";
 import { useTable } from "../../../../../../hooks/useTable/useTable.hook";
 import { TeamPostKey, TeamCreateMessage } from "../../../../../../hooks/useTeam/useTeam.definition";
@@ -18,31 +18,32 @@ import {
   getOrganizationEditRoute,
 } from "../../../../../../utils/organization/organization.utils";
 import { getOrganizationRouteBasedOnPermission } from "../../../../../../utils/route/route.utils";
+import { render, screen, fireEvent, waitFor } from "../../../../../../utils/testUtils";
 import { AdminUserTableHeader } from "../../../../../Tables/user/AdminUserTable.definition";
 import { TeamDescriptions, TeamErrorsLanguage } from "../OrganizationsTeam.definition";
 import { AddUsersTeamsFormLanguage } from "../components/AddUsersForm/AddUsersTeamsForm.definition";
 import { OrganizationTeamCreate } from "./OrganizationTeamCreate.component";
 import { TeamCreateLanguage, TeamCreateViewIdModel as ViewIdModel } from "./OrganizationsTeamCreate.definition";
 
-jest.mock("../../../../../schemas/generated/graphql");
+jest.mock("../../../../../../schemas/generated/graphql");
 const mockUseOrganizationsQuery = useOrganizationsQuery as jest.Mock;
-jest.mock("../../../../../contexts/session/useSession.hook");
+jest.mock("../../../../../../hooks/useClaims/useClaims.hook");
 const mockUseClaims = useClaims as jest.Mock;
-jest.mock("../../../../../hooks/useOrganization/useOrganization.hook");
+jest.mock("../../../../../../hooks/useOrganization/useOrganization.hook");
 const mockUseOrganizationQuery = useOrganizationQuery as jest.Mock;
-jest.mock("../../../../../hooks/useUser/useUser.hook");
+jest.mock("../../../../../../hooks/useUser/useUser.hook");
 const mockUseUsersQuery = useUsersQuery as jest.Mock;
-jest.mock("../../../../../hooks/useTeam/useTeam.hook");
+jest.mock("../../../../../../hooks/useTeam/useTeam.hook");
 const mockUseTeamsQuery = useTeamsQuery as jest.Mock;
 const mockUseTeamCreate = useTeamCreate as jest.Mock;
-jest.mock("../../../../../hooks/useToastNotificationService/useToastNotificationService.hook");
+jest.mock("../../../../../../hooks/useToastNotificationService/useToastNotificationService.hook");
 const mockUseToastNotificationService = useToastNotificationService as jest.Mock;
-jest.mock("../../../../../utils/route/route.utils");
+jest.mock("../../../../../../utils/route/route.utils");
 const mockGetOrganizationRouteBasedOnPermission = getOrganizationRouteBasedOnPermission as jest.Mock;
 
 const mockHistoryPush = jest.fn();
 const mockHistoryReplace = jest.fn();
-jest.mock("../../../../../hooks/useTable/useTable.hook");
+jest.mock("../../../../../../hooks/useTable/useTable.hook");
 jest.mock("react-router-dom", () => {
   const original = jest.requireActual("react-router-dom");
   return {

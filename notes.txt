@@ -19,6 +19,12 @@ FIXME: // @jm fixme
 - src/context/user
 - User }
 - { Organization }
+- tests
+- @q4/platform-definitions
+  - Organization
+  - User
+  - Entitlement
+  
 
 DONE
 - Fix circular references

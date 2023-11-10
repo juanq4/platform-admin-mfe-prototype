@@ -1,6 +1,5 @@
 import { SelectClassName, ToastContainer } from "@q4/nimbus-ui";
 import { OrganizationType } from "@q4/platform-definitions";
-import React from "react";
 import { MemoryRouter } from "react-router-dom";
 import { CombinedError } from "urql";
 import { Auth0HookMock, MockAuth0Token } from "../../__mocks__/contexts/Auth0Context.mock";
@@ -14,13 +13,14 @@ import { AccessRouteMap, PermissionCollection } from "../../configurations/acces
 import type { AdminRoutePath } from "../../configurations/navigation.configuration";
 import { OrganizationClaim } from "../../configurations/q4-platform-common.configuration";
 import type { TupleOf } from "../../definitions/typescript.definition";
+import { useClaims } from "../../hooks/useClaims/useClaims.hook";
 import { useIdTokenClaims } from "../../hooks/useIdTokenClaims/useIdTokenClaims.hook";
 import { useOrganizationQuery } from "../../hooks/useOrganization/useOrganization.hook";
 import { useUserCreate } from "../../hooks/useUser/useUser.hook";
 import { getOrganizationDetailsMode } from "../organization/organization.utils";
 import { fireEvent, render, screen, waitFor } from "../testUtils";
 
-jest.mock("../../../contexts/session/useSession.hook");
+jest.mock("../../../hooks/useClaims/useClaims.hook");
 const mockUseClaims = useClaims as jest.Mock;
 jest.mock("../../../hooks/useIdTokenClaims/useIdTokenClaims.hook");
 const mockUseIdTokenClaims = useIdTokenClaims as jest.Mock;

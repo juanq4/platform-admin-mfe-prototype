@@ -1,6 +1,6 @@
 import type { BaseComponentWithChildrenProps } from "@q4/nimbus-ui";
 import type { Dispatch, SetStateAction } from "react";
-import type { EntityBase } from "../../../definitions";
+import type { EntityBase } from "../../definitions/entity.definition";
 
 export type AdminEditContextProps = Pick<BaseComponentWithChildrenProps, "children" | "key">;
 

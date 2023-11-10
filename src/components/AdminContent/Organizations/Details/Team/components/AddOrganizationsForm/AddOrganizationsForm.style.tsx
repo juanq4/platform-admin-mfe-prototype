@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import type { AsyncSelectProps } from "@q4/nimbus-ui";
 import { AsyncSelect } from "@q4/nimbus-ui";
-import type { OrganizationTeamOption } from "../../../../../../definitions";
+import type { OrganizationTeamOption } from "../../../../../../../definitions/organization.definition";
 
 export const CustomAsyncSelect = styled((props: AsyncSelectProps<OrganizationTeamOption>) => <AsyncSelect {...props} />)`
   .nui-toggle-input-base--steel.nui-toggle-input-base--checked .nui-toggle-input-base_control {

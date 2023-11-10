@@ -38,7 +38,8 @@ jest.mock("./env/env", () => ({
   },
 }));
 
-global.matchMedia =
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+(global as any).matchMedia =
   global.matchMedia ||
   function () {
     return {
@@ -61,7 +62,8 @@ jest.mock("@q4/nimbus-ui", () => {
 // jsdom does not have a TextEncoder defined in global for the DOM
 // https://stackoverflow.com/questions/57712235/referenceerror-textencoder-is-not-defined-when-running-react-scripts-test
 global.TextEncoder = TextEncoder;
-global.TextDecoder = TextDecoder;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+(global as any).TextDecoder = TextDecoder;
 
 global.BroadcastChannel = jest.fn().mockImplementation(() => {
   return {

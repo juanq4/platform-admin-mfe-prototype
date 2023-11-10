@@ -4,6 +4,7 @@ import React from "react";
 import { NimbusConfig } from "../../__mocks__/contexts/NimbusConfig.mock";
 import { getAppWrapper } from "../../__mocks__/utils/wrappers";
 import { FeatureFlag } from "../../configurations/feature.configuration";
+import { useClaims } from "../../hooks/useClaims/useClaims.hook";
 import { getOrganizationDetailsMode } from "../../utils/organization/organization.utils";
 import { fireEvent, render, screen } from "../../utils/testUtils";
 import { OrganizationDetailsMode } from "../AdminContent/Organizations/Details/OrganizationDetails.definition";
@@ -11,10 +12,10 @@ import { Entitlements } from "./Entitlements.component";
 import { EntitlementsIdModel } from "./Entitlements.definition";
 import type { EntitlementsProps } from "./Entitlements.definition";
 
-jest.mock("../../../contexts/session/useSession.hook");
+jest.mock("../../hooks/useClaims/useClaims.hook");
 const mockUseClaims = useClaims as jest.Mock;
 
-jest.mock("../../../utils/organization/organization.utils");
+jest.mock("../../utils/organization/organization.utils");
 const mockGetOrganizationDetailsMode = getOrganizationDetailsMode as jest.Mock;
 
 describe("Entitlements Component", () => {

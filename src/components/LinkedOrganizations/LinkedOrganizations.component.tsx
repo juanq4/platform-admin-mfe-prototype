@@ -4,17 +4,17 @@ import React, { memo, useCallback, useMemo, useState } from "react";
 import { useHistory } from "react-router-dom";
 import UnlinkOrganizationIcon from "../../assets/icons/unlinkOrganization.svg";
 import { useAdminLoadingContext } from "../../contexts/loading/useLoadingContext.hook";
-import { useSession } from "../../contexts/session/useSession.hook";
 import { OrganizationEditState } from "../../definitions/organization.definition";
 import type { Organization } from "../../definitions/organization.definition";
 import { useUnlinkOrganizations } from "../../hooks/_apollo/useOrganization/useOrganization.hook";
+import { useClaims } from "../../hooks/useClaims/useClaims.hook";
 import type { OrganizationsQueryVariables } from "../../hooks/useOrganization/useOrganization.definition";
 import { OrganizationUnlinkMessage } from "../../hooks/useOrganization/useOrganization.definition";
+import { useOrganizationsLazyQuery } from "../../hooks/useOrganization/useOrganization.hook";
 import { usePagination } from "../../hooks/usePagination/usePagination.hook";
 import { QueryPaginationDefault } from "../../hooks/useQuery/useQuery.definition";
 import { useSearch } from "../../hooks/useSearch/useSearch.hook";
 import { useToastNotificationService } from "../../hooks/useToastNotificationService/useToastNotificationService.hook";
-import { useOrganizationsLazyQuery } from "../../schemas/generated/graphql";
 import { getOrganizationEditLinkedOrganizationsRoute } from "../../utils/organization/organization.utils";
 import { AdminOrganizationsTableCellRenderer } from "../AdminContent/Organizations/Organizations.definition";
 import type { CopyCellProps } from "../EntityTable/components/CopyCell/CopyCell.definition";
@@ -35,16 +35,13 @@ const generateRef = (lastOrganization: OrganizationEditState): OrganizationsQuer
 const OrganizationsBase = (props: OrganizationsProps): JSX.Element => {
   const { id, organization } = props;
   const organizationId = organization?.id;
-  const session = useSession();
+  const claims = useClaims();
   const history = useHistory();
   const idModel = useMemo(() => new OrganizationsIdModel(id), [id]);
   const [isVisible, handleModalOpen, handleModalClose] = useVisibility();
   const [selectedLinkedOrganization, setSelectedLinkedOrganization] = useState(null);
 
-  const canManageLinkedOrgs = useMemo(
-    () => session.permissions.includes(Permission.ManageLinkedOrgs),
-    [session.permissions],
-  );
+  const canManageLinkedOrgs = useMemo(() => claims.permissions.includes(Permission.ManageLinkedOrgs), [claims.permissions]);
 
   const onLinkedOrg = useCallback(() => {
     history.push(getOrganizationEditLinkedOrganizationsRoute(organizationId));

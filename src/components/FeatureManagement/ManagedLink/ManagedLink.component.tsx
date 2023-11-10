@@ -1,7 +1,7 @@
 import { AnchorTarget, Button, ButtonSize, ButtonTheme } from "@q4/nimbus-ui";
 import React, { memo, useCallback, useMemo } from "react";
 import { useHistory } from "react-router-dom";
-import { useSession } from "../../../contexts/session/useSession.hook";
+import { useClaims } from "../../../hooks/useClaims/useClaims.hook";
 import { useOrganizationQuery } from "../../../hooks/useOrganization/useOrganization.hook";
 import { getOrganizationRouteBasedOnPermission } from "../../../utils/route/route.utils";
 import type { ManagedLinkProps } from "./ManagedLink.definition";
@@ -10,7 +10,7 @@ const Link = (props: ManagedLinkProps): JSX.Element => {
   const { id, managedByOrganizationId } = props;
 
   const history = useHistory();
-  const session = useSession();
+  const claims = useClaims();
   const [{ data, fetching: isLoading }] = useOrganizationQuery({
     variables: { id: managedByOrganizationId },
   });
@@ -18,9 +18,9 @@ const Link = (props: ManagedLinkProps): JSX.Element => {
   const label = useMemo(() => `Agency Managed • ${data?.organization ? data?.organization.name : ""}`, [data?.organization]);
 
   const handleClick = useCallback(() => {
-    const organizationRoute = getOrganizationRouteBasedOnPermission(session.permissions, managedByOrganizationId);
+    const organizationRoute = getOrganizationRouteBasedOnPermission(claims.permissions, managedByOrganizationId);
     history.push(organizationRoute);
-  }, [history, managedByOrganizationId, session.permissions]);
+  }, [history, managedByOrganizationId, claims.permissions]);
 
   return (
     <Button

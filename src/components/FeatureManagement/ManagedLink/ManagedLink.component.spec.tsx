@@ -6,7 +6,7 @@ import { getOrganizationEditRoute, getOrganizationViewRoute } from "../../../uti
 import { render, waitFor, screen, fireEvent } from "../../../utils/testUtils";
 import { ManagedLink } from "./ManagedLink.component";
 
-jest.mock("../../../contexts/session/useSession.hook");
+jest.mock("../../../hooks/useClaims/useClaims.hook");
 const mockUseClaims = useClaims as jest.Mock;
 
 jest.mock("../../../hooks/useOrganization/useOrganization.hook");

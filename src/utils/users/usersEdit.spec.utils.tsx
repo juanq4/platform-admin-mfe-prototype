@@ -48,7 +48,7 @@ jest.mock("../../../hooks/useToastNotificationService/useToastNotificationServic
 const mockUseNotifications = useToastNotificationService as jest.Mock;
 jest.mock("../../../hooks/useIdTokenClaims/useIdTokenClaims.hook");
 const mockUseIdTokenClaims = useIdTokenClaims as jest.Mock;
-jest.mock("../../../contexts/session/useSession.hook");
+jest.mock("../../../hooks/useClaims/useClaims.hook");
 const mockUseClaims = useClaims as jest.Mock;
 jest.mock("../../../hooks/useUser/useUser.hook");
 const mockUseUserQuery = useUserQuery as jest.Mock;

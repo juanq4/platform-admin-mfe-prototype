@@ -12,10 +12,12 @@ import {
 import { NimbusConfig } from "../../../__mocks__/contexts/NimbusConfig.mock";
 import { MockUser1 } from "../../../__mocks__/data/users.mock";
 import { AdminRoutesIdModel } from "../../../components/Routes/Routes.definition";
+import { AccessRouteMap } from "../../../configurations/access.configuration";
 import { AdminRoutePath } from "../../../configurations/navigation.configuration";
 import { AdminLoadingProvider, AdminLoadingContext } from "../../../contexts/loading/loading.context";
 import type { AdminLoadingContextProps } from "../../../contexts/loading/loading.definition";
 import type { User } from "../../../definitions/user.definition";
+import { useClaims } from "../../../hooks/useClaims/useClaims.hook";
 import { useIdTokenClaims } from "../../../hooks/useIdTokenClaims/useIdTokenClaims.hook";
 import { QueryPaginationDefault } from "../../../hooks/useQuery/useQuery.definition";
 import { useUsersLazyQuery } from "../../../schemas/generated/graphql";
@@ -34,7 +36,7 @@ jest.mock("../../../utils/api/api.utils");
 const mockThrottle = throttle as unknown as jest.Mock;
 jest.mock("../../../hooks/useIdTokenClaims/useIdTokenClaims.hook");
 const mockUseIdTokenClaims = useIdTokenClaims as jest.Mock;
-jest.mock("../../../contexts/session/useSession.hook");
+jest.mock("../../../hooks/useClaims/useClaims.hook");
 const mockUseClaims = useClaims as jest.Mock;
 jest.mock("../../../contexts/loading/loading.context");
 const mockAdminLoadingProvider = AdminLoadingProvider as jest.Mock;
@@ -62,7 +64,8 @@ describe("Users View", () => {
   };
 
   const queryUsers = jest.fn();
-  const mockQueryReponse = {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const mockQueryReponse: any = {
     loading: false,
     error: null,
     data: { users: { items: mockUsers } },
@@ -79,7 +82,8 @@ describe("Users View", () => {
     mockUseIdTokenClaims.mockReturnValue(MockAuth0Token);
   });
 
-  function customRender(permissions = requiredPermissions, mockUsersQueryHook = usersLazyQueryHook) {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  function customRender(permissions = requiredPermissions, mockUsersQueryHook: any = usersLazyQueryHook) {
     const { loading } = mockUsersQueryHook[1];
     mockThrottle.mockImplementation((command) => {
       command();

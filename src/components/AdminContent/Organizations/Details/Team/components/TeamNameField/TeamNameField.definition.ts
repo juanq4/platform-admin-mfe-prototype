@@ -1,6 +1,6 @@
 import type { BaseComponentProps } from "@q4/nimbus-ui";
 import { FieldIdModel, IdModelBase, isNullOrWhiteSpace, TextboxIdModel } from "@q4/nimbus-ui";
-import type { Team } from "../../../../../../definitions";
+import type { Team } from "../../../../../../../definitions/team.definition";
 import type { TeamFormError } from "../../OrganizationsTeam.definition";
 
 export enum TeamNameFieldLanguage {

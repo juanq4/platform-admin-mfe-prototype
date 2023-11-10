@@ -1,6 +1,6 @@
 import { useDebounce } from "@q4/nimbus-ui";
 import { useCallback, useEffect, useRef, useState } from "react";
-import type { EntityTablePaginationDirection } from "../../../components/EntityTable/components/Pagination";
+import type { EntityTablePaginationDirection } from "../../components/EntityTable/components/Pagination/Pagination.definition";
 import type { SearchHookModel, SearchHookProps } from "./useSearch.definition";
 
 export const useSearch = <TPageRef>(props: SearchHookProps<TPageRef>): SearchHookModel<TPageRef> => {

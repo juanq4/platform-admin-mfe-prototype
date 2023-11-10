@@ -22,7 +22,7 @@ import { NotFoundError } from "../Errors/NotFoundError/NotFoundError.component";
 import { AdminLoadingSpinner } from "../LoadingSpinner/LoadingSpinner.component";
 import { AdminRoutesIdModel } from "./Routes.definition";
 
-const AdminRoutesBase = (props: AccessSwitchProps): JSX.Element => {
+const RoutesBase = (props: AccessSwitchProps): JSX.Element => {
   const [loading] = useContext(AdminLoadingContext);
   const { entitlements, features, permissions } = props;
 
@@ -77,4 +77,4 @@ const AdminRoutesBase = (props: AccessSwitchProps): JSX.Element => {
   );
 };
 
-export const AdminRoutes = memo(AdminRoutesBase);
+export const Routes = memo(RoutesBase);

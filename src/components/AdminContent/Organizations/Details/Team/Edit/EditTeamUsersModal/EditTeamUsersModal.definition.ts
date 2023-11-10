@@ -1,6 +1,6 @@
 import type { BaseComponentProps } from "@q4/nimbus-ui";
 import { ButtonIdModel, IdModelBase, isNullOrWhiteSpace, ModalIdModel } from "@q4/nimbus-ui";
-import type { Team } from "../../../../../../definitions";
+import type { Team } from "../../../../../../../definitions/team.definition";
 import type { TeamDeltaUpdates } from "../../OrganizationsTeam.definition";
 import { AddUsersTeamsFormIdModel } from "../../components/AddUsersForm/AddUsersTeamsForm.definition";
 

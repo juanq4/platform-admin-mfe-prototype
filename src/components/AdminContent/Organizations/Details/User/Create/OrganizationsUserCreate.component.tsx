@@ -2,8 +2,8 @@ import { isNullOrWhiteSpace } from "@q4/nimbus-ui";
 import React, { memo, useMemo, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { RoutePathIdLabel } from "../../../../../../configurations/navigation.configuration";
-import { useSession } from "../../../../../../contexts/session/useSession.hook";
 import type { User } from "../../../../../../definitions/user.definition";
+import { useClaims } from "../../../../../../hooks/useClaims/useClaims.hook";
 import { UserCreateMessages } from "../../../../../../hooks/useUser/useUser.definition";
 import { useUserCreate } from "../../../../../../hooks/useUser/useUser.hook";
 import {
@@ -35,12 +35,12 @@ const OrganizationsUserCreateBase = (): JSX.Element => {
     }));
   }
 
-  const session = useSession();
+  const claims = useClaims();
 
   function handleClose(): void {
     if (isNullOrWhiteSpace(organizationId)) return;
 
-    if (getOrganizationDetailsMode(session.permissions, organizationId) == OrganizationDetailsMode.Edit) {
+    if (getOrganizationDetailsMode(claims.permissions, organizationId) == OrganizationDetailsMode.Edit) {
       history.push(getOrganizationEditRoute(organizationId));
     } else {
       history.push(getOrganizationViewRoute(organizationId));

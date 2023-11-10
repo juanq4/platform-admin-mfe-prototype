@@ -4,10 +4,11 @@ import { ConfigProvider, StyleGuide } from "@q4/nimbus-ui";
 import type { MfeProps } from "@q4/platform-definitions";
 import React, { useMemo } from "react";
 import { AdminContent } from "../../components/AdminContent/AdminContent.component";
-import { SessionProvider } from "../../contexts/session/session.context";
+import { UserProvider } from "../../contexts/user/user.context";
 import { DefaultMfeProps } from "../../definitions/mfe.definition";
 import { useVersionTag } from "../../hooks/useVersionTag/useVersionTag.hook";
 
+// FIXME pass history to  router
 const Admin = (props: MfeProps = DefaultMfeProps): JSX.Element => {
   useVersionTag();
 
@@ -17,11 +18,12 @@ const Admin = (props: MfeProps = DefaultMfeProps): JSX.Element => {
     <ConfigProvider styleGuide={StyleGuide.V1}>
       <CacheProvider value={emotionCache}>
         {/* <ApolloWrapper token={props.token}> */}
-        <SessionProvider {...props}>
+        {/* <SessionProvider {...props}> */}
+        <UserProvider>
           {/* <FeatureFlagProvider> */}
           <AdminContent />
           {/* </FeatureFlagProvider> */}
-        </SessionProvider>
+        </UserProvider>
         {/* </ApolloWrapper> */}
       </CacheProvider>
     </ConfigProvider>

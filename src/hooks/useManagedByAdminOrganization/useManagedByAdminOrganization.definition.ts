@@ -1,4 +1,4 @@
-import type { Organization } from "../../definitions";
+import type { Organization } from "../../definitions/organization.definition";
 
 export interface UseManagedByAdminOrganizationResponse {
   isManagedByAdmin: boolean;

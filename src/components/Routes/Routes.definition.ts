@@ -1,5 +1,5 @@
 import { IdModelBase, isNullOrWhiteSpace, SpinnerIdModel } from "@q4/nimbus-ui";
-import type { NotFoundErrorIdModel } from "../../Errors/NotFoundError/NotFoundError.definition";
+import type { NotFoundErrorIdModel } from "../Errors/NotFoundError/NotFoundError.definition";
 
 class ViewIdModel extends IdModelBase {
   loadingSpinner: SpinnerIdModel;

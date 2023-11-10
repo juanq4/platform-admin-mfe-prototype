@@ -2,7 +2,7 @@ import { isEmpty, isNil } from "@q4/nimbus-ui";
 import { useCallback, useContext, useRef, useState } from "react";
 import { useMutation as useMutationHook, Context as GraphqlContext } from "urql";
 import type { OperationResult, UseMutationState } from "urql";
-import type { EntityBase, EntityModel } from "../../definitions";
+import type { EntityBase, EntityModel } from "../../definitions/entity.definition";
 import type {
   MutationResponse,
   MutationHookModel,
