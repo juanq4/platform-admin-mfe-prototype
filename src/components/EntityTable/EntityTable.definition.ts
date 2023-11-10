@@ -50,14 +50,16 @@ export interface EntityTableProps<TEntity, TPageRef = string[]> extends Pick<Bas
   error: Error;
   loading?: boolean;
   page?: EntityTablePaginationProps["page"];
-  pageRefs?: TPageRef[];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  pageRefs?: TPageRef[] | any;
   placeholderProps?: Partial<PlaceholderContentProps>;
   showToolbar?: boolean;
   searchProps?: Omit<SearchProps, "onClear">;
   tableProps?: Omit<TableProps, "rowData" | "className" | "loading" | "onGridReady">;
   toolbarActions?: ButtonProps[];
   onError: () => void;
-  onPageChange?: (pageRef: TPageRef, page: number, direction: EntityTablePaginationDirection) => void;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  onPageChange?: (pageRef: TPageRef | any, page: number, direction: EntityTablePaginationDirection) => void;
 }
 
 export interface EntityTableCellPropsBase<T = unknown>

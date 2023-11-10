@@ -1,5 +1,5 @@
 import { isEmpty } from "@q4/nimbus-ui";
-import React, { memo } from "react";
+import { memo } from "react";
 import { TickerCellIdModel } from "./TickerCell.definition";
 import type { TickerCellProps } from "./TickerCell.definition";
 

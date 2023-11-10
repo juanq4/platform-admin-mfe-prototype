@@ -6,10 +6,10 @@ const moduleFederationConfig = require("../config/webpack.moduleFederationConfig
 const { ModuleFederationPlugin } = webpack.container;
 
 describe("webpack config", () => {
-  it("has correct path for admin", () => {
-    const moduleName = "admin";
+  it("has correct path for sampleModule", () => {
+    const moduleName = "sampleModule";
     if (moduleFederationConfig instanceof ModuleFederationPlugin) {
-      expect(moduleFederationConfig._options.exposes[`./${moduleName}`]).toMatch(/.\/src\/[\w\/]+\/admin.component/i);
+      expect(moduleFederationConfig._options.exposes[`./${moduleName}`]).toMatch(/.\/src\/[\w\/]+\/sampleModule.component/i);
     }
   });
 });

@@ -1,6 +1,6 @@
 /* eslint-disable testing-library/no-node-access */
-import { renderHook, waitFor } from "@testing-library/react";
 import pckg from "../../../package.json";
+import { renderHook, waitFor } from "../../utils/testUtils";
 import { useVersionTag } from "./useVersionTag.hook";
 
 describe("useVersionTag", () => {

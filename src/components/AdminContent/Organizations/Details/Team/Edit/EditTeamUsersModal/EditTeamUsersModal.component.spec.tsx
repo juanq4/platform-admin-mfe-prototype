@@ -1,12 +1,12 @@
-import { fireEvent, waitFor } from "@testing-library/react";
 import React from "react";
-import { render } from "react-dom";
 import { MockUsersLong, MockUser13, MockUser12, MockUser11 } from "../../../../../../../__mocks__/data/users.mock";
 import { useAdminData } from "../../../../../../../contexts/data/data.hook";
+import { fireEvent, render, screen, waitFor } from "../../../../../../../utils/testUtils";
 import { TeamEditLanguage, TeamEditViewIdModel as ViewIdModel } from "../OrganizationsTeamEdit.definition";
 import { EditTeamUsersModal } from "./EditTeamUsersModal.component";
+import { Team } from "../../../../../../../definitions/team.definition";
 
-jest.mock("../../../../../../contexts/data/data.hook");
+jest.mock("../../../../../../../contexts/data/data.hook");
 const mockUseAdminData = useAdminData as jest.Mock;
 
 const mockOnUpdate = jest.fn();
@@ -15,7 +15,7 @@ const defaultProps = {
   isUpdating: false,
   isVisible: true,
   isLoading: false,
-  error: undefined,
+  // error: undefined,
   onUpdate: mockOnUpdate,
   onRefetchUsers: jest.fn(),
   onClose: () => jest.fn(),
@@ -81,7 +81,7 @@ describe("Edit Team Users Modal", () => {
     const mockAdminData = {
       team: { userIds: [MockUser13.id, MockUser12.id, MockUser11.id] },
       users: [MockUser13, MockUser12, MockUser11],
-      teams: [],
+      teams: [] as Team[],
     };
     mockUseAdminData.mockReturnValue(mockAdminData);
 

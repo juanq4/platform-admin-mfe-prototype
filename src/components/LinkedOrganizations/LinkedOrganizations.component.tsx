@@ -1,6 +1,6 @@
 import { Button, ButtonTheme, isEmpty, isNullOrWhiteSpace, useVisibility } from "@q4/nimbus-ui";
 import { Permission } from "@q4/platform-definitions";
-import React, { memo, useCallback, useMemo, useState } from "react";
+import { memo, useCallback, useMemo, useState } from "react";
 import { useHistory } from "react-router-dom";
 import UnlinkOrganizationIcon from "../../assets/icons/unlinkOrganization.svg";
 import { useAdminLoadingContext } from "../../contexts/loading/useLoadingContext.hook";

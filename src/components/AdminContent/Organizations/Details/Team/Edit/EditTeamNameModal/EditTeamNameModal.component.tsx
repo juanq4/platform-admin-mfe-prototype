@@ -8,9 +8,9 @@ import {
   Text,
   TextPreset,
 } from "@q4/nimbus-ui";
-import type { Organization } from "@q4/platform-definitions";
-import React, { memo, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
+import { memo, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
 import { AdminDataContext } from "../../../../../../../contexts/data/data.context";
+import type { Organization } from "../../../../../../../definitions/organization.definition";
 import type { Team } from "../../../../../../../definitions/team.definition";
 import type { User } from "../../../../../../../definitions/user.definition";
 import { mapErrorsToKey } from "../../../../../../../utils/error/error.utils";
@@ -25,6 +25,7 @@ import { TeamEditModal } from "../OrganizationTeamEdit.style";
 import { TeamEditLanguage, TeamEditModalDefaultProps } from "../OrganizationsTeamEdit.definition";
 import { EditTeamNameModalIdModel, maxTeamNameLength } from "./EditTeamNameModal.definition";
 import type { EditTeamNameModalProps } from "./EditTeamNameModal.definition";
+import { getUsersWithTeams, orderUsersAlphabetically } from "../../../../../../../utils/user/user.utils";
 
 const EditTeamNameModalBase = (props: EditTeamNameModalProps): JSX.Element => {
   const {

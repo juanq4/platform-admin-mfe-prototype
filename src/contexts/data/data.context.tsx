@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import { createContext, useState } from "react";
 import type { Organization } from "../../definitions/organization.definition";
 import { Team } from "../../definitions/team.definition";
 import type { User } from "../../definitions/user.definition";

@@ -1,0 +1,576 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AdminEntityTable Component 1271120: [Given] toolbarActions are provided [Expect] the buttons to render 1`] = `
+<div
+  class="entity-table"
+  id="MockId"
+>
+  <div
+    class="nui-collapsable nui-collapsable--vertical"
+  >
+    <div
+      class="nui-collapsable_content"
+    >
+      <div
+        class="nui-collapsable_opacity-layer"
+      >
+        <section
+          class="nui-toolbar entity-table_toolbar nui-toolbar--q4-blue nui-toolbar--v1"
+          id="MockIdToolbar"
+        >
+          <div
+            class="nui-toolbar_inner"
+          >
+            <div
+              class="nui-toolbar_row nui-toolbar_row--justify-space-between"
+              data-type="toolbar-row"
+              id="MockIdToolbarAutoRow"
+            >
+              <div
+                class="nui-toolbar_group entity-table_toolbar-group nui-toolbar_group--default"
+                data-type="toolbar-group"
+              >
+                <h2
+                  class="nui-text entity-table_title nui-text--v1"
+                >
+                  Toolbar Actions Test
+                </h2>
+                <div
+                  class="entity-table_toolbar-actions"
+                >
+                  <button
+                    class="nui-button nui-button--disabled nui-button--v1"
+                    disabled=""
+                    type="button"
+                  >
+                    <span
+                      class="nui-button_label"
+                    >
+                      Button with key
+                    </span>
+                  </button>
+                  <button
+                    class="nui-button nui-button--v1"
+                    id="mockButtonActive"
+                    type="button"
+                  >
+                    <span
+                      class="nui-button_label"
+                      id="mockButtonActiveLabel"
+                    >
+                      Button with onClick handler
+                    </span>
+                  </button>
+                  <button
+                    class="nui-button nui-button--disabled nui-button--v1"
+                    disabled=""
+                    id="mockButtonDisabled"
+                    type="button"
+                  >
+                    <span
+                      class="nui-button_label"
+                      id="mockButtonDisabledLabel"
+                    >
+                      Button is disabled
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+  <div
+    class="nui-swapable"
+  >
+    <div
+      class="nui-swapable_layer nui-solid--done"
+    >
+      <div
+        class="entity-table_content"
+      >
+        <div
+          class="nui-table ag-theme-balham entity-table_table nui-table--auto-height nui-table--no-columns nui-table--default"
+          id="MockIdTable"
+        >
+          <div
+            class="nui-swapable"
+          >
+            <div
+              class="nui-swapable_layer nui-solid--done"
+            >
+              <div
+                class="nui-spinner nui-spinner--rain nui-spinner--masked"
+              >
+                <div
+                  class="nui-spinner_pulse"
+                />
+                <div
+                  class="nui-spinner_mask nui-spinner_mask--subtle"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="nui-collapsable nui-collapsable--vertical"
+        >
+          <div
+            class="nui-collapsable_content"
+          >
+            <div
+              class="nui-collapsable_opacity-layer nui-solid--done"
+            >
+              <div
+                class="entity-table-pagination"
+                id="MockIdPagination"
+              >
+                <button
+                  class="nui-button entity-table-pagination_button nui-button--light-grey nui-button--disabled nui-button--v1"
+                  disabled=""
+                  id="MockIdPaginationPreviousButton"
+                  type="button"
+                >
+                  <i
+                    class="nui-button_icon q4i-arrow-left-4pt"
+                    id="MockIdPaginationPreviousButtonIcon"
+                  />
+                  <span
+                    class="nui-button_label"
+                    id="MockIdPaginationPreviousButtonLabel"
+                  >
+                    Previous
+                  </span>
+                </button>
+                <button
+                  class="nui-button entity-table-pagination_button entity-table-pagination_button--left-icon nui-button--light-grey nui-button--v1"
+                  id="MockIdPaginationNextButton"
+                  type="button"
+                >
+                  <span
+                    class="nui-button_label"
+                    id="MockIdPaginationNextButtonLabel"
+                  >
+                    <span>
+                      <span
+                        class="entity-table-pagination_button-label"
+                      >
+                        Next
+                      </span>
+                      <span
+                        class="entity-table-pagination_button-icon q4i-arrow-right-4pt"
+                      />
+                    </span>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`AdminEntityTable Component 1271121: [Given] there are no items [And] there is an error [Expect] the Error placeholder to be rendered [And] the Refresh button to work 1`] = `
+<div
+  class="entity-table"
+  id="MockId"
+>
+  <div
+    class="nui-collapsable nui-collapsable--vertical"
+  >
+    <div
+      class="nui-collapsable_content"
+    >
+      <div
+        class="nui-collapsable_opacity-layer"
+      >
+        <section
+          class="nui-toolbar entity-table_toolbar nui-toolbar--q4-blue nui-toolbar--v1"
+          id="MockIdToolbar"
+        >
+          <div
+            class="nui-toolbar_inner"
+          >
+            <div
+              class="nui-toolbar_row nui-toolbar_row--justify-space-between"
+              data-type="toolbar-row"
+              id="MockIdToolbarAutoRow"
+            >
+              <div
+                class="nui-toolbar_group entity-table_toolbar-group nui-toolbar_group--default"
+                data-type="toolbar-group"
+              >
+                <h2
+                  class="nui-text entity-table_title nui-text--v1"
+                >
+                  Mock Title
+                </h2>
+                <div
+                  class="entity-table_toolbar-actions"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+  <div
+    class="nui-swapable"
+  >
+    <div
+      class="nui-swapable_layer nui-solid--done"
+    >
+      <div
+        class="nui-layout nui-placeholder-content nui-placeholder-content--transparent nui-layout--transparent nui-layout--height-full nui-layout--padding-default nui-layout--flex nui-layout--justify-center nui-layout--align-center nui-layout--v1"
+        id="MockIdPlaceholderContent"
+      >
+        <div
+          class="nui-placeholder-content_inner"
+        >
+          <h2
+            class="nui-placeholder-content_title"
+            id="MockIdPlaceholderContentTitle"
+          >
+            Failed To Load Data
+          </h2>
+          <h3
+            class="nui-placeholder-content_subtitle"
+            id="MockIdPlaceholderContentSubtitle"
+          >
+            Please click refresh to try again.
+          </h3>
+          <div
+            class="nui-placeholder-content_actions"
+          >
+            <button
+              class="nui-button nui-button--v1"
+              id="MockIdPlaceholderContentOnErrorButton"
+              type="button"
+            >
+              <span
+                class="nui-button_label"
+                id="MockIdPlaceholderContentOnErrorButtonLabel"
+              >
+                REFRESH
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`AdminEntityTable Component 7386005: [Given] no props are provided [Expect] the component to render 1`] = `
+@keyframes animation-0 {
+  0% {
+    -webkit-transform: scale(0.1);
+    -webkit-transform: scale(0.1);
+    -moz-transform: scale(0.1);
+    -ms-transform: scale(0.1);
+    transform: scale(0.1);
+    opacity: 1;
+  }
+
+  70% {
+    -webkit-transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    opacity: 0.7;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.emotion-0 {
+  background-color: #ffffff;
+  min-height: 64px;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  transition-property: background-color,color;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  padding: 0 24px;
+}
+
+@media only screen and (max-width: 767px) {
+  .emotion-1 {
+    padding: 0 16px;
+  }
+}
+
+.emotion-1 [data-type="toolbar-row"] {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-1 [data-type="toolbar-row"]:first-child {
+  padding-top: 24px;
+}
+
+.emotion-1 [data-type="toolbar-row"]:last-child {
+  padding-bottom: 24px;
+}
+
+.emotion-1 [data-type="toolbar-row"]:first-child:last-child {
+  height: 100%;
+}
+
+.emotion-1 [data-type="toolbar-row"]+.emotion-1 [data-type="toolbar-row"] {
+  padding-top: 8px;
+}
+
+.emotion-1 [data-type="toolbar-row"]>*:not(:first-child) {
+  margin-left: 8px;
+}
+
+.emotion-1 [data-type="toolbar-row"][class*="--justify-flex-start"] {
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+}
+
+.emotion-1 [data-type="toolbar-row"][class*="--justify-center"] {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.emotion-1 [data-type="toolbar-row"][class*="--justify-center-space-between"] {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+
+.emotion-1 [data-type="toolbar-row"][class*="--justify-center-space-around"] {
+  -webkit-box-pack: space-around;
+  -ms-flex-pack: space-around;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+}
+
+.emotion-1 [data-type="toolbar-row"][class*="--justify-center-flex-end"] {
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+}
+
+@media only screen and (max-width: 412px) {
+  .emotion-1 [data-type="toolbar-row"]:first-child {
+    padding-top: 16px;
+  }
+
+  .emotion-1 [data-type="toolbar-row"]:last-child {
+    padding-bottom: 16px;
+  }
+
+  .emotion-1 [data-type="toolbar-row"]+.emotion-1 [data-type="toolbar-row"] {
+    padding-top: 16px;
+  }
+
+  .emotion-1 [data-type="toolbar-row"]>*:not(:first-child) {
+    margin-left: 16px;
+  }
+}
+
+.emotion-1 [data-type="toolbar-group"]>*:not(:first-child) {
+  margin-left: 8px;
+}
+
+@media only screen and (max-width: 767px) {
+  .emotion-1 [data-type="toolbar-group"]>*:not(:first-child) {
+    margin-left: 16px;
+  }
+}
+
+.emotion-1 [data-type="toolbar-group"][class*="--text"]>*:not(:first-child) {
+  margin-left: 16px;
+}
+
+.emotion-1[class*="_title "] {
+  padding: 4px 0;
+}
+
+.emotion-1[class*="_annotation "] {
+  display: block;
+  font-size: 10px;
+  line-height: 12px;
+  margin-top: 4px;
+}
+
+.emotion-2 {
+  font-family: 'Open Sans',sans-serif;
+  -webkit-transition: color 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 32px;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  font-weight: 600;
+}
+
+@media only screen and (max-width: 768px) {
+  .emotion-2 {
+    font-size: 20px;
+    line-height: 38px;
+  }
+}
+
+.emotion-3 {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 50;
+  background-color: rgba(255,255,255,0.15);
+  position: absolute;
+}
+
+.emotion-4 {
+  height: 64px;
+  width: 64px;
+  top: calc(50% - 25px);
+  left: calc(50% - 25px);
+  position: relative;
+}
+
+.emotion-4:after {
+  position: absolute;
+  top: calc(50% - 64px * 0.5);
+  left: calc(50% - 64px * 0.5);
+  content: "";
+  display: block;
+  width: 64px;
+  height: 64px;
+  border: 2px solid #0f5ca3;
+  border-radius: 50%;
+  -webkit-animation: animation-0 1s 0s infinite cubic-bezier(0.21, 0.53, 0.56, 0.8);
+  animation: animation-0 1s 0s infinite cubic-bezier(0.21, 0.53, 0.56, 0.8);
+}
+
+.emotion-5 {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+
+<div
+  id="root"
+>
+  <div
+    class="entity-table"
+  >
+    <div
+      class="nui-collapsable nui-collapsable--vertical"
+    >
+      <div
+        class="nui-collapsable_content"
+      >
+        <div
+          class="nui-collapsable_opacity-layer"
+        >
+          <section
+            class="entity-table_toolbar emotion-0"
+          >
+            <div
+              class="entity-table_toolbar_inner emotion-1"
+            >
+              <div
+                class="nui-toolbar_row nui-toolbar_row--justify-space-between"
+                data-type="toolbar-row"
+              >
+                <div
+                  class="nui-toolbar_group entity-table_toolbar-group nui-toolbar_group--default"
+                  data-type="toolbar-group"
+                >
+                  <h2
+                    class="entity-table_title emotion-2"
+                  />
+                  <div
+                    class="entity-table_toolbar-actions"
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+    <div
+      class="nui-swapable"
+    >
+      <div
+        class="nui-swapable_layer nui-solid--done"
+      >
+        <div
+          class="entity-table_content"
+        >
+          <div
+            class="nui-table ag-theme-balham entity-table_table nui-table--auto-height nui-table--no-columns nui-table--no-data nui-table--default"
+          >
+            <div
+              class="nui-swapable"
+            >
+              <div
+                class="nui-swapable_layer nui-solid--done"
+              >
+                <div
+                  class="emotion-3"
+                >
+                  <div
+                    class="emotion-4"
+                  />
+                  <div
+                    class="emotion-5"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,4 +1,4 @@
-import React, { memo, useMemo } from "react";
+import { memo, useMemo } from "react";
 import { StatusCellLabel, StatusCellIdModel } from "./StatusCell.definition";
 import type { StatusCellProps } from "./StatusCell.definition";
 

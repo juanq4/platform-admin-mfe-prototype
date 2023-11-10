@@ -12,29 +12,27 @@ import {
   TextPreset,
   useVisibility,
 } from "@q4/nimbus-ui";
-import type { Organization } from "@q4/platform-definitions";
 import { OrganizationType } from "@q4/platform-definitions";
 import { Role } from "@q4/platform-sdk-definitions";
-import React, { memo, useCallback, useMemo, useRef, useState } from "react";
+import { memo, useCallback, useMemo, useRef, useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
+import type { Organization } from "../../../../../../definitions/organization.definition";
 import type { Team } from "../../../../../../definitions/team.definition";
 import type { User } from "../../../../../../definitions/user.definition";
 import { useClaims } from "../../../../../../hooks/useClaims/useClaims.hook";
+import { useOrganizationQuery } from "../../../../../../hooks/useOrganization/useOrganization.hook";
 import { TeamCreateMessage } from "../../../../../../hooks/useTeam/useTeam.definition";
-import { useTeamCreate } from "../../../../../../hooks/useTeam/useTeam.hook";
+import { useTeamCreate, useTeamsQuery } from "../../../../../../hooks/useTeam/useTeam.hook";
 import { useToastNotificationService } from "../../../../../../hooks/useToastNotificationService/useToastNotificationService.hook";
-import {
-  useOrganizationQuery,
-  useOrganizationsQuery,
-  useTeamsQuery,
-  useUsersQuery,
-} from "../../../../../../schemas/generated/graphql";
+import { useUsersQuery } from "../../../../../../hooks/useUser/useUser.hook";
+import { useOrganizationsQuery } from "../../../../../../schemas/generated/graphql";
 import { mapErrorsToKey } from "../../../../../../utils/error/error.utils";
 import {
   orderOrganizationsAlphabetically,
   getOrganizationViewRoute,
 } from "../../../../../../utils/organization/organization.utils";
 import { getOrganizationRouteBasedOnPermission } from "../../../../../../utils/route/route.utils";
+import { orderUsersAlphabetically } from "../../../../../../utils/user/user.utils";
 import { AdminLoadingSpinner } from "../../../../../LoadingSpinner/LoadingSpinner.component";
 import type { TeamFormError, OrganizationsTeamParam } from "../OrganizationsTeam.definition";
 import { fetchPolicy, requestPolicy, TeamDescriptions, TeamErrorsLanguage } from "../OrganizationsTeam.definition";

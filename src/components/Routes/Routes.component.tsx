@@ -1,5 +1,5 @@
 import { Permission } from "@q4/platform-definitions";
-import React, { memo, useContext } from "react";
+import { memo, useContext } from "react";
 import { Route } from "react-router";
 import { Redirect, useLocation } from "react-router-dom";
 import { AdminRoutePath } from "../../configurations/navigation.configuration";
@@ -22,7 +22,7 @@ import { NotFoundError } from "../Errors/NotFoundError/NotFoundError.component";
 import { AdminLoadingSpinner } from "../LoadingSpinner/LoadingSpinner.component";
 import { AdminRoutesIdModel } from "./Routes.definition";
 
-const RoutesBase = (props: AccessSwitchProps): JSX.Element => {
+const AdminRoutesBase = (props: AccessSwitchProps): JSX.Element => {
   const [loading] = useContext(AdminLoadingContext);
   const { entitlements, features, permissions } = props;
 
@@ -77,4 +77,4 @@ const RoutesBase = (props: AccessSwitchProps): JSX.Element => {
   );
 };
 
-export const Routes = memo(RoutesBase);
+export const AdminRoutes = memo(AdminRoutesBase);

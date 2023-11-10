@@ -2,10 +2,10 @@ import { isNullOrWhiteSpace } from "@q4/nimbus-ui";
 import { useCallback, useMemo, useState } from "react";
 import { useAdminData } from "../../contexts/data/data.hook";
 import type { User } from "../../definitions/user.definition";
-import type { UsersQueryVariables } from "../../schemas/generated/graphql";
 import { useUsersQuery } from "../../schemas/generated/graphql";
 import { usePagination } from "../usePagination/usePagination.hook";
 import { QueryPaginationDefault } from "../useQuery/useQuery.definition";
+import type { UsersQueryVariables } from "../useUser/useUser.definition";
 import type { AdminUserTableHookModel, AdminUserTableHookProps } from "./useAdminUserTable.definition";
 
 export const useAdminUserTable = (props: AdminUserTableHookProps): AdminUserTableHookModel => {
@@ -19,7 +19,7 @@ export const useAdminUserTable = (props: AdminUserTableHookProps): AdminUserTabl
   const variables = { organizationId, page };
 
   const { data, loading, refetch, ...restQueryResults } = useUsersQuery({
-    variables: variables,
+    variables,
     fetchPolicy: "no-cache",
     skip: pause,
     onCompleted: () => {
@@ -64,7 +64,7 @@ export const useAdminUserTable = (props: AdminUserTableHookProps): AdminUserTabl
     loading,
     users,
     currentPage,
-    pageRefs,
+    pageRefs: (pageRefs as [id: string, organizationId: string][]) ?? [],
     handlePageChange,
     handleError,
   };

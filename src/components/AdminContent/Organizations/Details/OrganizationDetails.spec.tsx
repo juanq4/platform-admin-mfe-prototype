@@ -27,7 +27,9 @@ import { AdminRoutePath } from "../../../../configurations/navigation.configurat
 import { AdminEditProvider, AdminEditContext } from "../../../../contexts/edit/edit.context";
 import type { AdminEditContextProps } from "../../../../contexts/edit/edit.definition";
 import { OrganizationEditState } from "../../../../definitions/organization.definition";
+import { RoleLabel } from "../../../../definitions/role.definition";
 import type { Team } from "../../../../definitions/team.definition";
+import { useClaims } from "../../../../hooks/useClaims/useClaims.hook";
 import {
   OrganizationCreateMessage,
   OrganizationEditMessage,
@@ -889,7 +891,7 @@ describe("Organization Edit View", () => {
   });
 
   test.skip("4633529: [Given] an authenticated user with q4graph:manage:agency:linked-organizations permission is on /organizations/edit  page [When] user try to save organization details without selecting organization type [Then] expect validation error message", async () => {
-    const org = { ...mockOrganization12, type: undefined };
+    const org = { ...mockOrganization12, type: undefined } as OrganizationEditState;
     const fieldId = ViewIdModel.nameField.error;
     mockUseEntitySearchQuery.mockReturnValue({
       refetch: () => Promise.resolve(getEntitySearchResult(org.ticker, org.exchange)),
@@ -1783,7 +1785,7 @@ describe("Organization Edit View", () => {
   });
 
   test("5003131: [Given] an authenticated user with q4graph:read:organizations permission opens edit screen for corporate org [And] corporate org is not linked to an agency [Then] expect button to be not visible", async () => {
-    const mockData = { ...mockOrganization14, delegateOrganizationIds: [] };
+    const mockData = { ...mockOrganization14, delegateOrganizationIds: [] } as OrganizationEditState;
     customRenderEditRouteWithReadLinkedOrg(mockData);
 
     await waitFor(() => {

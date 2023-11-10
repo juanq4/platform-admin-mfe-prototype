@@ -1,9 +1,8 @@
 import "./OrganizationsSelectDropdown.scss";
 import type { ChipsItemProps } from "@q4/nimbus-ui";
 import { Chips, Field, isEmpty, isNullOrWhiteSpace, SelectPreset, Text } from "@q4/nimbus-ui";
-import type { Organization } from "@q4/platform-definitions";
-import React, { memo, useCallback, useMemo } from "react";
-import type { OrganizationTeamOption } from "../../../../../../../definitions/organization.definition";
+import { memo, useCallback, useMemo } from "react";
+import type { Organization, OrganizationTeamOption } from "../../../../../../../definitions/organization.definition";
 import type { Team } from "../../../../../../../definitions/team.definition";
 import {
   orderOrganizationsAlphabetically,

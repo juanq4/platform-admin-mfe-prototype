@@ -5,11 +5,11 @@ import type { OrganizationTeamOption } from "../../../../../../../definitions/or
 
 export const CustomAsyncSelect = styled((props: AsyncSelectProps<OrganizationTeamOption>) => <AsyncSelect {...props} />)`
   .nui-toggle-input-base--steel.nui-toggle-input-base--checked .nui-toggle-input-base_control {
-    background-color: ${({ theme }) => theme.colors.primary400};
+    background-color: #0a3d6d;
   }
 
   .nui-checkbox_box.nui-toggle-input-base_control {
-    background: ${({ theme }) => theme.colors.white};
+    background: #ffffff;
   }
 
   .nui-select_option-checkbox {
@@ -32,7 +32,7 @@ export const CustomOptionLabel = styled.div`
 `;
 
 export const CustomOptionStatus = styled.div`
-  color: ${({ theme }) => theme.colors.neutral500}
+  color: #61707c;
   margin: auto 0 auto 20px;
   font-size: 12px;
 `;

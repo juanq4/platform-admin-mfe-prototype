@@ -1,6 +1,7 @@
 import { MockUserWithId } from "../../../../__mocks__/data/users.mock";
 import { AdminRoutePath } from "../../../../configurations/navigation.configuration";
 import type { UsersEditSpecRouteConfig as RouteConfig } from "../../../../utils/users/usersEdit.definition";
+import { testUserEdit } from "../../../../utils/users/usersEdit.spec.utils";
 import { UserEditViewDefault, UserEditViewIdModel } from "./UserEdit.definition";
 
 jest.mock("../../../../hooks/useToastNotificationService/useToastNotificationService.hook");

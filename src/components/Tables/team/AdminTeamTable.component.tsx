@@ -1,5 +1,5 @@
-import React, { memo, useMemo, useRef } from "react";
-import type { Team } from "../../../../definitions/team.definition";
+import { memo, useMemo, useRef } from "react";
+import type { Team } from "../../../definitions/team.definition";
 import { EntityTable } from "../../EntityTable/EntityTable.component";
 import type { EntityTableColumnDef } from "../../EntityTable/EntityTable.definition";
 import {

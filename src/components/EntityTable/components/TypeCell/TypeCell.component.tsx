@@ -1,4 +1,4 @@
-import React, { memo, useMemo } from "react";
+import { memo, useMemo } from "react";
 import { EntityTableClassName } from "../../EntityTable.definition";
 import { TypeCellIdModel } from "./TypeCell.definition";
 import type { TypeCellProps } from "./TypeCell.definition";

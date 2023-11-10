@@ -1,4 +1,4 @@
-import React, { memo, useMemo } from "react";
+import { memo, useMemo } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { RoutePathIdLabel } from "../../../../configurations/navigation.configuration";
 import { useClaims } from "../../../../hooks/useClaims/useClaims.hook";
@@ -28,7 +28,7 @@ const UsersEditBase = (): JSX.Element => {
       <AdminUserForm
         id={ViewIdModel.form.id}
         user={user}
-        organizationId={organizationId}
+        organizationId={claims.organizationId}
         saving={loading}
         loading={loading}
         title="Update User"

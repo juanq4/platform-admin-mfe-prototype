@@ -21,7 +21,6 @@ import {
   RadioButton,
   CopyButton,
 } from "@q4/nimbus-ui";
-import type { Entitlement } from "@q4/platform-definitions";
 import { OrganizationType, Entitlement as EntitlementConstant, OrganizationRegion } from "@q4/platform-definitions";
 import { memo, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
 import { generatePath, useHistory, useLocation, useParams } from "react-router-dom";
@@ -41,11 +40,12 @@ import {
 } from "../../../../hooks/useOrganization/useOrganization.definition";
 import {
   useOrganizationCreate,
+  useOrganizationQuery,
   useOrganizationUpdate,
   useSitesByOrganizationsLazyQuery,
 } from "../../../../hooks/useOrganization/useOrganization.hook";
 import { useToastNotificationService } from "../../../../hooks/useToastNotificationService/useToastNotificationService.hook";
-import { OrganizationsDocument, useOrganizationQuery } from "../../../../schemas/generated/graphql";
+import { OrganizationsDocument } from "../../../../schemas/generated/graphql";
 import { checkIfEntitlementExists, filterEntitlement } from "../../../../utils/entitlement/entitlement.utils";
 import { mapErrorsToKey } from "../../../../utils/error/error.utils";
 import {
@@ -56,6 +56,7 @@ import {
   buildOrganizationCurrencyOptions,
   getOrganizationCreateTeamNewRoute,
 } from "../../../../utils/organization/organization.utils";
+import type { Entitlement } from "../../../Entitlements/Entitlements.definition";
 import { OrganizationFeatureManagement } from "../../../FeatureManagement/FeatureManagement.component";
 import { AdminLoadingSpinner } from "../../../LoadingSpinner/LoadingSpinner.component";
 import {

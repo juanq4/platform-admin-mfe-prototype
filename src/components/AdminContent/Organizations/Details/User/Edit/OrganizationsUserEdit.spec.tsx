@@ -2,11 +2,13 @@ import { MockUserWithId } from "../../../../../../__mocks__/data/users.mock";
 import { AdminRoutePath, RoutePathIdLabel } from "../../../../../../configurations/navigation.configuration";
 import { OrganizationsUserEditDefault } from "../../../../../../utils/organization/organization.definition";
 import { getOrganizationEditRoute } from "../../../../../../utils/organization/organization.utils";
+import type { UsersEditSpecRouteConfig as RouteConfig } from "../../../../../../utils/users/usersEdit.definition";
+import { testUserEdit } from "../../../../../../utils/users/usersEdit.spec.utils";
 import { OrganizationsUserEditViewIdModel } from "./OrganizationsUserEdit.definition";
 
 const { organizationId } = MockUserWithId;
 
-jest.mock("../../../../../hooks/useToastNotificationService/useToastNotificationService.hook");
+jest.mock("../../../../../../hooks/useToastNotificationService/useToastNotificationService.hook");
 
 const routes: RouteConfig[] = [
   {

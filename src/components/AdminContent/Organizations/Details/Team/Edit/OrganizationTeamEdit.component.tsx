@@ -2,7 +2,7 @@ import { useMutation, useQuery } from "@apollo/client";
 import type { ButtonProps } from "@q4/nimbus-ui";
 import { ButtonTheme, Text, TextPreset, isNullOrWhiteSpace, useVisibility } from "@q4/nimbus-ui";
 import { OrganizationType } from "@q4/platform-definitions";
-import React, { memo, useCallback, useContext, useEffect, useMemo, useState } from "react";
+import { memo, useCallback, useContext, useEffect, useMemo, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { AdminDataContext } from "../../../../../../contexts/data/data.context";
 import { Team } from "../../../../../../definitions/team.definition";
@@ -11,6 +11,7 @@ import { GET_ORGANIZATION, GET_ORGANIZATIONS } from "../../../../../../schemas/o
 import { GET_TEAM, GET_TEAMS, DELETE_TEAM, UPDATE_TEAM } from "../../../../../../schemas/teams/teams.schema";
 import { GET_USERS_QUERY } from "../../../../../../schemas/users/users.shema";
 import { getOrganizationViewRoute } from "../../../../../../utils/organization/organization.utils";
+import { orderUsersAlphabetically } from "../../../../../../utils/user/user.utils";
 import { fetchPolicy } from "../OrganizationsTeam.definition";
 import { EditTeamNameModal } from "./EditTeamNameModal/EditTeamNameModal.component";
 import { EditTeamOrganizationsModal } from "./EditTeamOrganizationsModal/EditTeamOrganizationsModal.component";

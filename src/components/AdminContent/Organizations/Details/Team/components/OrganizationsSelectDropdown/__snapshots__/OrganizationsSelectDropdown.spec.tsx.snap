@@ -47,6 +47,10 @@ exports[`Organizations Select Dropdown component 7395559: renders without crash 
   }
 }
 
+.emotion-4 .nui-toggle-input-base--steel.nui-toggle-input-base--checked .nui-toggle-input-base_control {
+  background-color: #0a3d6d;
+}
+
 .emotion-4 .nui-checkbox_box.nui-toggle-input-base_control {
   background: #ffffff;
 }

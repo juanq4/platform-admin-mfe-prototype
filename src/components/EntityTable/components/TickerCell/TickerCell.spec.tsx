@@ -1,7 +1,7 @@
 import React from "react";
+import { getAppWrapper } from "../../../../__mocks__/utils/wrappers";
 import { render, screen } from "../../../../utils/testUtils";
 import { CheckMarkCellIdModel } from "../CheckMarkCell/CheckMarkCell.definition";
-// import { getAppWrapper } from "../../../../__mocks__";
 import { TickerCell } from "./TickerCell.component";
 import { TickerCellListId } from "./TickerCell.definition";
 import { mapIdToTickerCell } from "./TickerCell.utils";

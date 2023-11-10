@@ -1,5 +1,5 @@
 import { Field, Textbox, TextboxTheme } from "@q4/nimbus-ui";
-import React, { memo, useMemo } from "react";
+import { memo, useMemo } from "react";
 import { CustomGrid, CustomGridColumn } from "../../OrganizationsTeam.style";
 import type { TeamNameFieldProps } from "./TeamNameField.definition";
 import { TeamNameFieldIdModel, TeamNameFieldLanguage } from "./TeamNameField.definition";

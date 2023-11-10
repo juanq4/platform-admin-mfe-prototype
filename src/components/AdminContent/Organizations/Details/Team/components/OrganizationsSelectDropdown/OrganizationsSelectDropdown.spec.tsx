@@ -1,16 +1,17 @@
-import type { Organization } from "@q4/platform-definitions";
-import { fireEvent, render, within } from "@testing-library/react";
 import React from "react";
 import {
   MockOrganizations,
   MockOrganization1,
   MockOrganization15,
 } from "../../../../../../../__mocks__/data/organizations.mock";
+import { MockTeam1, MockTeams } from "../../../../../../../__mocks__/data/teams.mock";
+import type { Organization } from "../../../../../../../definitions/organization.definition";
 import type { Team } from "../../../../../../../definitions/team.definition";
 import {
   getOrganizationLabelWithTicker,
   orderOrganizationsAlphabetically,
 } from "../../../../../../../utils/organization/organization.utils";
+import { fireEvent, render, screen, within } from "../../../../../../../utils/testUtils";
 import { StatusCellLabel } from "../../../../../../EntityTable/components/StatusCell/StatusCell.definition";
 import { OrganizationsSelectDropdown } from "./OrganizationsSelectDropdown.component";
 import {

@@ -1,6 +1,6 @@
-import type { User } from "@auth0/auth0-react";
-import React, { memo, useState } from "react";
+import { memo, useState } from "react";
 import { useHistory } from "react-router-dom";
+import type { User } from "../../../../definitions/user.definition";
 import { useClaims } from "../../../../hooks/useClaims/useClaims.hook";
 import { UserCreateMessages } from "../../../../hooks/useUser/useUser.definition";
 import { useUserCreate } from "../../../../hooks/useUser/useUser.hook";

@@ -1,0 +1,27 @@
+@import "/src/styles/scss/variables";
+@import "/src/styles/scss/mixins";
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: $font-family--base;
+  font-size: $font-size--base;
+  font-weight: $font-weight--normal;
+  background-color: $neutral50 !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: $font-weight--light;
+}

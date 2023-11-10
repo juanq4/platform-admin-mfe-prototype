@@ -1,6 +1,8 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import React from "react";
+import { MockOrganization12 } from "../../../__mocks__/data/organizations.mock";
 import { PermissionCollection } from "../../../configurations/access.configuration";
+import { useClaims } from "../../../hooks/useClaims/useClaims.hook";
 import { useOrganizationQuery } from "../../../hooks/useOrganization/useOrganization.hook";
 import { getOrganizationEditRoute, getOrganizationViewRoute } from "../../../utils/organization/organization.utils";
 import { render, waitFor, screen, fireEvent } from "../../../utils/testUtils";

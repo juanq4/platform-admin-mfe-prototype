@@ -1,5 +1,5 @@
 import { Fallback, FallbackImage } from "@q4/nimbus-ui";
-import React, { useMemo } from "react";
+import { useMemo } from "react";
 import { useHistory } from "react-router-dom";
 import { Email } from "../../../configurations/q4-platform-common.configuration";
 import { isRoute } from "../../../utils/route/route.utils";

@@ -6,11 +6,12 @@ import type {
   IHeaderParams,
   RowDataChangedEvent,
 } from "@q4/nimbus-ui/dist/dependencies/agGrid/community";
-import React, { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { User } from "../../../../../../../definitions/user.definition";
 import { usePagination } from "../../../../../../../hooks/usePagination/usePagination.hook";
 import { QueryPaginationDefault } from "../../../../../../../hooks/useQuery/useQuery.definition";
 import type { UsersQueryVariables } from "../../../../../../../schemas/generated/graphql";
+import { getUsersWithTeams, searchUserFromList } from "../../../../../../../utils/user/user.utils";
 import type { EntityTableColumnDef } from "../../../../../../EntityTable/EntityTable.definition";
 import type { EntityTablePaginationDirection } from "../../../../../../EntityTable/components/Pagination/Pagination.definition";
 import { AdminUserTable } from "../../../../../../Tables/user/AdminUserTable.component";

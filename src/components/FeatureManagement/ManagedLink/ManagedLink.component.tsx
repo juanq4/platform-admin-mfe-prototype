@@ -1,5 +1,5 @@
 import { AnchorTarget, Button, ButtonSize, ButtonTheme } from "@q4/nimbus-ui";
-import React, { memo, useCallback, useMemo } from "react";
+import { memo, useCallback, useMemo } from "react";
 import { useHistory } from "react-router-dom";
 import { useClaims } from "../../../hooks/useClaims/useClaims.hook";
 import { useOrganizationQuery } from "../../../hooks/useOrganization/useOrganization.hook";

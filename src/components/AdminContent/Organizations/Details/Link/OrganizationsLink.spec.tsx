@@ -1,8 +1,6 @@
 import { ChipClassName, SelectClassName, ToastContainer } from "@q4/nimbus-ui";
 import { OrganizationType } from "@q4/platform-definitions";
-import { fireEvent, within, waitFor } from "@testing-library/react";
 import React from "react";
-import { render } from "react-dom";
 import {
   MockOrganization1,
   MockOrganizations,
@@ -25,6 +23,7 @@ import {
   useOrganizationQuery,
 } from "../../../../../hooks/useOrganization/useOrganization.hook";
 import { useToastNotificationService } from "../../../../../hooks/useToastNotificationService/useToastNotificationService.hook";
+import { fireEvent, render, screen, waitFor, within } from "../../../../../utils/testUtils";
 import { OrganizationsLink } from "./OrganizationsLink.component";
 import {
   OrganizationLinkAdminWording,
@@ -32,14 +31,14 @@ import {
   OrganizationsLinkViewIdModel,
 } from "./OrganizationsLink.definition";
 
-jest.mock("../../../../hooks/_apollo/useOrganization/useOrganization.hook");
+jest.mock("../../../../../hooks/_apollo/useOrganization/useOrganization.hook");
 const mockUseLinkOrganizations = useLinkOrganizations as jest.Mock;
-jest.mock("../../../../hooks/useToastNotificationService/useToastNotificationService.hook");
+jest.mock("../../../../../hooks/useToastNotificationService/useToastNotificationService.hook");
 const mockUseToastNotificationService = useToastNotificationService as jest.Mock;
-jest.mock("../../../../hooks/useOrganization/useOrganization.hook");
+jest.mock("../../../../../hooks/useOrganization/useOrganization.hook");
 const mockOrganizationsWithManagedByQuery = OrganizationsWithManagedByQuery as jest.Mock;
 const mockUseOrganizationQuery = useOrganizationQuery as jest.Mock;
-jest.mock("../../../../hooks/useManagedByAdminOrganization/useManagedByAdminOrganization.hook");
+jest.mock("../../../../../hooks/useManagedByAdminOrganization/useManagedByAdminOrganization.hook");
 const mockUseManagedByAdminOrganization = useManagedByAdminOrganization as jest.Mock;
 
 const { id: mockOrganizationId, name: mockOrganizationName } = MockOrganization1;
@@ -49,7 +48,7 @@ const returnRoute = `/organizations/edit/${mockOrganizationId}`;
 const mockHistoryPush = jest.fn();
 const mockLinkOrganizations = jest.fn((): Promise<unknown> => Promise.resolve({ data: [] }));
 
-jest.mock("../../../../hooks/useClaims/useClaims.hook");
+jest.mock("../../../../../hooks/useClaims/useClaims.hook");
 jest.mock("react-router-dom", () => {
   const orginal = jest.requireActual("react-router-dom");
   return {

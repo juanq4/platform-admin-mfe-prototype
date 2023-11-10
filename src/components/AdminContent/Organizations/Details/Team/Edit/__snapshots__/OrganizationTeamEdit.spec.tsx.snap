@@ -108,16 +108,6 @@ exports[`Organization Team Edit view Edit Team Name functionality 7395561: rende
                   id="TeamEditTeamNameModalChildren"
                 >
                   <div
-                    class="nui-spinner nui-spinner--citrus nui-spinner--fixed nui-spinner--masked nui-solid--done"
-                  >
-                    <div
-                      class="nui-spinner_pulse"
-                    />
-                    <div
-                      class="nui-spinner_mask nui-spinner_mask--subtle"
-                    />
-                  </div>
-                  <div
                     class="nui-grid emotion-0"
                   >
                     <div
@@ -204,7 +194,7 @@ exports[`Organization Team Edit view Edit Team Name functionality 7395561: rende
                         id="TeamEditTeamNameModalNameFormOrgTable"
                       >
                         <div
-                          class="entity-table entity-table--loading"
+                          class="entity-table"
                           id="TeamEditTeamNameModalNameFormOrgTableEntityTable"
                         >
                           <div
@@ -241,8 +231,7 @@ exports[`Organization Team Edit view Edit Team Name functionality 7395561: rende
                                           class="entity-table_toolbar-actions"
                                         >
                                           <button
-                                            class="nui-button nui-button--disabled nui-button--v1"
-                                            disabled=""
+                                            class="nui-button nui-button--v1"
                                             id="TeamEditTeamNameModalNameFormEditOrgButton"
                                             type="button"
                                           >
@@ -310,14 +299,21 @@ exports[`Organization Team Edit view Edit Team Name functionality 7395561: rende
                                       class="nui-swapable_layer nui-solid--done"
                                     >
                                       <div
-                                        class="nui-spinner nui-spinner--rain nui-spinner--masked"
+                                        class="nui-table_wrapper"
                                       >
                                         <div
-                                          class="nui-spinner_pulse"
-                                        />
-                                        <div
-                                          class="nui-spinner_mask nui-spinner_mask--subtle"
-                                        />
+                                          class="entity-table_table"
+                                          style="height: 100%;"
+                                        >
+                                          <!-- AG Grid -->
+                                          <div
+                                            class="ag-root-wrapper"
+                                          >
+                                            <div
+                                              class="ag-root-wrapper-body ag-focus-managed"
+                                            />
+                                          </div>
+                                        </div>
                                       </div>
                                     </div>
                                   </div>
@@ -332,7 +328,7 @@ exports[`Organization Team Edit view Edit Team Name functionality 7395561: rende
                         id="TeamEditTeamNameModalNameFormUsersTable"
                       >
                         <div
-                          class="entity-table entity-table--loading"
+                          class="entity-table"
                           id="TeamEditTeamNameModalNameFormUsersTableEntityTable"
                         >
                           <div
@@ -369,8 +365,7 @@ exports[`Organization Team Edit view Edit Team Name functionality 7395561: rende
                                           class="entity-table_toolbar-actions"
                                         >
                                           <button
-                                            class="nui-button nui-button--disabled nui-button--v1"
-                                            disabled=""
+                                            class="nui-button nui-button--v1"
                                             id="TeamEditTeamNameModalNameFormEditUsersButton"
                                             type="button"
                                           >
@@ -438,14 +433,21 @@ exports[`Organization Team Edit view Edit Team Name functionality 7395561: rende
                                       class="nui-swapable_layer nui-solid--done"
                                     >
                                       <div
-                                        class="nui-spinner nui-spinner--rain nui-spinner--masked"
+                                        class="nui-table_wrapper"
                                       >
                                         <div
-                                          class="nui-spinner_pulse"
-                                        />
-                                        <div
-                                          class="nui-spinner_mask nui-spinner_mask--subtle"
-                                        />
+                                          class="entity-table_table"
+                                          style="height: 100%;"
+                                        >
+                                          <!-- AG Grid -->
+                                          <div
+                                            class="ag-root-wrapper"
+                                          >
+                                            <div
+                                              class="ag-root-wrapper-body ag-focus-managed"
+                                            />
+                                          </div>
+                                        </div>
                                       </div>
                                     </div>
                                   </div>
@@ -498,8 +500,7 @@ exports[`Organization Team Edit view Edit Team Name functionality 7395561: rende
         data-type="toolbar-row"
       >
         <button
-          class="nui-button nui-button--cherry nui-button--large nui-button--wide nui-button--disabled nui-button--v1"
-          disabled=""
+          class="nui-button nui-button--cherry nui-button--large nui-button--wide nui-button--v1"
           id="TeamEditTeamNameModalRemove"
           type="button"
         >
@@ -511,8 +512,7 @@ exports[`Organization Team Edit view Edit Team Name functionality 7395561: rende
           </span>
         </button>
         <button
-          class="nui-button nui-button--citrus nui-button--large nui-button--wide nui-button--disabled nui-button--v1"
-          disabled=""
+          class="nui-button nui-button--citrus nui-button--large nui-button--wide nui-button--v1"
           id="TeamEditTeamNameModalSave"
           type="button"
         >
@@ -562,6 +562,10 @@ exports[`Organization Team Edit view Manage Organizations functionality 7395562:
 
 .emotion-1 {
   padding-left: 0;
+}
+
+.emotion-6 .nui-toggle-input-base--steel.nui-toggle-input-base--checked .nui-toggle-input-base_control {
+  background-color: #0a3d6d;
 }
 
 .emotion-6 .nui-checkbox_box.nui-toggle-input-base_control {

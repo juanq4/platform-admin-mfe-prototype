@@ -1,11 +1,11 @@
 import "./FeatureManagement.scss";
 import { ButtonSize, getClassName, isNullOrWhiteSpace, Swapable, ToggleButtons, ToggleButtonsTheme } from "@q4/nimbus-ui";
 import type { ToggleButtonsProps } from "@q4/nimbus-ui";
-import type { Organization } from "@q4/platform-definitions";
 import { OrganizationType, Permission } from "@q4/platform-definitions";
 import type { KeyboardEvent, MouseEvent } from "react";
-import React, { memo, useCallback, useEffect, useMemo, useState } from "react";
+import { memo, useCallback, useEffect, useMemo, useState } from "react";
 import { FeatureFlag } from "../../configurations/feature.configuration";
+import type { Organization } from "../../definitions/organization.definition";
 import { useClaims } from "../../hooks/useClaims/useClaims.hook";
 import { useFeatureFlags } from "../../hooks/useFeatureFlags/useFeatureFlags.hook";
 import { useManagedByAdminOrganization } from "../../hooks/useManagedByAdminOrganization/useManagedByAdminOrganization.hook";

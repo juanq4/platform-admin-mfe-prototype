@@ -1,6 +1,6 @@
 import "./Pagination.scss";
 import { Button, ButtonTheme } from "@q4/nimbus-ui";
-import React, { memo, useMemo } from "react";
+import { memo, useMemo } from "react";
 import {
   EntityTablePaginationClassName,
   EntityTablePaginationDefault,

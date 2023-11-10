@@ -1,4 +1,4 @@
-import React, { memo, useMemo } from "react";
+import { memo, useMemo } from "react";
 import { CustomGridColumn } from "../../OrganizationsTeam.style";
 import { OrganizationsSelectDropdown } from "../OrganizationsSelectDropdown/OrganizationsSelectDropdown.component";
 import { TeamNameField } from "../TeamNameField/TeamNameField.component";

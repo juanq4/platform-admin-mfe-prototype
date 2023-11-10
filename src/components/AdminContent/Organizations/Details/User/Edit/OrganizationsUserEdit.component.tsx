@@ -1,5 +1,5 @@
 import { isNullOrWhiteSpace } from "@q4/nimbus-ui";
-import React, { memo, useMemo } from "react";
+import { memo, useMemo } from "react";
 import { useHistory, useLocation, useParams } from "react-router-dom";
 import { RoutePathIdLabel } from "../../../../../../configurations/navigation.configuration";
 import { useClaims } from "../../../../../../hooks/useClaims/useClaims.hook";

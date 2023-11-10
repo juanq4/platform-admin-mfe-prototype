@@ -2,11 +2,12 @@ import { MockedProvider } from "@apollo/client/testing";
 import type { MockedResponse } from "@apollo/client/testing";
 import type { NotificationService } from "@q4/nimbus-ui";
 import { ButtonClassName, StyleGuide, TableClassName, ConfigProvider as NimbusConfig } from "@q4/nimbus-ui";
-import type { Organization } from "@q4/platform-definitions";
 import { Role } from "@q4/platform-sdk-definitions";
-import { waitFor, fireEvent, within } from "@testing-library/react";
 import React from "react";
-import { render } from "react-dom";
+import { getOrganizationAgencyMock, getOrganizationsMock } from "../../../../../../__mocks__/apollo/organizations.mock";
+import { getTeamMock, getTeamsMock, updateTeamMock, removeTeamMock } from "../../../../../../__mocks__/apollo/teams.mock";
+import { getUsersMock } from "../../../../../../__mocks__/apollo/users.mock";
+import { AdminDataContextMock } from "../../../../../../__mocks__/contexts/AdminDataContext.mock";
 import {
   MockOrganization12,
   MockOrganization1,
@@ -18,6 +19,7 @@ import {
   MockOrganization13,
   MockOrganization14,
 } from "../../../../../../__mocks__/data/organizations.mock";
+import { MockTeam3, MockTeam1, MockTeam2, MockTeam8 } from "../../../../../../__mocks__/data/teams.mock";
 import {
   MockUsers,
   MockUser14,
@@ -30,6 +32,7 @@ import {
 } from "../../../../../../__mocks__/data/users.mock";
 import { AdminDataContext } from "../../../../../../contexts/data/data.context";
 import type { AdminDataContextState } from "../../../../../../contexts/data/data.definition";
+import type { Organization } from "../../../../../../definitions/organization.definition";
 import { Team } from "../../../../../../definitions/team.definition";
 import type { User } from "../../../../../../definitions/user.definition";
 import { useToastNotificationService } from "../../../../../../hooks/useToastNotificationService/useToastNotificationService.hook";
@@ -38,7 +41,8 @@ import {
   getOrganizationLabelWithTicker,
   getOrganizationViewRoute,
 } from "../../../../../../utils/organization/organization.utils";
-import { screen } from "../../../../../../utils/testUtils";
+import { waitFor, fireEvent, render, screen, within } from "../../../../../../utils/testUtils";
+import { orderUsersAlphabetically } from "../../../../../../utils/user/user.utils";
 import { EntityTablePaginationLabels } from "../../../../../EntityTable/components/Pagination/Pagination.definition";
 import { StatusCellLabel } from "../../../../../EntityTable/components/StatusCell/StatusCell.definition";
 import { AdminOrganizationsTableHeader } from "../../../../../Tables/organization/AdminOrganizationTable.definition";
@@ -55,7 +59,7 @@ import {
   TeamEditViewIdModel as ViewIdModel,
 } from "./OrganizationsTeamEdit.definition";
 
-jest.mock("../../../../../hooks/useToastNotificationService/useToastNotificationService.hook");
+jest.mock("../../../../../../hooks/useToastNotificationService/useToastNotificationService.hook");
 const mockUseToastNotificationService = useToastNotificationService as jest.Mock;
 
 const mockHistoryPush = jest.fn();

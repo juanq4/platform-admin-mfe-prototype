@@ -1,8 +1,8 @@
 import { OrganizationType } from "@q4/platform-definitions";
 import React from "react";
+import { getAppWrapper } from "../../../../__mocks__/utils/wrappers";
 import { render, screen } from "../../../../utils/testUtils";
 import { TypeCellIdModel, TypeCellListId } from "../TypeCell/TypeCell.definition";
-// import { getAppWrapper } from "../../../../__mocks__";
 import { TypeCell } from "./TypeCell.component";
 import { mapIdToTypeCell } from "./TypeCell.utils";
 

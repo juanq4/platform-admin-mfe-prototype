@@ -1,5 +1,5 @@
-import type { Organization } from "@q4/platform-definitions";
 import { EntityBase } from "./entity.definition";
+import type { Organization } from "./organization.definition";
 import type { User } from "./user.definition";
 
 export class Team extends EntityBase {

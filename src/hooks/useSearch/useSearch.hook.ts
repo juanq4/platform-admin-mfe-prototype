@@ -37,7 +37,8 @@ export const useSearch = <TPageRef>(props: SearchHookProps<TPageRef>): SearchHoo
   );
 
   const handlePageChange = useCallback(
-    (pageRef: TPageRef, pageNumber: number, direction: EntityTablePaginationDirection): void => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (pageRef: any, pageNumber: number, direction: EntityTablePaginationDirection): void => {
       handlePageChangeBase(pageRef, pageNumber, direction);
 
       if (!debouncedValue) {

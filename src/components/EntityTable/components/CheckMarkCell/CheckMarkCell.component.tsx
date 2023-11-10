@@ -1,4 +1,4 @@
-import React, { memo, useMemo } from "react";
+import { memo, useMemo } from "react";
 import { EntityTableClassName } from "../../EntityTable.definition";
 import { CheckMarkCellIdModel } from "./CheckMarkCell.definition";
 import type { CheckMarkCellProps } from "./CheckMarkCell.definition";

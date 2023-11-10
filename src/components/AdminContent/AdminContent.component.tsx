@@ -6,15 +6,17 @@ import {
   Brand,
   Button,
   ButtonTheme,
+  ConfigProvider as NimbusConfig,
   Layout,
   LayoutHeight,
   LayoutPadding,
   LayoutTheme,
   useV1Brand,
+  StyleGuide,
 } from "@q4/nimbus-ui";
 import type { Tab } from "@q4/nimbus-ui";
 import { Permission } from "@q4/platform-definitions";
-import React, { memo, useMemo } from "react";
+import { memo, useMemo } from "react";
 import { useHistory } from "react-router-dom";
 import { FeatureFlag } from "../../configurations/feature.configuration";
 import { AdminDataProvider } from "../../contexts/data/data.context";
@@ -25,7 +27,7 @@ import { useClaims } from "../../hooks/useClaims/useClaims.hook";
 import { useFeatureFlags } from "../../hooks/useFeatureFlags/useFeatureFlags.hook";
 import { mapRoutesByPermission } from "../../utils/permission/permission.utils";
 import { RouteTabs } from "../RouteTabs/RouteTabs.component";
-import { Routes } from "../Routes/Routes.component";
+import { AdminRoutes } from "../Routes/Routes.component";
 import {
   AdminViewClassName,
   AdminViewTabs,
@@ -50,53 +52,55 @@ const Component = (): JSX.Element => {
     claims.permissions?.includes(Permission.ImpersonateClient) && adminClientSelectorFeatureEnabled;
 
   return (
-    <Layout
-      className={AdminViewClassName.Base}
-      id={ViewIdModel.id}
-      padding={LayoutPadding.None}
-      flex={false}
-      height={LayoutHeight.Viewport}
-    >
-      <Banner
-        id={ViewIdModel.banner.id}
-        className={AdminViewClassName.Banner}
-        badgeIcon={AdminViewDefault.Icon}
-        title={AdminViewDefault.Title}
-        size={BannerSize.Medium}
-        alignChildrenWithBadge
-        controls={[
-          {
-            children: showClientSelectorButton && (
-              <Button
-                className={AdminViewClassName.BannerButton}
-                onClick={() => onSetAdminClientSelector(true)}
-                theme={ButtonTheme.DarkSlate}
-                label={AdminViewDefault.GoToClientAccountLabel}
-              />
-            ),
-            type: BannerControlType.Element,
-          },
-        ]}
-      >
-        <RouteTabs currentPath={history?.location?.pathname} items={tabs} onRouteChange={history.push} />
-      </Banner>
+    <NimbusConfig styleGuide={StyleGuide.V1}>
       <Layout
-        id={ViewIdModel.content.id}
-        className={AdminViewClassName.Content}
-        theme={LayoutTheme.White}
-        flex={false}
+        className={AdminViewClassName.Base}
+        id={ViewIdModel.id}
         padding={LayoutPadding.None}
+        flex={false}
+        height={LayoutHeight.Viewport}
       >
-        {/* @jm fixme should move to Admin component */}
-        <AdminLoadingProvider>
-          <AdminDataProvider>
-            <AdminEditProvider>
-              <Routes entitlements={claims.entitlements} features={features} permissions={claims.permissions} />
-            </AdminEditProvider>
-          </AdminDataProvider>
-        </AdminLoadingProvider>
+        <Banner
+          id={ViewIdModel.banner.id}
+          className={AdminViewClassName.Banner}
+          badgeIcon={AdminViewDefault.Icon}
+          title={AdminViewDefault.Title}
+          size={BannerSize.Medium}
+          alignChildrenWithBadge
+          controls={[
+            {
+              children: showClientSelectorButton && (
+                <Button
+                  className={AdminViewClassName.BannerButton}
+                  onClick={() => onSetAdminClientSelector(true)}
+                  theme={ButtonTheme.DarkSlate}
+                  label={AdminViewDefault.GoToClientAccountLabel}
+                />
+              ),
+              type: BannerControlType.Element,
+            },
+          ]}
+        >
+          <RouteTabs currentPath={history?.location?.pathname} items={tabs} onRouteChange={history.push} />
+        </Banner>
+        <Layout
+          id={ViewIdModel.content.id}
+          className={AdminViewClassName.Content}
+          theme={LayoutTheme.White}
+          flex={false}
+          padding={LayoutPadding.None}
+        >
+          {/* @jm fixme should move to Admin component */}
+          <AdminLoadingProvider>
+            <AdminDataProvider>
+              <AdminEditProvider>
+                <AdminRoutes entitlements={claims.entitlements} features={features} permissions={claims.permissions} />
+              </AdminEditProvider>
+            </AdminDataProvider>
+          </AdminLoadingProvider>
+        </Layout>
       </Layout>
-    </Layout>
+    </NimbusConfig>
   );
 };
 

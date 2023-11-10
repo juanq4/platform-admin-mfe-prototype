@@ -1,5 +1,4 @@
 import { TableClassName, ToastContainer } from "@q4/nimbus-ui";
-import { fireEvent } from "@testing-library/react";
 import React from "react";
 import {
   MockOrganization12,
@@ -14,18 +13,18 @@ import { useAdminUserTable } from "../../hooks/useAdminUserTable/useAdminUserTab
 import { useToastNotificationService } from "../../hooks/useToastNotificationService/useToastNotificationService.hook";
 import { useOrganizationsQuery, useTeamsQuery } from "../../schemas/generated/graphql";
 import { getOrganizationEditTeamRoute } from "../../utils/organization/organization.utils";
-import { render, screen, waitFor } from "../../utils/testUtils";
+import { fireEvent, render, screen, waitFor } from "../../utils/testUtils";
 import { OrganizationTeams } from "./Teams.component";
 import type { OrganizationTeamsProps } from "./Teams.definition";
 import { OrganizationTeamsIdModel, OrganizationTeamsLanguage } from "./Teams.definition";
 
-jest.mock("../../../schemas/generated/graphql");
+jest.mock("../../schemas/generated/graphql");
 const mockUseOrganizationsQuery = useOrganizationsQuery as jest.Mock;
 const mockUseTeamsQuery = useTeamsQuery as jest.Mock;
 
-jest.mock("../../../hooks/useToastNotificationService/useToastNotificationService.hook");
+jest.mock("../../hooks/useToastNotificationService/useToastNotificationService.hook");
 const mockUseToastNotificationService = useToastNotificationService as jest.Mock;
-jest.mock("../../../hooks/useAdminUserTable/useAdminUserTable.hook");
+jest.mock("../../hooks/useAdminUserTable/useAdminUserTable.hook");
 const mockUseAdminUserTable = useAdminUserTable as jest.Mock;
 
 const idModel = new OrganizationTeamsIdModel("mockOrganization");

@@ -1,6 +1,6 @@
 import type { ApolloCache, DefaultContext, MutationTuple } from "@apollo/client";
 import { gql, useMutation } from "@apollo/client";
-import type { Organization } from "@q4/platform-definitions";
+import type { Organization } from "../../../definitions/organization.definition";
 import { OrganizationsBase } from "../../useOrganization/useOrganization.definition";
 
 // export const GET_ORGANIZATION_QUERY = gql`

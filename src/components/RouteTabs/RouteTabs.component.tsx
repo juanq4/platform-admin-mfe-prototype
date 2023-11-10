@@ -1,5 +1,5 @@
 import { ArrayNotFoundIndex, ComponentSizeModifier, Tabs, TabsTheme } from "@q4/nimbus-ui";
-import React, { memo, useCallback, useMemo } from "react";
+import { memo, useCallback, useMemo } from "react";
 import type { RouteTabsProps } from "./RouteTabs.definition";
 import { RouteTabsIdModel } from "./RouteTabs.definition";
 

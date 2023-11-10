@@ -2,7 +2,6 @@ import { MockedProvider } from "@apollo/client/testing";
 import { isEmpty, SelectClassName, ToastContainer } from "@q4/nimbus-ui";
 import { OrganizationType, Permission } from "@q4/platform-definitions";
 import { createMemoryHistory } from "history";
-import React from "react";
 import { generatePath, Router } from "react-router-dom";
 import { CombinedError } from "urql";
 import { Auth0HookMock, MockAuth0Token } from "../../__mocks__/contexts/Auth0Context.mock";
@@ -15,6 +14,7 @@ import { AccessRouteMap, PermissionCollection, Role } from "../../configurations
 import { OrganizationClaim } from "../../configurations/q4-platform-common.configuration";
 import type { TupleOf } from "../../definitions/typescript.definition";
 import type { User } from "../../definitions/user.definition";
+import { useClaims } from "../../hooks/useClaims/useClaims.hook";
 import { useIdTokenClaims } from "../../hooks/useIdTokenClaims/useIdTokenClaims.hook";
 import { useOrganizationQuery } from "../../hooks/useOrganization/useOrganization.hook";
 import { useToastNotificationService } from "../../hooks/useToastNotificationService/useToastNotificationService.hook";
@@ -44,19 +44,19 @@ const mocks = [
   },
 ];
 
-jest.mock("../../../hooks/useToastNotificationService/useToastNotificationService.hook");
+jest.mock("../../hooks/useToastNotificationService/useToastNotificationService.hook");
 const mockUseNotifications = useToastNotificationService as jest.Mock;
-jest.mock("../../../hooks/useIdTokenClaims/useIdTokenClaims.hook");
+jest.mock("../../hooks/useIdTokenClaims/useIdTokenClaims.hook");
 const mockUseIdTokenClaims = useIdTokenClaims as jest.Mock;
-jest.mock("../../../hooks/useClaims/useClaims.hook");
+jest.mock("../../hooks/useClaims/useClaims.hook");
 const mockUseClaims = useClaims as jest.Mock;
-jest.mock("../../../hooks/useUser/useUser.hook");
+jest.mock("../../hooks/useUser/useUser.hook");
 const mockUseUserQuery = useUserQuery as jest.Mock;
-jest.mock("../../../hooks/useOrganization/useOrganization.hook");
+jest.mock("../../hooks/useOrganization/useOrganization.hook");
 const mockUseOrganizationQuery = useOrganizationQuery as jest.Mock;
-jest.mock("../../../utils/organization/organization.utils");
+jest.mock("../../utils/organization/organization.utils");
 const mockGetOrganizationDetailsMode = getOrganizationDetailsMode as jest.Mock;
-jest.mock("../../../schemas/generated/graphql");
+jest.mock("../../schemas/generated/graphql");
 const mockUseUpdateUserMutation = useUpdateUserMutation as jest.Mock;
 
 const testCount = 13;

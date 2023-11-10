@@ -23,13 +23,42 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx|tsx|ts)$/,
-        use: ["ts-loader"],
-        exclude: /node_modules/,
+        test: /\.s?css$/i,
+        use: [
+          "style-loader",
+          "css-loader",
+          {
+            loader: "resolve-url-loader",
+            options: {
+              sourceMap: false,
+            },
+          },
+          {
+            loader: "sass-loader",
+            options: {
+              sourceMap: true, // this is required for the resolve-url-loader
+            },
+          },
+        ],
       },
       {
-        test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
+        test: /\.(woff(2)?|ttf|eot)$/,
+        type: "asset/resource",
+        generator: {
+          filename: "./fonts/[name][ext]",
+        },
+      },
+      {
+        test: /\.svg$/i,
+        type: "asset",
+        resourceQuery: { not: [/inline/] },
+      },
+      {
+        test: /\.svg$/i,
+        issuer: /\.[jt]sx?$/,
+        resourceQuery: /inline/,
+
+        use: ["@svgr/webpack"],
       },
     ],
   },

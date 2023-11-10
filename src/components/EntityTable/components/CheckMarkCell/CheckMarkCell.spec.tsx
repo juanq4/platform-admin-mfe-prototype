@@ -1,5 +1,5 @@
 import React from "react";
-// import { getAppWrapper } from "../../../../__mocks__";
+import { getAppWrapper } from "../../../../__mocks__/utils/wrappers";
 import { render, screen } from "../../../../utils/testUtils";
 import { CheckMarkCell } from "./CheckMarkCell.component";
 import { CheckMarkCellIdModel, CheckMarkCellListId } from "./CheckMarkCell.definition";

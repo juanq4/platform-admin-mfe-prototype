@@ -9,11 +9,12 @@ import {
 } from "../../../../../__mocks__/data/organizations.mock";
 import { MockNoRolesUser } from "../../../../../__mocks__/data/users.mock";
 import { PermissionCollection, AppRole } from "../../../../../configurations/access.configuration";
+import { useClaims } from "../../../../../hooks/useClaims/useClaims.hook";
 import { fireEvent, render, screen } from "../../../../../utils/testUtils";
 import { AdminUserFormIdModel } from "../../AdminUserForm.definition";
 import { RoleSelector } from "./RoleSelector.component";
 
-jest.mock("../../../../hooks/useClaims");
+jest.mock("../../../../../hooks/useClaims/useClaims.hook");
 const mockUseClaims = useClaims as jest.Mock;
 
 const idModel = new AdminUserFormIdModel("mockFormId");

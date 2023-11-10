@@ -1,8 +1,8 @@
 import "./EditTeamTables.scss";
 import { isEmpty, isNullOrWhiteSpace, Origin } from "@q4/nimbus-ui";
 import type { IHeaderParams } from "@q4/nimbus-ui/dist/dependencies/agGrid/community";
-import type { Organization } from "@q4/platform-definitions";
-import React, { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
+import type { Organization } from "../../../../../../../definitions/organization.definition";
 import type { User } from "../../../../../../../definitions/user.definition";
 import { usePagination } from "../../../../../../../hooks/usePagination/usePagination.hook";
 import { QueryPaginationDefault } from "../../../../../../../hooks/useQuery/useQuery.definition";

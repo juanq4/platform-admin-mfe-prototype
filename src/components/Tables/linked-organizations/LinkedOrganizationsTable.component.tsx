@@ -1,4 +1,4 @@
-import React, { memo, useMemo, useRef } from "react";
+import { memo, useMemo, useRef } from "react";
 import { AdminOrganizationsTableCellRenderer } from "../../AdminContent/Organizations/Organizations.definition";
 import { EntityTable } from "../../EntityTable/EntityTable.component";
 import type { EntityTableColumnDef } from "../../EntityTable/EntityTable.definition";

@@ -1,11 +1,11 @@
 import { SelectClassName, StyleGuide } from "@q4/nimbus-ui";
 import { Entitlement, OrganizationType } from "@q4/platform-definitions";
-import { Role } from "@q4/platform-sdk-definitions";
 import React from "react";
 import { MockOrganization1, MockOrganization12, MockOrganization7 } from "../../../__mocks__/data/organizations.mock";
 import { MockUser, MockUser1, MockUser14, MockUser2 } from "../../../__mocks__/data/users.mock";
-import { PermissionCollection } from "../../../configurations/access.configuration";
+import { PermissionCollection, Role } from "../../../configurations/access.configuration";
 import { User, UserApplications } from "../../../definitions/user.definition";
+import { useClaims } from "../../../hooks/useClaims/useClaims.hook";
 import type { OrganizationQueryResponse } from "../../../hooks/useOrganization/useOrganization.definition";
 import { useOrganizationQuery } from "../../../hooks/useOrganization/useOrganization.hook";
 import { getRoles } from "../../../utils/organization/getRoles";
@@ -21,9 +21,9 @@ import {
 } from "./AdminUserForm.definition";
 import { getAdminFormUser } from "./AdminUserForm.utils";
 
-jest.mock("../../../../hooks/useOrganization/useOrganization.hook");
+jest.mock("../../../hooks/useOrganization/useOrganization.hook");
 const mockUseOrganizationQuery = useOrganizationQuery as jest.Mock;
-jest.mock("../../../../hooks/useClaims/useClaims.hook");
+jest.mock("../../../hooks/useClaims/useClaims.hook");
 const mockUseClaims = useClaims as jest.Mock;
 
 jest.mock("react-router-dom", () => {

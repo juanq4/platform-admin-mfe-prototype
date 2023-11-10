@@ -7,12 +7,13 @@ import { MockUsers, MockUser14, MockQ4AdminUser } from "../../../../../../__mock
 import type { Organization } from "../../../../../../definitions/organization.definition";
 import type { User } from "../../../../../../definitions/user.definition";
 import { useClaims } from "../../../../../../hooks/useClaims/useClaims.hook";
-import { useOrganizationsQuery, useOrganizationQuery } from "../../../../../../hooks/useOrganization/useOrganization.hook";
+import { useOrganizationQuery } from "../../../../../../hooks/useOrganization/useOrganization.hook";
 import { useTable } from "../../../../../../hooks/useTable/useTable.hook";
 import { TeamPostKey, TeamCreateMessage } from "../../../../../../hooks/useTeam/useTeam.definition";
-import { useTeamCreate } from "../../../../../../hooks/useTeam/useTeam.hook";
+import { useTeamCreate, useTeamsQuery } from "../../../../../../hooks/useTeam/useTeam.hook";
 import { useToastNotificationService } from "../../../../../../hooks/useToastNotificationService/useToastNotificationService.hook";
-import { useUsersQuery, useTeamsQuery } from "../../../../../../schemas/generated/graphql";
+import { useUsersQuery } from "../../../../../../hooks/useUser/useUser.hook";
+import { useOrganizationsQuery } from "../../../../../../schemas/generated/graphql";
 import {
   getOrganizationLabelWithTicker,
   getOrganizationEditRoute,

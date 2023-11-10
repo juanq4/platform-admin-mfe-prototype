@@ -1,5 +1,5 @@
 import { isEmpty, CheckboxTheme, RadioButton } from "@q4/nimbus-ui";
-import React, { memo, useMemo, useRef } from "react";
+import { memo, useMemo, useRef } from "react";
 import { EntityTable } from "../../EntityTable/EntityTable.component";
 import type { EntityTableColumnDef, EntityTableCellPropsBase } from "../../EntityTable/EntityTable.definition";
 import type { AdminStudioSitesTableProps, AdminStudioSitesViewModel } from "./AdminStudioSitesTable.definition";

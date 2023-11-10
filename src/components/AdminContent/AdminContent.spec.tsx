@@ -1,6 +1,7 @@
 import { Permission } from "@q4/platform-definitions";
 import React from "react";
 import { MemoryRouter } from "react-router-dom";
+import { Auth0HookMock, MockAuth0Token } from "../../__mocks__/contexts/Auth0Context.mock";
 import { FeatureFlag } from "../../configurations/feature.configuration";
 import { AdminRoutePath } from "../../configurations/navigation.configuration";
 import { useUser } from "../../contexts/user/user.hook";
@@ -28,10 +29,11 @@ jest.mock("react-router-dom", () => {
   };
 });
 
-// Auth0HookMock();
+Auth0HookMock();
 
 describe("Users View", () => {
   beforeEach(() => {
+    mockUseIdTokenClaims.mockReturnValue(MockAuth0Token);
     mockUseUser.mockReturnValue({ permissions: [Permission.ManageOrgs, Permission.ImpersonateClient] });
     mockUseFeatureFlags.mockReturnValue({ [FeatureFlag.AdminClientAccountAccess]: true });
   });

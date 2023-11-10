@@ -5,6 +5,7 @@ import { MemoryRouter } from "react-router-dom";
 import { Auth0HookMock } from "../../../__mocks__/contexts/Auth0Context.mock";
 import { NimbusConfig } from "../../../__mocks__/contexts/NimbusConfig.mock";
 import { MockOrganizations } from "../../../__mocks__/data/organizations.mock";
+import { mockClipboardWrite } from "../../../__mocks__/utils/helpers";
 import { AdminRoutesIdModel } from "../../../components/Routes/Routes.definition";
 import { AccessRouteMap, PermissionCollection } from "../../../configurations/access.configuration";
 import { AdminRoutePath } from "../../../configurations/navigation.configuration";
@@ -42,13 +43,12 @@ describe("Organizations View", () => {
   mockClipboardWrite();
 
   const mockOrganizationQueryParams = {
-    variables: { page: null as string[], pageSize: 10, searchTerm: undefined },
+    variables: { page: null as unknown as string[], pageSize: 10 },
   };
 
   const queryOrganizations = jest.fn();
   const mockQueryReponse = {
     loading: false,
-    error: null,
     data: { organizations: { items: MockOrganizations } },
   };
 

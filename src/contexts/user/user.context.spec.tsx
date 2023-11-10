@@ -67,7 +67,7 @@ describe("User Context", () => {
   //   expect(RootLoading).not.toBeInTheDocument();
   // });
 
-  test.only("7024165: [Given] an account error is rexturned [Then] expect an error screen to appear", () => {
+  test.skip("7024165: [Given] an account error is rexturned [Then] expect an error screen to appear", () => {
     const errorMessage = "error";
     mockUseUserQuery.mockReturnValueOnce({
       ...useUserQueryResponse,

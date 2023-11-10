@@ -306,6 +306,10 @@ exports[`Organization Team Create view 7395560: render without crash 1`] = `
   margin-left: 8px;
 }
 
+.emotion-25 .nui-toggle-input-base--steel.nui-toggle-input-base--checked .nui-toggle-input-base_control {
+  background-color: #0a3d6d;
+}
+
 .emotion-25 .nui-checkbox_box.nui-toggle-input-base_control {
   background: #ffffff;
 }

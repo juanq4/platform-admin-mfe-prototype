@@ -2,6 +2,7 @@ import { MockOrganization1 } from "../../../../../../__mocks__/data/organization
 import { MockUser } from "../../../../../../__mocks__/data/users.mock";
 import { AdminRoutePath } from "../../../../../../configurations/navigation.configuration";
 import { getOrganizationEditRoute } from "../../../../../../utils/organization/organization.utils";
+import { testUserCreate } from "../../../../../../utils/users/usersCreate.spec.utils";
 import { OrganizationsUserCreateViewIdModel } from "./OrganizationsUserCreate.definition";
 
 const organizationId = MockOrganization1.id;

@@ -1,6 +1,6 @@
 import "./CopyButton.scss";
 import { Button, ButtonTheme, NotificationService } from "@q4/nimbus-ui";
-import React, { memo, useCallback, useMemo, useRef } from "react";
+import { memo, useCallback, useMemo, useRef } from "react";
 import type { CopyButtonProps } from "./CopyButton.definition";
 import { CopyButtonClassName, CopyButtonIdModel } from "./CopyButton.definition";
 import { getCopyButtonFailureMessage, getCopyButtonSuccessMessage, isCopyButtonDisabled } from "./CopyButton.utils";

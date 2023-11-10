@@ -1,9 +1,8 @@
-import { renderHook } from "@testing-library/react";
 import { MockAdminOrganization, MockOrganization1 } from "../../__mocks__/data/organizations.mock";
 import type { Organization } from "../../definitions/organization.definition";
 import { useOrganizationsQuery } from "../../schemas/generated/graphql";
+import { renderHook } from "../../utils/testUtils";
 import { useManagedByAdminOrganization } from "./useManagedByAdminOrganization.hook";
-import { PropsWithChildren } from "react";
 
 jest.mock("../../schemas/generated/graphql");
 const mockUseOrganizationsQuery = useOrganizationsQuery as jest.Mock;

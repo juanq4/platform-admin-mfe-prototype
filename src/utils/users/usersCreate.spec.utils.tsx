@@ -20,15 +20,15 @@ import { useUserCreate } from "../../hooks/useUser/useUser.hook";
 import { getOrganizationDetailsMode } from "../organization/organization.utils";
 import { fireEvent, render, screen, waitFor } from "../testUtils";
 
-jest.mock("../../../hooks/useClaims/useClaims.hook");
+jest.mock("../../hooks/useClaims/useClaims.hook");
 const mockUseClaims = useClaims as jest.Mock;
-jest.mock("../../../hooks/useIdTokenClaims/useIdTokenClaims.hook");
+jest.mock("../../hooks/useIdTokenClaims/useIdTokenClaims.hook");
 const mockUseIdTokenClaims = useIdTokenClaims as jest.Mock;
-jest.mock("../../../hooks/useUser/useUser.hook");
+jest.mock("../../hooks/useUser/useUser.hook");
 const mockUseUserCreate = useUserCreate as jest.Mock;
-jest.mock("../../../hooks/useOrganization/useOrganization.hook");
+jest.mock("../../hooks/useOrganization/useOrganization.hook");
 const mockUseOrganizationQuery = useOrganizationQuery as jest.Mock;
-jest.mock("../../../utils/organization/organization.utils");
+jest.mock("../organization/organization.utils");
 const mockGetOrganizationDetailsMode = getOrganizationDetailsMode as jest.Mock;
 
 const testCount = 8;
@@ -126,8 +126,9 @@ export function testUserCreate(
       expect(element).toBeInTheDocument();
     });
 
-    test(`${testIds[2]}: [Given] I am on the ${componentMessage} [And] I click the modal close button [Expect] to be redirected to the correct route`, async () => {
+    test.only(`${testIds[2]}: [Given] I am on the ${componentMessage} [And] I click the modal close button [Expect] to be redirected to the correct route`, async () => {
       customRender();
+      console.log("~~~~~~~~~ viewIdModel.form.modal.exitIcon", viewIdModel.form.modal.exitIcon);
       const exit = screen.getByTestId(viewIdModel.form.modal.exitIcon);
       expect(exit).toBeInTheDocument();
 

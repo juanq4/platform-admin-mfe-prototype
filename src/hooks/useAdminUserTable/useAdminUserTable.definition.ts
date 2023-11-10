@@ -1,5 +1,5 @@
-import type { EntityTablePaginationDirection } from "../../../components";
-import type { User } from "../../../schemas/generated/graphql";
+import type { EntityTablePaginationDirection } from "../../components/EntityTable/components/Pagination/Pagination.definition";
+import type { User } from "../../definitions/user.definition";
 
 export interface AdminUserTableHookProps {
   organizationId: string;

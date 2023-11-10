@@ -1,6 +1,6 @@
 import { ButtonTheme, isEmpty, isNullOrWhiteSpace, Modal, Text, TextPreset } from "@q4/nimbus-ui";
 import { Role } from "@q4/platform-sdk-definitions";
-import React, { memo, useEffect, useMemo, useRef, useState } from "react";
+import { memo, useEffect, useMemo, useRef, useState } from "react";
 import { useAdminData } from "../../../../../../../contexts/data/data.hook";
 import type { User } from "../../../../../../../definitions/user.definition";
 import { TeamDescriptions } from "../../OrganizationsTeam.definition";

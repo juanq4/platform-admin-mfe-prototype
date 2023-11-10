@@ -18,10 +18,31 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "resolveJsonModule": true,
-    "jsx": "react-jsx",
+    // "jsx": "react", MFE seed
     "allowJs": true,
-    "strictNullChecks": false, // temporary need to set this only for U&AM files
+    "allowSyntheticDefaultImports": true,
+    "isolatedModules": false,
+    "jsx": "react-jsx",
+    "jsxImportSource": "@emotion/react",
+    "noEmit": false,
+    "noFallthroughCasesInSwitch": true,
+    "skipLibCheck": true,
+    "strictNullChecks": false // temporary need to set this only for U&AM files
   },
   "include": ["src", "config"],
-  "exclude": ["node_modules", ".webpack/**/*", ".vscode/**/*", "**/*.spec.tsx", "**/*.stories.tsx", "src/gql/*"]
+  "exclude": [
+    ".webpack/**/*",
+    ".vscode/**/*",
+    "config/jest/setup-jest.ts",
+    "node_modules",
+    "src/__mocks__/**/*",
+    "src/utils/testUtils.tsx",
+    "**/*.spec.tsx",
+    "**/*.stories.tsx"
+  ],
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
 }

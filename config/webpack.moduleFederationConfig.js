@@ -1,8 +1,8 @@
 const moduleFederationConfig = {
-  name: "seed",
+  name: "admin",
   filename: "remoteEntry.js",
   exposes: {
-    "./seed": "./src/modules/sampleModule/sampleModule.component",
+    "./admin": "./src/modules/Admin/Admin.component",
   },
   shared: {
     "react": {

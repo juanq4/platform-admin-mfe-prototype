@@ -104,7 +104,7 @@ describe("AdminEntityTable Component", () => {
       loading: false,
       error: new Error("mock error"),
       items: [] as Organization[],
-      pageRefs: null as string[][],
+      pageRefs: null as unknown as string[][],
     };
     const { rerender } = render(renderWithConfigs(testProps));
 
@@ -146,7 +146,7 @@ describe("AdminEntityTable Component", () => {
     const mockLessThan10Results = {
       ...mockProps,
       items: MockOrganizations.splice(0, 5),
-      pageRefs: [],
+      pageRefs: [] as string[][],
     };
 
     render(<EntityTable {...mockLessThan10Results} />, { container: getAppWrapper() });
@@ -159,8 +159,8 @@ describe("AdminEntityTable Component", () => {
     const onClick = jest.fn();
     const props: EntityTableProps<Organization> = {
       ...mockProps,
-      items: null,
-      pageRefs: null,
+      // items: null,
+      pageRefs: undefined,
       placeholderProps: {
         image: AddUserImage,
         actions: [
