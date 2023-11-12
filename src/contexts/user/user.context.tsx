@@ -11,7 +11,7 @@ import { updatePendoOrganization } from "./user.utils";
 
 export const UserContext = createContext<Partial<UserContextState>>({});
 
-// FIXME: should use mfe props: claims, user, organization?
+// FIXME: @jm should use mfe props: claims, user, organization?
 export const UserProvider = (props: UserProviderProps): JSX.Element => {
   const auth0 = useAuth0();
   const history = useHistory();
