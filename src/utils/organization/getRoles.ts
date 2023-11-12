@@ -1,9 +1,9 @@
 import { Entitlement, OrganizationType } from "@q4/platform-definitions";
 import type { Permission } from "@q4/platform-definitions";
-import { Role } from "@q4/platform-sdk-definitions";
 import {
   PermissionRule,
   PermissionCollection,
+  Role,
   Q4Role,
   AppRole,
   CorporateRoles,

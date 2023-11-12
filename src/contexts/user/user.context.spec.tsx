@@ -79,7 +79,7 @@ describe("User Context", () => {
 
     // expect(mockThrowError).toBeCalled();
     // expect(mockThrowError).toBeCalledWith("Account", new Error(errorMessage));
-    // FIXME: @jmejia
+    // FIXME: @jm
     expect(render(<UserProvider />)).toThrow();
   });
 

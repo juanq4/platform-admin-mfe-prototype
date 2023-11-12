@@ -159,7 +159,7 @@ export type CompletionInput = {
   stop?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
   stream?: InputMaybe<Scalars["Boolean"]>;
   systemMessage?: InputMaybe<Scalars["String"]>;
-  tag?: InputMaybe<Array<TagInput>>;
+  tag: Array<TagInput>;
   temperature?: InputMaybe<Scalars["Float"]>;
   vendor: VendorInput;
 };
@@ -195,6 +195,19 @@ export type ContactDto = {
   state_province?: Maybe<Scalars["String"]>;
   suffix?: Maybe<Scalars["String"]>;
   type?: Maybe<Scalars["String"]>;
+};
+
+export type ContactFlatPreview = {
+  __typename?: "ContactFlatPreview";
+  address?: Maybe<Scalars["String"]>;
+  city?: Maybe<Scalars["String"]>;
+  country?: Maybe<Scalars["String"]>;
+  email?: Maybe<Scalars["String"]>;
+  fundName?: Maybe<Scalars["String"]>;
+  institutionName?: Maybe<Scalars["String"]>;
+  jobTitle?: Maybe<Scalars["String"]>;
+  name?: Maybe<Scalars["String"]>;
+  phoneNumber?: Maybe<Scalars["String"]>;
 };
 
 export type ContactHoldingCurrentDto = {
@@ -334,6 +347,17 @@ export type ContactUrl = {
   url?: Maybe<Scalars["String"]>;
 };
 
+export type ConversationInput = {
+  humanMessage: Scalars["String"];
+  tag: Array<TagInput>;
+};
+
+export type ConversationResult = {
+  __typename?: "ConversationResult";
+  data?: Maybe<Scalars["String"]>;
+  success?: Maybe<Scalars["Boolean"]>;
+};
+
 export type CorporateContact = {
   __typename?: "CorporateContact";
   deleted?: Maybe<Scalars["Boolean"]>;
@@ -393,6 +417,24 @@ export type CreateEntityNoteResponse = {
   __typename?: "CreateEntityNoteResponse";
   count?: Maybe<Scalars["Int"]>;
   items?: Maybe<Array<Maybe<CreateItemResponse>>>;
+};
+
+export type CreateInstitutionInput = {
+  address?: InputMaybe<Scalars["String"]>;
+  city?: InputMaybe<Scalars["String"]>;
+  country?: InputMaybe<Scalars["String"]>;
+  countryCode?: InputMaybe<Scalars["String"]>;
+  entityName: Scalars["String"];
+  institutionStyle?: InputMaybe<Scalars["String"]>;
+  institutionType?: InputMaybe<Scalars["String"]>;
+  phoneNumber?: InputMaybe<Scalars["String"]>;
+  turnover?: InputMaybe<Scalars["String"]>;
+};
+
+export type CreateInstitutionResult = {
+  __typename?: "CreateInstitutionResult";
+  count?: Maybe<Scalars["Int"]>;
+  items?: Maybe<Array<Maybe<InstitutionResultDto>>>;
 };
 
 export type CreateInteractionResponse = {
@@ -1886,6 +1928,7 @@ export type EpEventManagerDto = {
 export type EpEventPlan = {
   addons?: InputMaybe<Scalars["KeyValue"]>;
   expectations?: InputMaybe<EpEventPlanExpectations>;
+  preRecordDetails?: InputMaybe<EpEventPreRecordDetails>;
   tier?: InputMaybe<EpEventPlanTier>;
 };
 
@@ -1893,6 +1936,7 @@ export type EpEventPlanDto = {
   __typename?: "EpEventPlanDTO";
   addons?: Maybe<Scalars["KeyValue"]>;
   expectations?: Maybe<EpEventPlanExpectationsDto>;
+  preRecordDetails?: Maybe<EpEventPreRecordDetailsDto>;
   tier?: Maybe<EpEventPlanTier>;
 };
 
@@ -1913,6 +1957,21 @@ export enum EpEventPlanTier {
   plus = "plus",
   premium = "premium",
 }
+
+export type EpEventPreRecordDetails = {
+  attendeeEmails?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  date?: InputMaybe<Scalars["String"]>;
+  time?: InputMaybe<Scalars["String"]>;
+  timezone?: InputMaybe<Scalars["String"]>;
+};
+
+export type EpEventPreRecordDetailsDto = {
+  __typename?: "EpEventPreRecordDetailsDTO";
+  attendeeEmails?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  date?: Maybe<Scalars["String"]>;
+  time?: Maybe<Scalars["String"]>;
+  timezone?: Maybe<Scalars["String"]>;
+};
 
 export enum EpEventTypeEnum {
   earnings = "earnings",
@@ -2194,6 +2253,52 @@ export type IDataMapSchematic = {
   sourceKey: Scalars["String"];
 };
 
+export type ImportContactPreviewResponse = {
+  __typename?: "ImportContactPreviewResponse";
+  id: Scalars["String"];
+  meta?: Maybe<ImportContactsMeta>;
+  preview?: Maybe<Array<Maybe<ContactFlatPreview>>>;
+};
+
+export type ImportContactResponse = {
+  __typename?: "ImportContactResponse";
+  count?: Maybe<Scalars["Int"]>;
+};
+
+export type ImportContactsMeta = {
+  __typename?: "ImportContactsMeta";
+  schemaMap?: Maybe<ImportContactsSchemaMap>;
+  validation?: Maybe<ImportContactsMetaValidation>;
+};
+
+export type ImportContactsMetaValidation = {
+  __typename?: "ImportContactsMetaValidation";
+  count?: Maybe<ImportContactsMetaValidationCount>;
+  invalidRecordsCsvUrl?: Maybe<Scalars["String"]>;
+  invalidations?: Maybe<Array<Maybe<Scalars["String"]>>>;
+};
+
+export type ImportContactsMetaValidationCount = {
+  __typename?: "ImportContactsMetaValidationCount";
+  invalid?: Maybe<Scalars["Int"]>;
+  valid?: Maybe<Scalars["Int"]>;
+};
+
+export type ImportContactsSchemaMap = {
+  __typename?: "ImportContactsSchemaMap";
+  address?: Maybe<Scalars["String"]>;
+  country?: Maybe<Scalars["String"]>;
+  cty?: Maybe<Scalars["String"]>;
+  email?: Maybe<Scalars["String"]>;
+  firstName?: Maybe<Scalars["String"]>;
+  fundName?: Maybe<Scalars["String"]>;
+  institutionName?: Maybe<Scalars["String"]>;
+  jobTitle?: Maybe<Scalars["String"]>;
+  lastName?: Maybe<Scalars["String"]>;
+  name?: Maybe<Scalars["String"]>;
+  phoneNumber?: Maybe<Scalars["String"]>;
+};
+
 export type ImportInteractionPreviewResponse = {
   __typename?: "ImportInteractionPreviewResponse";
   id: Scalars["String"];
@@ -2241,6 +2346,8 @@ export type ImportInteractionsSchemaMap = {
   attendeeFirstName?: Maybe<Scalars["String"]>;
   attendeeFund?: Maybe<Scalars["String"]>;
   attendeeInstitution?: Maybe<Scalars["String"]>;
+  attendeeInstitutionCity?: Maybe<Scalars["String"]>;
+  attendeeInstitutionCountry?: Maybe<Scalars["String"]>;
   attendeeJobTitle?: Maybe<Scalars["String"]>;
   attendeeLastName?: Maybe<Scalars["String"]>;
   attendeeName?: Maybe<Scalars["String"]>;
@@ -2298,10 +2405,19 @@ export type InstHoldingCurrentDto = {
   currentPosition?: Maybe<Scalars["Int"]>;
   entityId?: Maybe<Scalars["String"]>;
   entityName?: Maybe<Scalars["String"]>;
-  entityType?: Maybe<Entity_Type>;
+  entityType?: Maybe<Scalars["String"]>;
+  equityAum?: Maybe<Scalars["Float"]>;
   identifier?: Maybe<Scalars["String"]>;
   lastFilingDate?: Maybe<Scalars["String"]>;
+  marketValue?: Maybe<Scalars["Float"]>;
+  marketValueQtrChange?: Maybe<Scalars["Float"]>;
+  percentPortfolio?: Maybe<Scalars["Float"]>;
+  percentTso?: Maybe<Scalars["Float"]>;
+  qtrChange?: Maybe<Scalars["Float"]>;
   sector?: Maybe<Scalars["String"]>;
+  style?: Maybe<Scalars["String"]>;
+  totalAum?: Maybe<Scalars["Float"]>;
+  turnover?: Maybe<Scalars["String"]>;
 };
 
 export type InstHoldingCurrentFilter = {
@@ -2397,14 +2513,31 @@ export type InstitutionDto = {
   activist?: Maybe<Scalars["Boolean"]>;
   address?: Maybe<Array<Maybe<InstitutionAddressDto>>>;
   addressId?: Maybe<Scalars["Int"]>;
+  addressLine1?: Maybe<Scalars["String"]>;
+  addressLine2?: Maybe<Scalars["String"]>;
+  addressLine3?: Maybe<Scalars["String"]>;
+  city?: Maybe<Scalars["String"]>;
+  countryCode?: Maybe<Scalars["String"]>;
+  countryName?: Maybe<Scalars["String"]>;
+  createdBy?: Maybe<Scalars["String"]>;
+  createdDate?: Maybe<Scalars["String"]>;
   entityId?: Maybe<Scalars["String"]>;
+  entityIdTypeName?: Maybe<Scalars["String"]>;
   entityName?: Maybe<Scalars["String"]>;
   entityType?: Maybe<Scalars["String"]>;
   equityAum?: Maybe<Scalars["Float"]>;
   investmentApproach?: Maybe<Scalars["String"]>;
   managerStyle?: Maybe<Scalars["String"]>;
+  metro?: Maybe<Scalars["String"]>;
+  modifiedBy?: Maybe<Scalars["String"]>;
+  modifiedDate?: Maybe<Scalars["String"]>;
+  phone?: Maybe<Scalars["String"]>;
+  postalCode?: Maybe<Scalars["String"]>;
   profile?: Maybe<Scalars["String"]>;
   qualityRating?: Maybe<Scalars["Float"]>;
+  region?: Maybe<Scalars["String"]>;
+  stateProvinceCode?: Maybe<Scalars["String"]>;
+  stateProvinceName?: Maybe<Scalars["String"]>;
   style?: Maybe<Scalars["String"]>;
   totalAum?: Maybe<Scalars["Float"]>;
   turnover?: Maybe<Scalars["String"]>;
@@ -2427,11 +2560,25 @@ export type InstitutionResult = {
   items?: Maybe<Array<Maybe<InstitutionDto>>>;
 };
 
+export type InstitutionResultDto = {
+  __typename?: "InstitutionResultDTO";
+  entityId?: Maybe<Scalars["String"]>;
+};
+
+export type InstitutionSearch = {
+  value?: InputMaybe<Scalars["String"]>;
+};
+
 export type InstitutionSearchDto = EntitySearchDto & {
   __typename?: "InstitutionSearchDTO";
   entityId?: Maybe<Scalars["String"]>;
   entityName?: Maybe<Scalars["String"]>;
   entityType?: Maybe<SearchEntityType>;
+};
+
+export type InstitutionUpdateResultDto = {
+  __typename?: "InstitutionUpdateResultDTO";
+  entityId?: Maybe<Scalars["String"]>;
 };
 
 export type Interaction = {
@@ -2471,6 +2618,8 @@ export type InteractionFlatPreview = {
   contactEmail?: Maybe<Scalars["String"]>;
   contactFund?: Maybe<Scalars["String"]>;
   contactInstitution?: Maybe<Scalars["String"]>;
+  contactInstitutionCity?: Maybe<Scalars["String"]>;
+  contactInstitutionCountry?: Maybe<Scalars["String"]>;
   contactJobTitle?: Maybe<Scalars["String"]>;
   contactName?: Maybe<Scalars["String"]>;
   contactPhoneNumber?: Maybe<Scalars["String"]>;
@@ -2659,8 +2808,8 @@ export type JobsInput = {
   entityName: Scalars["String"];
   entityType: Scalars["String"];
   institutionType?: InputMaybe<Scalars["String"]>;
-  jobFunction?: InputMaybe<Scalars["String"]>;
-  jobTitle?: InputMaybe<Scalars["String"]>;
+  jobFunction?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  jobTitle?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
 };
 
 export type ManagedFundDto = {
@@ -2713,6 +2862,7 @@ export type Mutation = {
   createContact?: Maybe<CreateContactResponse>;
   /** Create a new contact list */
   createContactList?: Maybe<CreateContactListResponse>;
+  createConversation: ConversationResult;
   /** Creates a new Corporate Contact */
   createCorporateContact?: Maybe<CreateCorporateContactResponse>;
   /** Creates a new Contact */
@@ -2721,16 +2871,28 @@ export type Mutation = {
   createEarningsPlan?: Maybe<EarningsPlanCreationResult>;
   /** Creates a note/comment for a specified entity */
   createEntityNote?: Maybe<CreateEntityNoteResponse>;
+  /**
+   * This node is responsible for creating the custom institution.
+   * @meta permission ownership::create:entity
+   */
+  createInstitution?: Maybe<CreateInstitutionResult>;
   /** Creates a CRM Interaction */
   createInteraction?: Maybe<CreateInteractionResponse>;
   createOrganization?: Maybe<Organization>;
   /** Creates a new Scheduler page */
   createPage?: Maybe<CreatePageResponse>;
   /**
-   * Create new instance of a workflow. The workflow version should always use the latest version of the workflow definition for a given type.
+   * Creates a Workflow entity based on the Workflow Definition.
+   * A workflow definition describes the main construct used by the workflow orchestrator.
    * @meta permission workflow::create:workflow
    */
   createPlatformWorkflow?: Maybe<PlatformWorkflow>;
+  /**
+   * Creates a Workflow Step State entity.
+   * Each step within a workflow has its distinct state which evolves as users engage with the step.
+   * @meta permission workflow::create:workflow
+   */
+  createPlatformWorkflowStepState?: Maybe<PlatformWorkflowStepState>;
   createProductQualifiedLead?: Maybe<Scalars["Boolean"]>;
   createTrial?: Maybe<Trial>;
   createUploadUrl?: Maybe<FileUrlDto>;
@@ -2764,7 +2926,11 @@ export type Mutation = {
   generateAPICall?: Maybe<GenerateApiCallResult>;
   generateCompletion?: Maybe<GenerateCompletionResult>;
   generateDataMap?: Maybe<GenerateDataMapResult>;
-  /** Import interactions based on preview  */
+  /** Imports a Contact */
+  importContact?: Maybe<ImportContactResponse>;
+  /** Preview import of contacts */
+  importContactPreview?: Maybe<ImportContactPreviewResponse>;
+  /** Import interactions based on preview */
   importInteraction?: Maybe<ImportInteractionResponse>;
   /** Preview import of interactions */
   importInteractionPreview?: Maybe<ImportInteractionPreviewResponse>;
@@ -2810,6 +2976,11 @@ export type Mutation = {
   updateEarningsPlanStatus?: Maybe<EarningsPlanUpdateResult>;
   /** Updates a note attached to an Entity */
   updateEntityNote?: Maybe<UpdateEntityNoteResponse>;
+  /**
+   * This node is responsible for updating the custom institution.
+   * @meta permission ownership::update:entity
+   */
+  updateInstitution?: Maybe<UpdateInstitutionInputResult>;
   /** Updates a CRM Interaction */
   updateInteraction?: Maybe<UpdateInteractionResponse>;
   updateItemByClient?: Maybe<EarningsPlanItemResult>;
@@ -2819,15 +2990,17 @@ export type Mutation = {
   /** Updates the status of a Scheduler page (active / inactive) identified by it's unique slug */
   updatePageStatus?: Maybe<UpdatePageStatusResponse>;
   /**
-   * Update Workflow entity.
+   * Updates a Workflow entity based on the Workflow Definition.
+   * A workflow definition describes the main construct used by the workflow orchestrator.
    * @meta permission workflow::create:workflow
    */
   updatePlatformWorkflow?: Maybe<PlatformWorkflow>;
   /**
-   * Sets the state of an individual step
+   * Updates a Workflow Step State entity.
+   * Each step within a workflow has its distinct state which evolves as users engage with the step.
    * @meta permission workflow::create:workflow
    */
-  updatePlatformWorkflowState?: Maybe<PlatformStateWorkflow>;
+  updatePlatformWorkflowStepState?: Maybe<PlatformWorkflowStepState>;
   updateUser?: Maybe<User>;
   /** Upload attachment to vendor by using the URL from getUploadUrl as the attachment */
   uploadAttachment?: Maybe<UploadAttachmentResponse>;
@@ -2850,6 +3023,10 @@ export type MutationCreateContactArgs = {
 
 export type MutationCreateContactListArgs = {
   contactList: Array<ContactListInput>;
+};
+
+export type MutationCreateConversationArgs = {
+  input: ConversationInput;
 };
 
 export type MutationCreateCorporateContactArgs = {
@@ -2878,9 +3055,15 @@ export type MutationCreateEntityNoteArgs = {
   note?: InputMaybe<Scalars["String"]>;
 };
 
+export type MutationCreateInstitutionArgs = {
+  institutions: Array<CreateInstitutionInput>;
+};
+
 export type MutationCreateInteractionArgs = {
   attendees?: InputMaybe<Array<InputMaybe<Attendees>>>;
+  note?: InputMaybe<InteractionNoteInput>;
   start: StartDate;
+  summary?: InputMaybe<InteractionSummaryInput>;
   title: Scalars["String"];
   type: Scalars["String"];
 };
@@ -2903,7 +3086,11 @@ export type MutationCreatePageArgs = {
 };
 
 export type MutationCreatePlatformWorkflowArgs = {
-  workflowType: PlatformWorkflowType;
+  input: PlatformWorkflowCreateInput;
+};
+
+export type MutationCreatePlatformWorkflowStepStateArgs = {
+  input: PlatformWorkflowStepStateCreateInput;
 };
 
 export type MutationCreateProductQualifiedLeadArgs = {
@@ -3040,8 +3227,17 @@ export type MutationGenerateDataMapArgs = {
   sampleData: Scalars["String"];
 };
 
+export type MutationImportContactArgs = {
+  id: Scalars["String"];
+};
+
+export type MutationImportContactPreviewArgs = {
+  readUrl?: InputMaybe<Scalars["String"]>;
+};
+
 export type MutationImportInteractionArgs = {
   id: Scalars["String"];
+  useCustomInstitution?: InputMaybe<Scalars["Boolean"]>;
 };
 
 export type MutationImportInteractionPreviewArgs = {
@@ -3104,6 +3300,7 @@ export type MutationRequestJobPublishArgs = {
 export type MutationRequestJobUpdateArgs = {
   id: Scalars["String"];
   jobIndex: Scalars["Int"];
+  notifications?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
   updateModel: RequestJobUpdateInputSchema;
 };
 
@@ -3188,6 +3385,10 @@ export type MutationUpdateEntityNoteArgs = {
   note?: InputMaybe<Scalars["String"]>;
 };
 
+export type MutationUpdateInstitutionArgs = {
+  institutions: Array<UpdateInstitutionInput>;
+};
+
 export type MutationUpdateInteractionArgs = {
   attendees?: InputMaybe<Array<InputMaybe<Attendees>>>;
   id: Scalars["String"];
@@ -3237,16 +3438,11 @@ export type MutationUpdatePageStatusArgs = {
 };
 
 export type MutationUpdatePlatformWorkflowArgs = {
-  completedDate?: InputMaybe<Scalars["DateTime"]>;
-  status?: InputMaybe<PlatformWorkflowStatus>;
-  workflowId: Scalars["String"];
+  input: PlatformWorkflowUpdateInput;
 };
 
-export type MutationUpdatePlatformWorkflowStateArgs = {
-  state: Scalars["String"];
-  status?: InputMaybe<PlatformWorkflowStateStatus>;
-  stepId: Scalars["String"];
-  workflowId: Scalars["String"];
+export type MutationUpdatePlatformWorkflowStepStateArgs = {
+  input: PlatformWorkflowStepStateUpdateInput;
 };
 
 export type MutationUpdateUserArgs = {
@@ -3270,6 +3466,7 @@ export type MutationUploadAttachmentArgs = {
 
 export enum Notification_Type {
   DIGEST = "DIGEST",
+  TIMELY_ALERTS = "TIMELY_ALERTS",
 }
 
 export type Notification = {
@@ -3483,50 +3680,28 @@ export type PhoneInput = {
   type: Scalars["String"];
 };
 
-export type PlatformStateWorkflow = {
-  __typename?: "PlatformStateWorkflow";
-  lastModified: Scalars["DateTime"];
-  organizationId: Scalars["String"];
-  state?: Maybe<Scalars["String"]>;
-  status: PlatformWorkflowStateStatus;
-  stepId: Scalars["String"];
-  workflowId: Scalars["String"];
-};
-
-export type PlatformStepActionLabels = {
-  __typename?: "PlatformStepActionLabels";
-  next: Scalars["String"];
-};
-
-export type PlatformStepUserAction = {
-  __typename?: "PlatformStepUserAction";
-  action: Scalars["String"];
-  label: Scalars["String"];
-};
-
 export type PlatformWorkflow = {
   __typename?: "PlatformWorkflow";
-  completedDate?: Maybe<Scalars["DateTime"]>;
+  completeDate?: Maybe<Scalars["DateTime"]>;
   createDate: Scalars["DateTime"];
+  id: Scalars["String"];
   organizationId: Scalars["String"];
-  status: PlatformWorkflowStatus;
-  type: PlatformWorkflowType;
-  version: Scalars["String"];
-  workflowId: Scalars["String"];
-};
-
-export type PlatformWorkflowDefinition = {
-  __typename?: "PlatformWorkflowDefinition";
-  steps: Array<Maybe<PlatformWorkflowStep>>;
+  status: Scalars["String"];
   title: Scalars["String"];
-  type: PlatformWorkflowType;
+  type: Scalars["String"];
+  userId: Scalars["String"];
   version: Scalars["String"];
 };
 
-export type PlatformWorkflowDefinitionResult = {
-  __typename?: "PlatformWorkflowDefinitionResult";
-  count?: Maybe<Scalars["Int"]>;
-  items: Array<Maybe<PlatformWorkflowDefinition>>;
+export type PlatformWorkflowCreateInput = {
+  title: Scalars["String"];
+  type: Scalars["String"];
+  version: Scalars["String"];
+};
+
+export type PlatformWorkflowQueryInput = {
+  id?: InputMaybe<Scalars["String"]>;
+  status?: InputMaybe<Scalars["String"]>;
 };
 
 export type PlatformWorkflowResult = {
@@ -3535,44 +3710,48 @@ export type PlatformWorkflowResult = {
   items: Array<Maybe<PlatformWorkflow>>;
 };
 
-export type PlatformWorkflowStateResult = {
-  __typename?: "PlatformWorkflowStateResult";
-  count?: Maybe<Scalars["Int"]>;
-  items: Array<Maybe<PlatformStateWorkflow>>;
-};
-
-export enum PlatformWorkflowStateStatus {
-  completed = "completed",
-  error = "error",
-  inProgress = "inProgress",
-  notStarted = "notStarted",
-}
-
-export enum PlatformWorkflowStatus {
-  completed = "completed",
-  inProgress = "inProgress",
-}
-
-export type PlatformWorkflowStep = {
-  __typename?: "PlatformWorkflowStep";
-  actionLabels?: Maybe<PlatformStepActionLabels>;
-  requiresStepId?: Maybe<Array<Maybe<Scalars["String"]>>>;
-  step?: Maybe<Scalars["Int"]>;
+export type PlatformWorkflowStepState = {
+  __typename?: "PlatformWorkflowStepState";
+  createDate: Scalars["DateTime"];
+  organizationId: Scalars["String"];
+  state?: Maybe<Scalars["String"]>;
   stepId: Scalars["String"];
-  stepType: Scalars["String"];
-  steps?: Maybe<Array<Maybe<PlatformWorkflowStep>>>;
-  title: Scalars["String"];
-  userActions?: Maybe<Array<Maybe<PlatformStepUserAction>>>;
+  stepStatus: Scalars["String"];
+  stepVersion: Scalars["String"];
+  updateDate?: Maybe<Scalars["DateTime"]>;
+  userId: Scalars["String"];
+  workflowId: Scalars["String"];
 };
 
-export enum PlatformWorkflowStepType {
-  gateStep = "gateStep",
-  step = "step",
-}
+export type PlatformWorkflowStepStateCreateInput = {
+  state?: InputMaybe<Scalars["String"]>;
+  stepId: Scalars["String"];
+  stepVersion: Scalars["String"];
+  workflowId: Scalars["String"];
+};
 
-export enum PlatformWorkflowType {
-  earnings = "earnings",
-}
+export type PlatformWorkflowStepStateQueryInput = {
+  stepId?: InputMaybe<Scalars["String"]>;
+  workflowId: Scalars["String"];
+};
+
+export type PlatformWorkflowStepStateResult = {
+  __typename?: "PlatformWorkflowStepStateResult";
+  count?: Maybe<Scalars["Int"]>;
+  items: Array<Maybe<PlatformWorkflowStepState>>;
+};
+
+export type PlatformWorkflowStepStateUpdateInput = {
+  state?: InputMaybe<Scalars["String"]>;
+  stepId: Scalars["String"];
+  stepStatus?: InputMaybe<Scalars["String"]>;
+  workflowId: Scalars["String"];
+};
+
+export type PlatformWorkflowUpdateInput = {
+  id: Scalars["String"];
+  status: Scalars["String"];
+};
 
 export type PresentationResult = {
   __typename?: "PresentationResult";
@@ -3687,8 +3866,8 @@ export type Query = {
    */
   engagementTrackedSite?: Maybe<TrackedSitesResult>;
   /** This node sends the weekly digest email to a certain user. Used for testing purposes and for any possible failures in the scheduled job */
-  engagementWeeklyEmail?: Maybe<SentEmailResult>;
-  /** Returns a list of one or more Notes created by users for a given entity.  */
+  engagementWeeklyEmail?: Maybe<SentNotificationResult>;
+  /** Returns a list of one or more Notes created by users for a given entity. */
   entityNote?: Maybe<EntityNoteResponse>;
   entitySearch?: Maybe<EntitySearchResult>;
   event?: Maybe<EventResult>;
@@ -3700,6 +3879,10 @@ export type Query = {
   eventMetricsAggregate?: Maybe<EventMetricsAggregateResult>;
   faq?: Maybe<FaqResult>;
   faqById?: Maybe<StudioFaqDto>;
+  /**
+   * This node is responsible for returning general fund information.
+   * @meta permission ownership::view:entity
+   */
   fund?: Maybe<FundResult>;
   /** Returns user connection to the vendor's email API and account info used to connect */
   getEmailUser?: Maybe<GetEmailUserResponse>;
@@ -3717,9 +3900,28 @@ export type Query = {
    * @meta permission engagement-analytics::view:engagement
    */
   insiderEngagement?: Maybe<InsiderEngagementResult>;
+  /**
+   * This node is responsible for returning all the history and current institution position(ownership) data.
+   * Note: the argument identifier will be deprecated soon, please use q4SecurityId instead
+   * @meta permission ownership::view:holdings
+   */
   instHolding?: Maybe<InstHoldingResult>;
+  /**
+   * This node is responsible for returning the current institution position(ownership) and sector information.
+   * Note: the argument identifier will be deprecated soon, please use q4SecurityId instead
+   * @meta permission ownership::view:holdings
+   */
   instHoldingCurrent?: Maybe<InstHoldingCurrentResult>;
+  /**
+   * This node is responsible for returning aggregated institution position(ownership) data based on the given aggregated and sort fields.
+   * example: aggrField = SECTOR, sortBy = CURRENT
+   * @meta permission ownership::view:holdings
+   */
   instHoldingCurrentAggregate?: Maybe<InstHoldingCurrentAggregateResult>;
+  /**
+   * This node is responsible for returning general institution information.
+   * @meta permission ownership::view:entity
+   */
   institution?: Maybe<InstitutionResult>;
   /** Returns a list of one or more Interactions with an Institution or Contact */
   interaction?: Maybe<InteractionResponse>;
@@ -3742,20 +3944,22 @@ export type Query = {
   organizationsManagedByUser?: Maybe<OrganizationList>;
   people?: Maybe<PersonResult>;
   /**
-   * Returns a list of Workflow entities
+   * Retrieves a list of Workflow entities based on the Workflow Definition.
+   * A workflow definition describes the main construct used by the workflow orchestrator.
    * @meta permission workflow::create:workflow
    */
   platformWorkflow?: Maybe<PlatformWorkflowResult>;
-  platformWorkflowDefinition?: Maybe<PlatformWorkflowDefinitionResult>;
   /**
-   * State management to keep track of an organization’s progression throughout the workflow
+   * Retrieves a list of Workflow Step State entities.
+   * Each step within a workflow has its distinct state which evolves as users engage with the step.
    * @meta permission workflow::create:workflow
    */
-  platformWorkflowState?: Maybe<PlatformWorkflowStateResult>;
+  platformWorkflowStepState?: Maybe<PlatformWorkflowStepStateResult>;
   presentationById?: Maybe<StudioPresentationDto>;
   presentations?: Maybe<PresentationResult>;
   pressReleaseById?: Maybe<StudioPressReleaseDto>;
   pressReleases?: Maybe<PressReleaseResult>;
+  /** This node is responsible for returning Purchasing Power information. */
   purchasingPower?: Maybe<PurchasingPowerResult>;
   request?: Maybe<RequestResult>;
   requestGetChangeSummary?: Maybe<ChangeSummary>;
@@ -3764,6 +3968,8 @@ export type Query = {
   siteDetails?: Maybe<SiteDetailsDto>;
   stock?: Maybe<StockResult>;
   tagTemplates?: Maybe<TagTemplateCollectionDto>;
+  /** This node sends the timely alert to a certain user. Used for testing purposes and for any possible failures in the scheduled job */
+  timelyAlertNotification?: Maybe<SentNotificationResult>;
   timezones?: Maybe<TimezoneResult>;
   /**
    * This node is responsible for returning list of top download files data for Organization or institution in given time period.
@@ -4160,6 +4366,7 @@ export type QueryGetUserLoginStatusArgs = {
 };
 
 export type QueryInsiderEngagementArgs = {
+  contactId?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
   entityId: Scalars["String"];
   limit?: InputMaybe<Scalars["Int"]>;
   page?: InputMaybe<Scalars["Int"]>;
@@ -4174,9 +4381,13 @@ export type QueryInstHoldingArgs = {
 };
 
 export type QueryInstHoldingCurrentArgs = {
-  entityId: Array<Scalars["String"]>;
+  entityId?: InputMaybe<Array<Scalars["String"]>>;
   identifier?: InputMaybe<Array<Scalars["String"]>>;
+  limit?: InputMaybe<Scalars["Int"]>;
+  page?: InputMaybe<Scalars["Int"]>;
   q4SecurityId?: InputMaybe<Scalars["String"]>;
+  sortBy?: InputMaybe<Scalars["String"]>;
+  sortDir?: InputMaybe<Sort_Dir>;
 };
 
 export type QueryInstHoldingCurrentAggregateArgs = {
@@ -4189,9 +4400,11 @@ export type QueryInstHoldingCurrentAggregateArgs = {
 
 export type QueryInstitutionArgs = {
   currencyCode?: InputMaybe<Scalars["String"]>;
-  entityId: Array<Scalars["String"]>;
+  entityId?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  includeCustomInstitutions?: InputMaybe<Scalars["Boolean"]>;
   limit?: InputMaybe<Scalars["Int"]>;
   page?: InputMaybe<Scalars["Int"]>;
+  search?: InputMaybe<InstitutionSearch>;
 };
 
 export type QueryInteractionArgs = {
@@ -4232,6 +4445,7 @@ export type QueryOrganizationSitesArgs = {
 
 export type QueryOrganizationTrialsArgs = {
   expired?: InputMaybe<Scalars["Boolean"]>;
+  organizationId?: InputMaybe<Scalars["String"]>;
   trialType?: InputMaybe<Scalars["String"]>;
 };
 
@@ -4252,18 +4466,11 @@ export type QueryPeopleArgs = {
 };
 
 export type QueryPlatformWorkflowArgs = {
-  status?: InputMaybe<PlatformWorkflowStatus>;
-  workflowId?: InputMaybe<Scalars["String"]>;
+  input?: InputMaybe<PlatformWorkflowQueryInput>;
 };
 
-export type QueryPlatformWorkflowDefinitionArgs = {
-  version: Scalars["String"];
-  workflowType: PlatformWorkflowType;
-};
-
-export type QueryPlatformWorkflowStateArgs = {
-  stepId?: InputMaybe<Scalars["String"]>;
-  workflowId: Scalars["String"];
+export type QueryPlatformWorkflowStepStateArgs = {
+  input: PlatformWorkflowStepStateQueryInput;
 };
 
 export type QueryPresentationByIdArgs = {
@@ -4687,8 +4894,8 @@ export type SendEmailResponse = {
   success: Scalars["Boolean"];
 };
 
-export type SentEmailResult = {
-  __typename?: "SentEmailResult";
+export type SentNotificationResult = {
+  __typename?: "SentNotificationResult";
   reason?: Maybe<Scalars["String"]>;
   success?: Maybe<Scalars["Boolean"]>;
 };
@@ -6289,6 +6496,26 @@ export type UpdateEntityNoteResponse = {
   count?: Maybe<Scalars["Int"]>;
 };
 
+export type UpdateInstitutionInput = {
+  addressLine1?: InputMaybe<Scalars["String"]>;
+  city?: InputMaybe<Scalars["String"]>;
+  countryName?: InputMaybe<Scalars["String"]>;
+  entityId: Scalars["String"];
+  entityName?: InputMaybe<Scalars["String"]>;
+  entityType?: InputMaybe<Scalars["String"]>;
+  phone?: InputMaybe<Scalars["String"]>;
+  postalCode?: InputMaybe<Scalars["String"]>;
+  stateProvinceName?: InputMaybe<Scalars["String"]>;
+  style?: InputMaybe<Scalars["String"]>;
+  turnover?: InputMaybe<Scalars["String"]>;
+};
+
+export type UpdateInstitutionInputResult = {
+  __typename?: "UpdateInstitutionInputResult";
+  count?: Maybe<Scalars["Int"]>;
+  items?: Maybe<Array<Maybe<InstitutionUpdateResultDto>>>;
+};
+
 export type UpdateInteractionResponse = {
   __typename?: "UpdateInteractionResponse";
   count?: Maybe<Scalars["Int"]>;
@@ -6754,23 +6981,6 @@ export type UpdateTeamMutationMutation = {
   } | null;
 };
 
-export type OrganizationTrialsQueryVariables = Exact<{
-  trialType?: InputMaybe<Scalars["String"]>;
-  expired?: InputMaybe<Scalars["Boolean"]>;
-}>;
-
-export type OrganizationTrialsQuery = {
-  __typename?: "Query";
-  organizationTrials?: Array<{
-    __typename?: "Trial";
-    trialType: string;
-    trialName?: string | null;
-    entitlement?: string | null;
-    product?: string | null;
-    expiryDate?: string | null;
-  } | null> | null;
-};
-
 export type CreateTrialMutationVariables = Exact<{
   trialType: Scalars["String"];
 }>;
@@ -6785,6 +6995,24 @@ export type CreateTrialMutation = {
     trialName?: string | null;
     trialType: string;
   } | null;
+};
+
+export type OrganizationTrialsQueryVariables = Exact<{
+  trialType?: InputMaybe<Scalars["String"]>;
+  expired?: InputMaybe<Scalars["Boolean"]>;
+  organizationId?: InputMaybe<Scalars["String"]>;
+}>;
+
+export type OrganizationTrialsQuery = {
+  __typename?: "Query";
+  organizationTrials?: Array<{
+    __typename?: "Trial";
+    trialType: string;
+    trialName?: string | null;
+    entitlement?: string | null;
+    product?: string | null;
+    expiryDate?: string | null;
+  } | null> | null;
 };
 
 export type MeQueryVariables = Exact<{ [key: string]: never }>;
@@ -7378,51 +7606,6 @@ export type UpdateTeamMutationMutationOptions = Apollo.BaseMutationOptions<
   UpdateTeamMutationMutation,
   UpdateTeamMutationMutationVariables
 >;
-
-export const OrganizationTrialsDocument = gql`
-  query OrganizationTrials($trialType: String, $expired: Boolean) {
-    organizationTrials(trialType: $trialType, expired: $expired) {
-      trialType
-      trialName
-      entitlement
-      product
-      expiryDate
-    }
-  }
-`;
-
-/**
- * __useOrganizationTrialsQuery__
- *
- * To run a query within a React component, call `useOrganizationTrialsQuery` and pass it any options that fit your needs.
- * When your component renders, `useOrganizationTrialsQuery` returns an object from Apollo Client that contains loading, error, and data properties
- * you can use to render your UI.
- *
- * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
- *
- * @example
- * const { data, loading, error } = useOrganizationTrialsQuery({
- *   variables: {
- *      trialType: // value for 'trialType'
- *      expired: // value for 'expired'
- *   },
- * });
- */
-export function useOrganizationTrialsQuery(
-  baseOptions?: Apollo.QueryHookOptions<OrganizationTrialsQuery, OrganizationTrialsQueryVariables>,
-) {
-  const options = { ...defaultOptions, ...baseOptions };
-  return Apollo.useQuery<OrganizationTrialsQuery, OrganizationTrialsQueryVariables>(OrganizationTrialsDocument, options);
-}
-export function useOrganizationTrialsLazyQuery(
-  baseOptions?: Apollo.LazyQueryHookOptions<OrganizationTrialsQuery, OrganizationTrialsQueryVariables>,
-) {
-  const options = { ...defaultOptions, ...baseOptions };
-  return Apollo.useLazyQuery<OrganizationTrialsQuery, OrganizationTrialsQueryVariables>(OrganizationTrialsDocument, options);
-}
-export type OrganizationTrialsQueryHookResult = ReturnType<typeof useOrganizationTrialsQuery>;
-export type OrganizationTrialsLazyQueryHookResult = ReturnType<typeof useOrganizationTrialsLazyQuery>;
-export type OrganizationTrialsQueryResult = Apollo.QueryResult<OrganizationTrialsQuery, OrganizationTrialsQueryVariables>;
 export const CreateTrialDocument = gql`
   mutation createTrial($trialType: String!) {
     createTrial(trialType: $trialType) {
@@ -7434,7 +7617,6 @@ export const CreateTrialDocument = gql`
     }
   }
 `;
-
 export type CreateTrialMutationFn = Apollo.MutationFunction<CreateTrialMutation, CreateTrialMutationVariables>;
 
 /**
@@ -7463,6 +7645,51 @@ export function useCreateTrialMutation(
 export type CreateTrialMutationHookResult = ReturnType<typeof useCreateTrialMutation>;
 export type CreateTrialMutationResult = Apollo.MutationResult<CreateTrialMutation>;
 export type CreateTrialMutationOptions = Apollo.BaseMutationOptions<CreateTrialMutation, CreateTrialMutationVariables>;
+export const OrganizationTrialsDocument = gql`
+  query OrganizationTrials($trialType: String, $expired: Boolean, $organizationId: String) {
+    organizationTrials(trialType: $trialType, expired: $expired, organizationId: $organizationId) {
+      trialType
+      trialName
+      entitlement
+      product
+      expiryDate
+    }
+  }
+`;
+
+/**
+ * __useOrganizationTrialsQuery__
+ *
+ * To run a query within a React component, call `useOrganizationTrialsQuery` and pass it any options that fit your needs.
+ * When your component renders, `useOrganizationTrialsQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useOrganizationTrialsQuery({
+ *   variables: {
+ *      trialType: // value for 'trialType'
+ *      expired: // value for 'expired'
+ *      organizationId: // value for 'organizationId'
+ *   },
+ * });
+ */
+export function useOrganizationTrialsQuery(
+  baseOptions?: Apollo.QueryHookOptions<OrganizationTrialsQuery, OrganizationTrialsQueryVariables>,
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useQuery<OrganizationTrialsQuery, OrganizationTrialsQueryVariables>(OrganizationTrialsDocument, options);
+}
+export function useOrganizationTrialsLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<OrganizationTrialsQuery, OrganizationTrialsQueryVariables>,
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useLazyQuery<OrganizationTrialsQuery, OrganizationTrialsQueryVariables>(OrganizationTrialsDocument, options);
+}
+export type OrganizationTrialsQueryHookResult = ReturnType<typeof useOrganizationTrialsQuery>;
+export type OrganizationTrialsLazyQueryHookResult = ReturnType<typeof useOrganizationTrialsLazyQuery>;
+export type OrganizationTrialsQueryResult = Apollo.QueryResult<OrganizationTrialsQuery, OrganizationTrialsQueryVariables>;
 export const MeDocument = gql`
   query Me {
     me {

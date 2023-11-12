@@ -159,8 +159,8 @@ describe("AdminEntityTable Component", () => {
     const onClick = jest.fn();
     const props: EntityTableProps<Organization> = {
       ...mockProps,
-      // items: null,
-      pageRefs: undefined,
+      items: null,
+      pageRefs: null,
       placeholderProps: {
         image: AddUserImage,
         actions: [

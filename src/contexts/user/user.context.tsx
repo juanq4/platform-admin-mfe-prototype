@@ -3,7 +3,6 @@ import type { IdToken } from "@auth0/auth0-react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { createContext, useCallback, useEffect, useMemo, useState } from "react";
 import { useHistory } from "react-router-dom";
-import { managedOrganizationIdKey } from "../../components/AuthWrapper/AuthWrapper.definition";
 import { TokenClaim } from "../../definitions/token.definition";
 import { useOrganizationQuery, useUserQuery } from "../../schemas/generated/graphql";
 // import { throwError } from "../../utils/error/error.utils";
@@ -18,7 +17,7 @@ export const UserProvider = (props: UserProviderProps): JSX.Element => {
   const history = useHistory();
 
   const [managedOrganizationId, setManagedOrganizationId] = useState<string>(
-    localStorage.getItem(managedOrganizationIdKey) || null,
+    localStorage.getItem("managedOrganizationId") || null,
   );
   const [claims, setClaims] = useState<IdToken | undefined>();
   const [isManagedOrganizationLoading, setIsManagedOrganizationLoading] = useState<boolean>(true);
@@ -62,7 +61,7 @@ export const UserProvider = (props: UserProviderProps): JSX.Element => {
   );
 
   useEffect(() => {
-    localStorage.setItem(managedOrganizationIdKey, managedOrganizationId);
+    localStorage.setItem("managedOrganizationId", managedOrganizationId);
   }, [managedOrganizationId]);
 
   useEffect(() => {
@@ -84,7 +83,6 @@ export const UserProvider = (props: UserProviderProps): JSX.Element => {
   }, [organization?.data?.organization]);
 
   if (user?.error || organization?.error) {
-    console.log("aja");
     // throwError("Account", new Error(user?.error?.message || organization?.error?.message));
     throw new Error("Account", { cause: user?.error?.message || organization?.error?.message });
   }

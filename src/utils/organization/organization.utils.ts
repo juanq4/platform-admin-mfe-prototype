@@ -22,7 +22,11 @@ import { hasRequiredPermission } from "../permission/permission.utils";
 import { OrganizationsUserEditDefault as ViewDefaults } from "./organization.definition";
 
 export function getOrganizationEditRoute(id: Organization["id"]): string {
-  return generatePath(AdminRoutePath.OrganizationsEdit, { [RoutePathIdLabel.Id]: id });
+  const path = generatePath(AdminRoutePath.OrganizationsEdit, { [RoutePathIdLabel.Id]: id });
+  //return generatePath(AdminRoutePath.OrganizationsEdit, { [RoutePathIdLabel.Id]: id });
+  console.log("path", path);
+  // return path;
+  return "asdasdasdsd";
 }
 
 export function getOrganizationViewRoute(id: Organization["id"]): string {

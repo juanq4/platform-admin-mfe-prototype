@@ -1,3 +1,4 @@
+import React from "react";
 import { render, screen } from "../../../utils/testUtils";
 import { NotFoundError } from "./NotFoundError.component";
 import { noAccessErrorSubtitle, notFoundErrorTitle } from "./NotFoundError.definition";
@@ -7,7 +8,7 @@ jest.mock("react-router-dom", () => {
   return {
     ...orginal,
     useHistory: () => ({
-      location: { pathname: "/" },
+      location: { pathname: "/admin" },
       goBack: jest.fn(),
     }),
   };

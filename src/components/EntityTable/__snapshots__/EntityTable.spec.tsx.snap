@@ -268,6 +268,42 @@ exports[`AdminEntityTable Component 1271121: [Given] there are no items [And] th
 </div>
 `;
 
+exports[`AdminEntityTable Component 1271124: [Given] there no items [And] a placeholder is provided [Expect] the placeholder to be present [And] the placeholder action button clickable 1`] = `
+<div
+  class="nui-layout nui-placeholder-content nui-placeholder-content--transparent nui-layout--transparent nui-layout--height-full nui-layout--padding-default nui-layout--flex nui-layout--justify-center nui-layout--align-center nui-layout--v1"
+  id="MockIdPlaceholder"
+>
+  <div
+    class="nui-placeholder-content_inner"
+  >
+    <h2
+      class="nui-placeholder-content_title"
+      id="MockIdPlaceholderTitle"
+    />
+    <div
+      class="nui-placeholder-content_actions"
+    >
+      <button
+        class="nui-button nui-button--q4-blue nui-button--v1"
+        id="mockPlaceholderButton"
+        type="button"
+      >
+        <i
+          class="nui-button_icon q4i-add-4pt"
+          id="mockPlaceholderButtonIcon"
+        />
+        <span
+          class="nui-button_label"
+          id="mockPlaceholderButtonLabel"
+        >
+          Add User
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`AdminEntityTable Component 7386005: [Given] no props are provided [Expect] the component to render 1`] = `
 @keyframes animation-0 {
   0% {

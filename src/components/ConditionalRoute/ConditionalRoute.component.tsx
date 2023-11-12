@@ -1,4 +1,3 @@
-import React from "react";
 import { Route } from "react-router-dom";
 import { NotFoundError } from "../Errors/NotFoundError/NotFoundError.component";
 import type { ConditionalRouteProps } from "./ConditionalRoute.definition";

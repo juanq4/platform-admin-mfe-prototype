@@ -48,7 +48,6 @@ const roleEditPermissionRules = [
 ];
 
 const AdminUserFormBase = (props: AdminUserFormProps): JSX.Element => {
-  console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AdminUserFormBase");
   const {
     id,
     user,
@@ -327,7 +326,7 @@ const AdminUserFormBase = (props: AdminUserFormProps): JSX.Element => {
       </>
     );
   }
-  console.log("idModel.modal.id", idModel.modal.id);
+
   return (
     <div id={idModel.id}>
       <Modal

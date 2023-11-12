@@ -11,9 +11,9 @@ import { OrganizationsLink } from "../AdminContent/Organizations/Details/Link/Or
 import { OrganizationDetails } from "../AdminContent/Organizations/Details/OrganizationDetails.component";
 import { OrganizationTeamCreate } from "../AdminContent/Organizations/Details/Team/Create/OrganizationTeamCreate.component";
 import { OrganizationTeamEdit } from "../AdminContent/Organizations/Details/Team/Edit/OrganizationTeamEdit.component";
+import { OrganizationsUserCreate } from "../AdminContent/Organizations/Details/User/Create/OrganizationsUserCreate.component";
 import { OrganizationsUserEdit } from "../AdminContent/Organizations/Details/User/Edit/OrganizationsUserEdit.component";
 import { Organizations } from "../AdminContent/Organizations/Organizations.component";
-import { OrganizationsUserCreate } from "../AdminContent/User/Create/OrganizationsUserCreate.component";
 import { UsersCreate } from "../AdminContent/User/Create/UsersCreate.component";
 import { UsersEdit } from "../AdminContent/User/Edit/UserEdit.component";
 import { Users } from "../AdminContent/User/Users.component";

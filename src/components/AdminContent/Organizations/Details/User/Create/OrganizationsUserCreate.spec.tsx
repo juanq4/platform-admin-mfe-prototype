@@ -29,6 +29,7 @@ jest.mock("./OrganizationsUserCreate.definition", () => {
     OrganizationUserCreateDefaultUser: MockUser,
   };
 });
+console.log(getOrganizationEditRoute(organizationId));
 
 testUserCreate(
   "Organizations User Create",
