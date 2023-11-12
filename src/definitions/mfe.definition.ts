@@ -3,7 +3,7 @@ import { createMemoryHistory } from "history";
 
 export const DefaultMfeProps: MfeProps = {
   context: {
-    userId: "home-user-id",
+    userId: "admin-user-id",
     organization: {
       id: "org",
       name: "org",
@@ -18,10 +18,10 @@ export const DefaultMfeProps: MfeProps = {
     entitlements: [],
     claims: {
       __raw: "token",
-      email: "home_user@q4inc.com",
+      email: "admin_user@q4inc.com",
       email_verified: false,
-      name: "home user",
-      nickname: "home",
+      name: "admin user",
+      nickname: "admin",
     },
   },
   token: "token",
@@ -31,8 +31,8 @@ export const DefaultMfeProps: MfeProps = {
   brand: "classic",
   user: {
     active: true,
-    email: "home_user@q4inc.com",
-    firstName: "home",
+    email: "admin_user@q4inc.com",
+    firstName: "admin",
     friendlyName: "user",
     id: "user-id",
     lastName: "user",

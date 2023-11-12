@@ -1,9 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires*/
 const CopyPlugin = require("copy-webpack-plugin");
-const webpack = require("webpack");
+const { container, DefinePlugin } = require("webpack");
 const moduleFederationConfig = require("./webpack.moduleFederationConfig");
-
-const { ModuleFederationPlugin } = webpack.container;
 
 const environmentConfig = "environment.js";
 
@@ -36,6 +34,8 @@ module.exports = {
           {
             loader: "sass-loader",
             options: {
+              // data: '@import "path/to/global.scss";',
+              // data: '@import "/node_modules/@q4/nimbus-ui/dist/v1/variables"; @import "/node_modules/@q4/nimbus-ui/dist/v2/variables";',
               sourceMap: true, // this is required for the resolve-url-loader
             },
           },
@@ -57,7 +57,6 @@ module.exports = {
         test: /\.svg$/i,
         issuer: /\.[jt]sx?$/,
         resourceQuery: /inline/,
-
         use: ["@svgr/webpack"],
       },
     ],
@@ -70,8 +69,8 @@ module.exports = {
     new CopyPlugin({
       patterns: [{ from: `config/env/${environmentConfig}`, to: environmentConfig }],
     }),
-    new ModuleFederationPlugin(moduleFederationConfig),
-    new webpack.DefinePlugin({
+    new container.ModuleFederationPlugin(moduleFederationConfig),
+    new DefinePlugin({
       "process.env": JSON.stringify(process.env),
     }),
   ],

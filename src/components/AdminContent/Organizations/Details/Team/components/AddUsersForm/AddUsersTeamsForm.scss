@@ -1,4 +1,5 @@
-@import "../../../../../../styles/scss/variables";
+// @import "../../../../../../styles/scss/variables";
+@import "/src/styles/scss/variables";
 
 .add-users-teams-form {
   .ag-theme-balham {
@@ -13,10 +14,10 @@
     }
 
     .ag-checkbox-input-wrapper.ag-checked:after {
-      color: $white
+      color: $white;
     }
 
-    .ag-checkbox-input-wrapper{
+    .ag-checkbox-input-wrapper {
       background: transparent;
       width: gux(4);
       height: gux(4);
@@ -30,7 +31,7 @@
         border-radius: gux(0.8);
 
         .ag-checkbox-input-wrapper.ag-checked:after {
-          color: $primary500
+          color: $primary500;
         }
       }
     }
