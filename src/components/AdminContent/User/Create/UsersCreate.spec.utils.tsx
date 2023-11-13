@@ -2,33 +2,33 @@ import { SelectClassName, ToastContainer } from "@q4/nimbus-ui";
 import { OrganizationType } from "@q4/platform-definitions";
 import { MemoryRouter } from "react-router-dom";
 import { CombinedError } from "urql";
-import { Auth0HookMock, MockAuth0Token } from "../../__mocks__/contexts/Auth0Context.mock";
-import { MockOrganization1 } from "../../__mocks__/data/organizations.mock";
-import { MockUser } from "../../__mocks__/data/users.mock";
-import { AdminContent } from "../../components/AdminContent/AdminContent.component";
-import { OrganizationDetailsMode } from "../../components/AdminContent/Organizations/Details/OrganizationDetails.definition";
-import type { UsersCreateViewIdModel } from "../../components/AdminContent/User/Create/UsersCreate.definition";
-import { getAdminFormUser } from "../../components/Forms/User/AdminUserForm.utils";
-import { AccessRouteMap, PermissionCollection } from "../../configurations/access.configuration";
-import type { AdminRoutePath } from "../../configurations/navigation.configuration";
-import { OrganizationClaim } from "../../configurations/q4-platform-common.configuration";
-import type { TupleOf } from "../../definitions/typescript.definition";
-import { useClaims } from "../../hooks/useClaims/useClaims.hook";
-import { useIdTokenClaims } from "../../hooks/useIdTokenClaims/useIdTokenClaims.hook";
-import { useOrganizationQuery } from "../../hooks/useOrganization/useOrganization.hook";
-import { useUserCreate } from "../../hooks/useUser/useUser.hook";
-import { getOrganizationDetailsMode } from "../organization/organization.utils";
-import { fireEvent, render, screen, waitFor } from "../testUtils";
+import { Auth0HookMock, MockAuth0Token } from "../../../../__mocks__/contexts/Auth0Context.mock";
+import { MockOrganization1 } from "../../../../__mocks__/data/organizations.mock";
+import { MockUser } from "../../../../__mocks__/data/users.mock";
+import { AccessRouteMap, PermissionCollection } from "../../../../configurations/access.configuration";
+import type { AdminRoutePath } from "../../../../configurations/navigation.configuration";
+import { OrganizationClaim } from "../../../../configurations/q4-platform-common.configuration";
+import type { TupleOf } from "../../../../definitions/typescript.definition";
+import { useClaims } from "../../../../hooks/useClaims/useClaims.hook";
+import { useIdTokenClaims } from "../../../../hooks/useIdTokenClaims/useIdTokenClaims.hook";
+import { useOrganizationQuery } from "../../../../hooks/useOrganization/useOrganization.hook";
+import { useUserCreate } from "../../../../hooks/useUser/useUser.hook";
+import { getOrganizationDetailsMode } from "../../../../utils/organization/organization.utils";
+import { fireEvent, render, screen, waitFor } from "../../../../utils/testUtils";
+import { getAdminFormUser } from "../../../Forms/User/AdminUserForm.utils";
+import { AdminContent } from "../../AdminContent.component";
+import { OrganizationDetailsMode } from "../../Organizations/Details/OrganizationDetails.definition";
+import type { UsersCreateViewIdModel } from "./UsersCreate.definition";
 
-jest.mock("../../hooks/useClaims/useClaims.hook");
+jest.mock("../../../../hooks/useClaims/useClaims.hook");
 const mockUseClaims = useClaims as jest.Mock;
-jest.mock("../../hooks/useIdTokenClaims/useIdTokenClaims.hook");
+jest.mock("../../../../hooks/useIdTokenClaims/useIdTokenClaims.hook");
 const mockUseIdTokenClaims = useIdTokenClaims as jest.Mock;
-jest.mock("../../hooks/useUser/useUser.hook");
+jest.mock("../../../../hooks/useUser/useUser.hook");
 const mockUseUserCreate = useUserCreate as jest.Mock;
-jest.mock("../../hooks/useOrganization/useOrganization.hook");
+jest.mock("../../../../hooks/useOrganization/useOrganization.hook");
 const mockUseOrganizationQuery = useOrganizationQuery as jest.Mock;
-jest.mock("../organization/organization.utils");
+jest.mock("../../../../utils/organization/organization.utils");
 const mockGetOrganizationDetailsMode = getOrganizationDetailsMode as jest.Mock;
 
 const testCount = 8;
@@ -126,9 +126,8 @@ export function testUserCreate(
       expect(element).toBeInTheDocument();
     });
 
-    test.only(`${testIds[2]}: [Given] I am on the ${componentMessage} [And] I click the modal close button [Expect] to be redirected to the correct route`, async () => {
+    test(`${testIds[2]}: [Given] I am on the ${componentMessage} [And] I click the modal close button [Expect] to be redirected to the correct route`, async () => {
       customRender();
-      console.log("~~~~~~~~~ viewIdModel.form.modal.exitIcon", viewIdModel.form.modal.exitIcon);
       const exit = screen.getByTestId(viewIdModel.form.modal.exitIcon);
       expect(exit).toBeInTheDocument();
 

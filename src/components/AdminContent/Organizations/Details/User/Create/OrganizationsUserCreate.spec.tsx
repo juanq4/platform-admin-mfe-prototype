@@ -2,7 +2,7 @@ import { MockOrganization1 } from "../../../../../../__mocks__/data/organization
 import { MockUser } from "../../../../../../__mocks__/data/users.mock";
 import { AdminRoutePath } from "../../../../../../configurations/navigation.configuration";
 import { getOrganizationEditRoute } from "../../../../../../utils/organization/organization.utils";
-import { testUserCreate } from "../../../../../../utils/users/usersCreate.spec.utils";
+import { testUserCreate } from "../../../../User/Create/UsersCreate.spec.utils";
 import { OrganizationsUserCreateViewIdModel } from "./OrganizationsUserCreate.definition";
 
 const organizationId = MockOrganization1.id;
@@ -29,7 +29,6 @@ jest.mock("./OrganizationsUserCreate.definition", () => {
     OrganizationUserCreateDefaultUser: MockUser,
   };
 });
-console.log(getOrganizationEditRoute(organizationId));
 
 testUserCreate(
   "Organizations User Create",

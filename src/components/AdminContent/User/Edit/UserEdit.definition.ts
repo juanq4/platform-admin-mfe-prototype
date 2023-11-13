@@ -1,4 +1,5 @@
 import { IdModelBase, isNullOrWhiteSpace } from "@q4/nimbus-ui";
+import type { RoutePathIdLabel } from "../../../../configurations/navigation.configuration";
 import { AdminRoutePath } from "../../../../configurations/navigation.configuration";
 import type { User } from "../../../../definitions/user.definition";
 import { AdminUserFormIdModel } from "../../../Forms/User/AdminUserForm.definition";
@@ -27,3 +28,9 @@ class ViewIdModel extends IdModelBase {
 }
 
 export const UserEditViewIdModel = new ViewIdModel("UserEdit");
+
+export interface UsersEditSpecRouteConfig {
+  route: string;
+  routeQuery?: Partial<Record<RoutePathIdLabel, string>>;
+  returnRoute: string;
+}

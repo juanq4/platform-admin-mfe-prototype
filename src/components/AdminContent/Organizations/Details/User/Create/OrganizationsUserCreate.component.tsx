@@ -41,8 +41,6 @@ const OrganizationsUserCreateBase = (): JSX.Element => {
     if (isNullOrWhiteSpace(organizationId)) return;
 
     if (getOrganizationDetailsMode(claims.permissions, organizationId) == OrganizationDetailsMode.Edit) {
-      console.log("here");
-      console.log(getOrganizationEditRoute(organizationId));
       history.push(getOrganizationEditRoute(organizationId));
     } else {
       history.push(getOrganizationViewRoute(organizationId));

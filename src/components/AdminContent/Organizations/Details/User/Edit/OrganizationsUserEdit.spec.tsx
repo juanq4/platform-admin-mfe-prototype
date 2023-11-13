@@ -3,7 +3,7 @@ import { AdminRoutePath, RoutePathIdLabel } from "../../../../../../configuratio
 import { OrganizationsUserEditDefault } from "../../../../../../utils/organization/organization.definition";
 import { getOrganizationEditRoute } from "../../../../../../utils/organization/organization.utils";
 import type { UsersEditSpecRouteConfig as RouteConfig } from "../../../../../../utils/users/usersEdit.definition";
-import { testUserEdit } from "../../../../../../utils/users/usersEdit.spec.utils";
+import { testUserEdit } from "../../../../User/Edit/UsersEdit.spec.utils";
 import { OrganizationsUserEditViewIdModel } from "./OrganizationsUserEdit.definition";
 
 const { organizationId } = MockUserWithId;

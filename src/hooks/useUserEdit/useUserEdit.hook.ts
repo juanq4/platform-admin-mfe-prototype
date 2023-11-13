@@ -17,8 +17,8 @@ export const useUserEdit = (userId: User["id"], organizationId: Organization["id
   const { cachedVariables } = useAdminData();
 
   const client = useApolloClient();
-
-  const [updateUserMutation, { loading: saving }] = useUpdateUserMutation({});
+  const aja = useUpdateUserMutation({});
+  const [updateUserMutation, { loading: saving }] = aja;
 
   const pauseQuery = useRef(isNullOrWhiteSpace(userId) || isNullOrWhiteSpace(organizationId));
   const [{ fetching: loadingUserData, data: userData }] = useUserQuery({
@@ -35,8 +35,6 @@ export const useUserEdit = (userId: User["id"], organizationId: Organization["id
   }, [currentUser, setUser]);
 
   async function handleSave(updated: Partial<ApolloUser>): ReturnType<AdminUserFormProps["onSave"]> {
-    console.log("updated user: ", updated);
-
     try {
       await updateUserMutation({
         variables: {

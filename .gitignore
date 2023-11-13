@@ -12,9 +12,10 @@ node_modules/
 .idea
 
 # testrail report
-testrail-report.json
 nightwatch-testrail-report.json
+testrail-report.json
 testrail-*-*-report.json
+jest-testrail-report.json
 
 logs
 
