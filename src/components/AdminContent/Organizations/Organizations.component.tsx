@@ -7,7 +7,7 @@ import { AdminRoutePath, RoutePathIdLabel } from "../../../configurations/naviga
 import { useAdminLoadingContext } from "../../../contexts/loading/useLoadingContext.hook";
 import type { Organization } from "../../../definitions/organization.definition";
 import { useClaims } from "../../../hooks/useClaims/useClaims.hook";
-import { OrganizationsQueryVariables } from "../../../hooks/useOrganization/useOrganization.definition";
+import type { OrganizationsQueryVariables } from "../../../hooks/useOrganization/useOrganization.definition";
 import { usePagination } from "../../../hooks/usePagination/usePagination.hook";
 import { QueryPaginationDefault } from "../../../hooks/useQuery/useQuery.definition";
 import { useSearch } from "../../../hooks/useSearch/useSearch.hook";

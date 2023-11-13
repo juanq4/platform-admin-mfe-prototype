@@ -7,7 +7,7 @@ import { AdminRoutePath } from "../../configurations/navigation.configuration";
 import { useClaims } from "../../hooks/useClaims/useClaims.hook";
 import { useFeatureFlags } from "../../hooks/useFeatureFlags/useFeatureFlags.hook";
 import { useIdTokenClaims } from "../../hooks/useIdTokenClaims/useIdTokenClaims.hook";
-import { fireEvent, render, screen } from "../../utils/testUtils";
+import { render, screen } from "../../utils/testUtils";
 import { AdminContent } from "./AdminContent.component";
 import { AdminViewDefault } from "./AdminContent.definition";
 

@@ -1,10 +1,10 @@
 import React from "react";
 import { MockUsersLong, MockUser13, MockUser12, MockUser11 } from "../../../../../../../__mocks__/data/users.mock";
 import { useAdminData } from "../../../../../../../contexts/data/data.hook";
+import type { Team } from "../../../../../../../definitions/team.definition";
 import { fireEvent, render, screen, waitFor } from "../../../../../../../utils/testUtils";
 import { TeamEditLanguage, TeamEditViewIdModel as ViewIdModel } from "../OrganizationsTeamEdit.definition";
 import { EditTeamUsersModal } from "./EditTeamUsersModal.component";
-import { Team } from "../../../../../../../definitions/team.definition";
 
 jest.mock("../../../../../../../contexts/data/data.hook");
 const mockUseAdminData = useAdminData as jest.Mock;

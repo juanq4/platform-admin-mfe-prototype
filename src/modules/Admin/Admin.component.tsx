@@ -6,8 +6,6 @@ import { CacheProvider } from "@emotion/react";
 import { ConfigProvider, StyleGuide } from "@q4/nimbus-ui";
 import type { MfeProps } from "@q4/platform-definitions";
 import { useMemo } from "react";
-import { AdminContent } from "../../components/AdminContent/AdminContent.component";
-import { UserProvider } from "../../contexts/user/user.context";
 import { DefaultMfeProps } from "../../definitions/mfe.definition";
 import { useVersionTag } from "../../hooks/useVersionTag/useVersionTag.hook";
 

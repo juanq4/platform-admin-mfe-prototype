@@ -3,7 +3,6 @@ import { isEmpty, SelectClassName, ToastContainer } from "@q4/nimbus-ui";
 import { OrganizationType, Permission } from "@q4/platform-definitions";
 import { createMemoryHistory } from "history";
 import { generatePath, Router } from "react-router-dom";
-import { CombinedError } from "urql";
 import { Auth0HookMock, MockAuth0Token } from "../../../../__mocks__/contexts/Auth0Context.mock";
 import { MockOrganization1 } from "../../../../__mocks__/data/organizations.mock";
 import { MockUserWithId, MockUserNoRolesWithId } from "../../../../__mocks__/data/users.mock";

@@ -53,7 +53,6 @@ import {
   getOrganizationEditRoute,
   getOrganizationViewRoute,
   capitalize,
-  getOrganizationEditUserNewRoute,
   getOrganizationEditLinkedOrganizationsRoute,
 } from "../../../../utils/organization/organization.utils";
 import { act, cleanup, fireEvent, render, screen, waitFor, within } from "../../../../utils/testUtils";

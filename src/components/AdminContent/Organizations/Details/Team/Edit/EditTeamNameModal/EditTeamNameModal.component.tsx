@@ -15,6 +15,7 @@ import type { Team } from "../../../../../../../definitions/team.definition";
 import type { User } from "../../../../../../../definitions/user.definition";
 import { mapErrorsToKey } from "../../../../../../../utils/error/error.utils";
 import { orderOrganizationsAlphabetically } from "../../../../../../../utils/organization/organization.utils";
+import { getUsersWithTeams, orderUsersAlphabetically } from "../../../../../../../utils/user/user.utils";
 import { AdminLoadingSpinner } from "../../../../../../LoadingSpinner/LoadingSpinner.component";
 import type { TeamFormError } from "../../OrganizationsTeam.definition";
 import { TeamDescriptions, TeamErrorsLanguage } from "../../OrganizationsTeam.definition";
@@ -25,7 +26,6 @@ import { TeamEditModal } from "../OrganizationTeamEdit.style";
 import { TeamEditLanguage, TeamEditModalDefaultProps } from "../OrganizationsTeamEdit.definition";
 import { EditTeamNameModalIdModel, maxTeamNameLength } from "./EditTeamNameModal.definition";
 import type { EditTeamNameModalProps } from "./EditTeamNameModal.definition";
-import { getUsersWithTeams, orderUsersAlphabetically } from "../../../../../../../utils/user/user.utils";
 
 const EditTeamNameModalBase = (props: EditTeamNameModalProps): JSX.Element => {
   const {
