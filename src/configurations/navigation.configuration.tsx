@@ -36,20 +36,20 @@ export enum RoutePathIdLabel {
 // }
 
 export enum AdminRoutePath {
-  Home = "/admin",
-  Users = "/admin/users",
-  UsersCreate = "/admin/users/edit",
-  UsersEdit = "/admin/users/edit/:userId",
-  Organizations = "/admin/organizations",
-  OrganizationsCreate = "/admin/organizations/add",
-  OrganizationsEdit = "/admin/organizations/edit/:id",
-  OrganizationsView = "/admin/organizations/view/:id",
-  OrganizationsEditLinkedOrganizations = "/admin/organizations/edit/:id/linked-organizations",
-  OrganizationsUserCreate = "/admin/organizations/edit/:id/user/add",
-  OrganizationsUserEdit = "/admin/organizations/edit/:id/user/edit/:userId",
-  OrganizationsUserEditWithReturnUrl = "/admin/organizations/edit/:id/user/edit/:userId/?returnUrl=:returnUrl",
-  OrganizationsTeamCreate = "/admin/organizations/edit/:id/team/add",
-  OrganizationsTeamEdit = "/admin/organizations/edit/:id/team/:teamId/edit",
+  Home = "/app/admin",
+  Users = "/app/admin/users",
+  UsersCreate = "/app/admin/users/edit",
+  UsersEdit = "/app/admin/users/edit/:userId",
+  Organizations = "/app/admin/organizations",
+  OrganizationsCreate = "/app/admin/organizations/add",
+  OrganizationsEdit = "/app/admin/organizations/edit/:id",
+  OrganizationsView = "/app/admin/organizations/view/:id",
+  OrganizationsEditLinkedOrganizations = "/app/admin/organizations/edit/:id/linked-organizations",
+  OrganizationsUserCreate = "/app/admin/organizations/edit/:id/user/add",
+  OrganizationsUserEdit = "/app/admin/organizations/edit/:id/user/edit/:userId",
+  OrganizationsUserEditWithReturnUrl = "/app/admin/organizations/edit/:id/user/edit/:userId/?returnUrl=:returnUrl",
+  OrganizationsTeamCreate = "/app/admin/organizations/edit/:id/team/add",
+  OrganizationsTeamEdit = "/app/admin/organizations/edit/:id/team/:teamId/edit",
 }
 
 export type RoutePathType = `${AdminRoutePath}`;
