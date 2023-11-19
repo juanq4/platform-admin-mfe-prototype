@@ -22,7 +22,6 @@ import { FeatureFlag } from "../../configurations/feature.configuration";
 import { AdminDataProvider } from "../../contexts/data/data.context";
 import { AdminEditProvider } from "../../contexts/edit/edit.context";
 import { AdminLoadingProvider } from "../../contexts/loading/loading.context";
-import { useUser } from "../../contexts/user/user.hook";
 import { useClaims } from "../../hooks/useClaims/useClaims.hook";
 import { useFeatureFlags } from "../../hooks/useFeatureFlags/useFeatureFlags.hook";
 import { mapRoutesByPermission } from "../../utils/permission/permission.utils";
@@ -40,7 +39,8 @@ const Component = (): JSX.Element => {
   const claims = useClaims();
   const features = useFeatureFlags();
   const history = useHistory();
-  const { onSetAdminClientSelector } = useUser();
+  // const { onSetAdminClientSelector } = useSession(); // FIXME call url?
+  const onSetAdminClientSelector = () => true;
 
   const tabs = useMemo(() => {
     const getPath = (x: Tab) => x.value;
@@ -72,7 +72,8 @@ const Component = (): JSX.Element => {
               children: showClientSelectorButton && (
                 <Button
                   className={AdminViewClassName.BannerButton}
-                  onClick={() => onSetAdminClientSelector(true)}
+                  // onClick={() => onSetAdminClientSelector(true)}
+                  onClick={onSetAdminClientSelector}
                   theme={ButtonTheme.DarkSlate}
                   label={AdminViewDefault.GoToClientAccountLabel}
                 />

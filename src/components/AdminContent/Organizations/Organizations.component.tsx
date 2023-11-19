@@ -31,6 +31,7 @@ import {
 } from "./Organizations.definition";
 
 const OrganizationsBase = (): JSX.Element => {
+  debugger;
   const history = useHistory();
   const location = useLocation();
 

@@ -12,6 +12,13 @@ import type {
   LazyQueryCallbackFunction,
 } from "./useQuery.definition";
 
+export enum QueryRequestPolicy {
+  CacheAndNetwork = "cache-and-network",
+  CacheFirst = "cache-first",
+  CacheOnly = "cache-only",
+  NetworkOnly = "network-only",
+}
+
 export const useMutation = <
   TEntity extends EntityBase,
   TResponse extends MutationResponse<TEntity>,

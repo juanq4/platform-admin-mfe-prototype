@@ -1,10 +1,10 @@
 import { DefaultPrivacyLevel } from "@datadog/browser-rum";
 import { Environment } from "@q4/platform-sdk-definitions";
-// import DevConfig from "./config.dev.json";
-// import FeatureConfig from "./config.feature.json";
-// import LocalConfig from "./config.local.json";
-// import ProdConfig from "./config.prod.json";
-// import StageConfig from "./config.stage.json";
+import DevConfig from "./config.dev.json";
+import FeatureConfig from "./config.feature.json";
+import LocalConfig from "./config.local.json";
+import ProdConfig from "./config.prod.json";
+import StageConfig from "./config.stage.json";
 
 declare global {
   function getConfigEnvironment(): string;
@@ -13,14 +13,14 @@ declare global {
 // bypass config environment for e2e tests
 const configEnv = "local"; // process.env.TARGET_STAGE === "test" ? "local" : getConfigEnvironment();
 
-// const config =
-//   {
-//     dev: DevConfig,
-//     local: LocalConfig,
-//     feature: FeatureConfig,
-//     stage: StageConfig,
-//     prod: ProdConfig,
-//   }[configEnv] || LocalConfig;
+const config =
+  {
+    dev: DevConfig,
+    local: LocalConfig,
+    feature: FeatureConfig,
+    stage: StageConfig,
+    prod: ProdConfig,
+  }[configEnv] || LocalConfig;
 
 const domainName = ""; // config.PLATFORM_SHELL_HOSTED_ZONE || window.location.origin;
 
@@ -30,9 +30,10 @@ const roleLabelSuffixes = {
   [Environment.Development as string]: "[DEV]",
 };
 
+// FIXME: @jm some values are not required
 export const env = {
   apollo: {
-    gatewayUrl: domainName + "/api/eds",
+    gatewayUrl: config.Q4_PLATFORM_GATEWAY_URL || window.location.origin + "/api/eds",
   },
   // TODO: This is a temporary fix until our configEnv is set up correctly for new pipeline deploys (as TARGET_STAGE is no longer passed in for dev, stage, prod)
   appEnv: (process.env.TARGET_STAGE === Environment.Test ? "test" : configEnv) || Environment.Debug,

@@ -1,15 +1,16 @@
 import { ApolloProvider, ApolloClient, createHttpLink, InMemoryCache } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 import fetch from "cross-fetch";
+import type { PropsWithChildren } from "react";
 import React from "react";
 import { env } from "../../../config/env/env";
-import type { ApolloWrapperProps } from "./ApolloWrapper.definition";
+import { useSession } from "../../contexts/session/useSession.hook";
 
-export const ApolloWrapper = (props: ApolloWrapperProps): React.JSX.Element => {
-  const { token, children } = props;
+export const ApolloWrapper = (props: PropsWithChildren): React.JSX.Element => {
+  const session = useSession();
 
   const authLink = setContext(async (_, { headers }) => ({
-    headers: { ...headers, authorization: `Bearer ${token}` },
+    headers: { ...headers, authorization: `Bearer ${session.token}` },
   }));
 
   const httpLink = createHttpLink({
@@ -27,5 +28,5 @@ export const ApolloWrapper = (props: ApolloWrapperProps): React.JSX.Element => {
     },
   });
 
-  return <ApolloProvider client={client}>{children}</ApolloProvider>;
+  return <ApolloProvider client={client}>{props.children}</ApolloProvider>;
 };

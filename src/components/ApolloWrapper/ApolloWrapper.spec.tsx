@@ -4,7 +4,7 @@ import { ApolloWrapper } from "./ApolloWrapper.component";
 
 describe("ApolloWrapper", () => {
   it("renders children", () => {
-    render(<ApolloWrapper token="token">Test</ApolloWrapper>);
+    render(<ApolloWrapper>Test</ApolloWrapper>);
     expect(screen.getByText("Test")).toBeVisible();
   });
 });
