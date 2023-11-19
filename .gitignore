@@ -25,3 +25,4 @@ logs
 *.tfplan
 *.terraform.lock.hcl
 backend.tf
+jest-testrail-report.json
