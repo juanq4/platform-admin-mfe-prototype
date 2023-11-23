@@ -1,8 +1,5 @@
 import { PermissionCollection } from "../../configurations/access.configuration";
-import {
-  // AppRoutePath,
-  AdminRoutePath,
-} from "../../configurations/navigation.configuration";
+import { AdminRoutePath } from "../../configurations/navigation.configuration";
 import { getDefaultRedirectRoute, getOrganizationRouteBasedOnPermission, isRoute } from "./route.utils";
 
 describe("getDefaultRedirectRoute", () => {
@@ -14,6 +11,7 @@ describe("getDefaultRedirectRoute", () => {
     CrudAll,
   } = PermissionCollection;
 
+  // FIXME: PLATFORM-3885
   // test("7403040: [Given] the user has permissions: 'undefined' [Expect] '/' to be returned", () => {
   //   const defaultRoute = getDefaultRedirectRoute(null);
   //   expect(defaultRoute).toBe(AppRoutePath.Default);

@@ -813,7 +813,7 @@ describe("Organization Edit View", () => {
     await waitFor(() => {
       expect(mockSetEntity).toBeCalledTimes(2);
       expect(screen.getByText(OrganizationDetailsTitle.Edit)).toBeInTheDocument();
-      // FIXME: @jm - this test is failing because the history push is not being mocked?
+      // FIXME: PLATFORM-3885 - this test is failing because the history push is not being mocked?
       // expect(window.history.replaceState).toHaveBeenCalledWith(null, "", `/organizations/edit/${id}`);
     });
   });
@@ -1116,7 +1116,7 @@ describe("Organization Edit View", () => {
     fireEvent.click(addUserButton);
 
     expect(mockHistoryPush).toBeCalledTimes(1);
-    // FIXME: @jm - this test is failing because the history push is not being mocked?
+    // FIXME: PLATFORM-3885 - this test is failing because the history push is not being mocked?
     // expect(mockHistoryPush).toBeCalledWith(
     //   expect.objectContaining({
     //     pathname: getOrganizationEditUserNewRoute(mockOrganization1.id),

@@ -135,7 +135,7 @@ export function testUserCreate(
       await waitFor(() => {
         expect(mockPush).toBeCalledTimes(1);
       });
-      // @jm fixme /Users/juanmejia/Workspace/platform-admin-mfe-prototype/src/components/AdminContent/Organizations/Details/User/Create/OrganizationsUserCreate.component.tsx handleClose getOrganizationEditRoute(organizationId) returns undefined
+      // FIXME: PLATFORM-3885 /Users/juanmejia/Workspace/platform-admin-mfe-prototype/src/components/AdminContent/Organizations/Details/User/Create/OrganizationsUserCreate.component.tsx handleClose getOrganizationEditRoute(organizationId) returns undefined
       // expect(mockPush).toBeCalledWith(returnRoute);
     });
 

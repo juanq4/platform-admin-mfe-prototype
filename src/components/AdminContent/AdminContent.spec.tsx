@@ -42,7 +42,7 @@ describe("Users View", () => {
     return render(
       <MemoryRouter initialEntries={[AdminRoutePath.Organizations]}>
         <AdminContent />
-        {/* <ClientAccounts /> @jm fixme this is a push route now */}
+        {/* <ClientAccounts /> FIXME: PLATFORM-3885 */}
       </MemoryRouter>,
     );
   }
@@ -67,7 +67,7 @@ describe("Users View", () => {
     expect(screen.queryByRole("button", { name: AdminViewDefault.GoToClientAccountLabel })).not.toBeInTheDocument();
   });
 
-  // FIXME: @jm no Client Account in admin
+  // FIXME: PLATFORM-3885 no Client Account in admin
   // test("8684271: [Given] Client Account button is clicked [Then] user should see Client Accounts screen", () => {
   //   const clientSelectorButton = screen.getByText(AdminViewDefault.GoToClientAccountLabel);
   //   expect(clientSelectorButton).toBeInTheDocument();

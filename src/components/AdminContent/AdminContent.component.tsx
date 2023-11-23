@@ -39,6 +39,7 @@ const Component = (): JSX.Element => {
   const claims = useClaims();
   const features = useFeatureFlags();
   const history = useHistory();
+  // FIXME: PLATFORM-3885 create Admin Client Selector as a view accesible by route in platform shell
   // const { onSetAdminClientSelector } = useSession(); // FIXME call url?
   const onSetAdminClientSelector = () => true;
 
@@ -72,6 +73,7 @@ const Component = (): JSX.Element => {
               children: showClientSelectorButton && (
                 <Button
                   className={AdminViewClassName.BannerButton}
+                  // FIXME: PLATFORM-3885
                   // onClick={() => onSetAdminClientSelector(true)}
                   onClick={onSetAdminClientSelector}
                   theme={ButtonTheme.DarkSlate}
@@ -91,7 +93,6 @@ const Component = (): JSX.Element => {
           flex={false}
           padding={LayoutPadding.None}
         >
-          {/* @jm fixme should move to Admin component */}
           <AdminLoadingProvider>
             <AdminDataProvider>
               <AdminEditProvider>
