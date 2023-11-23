@@ -8,7 +8,7 @@ jest.mock("react-router-dom", () => {
   return {
     ...orginal,
     useHistory: () => ({
-      location: { pathname: "/admin" },
+      location: { pathname: "/app/admin" },
       goBack: jest.fn(),
     }),
   };

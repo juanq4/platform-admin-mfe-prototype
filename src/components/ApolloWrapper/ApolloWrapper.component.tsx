@@ -4,10 +4,10 @@ import fetch from "cross-fetch";
 import type { PropsWithChildren } from "react";
 import React from "react";
 import { env } from "../../../config/env/env";
-import { useSession } from "../../contexts/session/useSession.hook";
+import { useSessionContext } from "../../hooks/useSessionContext/useSessionContext.hook";
 
 export const ApolloWrapper = (props: PropsWithChildren): React.JSX.Element => {
-  const session = useSession();
+  const session = useSessionContext();
 
   const authLink = setContext(async (_, { headers }) => ({
     headers: { ...headers, authorization: `Bearer ${session.token}` },

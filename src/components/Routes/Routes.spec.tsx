@@ -6,9 +6,8 @@ import { Auth0HookMock, MockAuth0Token, MockAuth0User } from "../../__mocks__/co
 import { AccessRouteMap, PermissionCollection } from "../../configurations/access.configuration";
 import { AdminRoutePath } from "../../configurations/navigation.configuration";
 import { OrganizationClaim } from "../../configurations/q4-platform-common.configuration";
-import { useAdminData } from "../../contexts/data/data.hook";
 import { AdminLoadingProvider } from "../../contexts/loading/loading.context";
-// import { useAccess } from "../../hooks/useAccess/useAccess.hook";
+import { useAdminDataContext } from "../../hooks/useAdminDataContext/useAdminDataContext.hook";
 import { useClaims } from "../../hooks/useClaims/useClaims.hook";
 import { useIdTokenClaims } from "../../hooks/useIdTokenClaims/useIdTokenClaims.hook";
 import type { OrganizationsLazyQueryResponse } from "../../hooks/useOrganization/useOrganization.definition";
@@ -25,19 +24,16 @@ import { AdminRoutesIdModel } from "./Routes.definition";
 
 jest.mock("../../utils/route/route.utils");
 const mockGetDefaultAdminRoute = getDefaultAdminRoute as jest.Mock;
-
 jest.mock("../../hooks/useOrganization/useOrganization.hook");
 const mockUseOrganizationsLazyQuery = useOrganizationsLazyQuery as jest.Mock;
 jest.mock("../../hooks/useUser/useUser.hook");
 const mockUseUsersLazyQuery = useUsersLazyQuery as jest.Mock;
 jest.mock("../../hooks/useIdTokenClaims/useIdTokenClaims.hook");
 const mockUseIdTokenClaims = useIdTokenClaims as jest.Mock;
-// jest.mock("../../hooks/useAccess/useAccess.hook");
-// const mockUseAccess = useAccess as jest.Mock;
 jest.mock("../../hooks/useClaims/useClaims.hook");
 const mockUseClaims = useClaims as jest.Mock;
-jest.mock("../../contexts/data/data.hook");
-const mockUseAdminData = useAdminData as jest.Mock;
+jest.mock("../../hooks/useAdminDataContext/useAdminDataContext.hook");
+const mockUseAdminData = useAdminDataContext as jest.Mock;
 
 Auth0HookMock({ user: { ...MockAuth0User, [OrganizationClaim]: undefined } });
 

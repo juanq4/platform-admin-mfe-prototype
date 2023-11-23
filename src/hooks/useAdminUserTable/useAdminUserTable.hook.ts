@@ -1,8 +1,8 @@
 import { isNullOrWhiteSpace } from "@q4/nimbus-ui";
 import { useCallback, useMemo, useState } from "react";
-import { useAdminData } from "../../contexts/data/data.hook";
 import type { User } from "../../definitions/user.definition";
 import { useUsersQuery } from "../../schemas/generated/graphql";
+import { useAdminDataContext } from "../useAdminDataContext/useAdminDataContext.hook";
 import { usePagination } from "../usePagination/usePagination.hook";
 import { QueryPaginationDefault } from "../useQuery/useQuery.definition";
 import type { UsersQueryVariables } from "../useUser/useUser.definition";
@@ -14,7 +14,7 @@ export const useAdminUserTable = (props: AdminUserTableHookProps): AdminUserTabl
   const pageState = useState<UsersQueryVariables["page"]>(null);
   const [page] = pageState;
 
-  const { setCachedVariables } = useAdminData();
+  const { setCachedVariables } = useAdminDataContext();
 
   const variables = { organizationId, page };
 

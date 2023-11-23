@@ -9,19 +9,3 @@ export function isFeatureTrue(features?: Partial<Features>, featureFlag?: string
   if (isEmpty(features)) return false;
   return features[featureFlag];
 }
-
-// export function createCrossSellingPath(
-//   link: CrossSellingLink,
-//   user: User,
-//   organizationId: string,
-//   organizationName: string,
-// ): string {
-//   const userData = {
-//     email: user.email,
-//     org_id: organizationId,
-//     org_name: organizationName,
-//     first_name: user.firstName,
-//     last_name: user.lastName,
-//   };
-//   return `${link.url}?${new URLSearchParams(userData).toString()}`;
-// }

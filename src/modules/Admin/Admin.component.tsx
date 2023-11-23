@@ -1,6 +1,5 @@
 import "./Admin.scss";
 import "../../styles/scss/index.scss";
-// // import { GlobalStyles } from "../../styles/GlobalStyle";
 import createCache from "@emotion/cache";
 import { CacheProvider } from "@emotion/react";
 import { ConfigProvider, StyleGuide } from "@q4/nimbus-ui";
@@ -13,10 +12,11 @@ import { FeatureFlagProvider } from "../../components/FeatureFlagProvider/Featur
 import { GraphWrapper } from "../../components/GraphWrapper/GraphWrapper.component";
 import { SessionProvider } from "../../contexts/session/session.context";
 import { DefaultMfeProps } from "../../definitions/mfe.definition";
+import { useMfePropsValidator } from "../../hooks/useMfePropsValidator/useMfePropsValidator.hook";
 import { useVersionTag } from "../../hooks/useVersionTag/useVersionTag.hook";
 
-// FIXME pass history to  router
 const Admin = (props: MfeProps = DefaultMfeProps): JSX.Element => {
+  useMfePropsValidator(props);
   useVersionTag();
 
   const emotionCache = useMemo(() => createCache({ key: "admin", container: document.body }), []);

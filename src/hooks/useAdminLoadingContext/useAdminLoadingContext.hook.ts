@@ -1,7 +1,7 @@
 import type { Key } from "react";
 import { useContext, useEffect } from "react";
-import { AdminLoadingContext } from "./loading.context";
-import type { AdminLoadingContextState } from "./loading.definition";
+import { AdminLoadingContext } from "../../contexts/loading/loading.context";
+import type { AdminLoadingContextState } from "../../contexts/loading/loading.definition";
 
 export const useAdminLoadingContext = (key: Key, loading: boolean): AdminLoadingContextState => {
   const [globalLoading, setGlobalLoading] = useContext(AdminLoadingContext);

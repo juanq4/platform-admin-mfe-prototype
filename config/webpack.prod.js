@@ -34,8 +34,6 @@ module.exports = {
           {
             loader: "sass-loader",
             options: {
-              // data: '@import "path/to/global.scss";',
-              // data: '@import "/node_modules/@q4/nimbus-ui/dist/v1/variables"; @import "/node_modules/@q4/nimbus-ui/dist/v2/variables";',
               sourceMap: true, // this is required for the resolve-url-loader
             },
           },

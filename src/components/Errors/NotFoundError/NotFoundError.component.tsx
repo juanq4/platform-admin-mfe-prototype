@@ -1,7 +1,6 @@
 import { Fallback, FallbackImage } from "@q4/nimbus-ui";
 import { useMemo } from "react";
 import { useHistory } from "react-router-dom";
-import { Email } from "../../../configurations/q4-platform-common.configuration";
 import { isRoute } from "../../../utils/route/route.utils";
 import {
   NotFoundErrorIdModel,
@@ -21,7 +20,7 @@ export const NotFoundError = (props: NotFoundErrorProps): JSX.Element => {
   return (
     <div id={idModel.id}>
       <Fallback
-        email={Email.Support}
+        email="q4platform-support@q4inc.com"
         image={hasAccess ? FallbackImage.Empty : FallbackImage.Fallback}
         placeholderContentProps={{
           title: notFoundErrorTitle,

@@ -43,7 +43,7 @@ const mockUseManagedByAdminOrganization = useManagedByAdminOrganization as jest.
 
 const { id: mockOrganizationId, name: mockOrganizationName } = MockOrganization1;
 const idModel = OrganizationsLinkViewIdModel;
-const returnRoute = `/admin/organizations/edit/${mockOrganizationId}`;
+const returnRoute = `/app/admin/organizations/edit/${mockOrganizationId}`;
 
 const mockHistoryPush = jest.fn();
 const mockLinkOrganizations = jest.fn((): Promise<unknown> => Promise.resolve({ data: [] }));

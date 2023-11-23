@@ -4,8 +4,8 @@ import { Permission } from "@q4/platform-definitions";
 import { memo, useCallback, useMemo, useRef, useState } from "react";
 import { generatePath, useHistory, useLocation } from "react-router-dom";
 import { AdminRoutePath, RoutePathIdLabel } from "../../../configurations/navigation.configuration";
-import { useAdminLoadingContext } from "../../../contexts/loading/useLoadingContext.hook";
 import type { Organization } from "../../../definitions/organization.definition";
+import { useAdminLoadingContext } from "../../../hooks/useAdminLoadingContext/useAdminLoadingContext.hook";
 import { useClaims } from "../../../hooks/useClaims/useClaims.hook";
 import type { OrganizationsQueryVariables } from "../../../hooks/useOrganization/useOrganization.definition";
 import { usePagination } from "../../../hooks/usePagination/usePagination.hook";
@@ -31,7 +31,6 @@ import {
 } from "./Organizations.definition";
 
 const OrganizationsBase = (): JSX.Element => {
-  debugger;
   const history = useHistory();
   const location = useLocation();
 

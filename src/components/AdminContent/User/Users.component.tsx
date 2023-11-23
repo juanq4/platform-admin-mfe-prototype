@@ -4,9 +4,9 @@ import { memo, useCallback, useMemo, useState } from "react";
 import { generatePath, useHistory, useLocation } from "react-router-dom";
 import AddUserImage from "../../../assets/icons/addUserImage.svg";
 import { AdminRoutePath, RoutePathIdLabel } from "../../../configurations/navigation.configuration";
-import { useAdminData } from "../../../contexts/data/data.hook";
-import { useAdminLoadingContext } from "../../../contexts/loading/useLoadingContext.hook";
 import type { User } from "../../../definitions/user.definition";
+import { useAdminDataContext } from "../../../hooks/useAdminDataContext/useAdminDataContext.hook";
+import { useAdminLoadingContext } from "../../../hooks/useAdminLoadingContext/useAdminLoadingContext.hook";
 import { useClaims } from "../../../hooks/useClaims/useClaims.hook";
 import { usePagination } from "../../../hooks/usePagination/usePagination.hook";
 import { QueryPaginationDefault } from "../../../hooks/useQuery/useQuery.definition";
@@ -25,7 +25,7 @@ const UsersBase = (): JSX.Element => {
   const history = useHistory();
   const location = useLocation();
   const claims = useClaims();
-  const { setCachedVariables } = useAdminData();
+  const { setCachedVariables } = useAdminDataContext();
 
   const hasOrganizationAccess = useMemo(
     () => hasRequiredPermission(claims.permissions, AdminOrganizationCondition),

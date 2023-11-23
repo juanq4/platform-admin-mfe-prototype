@@ -25,7 +25,6 @@ import { OrganizationType, Entitlement as EntitlementConstant, OrganizationRegio
 import { memo, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
 import { generatePath, useHistory, useLocation, useParams } from "react-router-dom";
 import { AdminRoutePath, RoutePathIdLabel } from "../../../../configurations/navigation.configuration";
-import { useAdminEditContext } from "../../../../contexts/edit/useEditContext.hook";
 import { AdminLoadingContext } from "../../../../contexts/loading/loading.context";
 import type {
   OrganizationStockInfo,
@@ -33,6 +32,7 @@ import type {
   OrganizationCurrencyOption,
 } from "../../../../definitions/organization.definition";
 import { Organization, OrganizationEditState } from "../../../../definitions/organization.definition";
+import { useAdminEditContext } from "../../../../hooks/useAdminEditContext/useAdminEditContext.hook";
 import { useClaims } from "../../../../hooks/useClaims/useClaims.hook";
 import {
   OrganizationEditMessage,

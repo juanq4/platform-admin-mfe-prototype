@@ -8,34 +8,13 @@ import { mockWindowMethods } from "../../src/__mocks__/utils/helpers";
 import { createAppWrapper, destroyAppWrapper } from "../../src/__mocks__/utils/wrappers";
 import { configure } from "../../src/utils/testUtils";
 
-// getConfigEnvironment is not defined in env.ts, which prevents swc-jest from running
 jest.mock("../env/env", () => ({
   env: {
     apollo: { gatewayUrl: "https://connect.dev.q4inc.com/api/eds" },
     auth0: {},
-    dataDog: { applicationId: "myId" },
     featureFlag: {},
-    helpCenter: { url: "https://help.dev.q4inc.com" },
-    launchDarkly: {
-      featureFlag: {},
-      versionManager: {},
-    },
-    role: {
-      labelSuffix: "[DEV]",
-    },
-    q4Desktop: {
-      mobile: {
-        android: "https://play.google.com/store/apps/details?id=com.q4inc.connect.mobile",
-        apple: "https://apps.apple.com/us/app/q4-go/id1632059817?platform=iphone",
-      },
-      url: "https://develop.q4desktop.com/",
-    },
-    analytics: {
-      postHog: {
-        key: "myKey",
-        apiHost: "http://localhost:8000",
-      },
-    },
+    launchDarkly: { featureFlag: {} },
+    role: { labelSuffix: "[DEV]" },
   },
 }));
 

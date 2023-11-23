@@ -1,8 +1,8 @@
 import { ButtonTheme, isEmpty, isNullOrWhiteSpace, Modal, Text, TextPreset } from "@q4/nimbus-ui";
 import { Role } from "@q4/platform-sdk-definitions";
 import { memo, useEffect, useMemo, useRef, useState } from "react";
-import { useAdminData } from "../../../../../../../contexts/data/data.hook";
 import type { User } from "../../../../../../../definitions/user.definition";
+import { useAdminDataContext } from "../../../../../../../hooks/useAdminDataContext/useAdminDataContext.hook";
 import { TeamDescriptions } from "../../OrganizationsTeam.definition";
 import { CustomGrid, CustomGridColumn, WideTableWrapper } from "../../OrganizationsTeam.style";
 import { AddUsersTeamsForm } from "../../components/AddUsersForm/AddUsersTeamsForm.component";
@@ -16,7 +16,7 @@ import type { EditTeamUsersModalProps } from "./EditTeamUsersModal.definition";
 
 const EditTeamUsersModalBase = (props: EditTeamUsersModalProps): JSX.Element => {
   const { id, title, isVisible, isLoading, isUpdating, error, onRefetchUsers, onUpdate, onClose } = props;
-  const { team, teams, users } = useAdminData();
+  const { team, teams, users } = useAdminDataContext();
 
   const idModel = useMemo(() => new EditTeamUsersModalIdModel(id), [id]);
 

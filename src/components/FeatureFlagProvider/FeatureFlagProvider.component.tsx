@@ -1,14 +1,14 @@
 import { LDProvider } from "launchdarkly-react-client-sdk";
 import type { PropsWithChildren } from "react";
-import { useSession } from "../../contexts/session/useSession.hook";
+import { LaunchDarklyConfig } from "../../../config/launchDarkly/launchDarkly";
+import { useSessionContext } from "../../hooks/useSessionContext/useSessionContext.hook";
 
-// TODO: create project in launchdarkly
 export const FeatureFlagProvider = (props: PropsWithChildren): JSX.Element => {
-  const session = useSession();
+  const session = useSessionContext();
 
   return (
     <LDProvider
-      clientSideID="62154708fbcd54151df7aca2"
+      clientSideID={LaunchDarklyConfig.clientSideID}
       context={{
         kind: "user",
         key: session.user.id,

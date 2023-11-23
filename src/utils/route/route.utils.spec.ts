@@ -71,7 +71,7 @@ describe("Organization Route Based On Permisson", () => {
 
   test("5530628: [Given] a user has the permission to edit an organization [Expect] route returned to be the Organization edit route", () => {
     const mockPermissions = PermissionCollection.CrudOrganizations;
-    const expectedRoute = `/admin/organizations/edit/${mockOrganizationId}`;
+    const expectedRoute = `/app/admin/organizations/edit/${mockOrganizationId}`;
 
     const defaultRoute = getOrganizationRouteBasedOnPermission(mockPermissions, mockOrganizationId);
     expect(defaultRoute).toStrictEqual(expectedRoute);
@@ -79,7 +79,7 @@ describe("Organization Route Based On Permisson", () => {
 
   test("5530629: [Given] a user has the permission to view an organization [Expect] route returned to be the Organization view route", () => {
     const mockPermissions = PermissionCollection.ReadOrganizations;
-    const expectedRoute = `/admin/organizations/view/${mockOrganizationId}`;
+    const expectedRoute = `/app/admin/organizations/view/${mockOrganizationId}`;
 
     const defaultRoute = getOrganizationRouteBasedOnPermission(mockPermissions, mockOrganizationId);
     expect(defaultRoute).toStrictEqual(expectedRoute);

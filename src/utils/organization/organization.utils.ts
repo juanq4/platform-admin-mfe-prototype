@@ -21,12 +21,8 @@ import type { OrganizationMutationModel } from "../../hooks/useOrganization/useO
 import { hasRequiredPermission } from "../permission/permission.utils";
 import { OrganizationsUserEditDefault as ViewDefaults } from "./organization.definition";
 
-// FIXME @jm tests
 export function getOrganizationEditRoute(id: Organization["id"]): string {
-  const path = generatePath(AdminRoutePath.OrganizationsEdit, { [RoutePathIdLabel.Id]: id });
-  //return generatePath(AdminRoutePath.OrganizationsEdit, { [RoutePathIdLabel.Id]: id });
-  console.log("path", path);
-  return path;
+  return generatePath(AdminRoutePath.OrganizationsEdit, { [RoutePathIdLabel.Id]: id });
 }
 
 export function getOrganizationViewRoute(id: Organization["id"]): string {

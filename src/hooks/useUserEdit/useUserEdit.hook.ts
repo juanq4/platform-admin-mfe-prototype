@@ -2,19 +2,19 @@ import { useApolloClient } from "@apollo/client";
 import { isNullOrWhiteSpace } from "@q4/nimbus-ui";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { AdminUserFormProps } from "../../components/Forms/User/AdminUserForm.definition";
-import { useAdminData } from "../../contexts/data/data.hook";
 import type { Organization } from "../../definitions/organization.definition";
 import type { User } from "../../definitions/user.definition";
 import { useUserQuery } from "../../hooks/useUser/useUser.hook";
 import type { Exact, User as ApolloUser, UsersQuery } from "../../schemas/generated/graphql";
 import { UsersDocument, useUpdateUserMutation } from "../../schemas/generated/graphql";
+import { useAdminDataContext } from "../useAdminDataContext/useAdminDataContext.hook";
 import { UserEditDefault } from "./useUserEdit.definition";
 import type { UserEditHookModel } from "./useUserEdit.definition";
 
 export const useUserEdit = (userId: User["id"], organizationId: Organization["id"]): UserEditHookModel => {
   const userState = useState(UserEditDefault.User);
   const [, setUser] = userState;
-  const { cachedVariables } = useAdminData();
+  const { cachedVariables } = useAdminDataContext();
 
   const client = useApolloClient();
   const aja = useUpdateUserMutation({});
